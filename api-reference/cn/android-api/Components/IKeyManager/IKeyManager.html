@@ -37,10 +37,11 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a href="/document/a8c437ae-29e3-4dc7-838e-f8ae31ac84ec">文档</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">文档</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
-          </ul></span><a href="/mobile-sdk/downloads">下载</a></nav>
+          </ul></span><a href="/mobile-sdk/downloads">下载</a>
+      </nav>
     </div>
   </div>
   <div id="documentation-page" class="documentation-page">
@@ -318,7 +319,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IKeyManager</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：">描述：</h5>
-<p><font color="#666">此类是MSDK KEY管理类，MSDK提供了一组KEY方法来访问和控制硬件产品的能力。支持的KEY模块列表请查看<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>。我们提供了<code><a href="../../Components/IKeyManager/KeyTools.html#keytools">KeyTools</a></code>,为开发者提供了更加简洁易用的方法创建<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</font></p>
+<p><font color="#666">此类是MSDK Key管理类，MSDK提供了一组方法来访问硬件模块的参数和控制硬件模块的行为，包括<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的Value设置，Value获取，Value监听和Action执行。通过<code><a href="../../Components/IKeyManager/KeyTools.html#keytools">KeyTools</a></code>类提供的createKey方法可以更加方便的创建DJIKey实例。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="类成员">类成员:</h5>
 <div class="api-row" id="ikeymanager_getvalue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_getvalue_inline">getValue</a></div></div><div class="inline-doc" id="ikeymanager_getvalue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getValue</h6></div>
@@ -326,7 +327,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Result&gt; <span class="function">Result <span class="title">getValue</span><span class="params">(DJIKey&lt;Result&gt; key)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">同步方式获取<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值，该值是从MSDK缓存中读取数据。如需要从硬件设备中异步获取数值，请调用<code><a href="../../Components/IKeyManager/IKeyManager.html#ikeymanager_getvaluecompletioncallbackwithparam">getValue</a></code>。</font></p>
+<p><font color="#666">同步方式获取<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值，该值是从MSDK缓存中读取数据。如需要从硬件设备中异步获取数值，请调用<code><a href="../../Components/IKeyManager/IKeyManager.html#ikeymanager_getvaluecompletioncallbackwithparam">getValue</a></code>。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;Result&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr></table></html>
 <h5 id="返回值：">返回值：</h5>
@@ -337,7 +338,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Result&gt; <span class="function"><span class="keyword">void</span> <span class="title">getValue</span><span class="params">(DJIKey&lt;Result&gt; key, CommonCallbacks.CompletionCallbackWithParam&lt;Result&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">异步方式获取<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值，该值从硬件设备中获取数值。如需要从MSDK缓存中读取数值，请调用<code><a href="../../Components/IKeyManager/IKeyManager.html#ikeymanager_getvalue">getValue</a></code>。</font></p>
+<p><font color="#666">异步方式获取<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值，该值从硬件设备中获取数值。如需要从MSDK缓存中读取数值，请调用<code><a href="../../Components/IKeyManager/IKeyManager.html#ikeymanager_getvalue">getValue</a></code>。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v2">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;Result&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Result&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_setvalue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_setvalue_inline">setValue</a></div></div><div class="inline-doc" id="ikeymanager_setvalue_inline" <blockquote>
@@ -346,7 +347,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Param&gt; <span class="function"><span class="keyword">void</span> <span class="title">setValue</span><span class="params">(DJIKey&lt;Param&gt; key, Param param, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v4">描述：</h5>
-<p><font color="#666">设置<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的参数。</font></p>
+<p><font color="#666">设置<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的参数。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v3">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;Param&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">Param <font color="#000">param</font></font></td><td><font color="#666"><i>设置的参数。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_performaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_performaction_inline">performAction</a></div></div><div class="inline-doc" id="ikeymanager_performaction_inline" <blockquote>
@@ -355,7 +356,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Result&gt; <span class="function"><span class="keyword">void</span> <span class="title">performAction</span><span class="params">(DJIKey.ActionKey&lt;?, Result&gt; key, CommonCallbacks.CompletionCallbackWithParam&lt;Result&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v5">描述：</h5>
-<p><font color="#666">执行<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的Action行为。</font></p>
+<p><font color="#666">执行<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的Action行为。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v4">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey.ActionKey&lt;?, Result&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Result&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_performactionparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_performactionparam_inline">performAction</a></div></div><div class="inline-doc" id="ikeymanager_performactionparam_inline" <blockquote>
@@ -364,7 +365,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Param, Result&gt; <span class="function"><span class="keyword">void</span> <span class="title">performAction</span><span class="params">(DJIKey.ActionKey&lt;Param, Result&gt; key, Param param, CommonCallbacks.CompletionCallbackWithParam&lt;Result&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">执行带参数的<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的Action行为。</font></p>
+<p><font color="#666">执行带参数的<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的Action行为。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v5">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey.ActionKey&lt;Param, Result&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">Param <font color="#000">param</font></font></td><td><font color="#666"><i>Action参数。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Result&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_listen"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_listen_inline">listen</a></div></div><div class="inline-doc" id="ikeymanager_listen_inline" <blockquote>
@@ -373,7 +374,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Result&gt; <span class="function"><span class="keyword">void</span> <span class="title">listen</span><span class="params">(DJIKey&lt;Result&gt; key, Object listenHolder, CommonCallbacks.KeyListener&lt;Result&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v7">描述：</h5>
-<p><font color="#666">监听<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值。</font></p>
+<p><font color="#666">监听<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v6">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;Result&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">Object <font color="#000">listenHolder</font></font></td><td><font color="#666"><i>监听器的持有者。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.KeyListener&lt;Result&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_listengetonce"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_listengetonce_inline">listen</a></div></div><div class="inline-doc" id="ikeymanager_listengetonce_inline" <blockquote>
@@ -382,7 +383,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Result&gt; <span class="function"><span class="keyword">void</span> <span class="title">listen</span><span class="params">(DJIKey&lt;Result&gt; key, Object listenHolder, <span class="keyword">boolean</span> getOnce, CommonCallbacks.KeyListener&lt;Result&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v8">描述：</h5>
-<p><font color="#666">监听<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值。监听的同时可以异步获取一次<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值。</font></p>
+<p><font color="#666">监听<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值。监听的同时可以异步获取一次<code><a href="../../Components/IKeyManager/DJIValue.html#djivalue">DJIValue</a></code>值。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v7">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;Result&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">Object <font color="#000">listenHolder</font></font></td><td><font color="#666"><i>监听器的持有者。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">getOnce</font></font></td><td><font color="#666"><i><code>true</code>表示监听的同时异步Get一次value值。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.KeyListener&lt;Result&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_cancellistenkeylistenholder"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_cancellistenkeylistenholder_inline">cancelListen</a></div></div><div class="inline-doc" id="ikeymanager_cancellistenkeylistenholder_inline" <blockquote>
@@ -391,7 +392,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelListen</span><span class="params">(DJIKey&lt;?&gt; key, Object listenHolder)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v9">描述：</h5>
-<p><font color="#666">取消特定<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>和特定listenHolder的监听。</font></p>
+<p><font color="#666">取消特定<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>和特定listenHolder的监听。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v8">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;?&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">Object <font color="#000">listenHolder</font></font></td><td><font color="#666"><i>监听器的持有者。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_cancellistenkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_cancellistenkey_inline">cancelListen</a></div></div><div class="inline-doc" id="ikeymanager_cancellistenkey_inline" <blockquote>
@@ -400,7 +401,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelListen</span><span class="params">(DJIKey&lt;?&gt; key)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v10">描述：</h5>
-<p><font color="#666">取消特定<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的监听。</font></p>
+<p><font color="#666">取消特定<code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>的监听。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v9">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKey&lt;?&gt; <font color="#000">key</font></font></td><td><font color="#666"><i><code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>实例。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ikeymanager_cancellistenlistenholder"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ikeymanager_cancellistenlistenholder_inline">cancelListen</a></div></div><div class="inline-doc" id="ikeymanager_cancellistenlistenholder_inline" <blockquote>
@@ -409,7 +410,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancelListen</span><span class="params">(Object listenHolder)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v11">描述：</h5>
-<p><font color="#666">取消特定Holder的所有监听。</font></p>
+<p><font color="#666">取消特定Holder的所有监听。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v10">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Object <font color="#000">listenHolder</font></font></td><td><font color="#666"><i>Holder监听器。</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
@@ -456,7 +457,7 @@
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2021 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
         <div class="col-xs-2">
           <div class="lang-selector">
             <selector dir="rtl" v-model="lang">

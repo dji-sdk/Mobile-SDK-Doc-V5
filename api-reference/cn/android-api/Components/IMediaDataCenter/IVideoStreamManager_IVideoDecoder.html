@@ -37,10 +37,11 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a href="/document/a8c437ae-29e3-4dc7-838e-f8ae31ac84ec">文档</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">文档</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
-          </ul></span><a href="/mobile-sdk/downloads">下载</a></nav>
+          </ul></span><a href="/mobile-sdk/downloads">下载</a>
+      </nav>
     </div>
   </div>
   <div id="documentation-page" class="documentation-page">
@@ -318,7 +319,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IVideoDecoder</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：">描述：</h5>
-<p><font color="#666">DJI码流解码器类。支持YUV输出模式和SURFACE输出模式。你可以通过构造函数设置解码器输出模式<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode">DecoderOutputMode</a></code>，通过设置<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel.html#ivideostreammanager_ivideochannel_videochanneltype">VideoChannelType</a></code>来绑定需要进行解码的<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel.html#ivideostreammanager_ivideochannel">IVideoChannel</a></code>。 <br><b>注意： 如果开发者通过构造函数自行设置解码器的宽(width)和高(height)，需要保证设置的宽和高是16的倍数。</b></font></p>
+<p><font color="#666">DJI码流解码器类。支持YUV输出模式和SURFACE输出模式。你可以通过构造函数设置解码器输出模式<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode">DecoderOutputMode</a></code>，通过设置<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel.html#ivideostreammanager_ivideochannel_videochanneltype">VideoChannelType</a></code>来绑定需要进行解码的<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel.html#ivideostreammanager_ivideochannel">IVideoChannel</a></code>。 <br><b>注意： 如果开发者通过构造函数自行设置解码器的宽(width)和高(height)，需要保证设置的宽和高是16的倍数。</b> <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="类成员">类成员:</h5>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_getdecoderoutputmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_getdecoderoutputmode_inline">getDecoderOutputMode</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_getdecoderoutputmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getDecoderOutputMode</h6></div>
@@ -326,7 +327,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line">    <span class="function">DecoderOutputMode <span class="title">getDecoderOutputMode</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">获取解码器输出模式。</font></p>
+<p><font color="#666">获取解码器输出模式。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="返回值：">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode">DecoderOutputMode</a></font></td><td><font color="#666"><i>返回解码器输出模式。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_getvideochanneltype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_getvideochanneltype_inline">getVideoChannelType</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_getvideochanneltype_inline" <blockquote>
@@ -335,7 +336,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">VideoChannelType <span class="title">getVideoChannelType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">获取解码器对应的码流通道类型。</font></p>
+<p><font color="#666">获取解码器对应的码流通道类型。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="返回值：-v2">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel.html#ivideostreammanager_ivideochannel_videochanneltype">VideoChannelType</a></font></td><td><font color="#666"><i>返回解码器对应的码流通道类型。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_getvideowidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_getvideowidth_inline">getVideoWidth</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_getvideowidth_inline" <blockquote>
@@ -344,7 +345,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getVideoWidth</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v4">描述：</h5>
-<p><font color="#666">获取解码后的视频宽度。</font></p>
+<p><font color="#666">获取解码后的视频宽度。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="返回值：-v3">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回解码后的视频宽度。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_getvideoheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_getvideoheight_inline">getVideoHeight</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_getvideoheight_inline" <blockquote>
@@ -353,7 +354,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getVideoHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v5">描述：</h5>
-<p><font color="#666">获取解码后的视频高度。</font></p>
+<p><font color="#666">获取解码后的视频高度。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="返回值：-v4">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回解码后的视频高度。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_addyuvdatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_addyuvdatalistener_inline">addYuvDataListener</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_addyuvdatalistener_inline" <blockquote>
@@ -362,7 +363,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addYuvDataListener</span><span class="params">(@NonNull YuvDataListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">设置YUV数据监听器。设置<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode">DecoderOutputMode</a></code>为<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode_yuv_mode">YUV_MODE</a></code>后，可通过此监听器获取到通过解码器解码后的YUV数据。</font></p>
+<p><font color="#666">设置YUV数据监听器。设置<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode">DecoderOutputMode</a></code>为<code><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderoutputmode_yuv_mode">YUV_MODE</a></code>后，可通过此监听器获取到通过解码器解码后的YUV数据。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder_YuvDataListener.html#ivideostreammanager_ivideodecoder_yuvdatalistener">YuvDataListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>YUV数据监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_removeyuvdatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_removeyuvdatalistener_inline">removeYuvDataListener</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_removeyuvdatalistener_inline" <blockquote>
@@ -371,7 +372,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeYuvDataListener</span><span class="params">(@NonNull YuvDataListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v7">描述：</h5>
-<p><font color="#666">删除YUV数据监听器。</font></p>
+<p><font color="#666">删除YUV数据监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v2">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder_YuvDataListener.html#ivideostreammanager_ivideodecoder_yuvdatalistener">YuvDataListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>YUV数据监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_clearallyuvdatalisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_clearallyuvdatalisteners_inline">clearAllYuvDataListeners</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_clearallyuvdatalisteners_inline" <blockquote>
@@ -380,7 +381,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllYuvDataListeners</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v8">描述：</h5>
-<p><font color="#666">移除所有YUV数据监听器。</font></p>
+<p><font color="#666">移除所有YUV数据监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_adddecoderstatechangelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_adddecoderstatechangelistener_inline">addDecoderStateChangeListener</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_adddecoderstatechangelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addDecoderStateChangeListener</h6></div>
@@ -388,7 +389,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addDecoderStateChangeListener</span><span class="params">(@NonNull DecoderStateChangeListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v9">描述：</h5>
-<p><font color="#666">设置解码器状态监听器。</font></p>
+<p><font color="#666">设置解码器状态监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v3">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder_DecoderStateChangeListener.html#ivideostreammanager_ivideodecoder_decoderstatechangelistener">DecoderStateChangeListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>解码器状态监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_removedecoderstatechangelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_removedecoderstatechangelistener_inline">removeDecoderStateChangeListener</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_removedecoderstatechangelistener_inline" <blockquote>
@@ -397,7 +398,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeDecoderStateChangeListener</span><span class="params">(@NonNull DecoderStateChangeListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v10">描述：</h5>
-<p><font color="#666">删除解码器状态监听器。</font></p>
+<p><font color="#666">删除解码器状态监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v4">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder_DecoderStateChangeListener.html#ivideostreammanager_ivideodecoder_decoderstatechangelistener">DecoderStateChangeListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>解码器状态监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_clearalldecoderstatechangelisteners"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_clearalldecoderstatechangelisteners_inline">clearAllDecoderStateChangeListeners</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_clearalldecoderstatechangelisteners_inline" <blockquote>
@@ -406,7 +407,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllDecoderStateChangeListeners</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v11">描述：</h5>
-<p><font color="#666">移除所有解码器状态监听器。</font></p>
+<p><font color="#666">移除所有解码器状态监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_getdecoderstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_getdecoderstatus_inline">getDecoderStatus</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_getdecoderstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getDecoderStatus</h6></div>
@@ -414,7 +415,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line">    <span class="function">DecoderState <span class="title">getDecoderStatus</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v12">描述：</h5>
-<p><font color="#666">获取解码器状态。</font></p>
+<p><font color="#666">获取解码器状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="返回值：-v5">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoDecoder.html#ivideostreammanager_ivideodecoder_decoderstate">DecoderState</a></font></td><td><font color="#666"><i>返回解码器状态。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_onpause"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_onpause_inline">onPause</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_onpause_inline" <blockquote>
@@ -423,7 +424,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v13">描述：</h5>
-<p><font color="#666">设置解码器进入暂停解码状态。</font></p>
+<p><font color="#666">设置解码器进入暂停解码状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_onresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_onresume_inline">onResume</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_onresume_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onResume</h6></div>
@@ -431,7 +432,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v14">描述：</h5>
-<p><font color="#666">设置解码器恢复解码状态。</font></p>
+<p><font color="#666">设置解码器恢复解码状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_destory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_destory_inline">destory</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_destory_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>destory</h6></div>
@@ -439,7 +440,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">destory</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v15">描述：</h5>
-<p><font color="#666">销毁解码器实例，释放资源。</font></p>
+<p><font color="#666">销毁解码器实例，释放资源。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="ivideostreammanager_ivideodecoder_decoderoutputmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideodecoder_decoderoutputmode_inline">DecoderOutputMode</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideodecoder_decoderoutputmode_inline" <blockquote>
@@ -448,7 +449,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> DecoderOutputMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.decoder</font></td></tr></table></html>
 <h5 id="描述：-v16">描述：</h5>
-<p><font color="#666">解码器输出模式。支持YUV输出模式和SURFACE输出模式。</font></p>
+<p><font color="#666">解码器输出模式。支持YUV输出模式和SURFACE输出模式。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideodecoder_decoderoutputmode_yuv_mode_inline"></a>YUV_MODE</font></td><td><font color="#666">YUV输出模式。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideodecoder_decoderoutputmode_surface_mode_inline"></a>SURFACE_MODE</font></td><td><font color="#666">SURFACE输出模式。</font></td></tr></table></html>
 <h5 id="class-members">Class Members:</h5>
@@ -459,7 +460,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> DecoderState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.decoder</font></td></tr></table></html>
 <h5 id="描述：-v17">描述：</h5>
-<p><font color="#666">解码器状态。</font></p>
+<p><font color="#666">解码器状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideodecoder_decoderstate_initialized_inline"></a>INITIALIZED</font></td><td><font color="#666">解码器初始化完成。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideodecoder_decoderstate_videoframeinput_inline"></a>VIDEO_FRAME_INPUT</font></td><td><font color="#666">解码器处于视频帧输入状态。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideodecoder_decoderstate_decoding_inline"></a>DECODING</font></td><td><font color="#666">解码器处于视频帧解码状态。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideodecoder_decoderstate_paused_inline"></a>PAUSED</font></td><td><font color="#666">解码器处于暂停状态。</font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
@@ -507,7 +508,7 @@
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2021 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
         <div class="col-xs-2">
           <div class="lang-selector">
             <selector dir="rtl" v-model="lang">
