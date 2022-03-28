@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -20,14 +20,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
+          <li><a href="/login">登录</a></li>
+          <li><a href="/register" class="head-cta">注册</a></li>
         </ul>
         <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+              <li><a href="/user">个人中心</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
             </ul>
           </li>
         </ul>
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a>
+      <nav><a href="/mobile-sdk">概览</a><a href="/document/19ce7591-d462-4634-ad87-b3a1dccd2cb6">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a>
       </nav>
     </div>
   </div>
@@ -314,79 +314,79 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>ILDMManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ILDMManager</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666">LDM(Local Data Mode) manager is used to enable or disable the LDM mode. After enabling LDM, the MSDK's internet access will be restricted. You can call<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_enableldm">enableLDM</a></code>to enable LDM mode. Also, you can configure the exempt modules when enabling the LDM in order to allow those modules to access internet. For example, allowing RTK module as an exempt module in LDM will allow the RTK module to connect with RTK server to ensure the accuracy of navigation. Also, allowing a flysafe module as an exempt module in LDM can still access the flysafe ever to ensure the safety of flight. You have to apply successfully from our developer website(<a href="https://developer.dji.com/user/ldm/" target="_blank" rel="noopener">https://developer.dji.com/user/ldm/</a>) and receive a LDM licence in order to use this feature. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="class-members">Class Members:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：">描述：</h5>
+<p><font color="#666">LDM（Local Data Mode)管理类，可以用来开启或者关闭LDM模式，LDM开启的时候MSDK的网络访问功能会受限，可以调用<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_enableldm">enableLDM</a></code>来开启LDM模式，也可以在开启的时候配置例外模块,允许个别例外模块在LDM开启时任然可以访问网络。例如允许RTK模块在LDM开启时访问RTK服务器以确保定位的精度，或者允许限飞解禁模块在LDM开启时仍然可以访问限飞数据库服务器以确保飞行安全。LDM功能需要先在开发者官网(<a href="https://developer.dji.com/user/ldm/" target="_blank" rel="noopener">https://developer.dji.com/user/ldm/</a>)申请，审批通过后才能使用。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="类成员">类成员:</h5>
 <div class="api-row" id="ildmmanager_isldmlicenseloaded"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ildmmanager_isldmlicenseloaded_inline">isLDMLicenseLoaded</a></div></div><div class="inline-doc" id="ildmmanager_isldmlicenseloaded_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isLDMLicenseLoaded</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLDMLicenseLoaded</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">After calling<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_enableldm">enableLDM</a></code>, MSDK will check if there is a local LDM license. Otherwise, it will ask the server to transmit a LDM license. If the LDM license has been loaded and activated, then return<code>true</code>. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code>means the LDM certificate has been loaded and activated.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v2">描述：</h5>
+<p><font color="#666">调用<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_enableldm">enableLDM</a></code>接口后，MSDK会先判断是否有本地LDM证书文件，没有的话，会请求服务器返回LDM证书文件，如果证书文件成功加载并生效，会返回<code>true</code>. <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="返回值：">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code>表示LDM证书文件已成功加载并生效。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ildmmanager_isldmenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ildmmanager_isldmenabled_inline">isLDMEnabled</a></div></div><div class="inline-doc" id="ildmmanager_isldmenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isLDMEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLDMEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">Return whether the LDM is enabled. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code>means LDM is enabled.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v3">描述：</h5>
+<p><font color="#666">返回LDM模式是否开启。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="返回值：-v2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code>表示LDM模式已开启。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ildmmanager_isnetworkserviceenabledformodule"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ildmmanager_isnetworkserviceenabledformodule_inline">isNetworkServiceEnabledForModule</a></div></div><div class="inline-doc" id="ildmmanager_isnetworkserviceenabledformodule_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isNetworkServiceEnabledForModule</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isNetworkServiceEnabledForModule</span><span class="params">(LDMExemptModule <span class="keyword">module</span>)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">Check the internet access of input LDMExemptModule.</font></p>
-<h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_ldmexemptmodule">LDMExemptModule</a> <font color="#000">module</font></font></td><td><font color="#666"><i>LDM exempt module.</i></font></td></tr></table></html>
-<h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code>means LDM is not enabled or the input LDMExemptModule still has internet access when LDM is enabled.<code>false</code> means LDM is enabled and the input LDMExemptModule has no internet access.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v4">描述：</h5>
+<p><font color="#666">获取传入的LDMExemptModule是否有网络访问权限。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_ldmexemptmodule">LDMExemptModule</a> <font color="#000">module</font></font></td><td><font color="#666"><i>LDM例外模块。</i></font></td></tr></table></html>
+<h5 id="返回值：-v3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code>表示LDM没有开启，或者在LDM开启情况下传入的LDMExemptModule任然有网络访问权限。<code>false</code>表示LDM已经开启，并且传入的LDMExemptModule没有网络访问权限。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ildmmanager_loadlocalldmlicensecontent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ildmmanager_loadlocalldmlicensecontent_inline">loadLocalLDMLicenseContent</a></div></div><div class="inline-doc" id="ildmmanager_loadlocalldmlicensecontent_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>loadLocalLDMLicenseContent</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IDJIError <span class="title">loadLocalLDMLicenseContent</span><span class="params">(String content)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">Load the content of LDM license, the content is the license_appname.txt given by developer website after successfully applying the LDM license. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">content</font></font></td><td><font color="#666"><i>The content of LDM License, the content is the license_appname.txt given by developer website after successfully applying for the LDM license.</i></font></td></tr></table></html>
-<h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJIError/DJIError.html#djierror">IDJIError</a></font></td><td><font color="#666"><i>Return the loading execution result of LDM License. The result is successful if returning null.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v5">描述：</h5>
+<p><font color="#666">加载LDM License文件的内容，该内容来源为申请LDM成功后开发者网站返回的license_app包名.txt文件的内容。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">content</font></font></td><td><font color="#666"><i>LDM License文件的内容，该内容来源为申请LDM成功后开发者网站返回的license_app包名.txt文件的内容。</i></font></td></tr></table></html>
+<h5 id="返回值：-v4">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJIError/DJIError.html#djierror">IDJIError</a></font></td><td><font color="#666"><i>返回加载LDM License文件内容的执行结果。返回null，则表示成功加载License文件内容。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ildmmanager_enableldm"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ildmmanager_enableldm_inline">enableLDM</a></div></div><div class="inline-doc" id="ildmmanager_enableldm_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>enableLDM</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enableLDM</span><span class="params">(Context context, CommonCallbacks.CompletionCallback callback, LDMExemptModule... modules)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">A method of enabling LDM mode. When calling this method, you can pass multiple LDMExemptModule parameters in. It means the exempt modules when LDM is enabled. E.g. When you pass RTK and FLY_SAFE in, those modules can still access internet after enabling LDM.<br> <b>Note:<br> 1. You have to call this method before calling SDKManager.init() method in order to enable LDM. If you don't have an offline license, then you need to pass this parameter in, <code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_ldmexemptmodule_msdk_init_and_registration">MSDK_INIT_AND_REGISTRATION</a></code>. This will allow MSDK registration module to complete the registration.<br> 2. Make sure your offline LDM license is saved in the correct directory when you use an offline LDM license to enable LDM.(Offline LDM License save path is /storage/emulated/0/Android/data/app name/files/DJI/LDM/license_appname.txt)<br> 3. Except save the offline LDM license to the specified path, you can also call <code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_loadlocalldmlicensecontent">loadLocalLDMLicenseContent</a></code> to load the content of LDM license to the LDM module.<br> 4. If you don't have an offline LDM license, the first time you call this method will access DJI LDM server to download the LDM license. Later on, calling this method will read the local cache.<br> 5. If you want to use the offline LDM license, you need to apply from<a href="https://developer.dji.com" target="_blank" rel="noopener">https://developer.dji.com</a>loin your user account and apply.<br> <br><br><code><i>Supported since MSDK 5.0.0</i></code></b></font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Context <font color="#000">context</font></font></td><td><font color="#666"><i>Pass a Application's Context in.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return a callback of the execution result.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_ldmexemptmodule">LDMExemptModule</a>... <font color="#000">modules</font></font></td><td><font color="#666"><i>If you need some modules than are exempt when LDM is enabled so that they can still access internet, you can set this in modules.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v6">描述：</h5>
+<p><font color="#666">开启LDM模式接口，调用此接口时可以传入多个LDMExemptModule参数，代表LDM开启后任然允许联网的例外模块，举例：调用接口时modules参数包含RTK和FLY_SAFE，则表示LDM开启后，RTK和限飞模块仍然可以访问网络。<br> <b>注意：<br> 1.用此接口开启LDM模式, 需要在<code><a href="../../Components/SDKManager/DJISDKManager.html#isdkmanager_init">init</a></code>方法之前调用,如果没有离线的License文件，则必须传入如下参数：<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_ldmexemptmodule_msdk_init_and_registration">MSDK_INIT_AND_REGISTRATION</a></code>，以便让MSDK注册模块可以进行一次联网完成注册流程。<br> 2.使用离线证书激活LDM时，需要确保离线的LDM证书文件已经存放到指定目录（离线LDM License文件的存放的指定目录：/storage/emulated/0/Android/data/app包名/files/DJI/LDM/license_app包名.txt）<br> 3.除了把离线的LDM证书文件存放到指定目录的方式外，你也可以调用<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_loadlocalldmlicensecontent">loadLocalLDMLicenseContent</a></code>把Lincese文件的内容加载到LDM模块中。<br> 4.如果没有离线的License文件，第一次调用本方法时会访问DJI的LDM服务器拉取License文件信息并保存到本地，之后调用此接口时会首先读取本地保存的信息。<br> 5.想使用LDM离线模式的证书，需要去DJI SDK开发者官网<a href="https://developer.dji.com" target="_blank" rel="noopener">https://developer.dji.com</a>登录个人账号后申请。<br> <br><br><code><i>MSDK 5.0.0开始支持</i></code></b></font></p>
+<h5 id="输入参数：-v3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Context <font color="#000">context</font></font></td><td><font color="#666"><i>传入一个Application的Context.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_ldmexemptmodule">LDMExemptModule</a>... <font color="#000">modules</font></font></td><td><font color="#666"><i>如果希望某几个模块在LDM开启时作为例外模块，仍然可以访问网络，则在modules中设置此模块。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ildmmanager_disableldm"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ildmmanager_disableldm_inline">disableLDM</a></div></div><div class="inline-doc" id="ildmmanager_disableldm_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>disableLDM</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">disableLDM</span><span class="params">(CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666">Disable LDM. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return a callback of the execution result.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v7">描述：</h5>
+<p><font color="#666">关闭LDM模式。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="ildmmanager_ldmexemptmodule"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ildmmanager_ldmexemptmodule_inline">LDMExemptModule</a></div></div><div class="inline-doc" id="ildmmanager_ldmexemptmodule_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>LDMExemptModule</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> LDMExemptModule</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.common.ldm</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666">LDM exempt modules type, set the LDM exempt modules in order to allow them access internet. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.ldm</font></td></tr></table></html>
+<h5 id="描述：-v8">描述：</h5>
+<p><font color="#666">LDM例外模块类型，设置LDM例外模块可以正常访问网络。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_msdk_init_and_registration_inline"></a>MSDK_INIT_AND_REGISTRATION</font></td><td><font color="#666">MSDK registration  module. It can still access internet when LDM is calling <code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_enableldm">enableLDM</a></code> and LDM gets enabled.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_live_streaming_inline"></a>LIVE_STREAMING</font></td><td><font color="#666">Live stream module. It can still access internet when LDM is enabled.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_rtk_inline"></a>RTK</font></td><td><font color="#666">RTK module. It can still access internet when LDM is enabled.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_experence_improvement_inline"></a>EXPERENCE_IMPROVEMENT</font></td><td><font color="#666">Experience improvement module. It can still access internet when LDM is enabled.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_fly_safe_inline"></a>FLY_SAFE</font></td><td><font color="#666">Fly safe module. It can still access internet when LDM is enabled.</font></td></tr></table></html>
-<h5 id="class-members-v2">Class Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_msdk_init_and_registration_inline"></a>MSDK_INIT_AND_REGISTRATION</font></td><td><font color="#666">MSDK初始化和注册模块。LDM下，MSDK初始化和注册模块以及LDM拉取DJI服务器License功能（调用<code><a href="../../Components/ILDMManager/ILDMManager.html#ildmmanager_enableldm">enableLDM</a></code>）时可以正常访问网络。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_live_streaming_inline"></a>LIVE_STREAMING</font></td><td><font color="#666">直播模块。LDM下，直播模块可以正常访问网络。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_rtk_inline"></a>RTK</font></td><td><font color="#666">RTK模块。LDM下，RTK模块可以正常访问网络。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_experence_improvement_inline"></a>EXPERENCE_IMPROVEMENT</font></td><td><font color="#666">产品改进计划模块。LDM下，产品改进计划模块可以正常访问网络。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ildmmanager_ldmexemptmodule_fly_safe_inline"></a>FLY_SAFE</font></td><td><font color="#666">限飞模块。LDM下，限飞模块可以正常访问网络。</font></td></tr></table></html>
+<h5 id="class-members">Class Members:</h5>
 </div>
 
         </div>
@@ -396,22 +396,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>
@@ -422,15 +422,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
         <div class="col-xs-2">
           <div class="lang-selector">
             <selector dir="rtl" v-model="lang">

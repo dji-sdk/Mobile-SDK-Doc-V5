@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -20,14 +20,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
+          <li><a href="/login">登录</a></li>
+          <li><a href="/register" class="head-cta">注册</a></li>
         </ul>
         <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+              <li><a href="/user">个人中心</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
             </ul>
           </li>
         </ul>
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a>
+      <nav><a href="/mobile-sdk">概览</a><a href="/document/19ce7591-d462-4634-ad87-b3a1dccd2cb6">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a>
       </nav>
     </div>
   </div>
@@ -314,101 +314,101 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>SuperResolutionInfo</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperResolutionInfo</span> <span class="keyword">implements</span> <span class="title">DJIValue</span>, <span class="title">JNIProguardKeepTag</span>, <span class="title">ByteStream</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666">The status and information of super resolution photo shooting.</font></p>
-<h5 id="class-members">Class Members:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：">描述：</h5>
+<p><font color="#666">超清矩阵拍照的状态和信息。</font></p>
+<h5 id="类成员">类成员:</h5>
 <h4 id="members">Members</h4>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getmaxarea"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getmaxarea_inline">getMaxArea</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getmaxarea_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getMaxArea</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DoubleRect4Sides <span class="title">getMaxArea</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">To get the maximum area of super resolution photo shooting. This range is automatically calculated by the camera based on the camera angle.</font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/Value_Common_Struct_RectF.html#value_common_struct_rectf">DoubleRect4Sides</a></font></td><td><font color="#666"><i>Return the maximum area of super resolution photo shooting. (0,0) is the upper left corner of the video interface, (1,1) is the lower right corner of the video interface.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v2">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照的最大区域。此范围由相机根据相机角度自动计算所得。</font></p>
+<h5 id="返回值：">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/Value_Common_Struct_RectF.html#value_common_struct_rectf">DoubleRect4Sides</a></font></td><td><font color="#666"><i>返回超清矩阵拍照的最大区域。（0,0）是视频界面的左上角，（1,1）是视频界面的右下角。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getzoomtotalcount"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getzoomtotalcount_inline">getZoomTotalCount</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getzoomtotalcount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getZoomTotalCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getZoomTotalCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">To get the total number of zoom photos that need to be taken for super resolution photo shooting.</font></p>
-<h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>Return the total number of zoom photos that need to be taken for super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v3">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照需要拍摄的变焦照片总张数。</font></p>
+<h5 id="返回值：-v2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回超清矩阵拍照需要拍摄的变焦照片总张数。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getcapturearea"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getcapturearea_inline">getCaptureArea</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getcapturearea_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCaptureArea</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DoubleRect4Sides <span class="title">getCaptureArea</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">To get the currently set area of super resolution photo shooting.</font></p>
-<h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/Value_Common_Struct_RectF.html#value_common_struct_rectf">DoubleRect4Sides</a></font></td><td><font color="#666"><i>Return the currently set area of super resolution photo shooting. (0,0) is the upper left corner of the video interface, (1,1) is the lower right corner of the video interface.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v4">描述：</h5>
+<p><font color="#666">获取当前设置的超清矩阵拍照的区域。</font></p>
+<h5 id="返回值：-v3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/Value_Common_Struct_RectF.html#value_common_struct_rectf">DoubleRect4Sides</a></font></td><td><font color="#666"><i>返回当前设置的超清矩阵拍照的区域。（0,0）是视频界面的左上角，（1,1）是视频界面的右下角。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getcapturecolumncount"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getcapturecolumncount_inline">getCaptureColumnCount</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getcapturecolumncount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCaptureColumnCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getCaptureColumnCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">To get the row number of super resolution photo shooting.</font></p>
-<h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>Return the row number of super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v5">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照需要拍摄的行数。</font></p>
+<h5 id="返回值：-v4">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回超清矩阵拍照需要拍摄的行数。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getcapturerowcount"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getcapturerowcount_inline">getCaptureRowCount</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getcapturerowcount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCaptureRowCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getCaptureRowCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">To get the column number of super resolution photo shooting.</font></p>
-<h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>Returns the column number of super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v6">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照需要拍摄的列数。</font></p>
+<h5 id="返回值：-v5">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回超清矩阵拍照需要拍摄的列数。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getisstorageoverflow"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getisstorageoverflow_inline">getIsStorageOverflow</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getisstorageoverflow_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getIsStorageOverflow</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Boolean <span class="title">getIsStorageOverflow</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666">To get whether the SD Card is full.</font></p>
-<h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</font></td><td><font color="#666"><i><code>true</code> means that the SD Card is full.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v7">描述：</h5>
+<p><font color="#666">获取存储卡是否已满。</font></p>
+<h5 id="返回值：-v6">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</font></td><td><font color="#666"><i><code>true</code>表示存储卡已满。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getcaptureremainingtime"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getcaptureremainingtime_inline">getCaptureRemainingTime</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getcaptureremainingtime_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCaptureRemainingTime</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getCaptureRemainingTime</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666">To get the remaining time of super resolution photo shooting.</font></p>
-<h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>Return the remaining time of super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v8">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照的剩余拍摄时间。</font></p>
+<h5 id="返回值：-v7">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回超清矩阵拍照的剩余拍摄时间。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getprogress_inline">getProgress</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getprogress_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getProgress</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getProgress</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
-<p><font color="#666">To get the progress of super resolution photo shooting.</font></p>
-<h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>Return the progress of super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v9">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照的拍摄进度。</font></p>
+<h5 id="返回值：-v8">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回超清矩阵拍照的拍摄进度。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getzoomcapturedcount"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getzoomcapturedcount_inline">getZoomCapturedCount</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getzoomcapturedcount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getZoomCapturedCount</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">getZoomCapturedCount</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
-<p><font color="#666">To get the number of shots taken by super resolution photo shooting.</font></p>
-<h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>Return the number of shots taken by super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v10">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照已拍摄的张数。</font></p>
+<h5 id="返回值：-v9">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Integer</font></td><td><font color="#666"><i>返回超清矩阵拍照已拍摄的张数。</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_superresolutionstatemsg_getstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_superresolutionstatemsg_getstatus_inline">getStatus</a></div></div><div class="inline-doc" id="value_camera_struct_superresolutionstatemsg_getstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getStatus</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">SuperResolutionState <span class="title">getStatus</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
-<p><font color="#666">To get the status of super resolution photo shooting.</font></p>
-<h5 id="return-v10">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_camera_enum_superresolutionstatus">SuperResolutionState</a></font></td><td><font color="#666"><i>Return the status of super resolution photo shooting.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
+<h5 id="描述：-v11">描述：</h5>
+<p><font color="#666">获取超清矩阵拍照状态。</font></p>
+<h5 id="返回值：-v10">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_camera_enum_superresolutionstatus">SuperResolutionState</a></font></td><td><font color="#666"><i>返回超清矩阵拍照状态。</i></font></td></tr></table></html></div>
 
         </div>
       </div>
@@ -417,22 +417,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>
@@ -443,15 +443,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
         <div class="col-xs-2">
           <div class="lang-selector">
             <selector dir="rtl" v-model="lang">
