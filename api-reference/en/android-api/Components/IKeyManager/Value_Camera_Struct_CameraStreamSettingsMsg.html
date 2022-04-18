@@ -230,6 +230,46 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../IMediaDataCenter/ILiveStreamManager.html" class="sub-toggle">ILiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings.html" class="sub-toggle">LiveStreamSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtspSettings.html" class="sub-toggle">RtspSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtspSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtmpSettings.html" class="sub-toggle">RtmpSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtmpSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_GB28181Settings.html" class="sub-toggle">GB28181Settings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_GB28181Settings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_AgoraSettings.html" class="sub-toggle">AgoraSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_AgoraSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamStatus.html">LiveStreamStatus</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ILiveStreamManager_VideoResolution.html">VideoResolution</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamStatusListener.html">LiveStreamStatusListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../IWaypointMissionManager/IWaypointMissionManager.html" class="sub-toggle">IWaypointMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -239,6 +279,16 @@
                             <dd><a href="../IWaypointMissionManager/IWaypointMissionManager_WaylineExecutingInfoListener.html">WaylineExecutingInfoListener</a>
                             </dd>
                             <dd><a href="../IWaypointMissionManager/IWaypointMissionManager_WaylineExecutingInfo.html">WaylineExecutingInfo</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IVirtualStickManager/IVirtualStickManager.html" class="sub-toggle">IVirtualStickManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
+                            </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
+                            </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
                     </ul>
                   </dd>
@@ -296,6 +346,20 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IDeviceStatusManager/IDeviceStatusManager.html" class="sub-toggle">IDeviceStatusManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IDeviceStatusManager/IDeviceStatusManager_DJIDeviceStatusChangeListener.html">DJIDeviceStatusChangeListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IDeviceHealthManager/IDeviceHealthManager.html" class="sub-toggle">IDeviceHealthManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IDeviceHealthManager/IDeviceHealthManager_DJIDeviceHealthInfo.html">DJIDeviceHealthInfo</a>
+                            </dd>
+                            <dd><a href="../IDeviceHealthManager/IDeviceHealthManager_DJIDeviceHealthInfoChangeListener.html">DJIDeviceHealthInfoChangeListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Misc Classes
@@ -327,7 +391,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Boolean <span class="title">getRequestCurrentScreen</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666"><code>true</code> means to store the media files generated by the current live video stream when taking pictures or recording videos. You can get the video source type of the current live video stream through <code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_liveviewcamerasource">KeyCamearaVideoStreamSource</a></code>. <br> Notice：<br> If it is in the camera mode, the stored photo is the photo of the video source of the current lens, but in the split-screen mode <code><a href="../../Components/IKeyManager/DJIValue.html#value_camera_enum_cameradisplaymode_pip">PIP</a></code> of the infrared lens, it is a screenshot of the image transmission.<br> If it is in recording mode, the stored video is the image transmitted by the current lens, not a high-definition video.<br></font></p>
+<p><font color="#666"><code>true</code> means to store the media files generated by the current live video stream when taking pictures or recording videos. You can get the video source type of the current live video stream through <code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_liveviewcamerasource">KeyCameraVideoStreamSource</a></code>. <br> Notice：<br> If it is in the camera mode, the stored photo is the photo of the video source of the current lens, but in the split-screen mode <code><a href="../../Components/IKeyManager/DJIValue.html#value_camera_enum_cameradisplaymode_pip">PIP</a></code> of the infrared lens, it is a screenshot of the image transmission.<br> If it is in recording mode, the stored video is the image transmitted by the current lens, not a high-definition video.<br></font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</font></td><td><font color="#666"><i><code>true</code> means to store the media files generated by the current live video stream when taking pictures or recording videos.</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_camerastreamsettingsmsg_setrequestcurrentscreen"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_camerastreamsettingsmsg_setrequestcurrentscreen_inline">setRequestCurrentScreen</a></div></div><div class="inline-doc" id="value_camera_struct_camerastreamsettingsmsg_setrequestcurrentscreen_inline" <blockquote>
@@ -336,7 +400,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRequestCurrentScreen</span><span class="params">(Boolean requestCurrentScreen)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.camera</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">To set whether to store the media file generated by the current live video stream when taking a picture or recording a video. You can get the video source type of the current live video stream through <code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_liveviewcamerasource">KeyCamearaVideoStreamSource</a></code>. Notice：<br> If it is in the camera mode, the stored photo is the photo of the video source of the current lens, but in the split-screen mode <code><a href="../../Components/IKeyManager/DJIValue.html#value_camera_enum_cameradisplaymode_pip">PIP</a></code> of the infrared lens, it is a screenshot of the image transmission.<br> If it is in recording mode, the stored video is the image transmitted by the current lens, not a high-definition video.<br></font></p>
+<p><font color="#666">To set whether to store the media file generated by the current live video stream when taking a picture or recording a video. You can get the video source type of the current live video stream through <code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_liveviewcamerasource">KeyCameraVideoStreamSource</a></code>. Notice：<br> If it is in the camera mode, the stored photo is the photo of the video source of the current lens, but in the split-screen mode <code><a href="../../Components/IKeyManager/DJIValue.html#value_camera_enum_cameradisplaymode_pip">PIP</a></code> of the infrared lens, it is a screenshot of the image transmission.<br> If it is in recording mode, the stored video is the image transmitted by the current lens, not a high-definition video.<br></font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">requestCurrentScreen</font></font></td><td><font color="#666"><i><code>true</code> means to store the media file generated by the current live video stream when taking a picture or recording a video.</i></font></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_camerastreamsettingsmsg_getvalues"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_camerastreamsettingsmsg_getvalues_inline">getCameraVideoStreamSources</a></div></div><div class="inline-doc" id="value_camera_struct_camerastreamsettingsmsg_getvalues_inline" <blockquote>

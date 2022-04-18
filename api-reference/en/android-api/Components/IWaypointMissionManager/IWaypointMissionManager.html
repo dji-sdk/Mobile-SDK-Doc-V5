@@ -230,6 +230,46 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../IMediaDataCenter/ILiveStreamManager.html" class="sub-toggle">ILiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings.html" class="sub-toggle">LiveStreamSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtspSettings.html" class="sub-toggle">RtspSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtspSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtmpSettings.html" class="sub-toggle">RtmpSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_RtmpSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_GB28181Settings.html" class="sub-toggle">GB28181Settings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_GB28181Settings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_AgoraSettings.html" class="sub-toggle">AgoraSettings<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamSettings_AgoraSettings_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamStatus.html">LiveStreamStatus</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ILiveStreamManager_VideoResolution.html">VideoResolution</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ILiveStreamManager_LiveStreamStatusListener.html">LiveStreamStatusListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href class="sub-toggle">IWaypointMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -239,6 +279,16 @@
                             <dd><a href="IWaypointMissionManager_WaylineExecutingInfoListener.html">WaylineExecutingInfoListener</a>
                             </dd>
                             <dd><a href="IWaypointMissionManager_WaylineExecutingInfo.html">WaylineExecutingInfo</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IVirtualStickManager/IVirtualStickManager.html" class="sub-toggle">IVirtualStickManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
+                            </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
+                            </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
                     </ul>
                   </dd>
@@ -296,6 +346,20 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IDeviceStatusManager/IDeviceStatusManager.html" class="sub-toggle">IDeviceStatusManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IDeviceStatusManager/IDeviceStatusManager_DJIDeviceStatusChangeListener.html">DJIDeviceStatusChangeListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IDeviceHealthManager/IDeviceHealthManager.html" class="sub-toggle">IDeviceHealthManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IDeviceHealthManager/IDeviceHealthManager_DJIDeviceHealthInfo.html">DJIDeviceHealthInfo</a>
+                            </dd>
+                            <dd><a href="../IDeviceHealthManager/IDeviceHealthManager_DJIDeviceHealthInfoChangeListener.html">DJIDeviceHealthInfoChangeListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Misc Classes
@@ -326,7 +390,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushKMZFileToAircraft</span><span class="params">(String missionId, String  missionFilePath , CommonCallbacks.CompletionCallbackWithProgress&lt;Double&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Upload a waypoint mission. The waypoint mission is defined in a KMZ file, KMZ file is defined according to the DJI standard WPML. The WPML is defined according to XML and KML. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<p><font color="#666">Upload a waypoint mission. The waypoint mission is defined in a KMZ file, KMZ file is defined according to the DJI standard WPML. The WPML is defined according to XML and KML. For more details, please see: <a href="https://developer.dji.com/document/f64fe5ab-feaa-4ba5-bd6c-cc3e88e4ef88" target="_blank" rel="noopener">DJI WPML</a>. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">missionId</font></font></td><td><font color="#666"><i>mission id, defined by the user. Each KMZ file is associated with a mission id. The user has to make sure the mission id is unique. The newly uploaded KMZ file will override the previously uploaded KMZ file if they have the same mission id. You can use mission id to control the execution of the mission such as pause. Users can generate a KMZ file according to the template provided by DJI Pilot. You can also define custom waylines.wpml according to DJI WPML standard and upload it after compressing it into a KMZ file.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">String <font color="#000">missionFilePath</font></font></td><td><font color="#666"><i>The file path of the waypoint mission KMZ file.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithProgress&lt;Double&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>return the execution result. Return the upload status of the KMZ file including uploading progress and errors.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iwaypointmissionmanager_addwaypointmissionexecutestatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iwaypointmissionmanager_addwaypointmissionexecutestatelistener_inline">addWaypointMissionExecuteStateListener</a></div></div><div class="inline-doc" id="iwaypointmissionmanager_addwaypointmissionexecutestatelistener_inline" <blockquote>
