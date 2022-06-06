@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -130,11 +130,11 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_GeneratedMediaFileInfo.html">GeneratedMediaFileInfo</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageStateMsg.html">CameraStorageStateMsg</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageInfos.html">CameraStorageInfos</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_PhotoIntervalShootSettings.html">PhotoIntervalShootSettings</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageState.html">CameraStorageState</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageInfo.html">CameraStorageInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_SuperResolutionStateMsg.html">SuperResolutionInfo</a>
                                       </dd>
@@ -192,6 +192,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IUserAccountManager/IUserAccountManager.html" class="sub-toggle">IUserAccountManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfo.html">LoginInfo</a>
+                            </dd>
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfoUpdateListener.html">LoginInfoUpdateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../ISimulatorManager/ISimulatorManager.html" class="sub-toggle">ISimulatorManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ISimulatorManager/ISimulatorManager_InitializationSettings.html">InitializationSettings</a>
@@ -206,7 +214,11 @@
                     <ul class="sub-menu">
                             <dd><a data-href="IVideoStreamManager.html" class="sub-toggle">IVideoStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="IVideoStreamManager_StreamSource.html">StreamSource</a>
+                                      <dd><a data-href="IVideoStreamManager_StreamSource.html" class="sub-toggle">StreamSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="IVideoStreamManager_StreamSource_PhysicalDeviceType.html">PhysicalDeviceType</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a data-href="IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
@@ -227,6 +239,32 @@
                                         </ul>
                                       </dd>
                                       <dd><a href="IVideoStreamManager_StreamSourceListener.html">StreamSourceListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="IMediaManager.html" class="sub-toggle">IMediaManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="IMediaManager_MediaFileListDataSource.html" class="sub-toggle">MediaFileListDataSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="IMediaManager_MediaFileListDataSource_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="IMediaManager_PullMediaFileListParam.html" class="sub-toggle">PullMediaFileListParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="IMediaManager_PullMediaFileListParam_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="IMediaManager_MediaFileListData.html">MediaFileListData</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_MediaFile.html">MediaFile</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_MediaFileListStateListener.html">MediaFileListStateListener</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_VideoPlayStatus.html">VideoPlayStatus</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -382,7 +420,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMediaDataCenter</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Class that is used for managing media data center. It can be used to get an instance of VideoStreamManager and MediaManager. It provides a video stream and media data management capability. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<p><font color="#666">Class that is used for managing media data center. It can be used to get an instance of VideoStreamManager, MediaManager and LiveStreamManager. It provides the video stream, media data and live stream management capability. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="imediadatacenter_getvideostreammanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imediadatacenter_getvideostreammanager_inline">getVideoStreamManager</a></div></div><div class="inline-doc" id="imediadatacenter_getvideostreammanager_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getVideoStreamManager</h6></div>
@@ -393,17 +431,26 @@
 <p><font color="#666">Get an instance of VideoStreamManager, this instance is used to manage the parameters and output of the video stream. <br><b>Note: You need to call this method again to get the instance of VideoStreamManager again when a new DJI product is connected. The new DJI hardware product connection can be obtained through <code><a href="../../Components/IKeyManager/Key_Product_ProductKey.html#key_product_connection">KeyConnection</a></code> and <code><a href="../../Components/IKeyManager/Key_Product_ProductKey.html#key_product_producttype">KeyProductType</a></code>.</b> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager.html#ivideostreammanager">IVideoStreamManager</a></font></td><td><font color="#666"><i>Return an instance of VideoStreamManager</i></font></td></tr></table></html></div>
+<div class="api-row" id="imediadatacenter_getmediamanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imediadatacenter_getmediamanager_inline">getMediaManager</a></div></div><div class="inline-doc" id="imediadatacenter_getmediamanager_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getMediaManager</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IMediaManager <span class="title">getMediaManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Get instance of MediaManager. This instance is used to manage the camera functions such as media file list download, media file preview, download and video playback. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IMediaManager.html#imediamanager">IMediaManager</a></font></td><td><font color="#666"><i>Return an instance of MediaManager.</i></font></td></tr></table></html></div>
 <div class="api-row" id="imediadatacenter_getlivestreammanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imediadatacenter_getlivestreammanager_inline">getLiveStreamManager</a></div></div><div class="inline-doc" id="imediadatacenter_getlivestreammanager_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLiveStreamManager</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ILiveStreamManager <span class="title">getLiveStreamManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Get an instance of LiveStreamManager, this instance is used to configure the live stream settings, start and stop the live streaming. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="return-v2">Return:</h5>
+<h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/ILiveStreamManager.html#ilivestreammanager">ILiveStreamManager</a></font></td><td><font color="#666"><i>Return an instance of LiveStreamManager.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="ivideostreammanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/IVideoStreamManager.html">IVideoStreamManager</a></div></div><div class="api-row" id="ilivestreammanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ILiveStreamManager.html">ILiveStreamManager</a></div></div>
+<div class="api-row" id="ivideostreammanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/IVideoStreamManager.html">IVideoStreamManager</a></div></div><div class="api-row" id="imediamanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/IMediaManager.html">IMediaManager</a></div></div><div class="api-row" id="ilivestreammanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ILiveStreamManager.html">ILiveStreamManager</a></div></div>
 
         </div>
       </div>

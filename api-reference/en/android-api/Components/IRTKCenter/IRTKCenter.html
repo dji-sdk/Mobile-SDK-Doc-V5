@@ -130,11 +130,11 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_GeneratedMediaFileInfo.html">GeneratedMediaFileInfo</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageStateMsg.html">CameraStorageStateMsg</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageInfos.html">CameraStorageInfos</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_PhotoIntervalShootSettings.html">PhotoIntervalShootSettings</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageState.html">CameraStorageState</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageInfo.html">CameraStorageInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_SuperResolutionStateMsg.html">SuperResolutionInfo</a>
                                       </dd>
@@ -192,6 +192,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IUserAccountManager/IUserAccountManager.html" class="sub-toggle">IUserAccountManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfo.html">LoginInfo</a>
+                            </dd>
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfoUpdateListener.html">LoginInfoUpdateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../ISimulatorManager/ISimulatorManager.html" class="sub-toggle">ISimulatorManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ISimulatorManager/ISimulatorManager_InitializationSettings.html">InitializationSettings</a>
@@ -206,7 +214,11 @@
                     <ul class="sub-menu">
                             <dd><a data-href="../IMediaDataCenter/IVideoStreamManager.html" class="sub-toggle">IVideoStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../IMediaDataCenter/IVideoStreamManager_StreamSource.html">StreamSource</a>
+                                      <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_StreamSource.html" class="sub-toggle">StreamSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_StreamSource_PhysicalDeviceType.html">PhysicalDeviceType</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
@@ -227,6 +239,32 @@
                                         </ul>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/IVideoStreamManager_StreamSourceListener.html">StreamSourceListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IMediaDataCenter/IMediaManager.html" class="sub-toggle">IMediaManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../IMediaDataCenter/IMediaManager_MediaFileListDataSource.html" class="sub-toggle">MediaFileListDataSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileListDataSource_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/IMediaManager_PullMediaFileListParam.html" class="sub-toggle">PullMediaFileListParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IMediaManager_PullMediaFileListParam_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileListData.html">MediaFileListData</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFile.html">MediaFile</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileListStateListener.html">MediaFileListStateListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_VideoPlayStatus.html">VideoPlayStatus</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -384,30 +422,39 @@
 <h5 id="description">Description:</h5>
 <p><font color="#666">The class to manage RTK module. It is used to get an instance of network RTK or RTK base station and provides the initialization of network RTK, the connection and configuration of RTK base station. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="irtkcenter_getqxrtkmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_getqxrtkmanager_inline">getQXRTKManager</a></div></div><div class="inline-doc" id="irtkcenter_getqxrtkmanager_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getQXRTKManager</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">INetworkRTKManager <span class="title">getQXRTKManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Get an instance of  Chihiro NetworkRTKManager. It is used to initialize and enable Chihiro network RTK service. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/INetworkRTKManager.html#inetworkrtkmanager">INetworkRTKManager</a></font></td><td><font color="#666"><i>Return an instance of Chihiro NetworkRTKManager.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_getcustomrtkmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_getcustomrtkmanager_inline">getCustomRTKManager</a></div></div><div class="inline-doc" id="irtkcenter_getcustomrtkmanager_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCustomRTKManager</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">INetworkRTKManager <span class="title">getCustomRTKManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">Get an instance of customRTKManager. It is used to initialize and enable custom network RTK service. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/INetworkRTKManager.html#inetworkrtkmanager">INetworkRTKManager</a></font></td><td><font color="#666"><i>Return an instance of customRTKManager.</i></font></td></tr></table></html></div>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Get an instance of custom NetworkRTKManager. It is used to initialize and enable custom network RTK service. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/INetworkRTKManager.html#inetworkrtkmanager">INetworkRTKManager</a></font></td><td><font color="#666"><i>Return an instance of custom NetworkRTKManager.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_getrtkstationmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_getrtkstationmanager_inline">getRTKStationManager</a></div></div><div class="inline-doc" id="irtkcenter_getrtkstationmanager_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getRTKStationManager</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IRTKStationManager <span class="title">getRTKStationManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Get an instance of RTKStationManager. It is used to connect and configure the RTK base station. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="return-v2">Return:</h5>
+<h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/IRTKStationManager.html#irtkstationmanager">IRTKStationManager</a></font></td><td><font color="#666"><i>Return an instance of RTKStationManager.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_setaircraftrtkmoduleenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_setaircraftrtkmoduleenabled_inline">setAircraftRTKModuleEnabled</a></div></div><div class="inline-doc" id="irtkcenter_setaircraftrtkmoduleenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setAircraftRTKModuleEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAircraftRTKModuleEnabled</span><span class="params">(<span class="keyword">boolean</span> isEnabled, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">Enable or disable the RTK module of an aircraft. You must set this method before starting the motor, otherwise, this method is ineffective. Pass<code>true</code>in means to enable the RTK module. The aircraft has to read RTK data to take off. Also, the flight controller must use the accurate location data given by the RTK module. Pass<code>false</code>means to disable the RTK module, the flight controller will no longer use the location data from the RTK module. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>true</code>means to enable the RTK module of an aircraft.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of execution.</i></font></td></tr></table></html></div>
@@ -416,7 +463,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getAircraftRTKModuleEnabled</span><span class="params">(CommonCallbacks.CompletionCallbackWithParam&lt;Boolean&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Get whether the RTK module of an aircraft is enabled or disabled. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of execution.</i></font></td></tr></table></html></div>
@@ -425,8 +472,8 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRTKReferenceStationSource</span><span class="params">(RTKReferenceStationSource source, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">Set the RTK reference station source of an aircraft. The RTK module of an aircraft provides Qianxun network RTK, custom network RTK and DJI's D-RTK 2 base station to select. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Set the RTK reference station source of an aircraft. The RTK module of an aircraft provides Chihiro network RTK, custom network RTK and DJI's D-RTK 2 base station to select. <br><b>Note: <br> After setting the RTK reference station source, it is recommended to restart the aircraft.</b> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/IRTKCenter.html#value_rtkbasestation_enum_rtkreferencestationsource">RTKReferenceStationSource</a> <font color="#000">source</font></font></td><td><font color="#666"><i>The RTK reference station source of an aircraft</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of execution.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_getrtkreferencestationsource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_getrtkreferencestationsource_inline">getRTKReferenceStationSource</a></div></div><div class="inline-doc" id="irtkcenter_getrtkreferencestationsource_inline" <blockquote>
@@ -434,35 +481,54 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRTKReferenceStationSource</span><span class="params">(CommonCallbacks.CompletionCallbackWithParam&lt;RTKReferenceStationSource&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Get the RTK reference station source of an aircraft.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;<a href="../../Components/IRTKCenter/IRTKCenter.html#value_rtkbasestation_enum_rtkreferencestationsource">RTKReferenceStationSource</a>&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of execution.</i></font></td></tr></table></html></div>
+<div class="api-row" id="irtkcenter_setrtkmaintainaccuracyenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_setrtkmaintainaccuracyenabled_inline">setRTKMaintainAccuracyEnabled</a></div></div><div class="inline-doc" id="irtkcenter_setrtkmaintainaccuracyenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setRTKMaintainAccuracyEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRTKMaintainAccuracyEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">enabled or disabled maintain positioning accuracy mode. In case of an RTK module communication error, the aircraft will autonomously maintain the current RTK status with gradually decreasing accurcy. The aircraft will exit RTK if the connection is not re-established within 10 minutes.
+<br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i>’‘TRUE‘’ to enabled maintain positioning accuracy mode.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of execution.</i></font></td></tr></table></html></div>
+<div class="api-row" id="irtkcenter_getrtkmaintainaccuracyenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_getrtkmaintainaccuracyenabled_inline">getRTKMaintainAccuracyEnabled</a></div></div><div class="inline-doc" id="irtkcenter_getrtkmaintainaccuracyenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getRTKMaintainAccuracyEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getRTKMaintainAccuracyEnabled</span><span class="params">(CommonCallbacks.CompletionCallbackWithParam&lt;Boolean&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Get if the maintain positioning accuracy mode is enabled. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of execution.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_addrtklocationinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_addrtklocationinfolistener_inline">addRTKLocationInfoListener</a></div></div><div class="inline-doc" id="irtkcenter_addrtklocationinfolistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addRTKLocationInfoListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addRTKLocationInfoListener</span><span class="params">(RTKLocationInfoListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Add the listener of RTK location information. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/IRTKCenter_RTKLocationInfoListener.html#irtkcenter_rtklocationinfolistener">RTKLocationInfoListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener of RTK location information.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_removertklocationinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_removertklocationinfolistener_inline">removeRTKLocationInfoListener</a></div></div><div class="inline-doc" id="irtkcenter_removertklocationinfolistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeRTKLocationInfoListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeRTKLocationInfoListener</span><span class="params">(RTKLocationInfoListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Remove the listener of RTK location information. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/IRTKCenter_RTKLocationInfoListener.html#irtkcenter_rtklocationinfolistener">RTKLocationInfoListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener of RTK location information.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_clearallrtklocationinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_clearallrtklocationinfolistener_inline">clearAllRTKLocationInfoListener</a></div></div><div class="inline-doc" id="irtkcenter_clearallrtklocationinfolistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>clearAllRTKLocationInfoListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllRTKLocationInfoListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Remove all listener of RTK location information. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="irtkcenter_addrtksystemstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_addrtksystemstatelistener_inline">addRTKSystemStateListener</a></div></div><div class="inline-doc" id="irtkcenter_addrtksystemstatelistener_inline" <blockquote>
@@ -470,25 +536,25 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addRTKSystemStateListener</span><span class="params">(RTKSystemStateListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Add the listener of the RTK system state. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/IRTKCenter_RTKSystemStateListener.html#irtkcenter_rtksystemstatelistener">RTKSystemStateListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener of RTK system state.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_removertksystemstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_removertksystemstatelistener_inline">removeRTKSystemStateListener</a></div></div><div class="inline-doc" id="irtkcenter_removertksystemstatelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeRTKSystemStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeRTKSystemStateListener</span><span class="params">(RTKSystemStateListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Remove the listener of the RTK system state. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IRTKCenter/IRTKCenter_RTKSystemStateListener.html#irtkcenter_rtksystemstatelistener">RTKSystemStateListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener of RTK system state.</i></font></td></tr></table></html></div>
 <div class="api-row" id="irtkcenter_clearallrtksystemstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#irtkcenter_clearallrtksystemstatelistener_inline">clearAllRTKSystemStateListener</a></div></div><div class="inline-doc" id="irtkcenter_clearallrtksystemstatelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>clearAllRTKSystemStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllRTKSystemStateListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Remove all listeners of the RTK system state. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
@@ -497,10 +563,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> RTKReferenceStationSource implements JNIProguardKeepTag</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.rtkbasestation</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">The reference station source of an RTK module. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkbasestation_enum_rtkreferencestationsource_qx_network_service_inline"></a>QX_NETWORK_SERVICE</font></td><td><font color="#666">Qianxun netowrk RTK reference station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkbasestation_enum_rtkreferencestationsource_custom_network_service_inline"></a>CUSTOM_NETWORK_SERVICE</font></td><td><font color="#666">Custom netowrk RTK reference station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkbasestation_enum_rtkreferencestationsource_base_station_inline"></a>BASE_STATION</font></td><td><font color="#666">RTK base station reference station.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkbasestation_enum_rtkreferencestationsource_qx_network_service_inline"></a>QX_NETWORK_SERVICE</font></td><td><font color="#666">Chihiro netowrk RTK reference station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkbasestation_enum_rtkreferencestationsource_custom_network_service_inline"></a>CUSTOM_NETWORK_SERVICE</font></td><td><font color="#666">Custom netowrk RTK reference station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkbasestation_enum_rtkreferencestationsource_base_station_inline"></a>BASE_STATION</font></td><td><font color="#666">RTK base station reference station.</font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
 </div>
 <div class="api-row" id="irtkcenter_rtklocationinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IRTKCenter/IRTKCenter_RTKLocationInfo.html">RTKLocationInfo</a></div></div><div class="api-row" id="value_rtkmobilestation_struct_rtklocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IRTKCenter/Value_RtkMobileStation_Struct_RTKLocation.html">RTKLocation</a></div></div><div class="api-row" id="value_rtkmobilestation_enum_rtkpositioningsolution"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#value_rtkmobilestation_enum_rtkpositioningsolution_inline">RTKPositioningSolution</a></div></div><div class="inline-doc" id="value_rtkmobilestation_enum_rtkpositioningsolution_inline" <blockquote>
@@ -508,7 +574,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> RTKPositioningSolution implements JNIProguardKeepTag</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.rtkmobilestation</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">RTK positioning solution. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_rtkpositioningsolution_none_inline"></a>NONE</font></td><td><font color="#666">No RTK positioning solution. Possible reason: No enough satellites in view, not enough time to lock satellites, and the connection between aircraft and base station is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_rtkpositioningsolution_single_point_inline"></a>SINGLE_POINT</font></td><td><font color="#666">Single Point state.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_rtkpositioningsolution_float_inline"></a>FLOAT</font></td><td><font color="#666">Float state.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_rtkpositioningsolution_fixed_point_inline"></a>FIXED_POINT</font></td><td><font color="#666">Fixed Point state, most accurate state.</font></td></tr></table></html>
@@ -519,7 +585,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> GNSSType implements JNIProguardKeepTag</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.rtkmobilestation</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">GNSS system type. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_gnsstype_gps_inline"></a>GPS</font></td><td><font color="#666">GPS system.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_gnsstype_glonass_inline"></a>GLONASS</font></td><td><font color="#666">GLONASS system.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_gnsstype_galileo_inline"></a>GALILEO</font></td><td><font color="#666">GALILEO system.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_rtkmobilestation_enum_gnsstype_beidou_inline"></a>BEIDOU</font></td><td><font color="#666">BEIDOU system.</font></td></tr></table></html>

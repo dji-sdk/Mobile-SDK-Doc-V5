@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -130,11 +130,11 @@
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_GeneratedMediaFileInfo.html">GeneratedMediaFileInfo</a>
                                       </dd>
-                                      <dd><a href="Value_Camera_Struct_CameraStorageStateMsg.html">CameraStorageStateMsg</a>
+                                      <dd><a href="Value_Camera_Struct_CameraStorageInfos.html">CameraStorageInfos</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_PhotoIntervalShootSettings.html">PhotoIntervalShootSettings</a>
                                       </dd>
-                                      <dd><a href="Value_Camera_Struct_CameraStorageState.html">CameraStorageState</a>
+                                      <dd><a href="Value_Camera_Struct_CameraStorageInfo.html">CameraStorageInfo</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_SuperResolutionStateMsg.html">SuperResolutionInfo</a>
                                       </dd>
@@ -192,6 +192,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IUserAccountManager/IUserAccountManager.html" class="sub-toggle">IUserAccountManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfo.html">LoginInfo</a>
+                            </dd>
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfoUpdateListener.html">LoginInfoUpdateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../ISimulatorManager/ISimulatorManager.html" class="sub-toggle">ISimulatorManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ISimulatorManager/ISimulatorManager_InitializationSettings.html">InitializationSettings</a>
@@ -206,7 +214,11 @@
                     <ul class="sub-menu">
                             <dd><a data-href="../IMediaDataCenter/IVideoStreamManager.html" class="sub-toggle">IVideoStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../IMediaDataCenter/IVideoStreamManager_StreamSource.html">StreamSource</a>
+                                      <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_StreamSource.html" class="sub-toggle">StreamSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IVideoStreamManager_StreamSource_PhysicalDeviceType.html">PhysicalDeviceType</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a data-href="../IMediaDataCenter/IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
@@ -227,6 +239,32 @@
                                         </ul>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/IVideoStreamManager_StreamSourceListener.html">StreamSourceListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IMediaDataCenter/IMediaManager.html" class="sub-toggle">IMediaManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="../IMediaDataCenter/IMediaManager_MediaFileListDataSource.html" class="sub-toggle">MediaFileListDataSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileListDataSource_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="../IMediaDataCenter/IMediaManager_PullMediaFileListParam.html" class="sub-toggle">PullMediaFileListParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../IMediaDataCenter/IMediaManager_PullMediaFileListParam_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileListData.html">MediaFileListData</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFile.html">MediaFile</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileListStateListener.html">MediaFileListStateListener</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_VideoPlayStatus.html">VideoPlayStatus</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -403,7 +441,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Create a Key instance by passing a <code><a href="../../Components/IKeyManager/DJIKeyInfo.html#djikeyinfo">DJIKeyInfo<t></t></a></code> instance of a Key interface. This method is suitable for instance creation of keys that have nothing to do with the gimbal load and camera. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKeyInfo&lt;T&gt; <font color="#000">mKeyInfo</font></font></td><td><font color="#666"><i>A key interface in <code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>. For example, CameraKey.<code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_cameratype">KeyCameraType</a></code>, which represents the key of the camera type.</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKeyInfo&lt;T&gt; <font color="#000">mKeyInfo</font></font></td><td><font color="#666"><i>A key interface in <code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>. For example, FlightControllerKey.<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_attitude">KeyAircraftAttitude</a></code>, which represents the key to get the aircraft attitude.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static &lt;T&gt; DJIKey&lt;T&gt;</font></td><td><font color="#666"><i>Return instance of <code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="keytools_createkeymkeyinfocomponentindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#keytools_createkeymkeyinfocomponentindex_inline">createKey</a></div></div><div class="inline-doc" id="keytools_createkeymkeyinfocomponentindex_inline" <blockquote>
@@ -414,7 +452,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Create a Key instance by passing in the <code><a href="../../Components/IKeyManager/DJIKeyInfo.html#djikeyinfo">DJIKeyInfo<t></t></a></code> instance of a Key interface and the load position of the gimbal. This method is suitable for instance creation of keys related to the gimbal load. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKeyInfo&lt;T&gt; <font color="#000">mKeyInfo</font></font></td><td><font color="#666"><i>A key interface in <code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>. For example, CameraKey.<code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_cameratype">KeyCameraType</a></code>, which represents the key of the camera type.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">componentIndexType</font></font></td><td><font color="#666"><i>Gimbal load position.</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIKeyInfo&lt;T&gt; <font color="#000">mKeyInfo</font></font></td><td><font color="#666"><i>A key interface in <code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>. For example, GimbalKey.<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_resetgimbal">KeyGimbalReset</a></code>, which represents the key to reset the gimbal.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">componentIndexType</font></font></td><td><font color="#666"><i>Gimbal load position.</i></font></td></tr></table></html>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static &lt;T&gt; DJIKey&lt;T&gt;</font></td><td><font color="#666"><i>Return instance of <code><a href="../../Components/IKeyManager/DJIKey.html#djikey">DJIKey<t></t></a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="keytools_createcamerakeyinfocomponentindexlensindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#keytools_createcamerakeyinfocomponentindexlensindex_inline">createCameraKey</a></div></div><div class="inline-doc" id="keytools_createcamerakeyinfocomponentindexlensindex_inline" <blockquote>

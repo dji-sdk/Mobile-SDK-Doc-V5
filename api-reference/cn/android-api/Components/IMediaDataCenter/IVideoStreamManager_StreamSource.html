@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -130,11 +130,11 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_GeneratedMediaFileInfo.html">GeneratedMediaFileInfo</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageStateMsg.html">CameraStorageStateMsg</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageInfos.html">CameraStorageInfos</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_PhotoIntervalShootSettings.html">PhotoIntervalShootSettings</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageState.html">CameraStorageState</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStorageInfo.html">CameraStorageInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_SuperResolutionStateMsg.html">SuperResolutionInfo</a>
                                       </dd>
@@ -192,6 +192,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IUserAccountManager/IUserAccountManager.html" class="sub-toggle">IUserAccountManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfo.html">LoginInfo</a>
+                            </dd>
+                            <dd><a href="../IUserAccountManager/IUserAccountManager_LoginInfoUpdateListener.html">LoginInfoUpdateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../ISimulatorManager/ISimulatorManager.html" class="sub-toggle">ISimulatorManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../ISimulatorManager/ISimulatorManager_InitializationSettings.html">InitializationSettings</a>
@@ -206,7 +214,11 @@
                     <ul class="sub-menu">
                             <dd><a data-href="IVideoStreamManager.html" class="sub-toggle">IVideoStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href class="active">StreamSource</a>
+                                      <dd><a data-href class="sub-toggle">StreamSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="IVideoStreamManager_StreamSource_PhysicalDeviceType.html">PhysicalDeviceType</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a data-href="IVideoStreamManager_IVideoChannel.html" class="sub-toggle">IVideoChannel<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
@@ -227,6 +239,32 @@
                                         </ul>
                                       </dd>
                                       <dd><a href="IVideoStreamManager_StreamSourceListener.html">StreamSourceListener</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="IMediaManager.html" class="sub-toggle">IMediaManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a data-href="IMediaManager_MediaFileListDataSource.html" class="sub-toggle">MediaFileListDataSource<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="IMediaManager_MediaFileListDataSource_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a data-href="IMediaManager_PullMediaFileListParam.html" class="sub-toggle">PullMediaFileListParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="IMediaManager_PullMediaFileListParam_Builder.html">Builder</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
+                                      <dd><a href="IMediaManager_MediaFileListData.html">MediaFileListData</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_MediaFile.html">MediaFile</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_MediaFileListStateListener.html">MediaFileListStateListener</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_VideoPlayStatus.html">VideoPlayStatus</a>
+                                      </dd>
+                                      <dd><a href="IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -379,7 +417,7 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>StreamSource</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StreamSource</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StreamSource</span> <span class="keyword">implements</span> <span class="title">KeepProguard</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.stream</font></td></tr></table></html>
 <h5 id="描述：">描述：</h5>
 <p><font color="#666">码流源信息类。用于获取码流源唯一标示ID，码流对应的物理设备类型，物理设备型号，物理设备在飞机上的位置。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -410,7 +448,7 @@
 <h5 id="描述：-v4">描述：</h5>
 <p><font color="#666">获取码流源对应的物理设备具体型号。</font></p>
 <h5 id="返回值：-v3">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_StreamSource.html#ivideostreammanager_streamsource_physicaldevicetype">PhysicalDeviceType</a></font></td><td><font color="#666"><i>返回码流源对应的物理设备具体型号。</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_StreamSource_PhysicalDeviceType.html#ivideostreammanager_streamsource_physicaldevicetype">PhysicalDeviceType</a></font></td><td><font color="#666"><i>返回码流源对应的物理设备具体型号。</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivideostreammanager_streamsource_getphysicaldeviceposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_streamsource_getphysicaldeviceposition_inline">getPhysicalDevicePosition</a></div></div><div class="inline-doc" id="ivideostreammanager_streamsource_getphysicaldeviceposition_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getPhysicalDevicePosition</h6></div>
 
@@ -432,27 +470,16 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicecategory_camera_inline"></a>CAMERA</font></td><td><font color="#666">码流源对应的物理设备类型是相机类型。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicecategory_radar_inline"></a>RADAR</font></td><td><font color="#666">码流源对应的物理设备类型是雷达类型。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicecategory_payload_inline"></a>PAYLOAD</font></td><td><font color="#666">码流源对应的物理设备类型是第三方负载类型。</font></td></tr></table></html>
 <h5 id="class-members">Class Members:</h5>
 </div>
-<div class="api-row" id="ivideostreammanager_streamsource_physicaldevicetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_streamsource_physicaldevicetype_inline">PhysicalDeviceType</a></div></div><div class="inline-doc" id="ivideostreammanager_streamsource_physicaldevicetype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>PhysicalDeviceType</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> PhysicalDeviceType</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.stream</font></td></tr></table></html>
-<h5 id="描述：-v7">描述：</h5>
-<p><font color="#666">码流源对应的物理设备型号。</font></p>
-<h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicetype_zenmuse_h20_inline"></a>ZENMUSE_H20</font></td><td><font color="#666">码流源对应的物理设备具体型号是Zenmuse H20相机。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicetype_zenmuse_h20t_inline"></a>ZENMUSE_H20T</font></td><td><font color="#666">码流源对应的物理设备具体型号是Zenmuse H20T相机。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicetype_m30_camera_inline"></a>M30_CAMERA</font></td><td><font color="#666">码流源对应的物理设备具体型号是M30相机。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicetype_m30t_camera_inline"></a>M30T_CAMERA</font></td><td><font color="#666">码流源对应的物理设备具体型号是M30T相机。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldevicetype_zenmuse_fpv_inline"></a>FPV</font></td><td><font color="#666">码流源对应的物理设备具体型号是FPV相机。</font></td></tr></table></html>
-<h5 id="class-members-v2">Class Members:</h5>
-</div>
-<div class="api-row" id="ivideostreammanager_streamsource_physicaldeviceposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_streamsource_physicaldeviceposition_inline">PhysicalDevicePosition</a></div></div><div class="inline-doc" id="ivideostreammanager_streamsource_physicaldeviceposition_inline" <blockquote>
+<div class="api-row" id="ivideostreammanager_streamsource_physicaldevicetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_StreamSource_PhysicalDeviceType.html">PhysicalDeviceType</a></div></div><div class="api-row" id="ivideostreammanager_streamsource_physicaldeviceposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_streamsource_physicaldeviceposition_inline">PhysicalDevicePosition</a></div></div><div class="inline-doc" id="ivideostreammanager_streamsource_physicaldeviceposition_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>PhysicalDevicePosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> PhysicalDevicePosition</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.stream</font></td></tr></table></html>
-<h5 id="描述：-v8">描述：</h5>
+<h5 id="描述：-v7">描述：</h5>
 <p><font color="#666">码流源对应的物理设备在飞机上的位置。</font></p>
-<h5 id="enum-members-v3">Enum Members:</h5>
+<h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldeviceposition_portside_inline"></a>PORTSIDE</font></td><td><font color="#666">码流源对应的物理设备位于飞行器左舷侧。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldeviceposition_starboard_inline"></a>STARBOARD</font></td><td><font color="#666">码流源对应的物理设备位于飞行器右舷侧。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldeviceposition_upside_inline"></a>UPSIDE</font></td><td><font color="#666">码流源对应的物理设备位于飞行器上侧。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldeviceposition_nose_inline"></a>NOSE</font></td><td><font color="#666">码流源对应的物理设备位于飞行器机头侧，一般是FPV相机。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_streamsource_physicaldeviceposition_default_inline"></a>DEFAULT</font></td><td><font color="#666">码流源对应的物理设备位于飞行器下侧，只有一个相机的消费机一般返回这个位置。</font></td></tr></table></html>
-<h5 id="class-members-v3">Class Members:</h5>
+<h5 id="class-members-v2">Class Members:</h5>
 </div>
 
         </div>
