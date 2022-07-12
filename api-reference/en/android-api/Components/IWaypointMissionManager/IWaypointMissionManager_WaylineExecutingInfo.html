@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -138,7 +138,7 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_SuperResolutionStateMsg.html">SuperResolutionInfo</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_ThermalAreaTemperatureAggregationsMsg.html">ThermalAreaTemperatureAggregations</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_ThermalAreaTemperatureAggregationsMsg.html">ThermalAreaMetersureTemperature</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Common_Struct_DoubleRect.html">DoubleRect</a>
                                       </dd>
@@ -330,6 +330,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IPerceptionManager/IPerceptionManager.html" class="sub-toggle">IPerceptionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../IRTKCenter/IRTKCenter.html" class="sub-toggle">IRTKCenter<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a data-href="../IRTKCenter/INetworkRTKManager.html" class="sub-toggle">INetworkRTKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -372,10 +380,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../ILDMManager/ILDMManager.html">ILDMManager</a>
-                  </dd>
-                  <dd><a href="../IFlightLogManager/IFlightLogManager.html">IFlightLogManager</a>
-                  </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
@@ -383,6 +387,34 @@
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
                             </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../IFlightLogManager/IFlightLogManager.html">IFlightLogManager</a>
+                  </dd>
+                  <dd><a data-href="../IAreaCodeManager/IAreaCodeManager.html" class="sub-toggle">IAreaCodeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IAreaCodeManager/IAreaCodeManager_AreaCodeData.html">AreaCodeData</a>
+                            </dd>
+                            <dd><a href="../IAreaCodeManager/IAreaCodeManager_AreaCodeData_AreaCodeChangeListener.html">AreaCodeChangeListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUASRemoteIDManager/IUASRemoteIDManager.html" class="sub-toggle">IUASRemoteIDManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html">UASRemoteIDStatus</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html">UASRemoteIDStatusListener</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_ElectronicIDStatus.html">ElectronicIDStatus</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_ElectronicIDStatusListener.html">ElectronicIDStatusListener</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatus.html">UARegistrationNumberStatus</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html">UARegistrationNumberStatusListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../ILDMManager/ILDMManager.html">ILDMManager</a>
                   </dd>
                   <dd><a data-href="../IDeviceStatusManager/IDeviceStatusManager.html" class="sub-toggle">IDeviceStatusManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -422,32 +454,23 @@
 <h5 id="description">Description:</h5>
 <p><font color="#666">Waylines execution information. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="iwaypointmissionmanager_waylineexecutinginfo_getmissionid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iwaypointmissionmanager_waylineexecutinginfo_getmissionid_inline">getMissionID</a></div></div><div class="inline-doc" id="iwaypointmissionmanager_waylineexecutinginfo_getmissionid_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getMissionID</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getMissionID</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.waypoint3.model</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">Get the current executing mission id.</font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>Return the current executing mission id.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iwaypointmissionmanager_waylineexecutinginfo_getwaylineid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iwaypointmissionmanager_waylineexecutinginfo_getwaylineid_inline">getWaylineID</a></div></div><div class="inline-doc" id="iwaypointmissionmanager_waylineexecutinginfo_getwaylineid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getWaylineID</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getWaylineID</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.waypoint3.model</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v2">Description:</h5>
 <p><font color="#666">Get the current executing wayline id.</font></p>
-<h5 id="return-v2">Return:</h5>
+<h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Return the current executing wayline id.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iwaypointmissionmanager_waylineexecutinginfo_getcurrentwaypointindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iwaypointmissionmanager_waylineexecutinginfo_getcurrentwaypointindex_inline">getCurrentWaypointIndex</a></div></div><div class="inline-doc" id="iwaypointmissionmanager_waylineexecutinginfo_getcurrentwaypointindex_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCurrentWaypointIndex</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCurrentWaypointIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.waypoint3.model</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v3">Description:</h5>
 <p><font color="#666">Get the current executing waypoint index.</font></p>
-<h5 id="return-v3">Return:</h5>
+<h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Return the current executing waypoint index.</i></font></td></tr></table></html></div>
 
         </div>
