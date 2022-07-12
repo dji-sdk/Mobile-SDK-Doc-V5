@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -20,14 +20,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
+          <li><a href="/login">登录</a></li>
+          <li><a href="/register" class="head-cta">注册</a></li>
         </ul>
         <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+              <li><a href="/user">个人中心</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
             </ul>
           </li>
         </ul>
@@ -37,9 +37,9 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a href="/document/19ce7591-d462-4634-ad87-b3a1dccd2cb6">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
           <ul class="hovedown-menu">
-            <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
+            <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
           </ul></span></nav>
     </div>
   </div>
@@ -450,150 +450,150 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>IUASRemoteIDManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IUASRemoteIDManager</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666">RID management class of the drone system. In order to meet the increasingly standardized drone regulatory requirements around the world, The drone in flight should be able to broadcast the identification and location of the operator and the drone. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="class-members">Class Members:</h5>
-<h4 id="area-code">Area code</h4>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：">描述：</h5>
+<p><font color="#666">无人机系统远程识别管理类。为了满足全球日渐规范的无人机监管诉求，飞行中的无人机需要具备通过无线电的方式向外广播无人机或者操作者的身份和位置信息的能力。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="类成员">类成员:</h5>
+<h4 id="国家区域码">国家区域码</h4>
 <div class="api-row" id="iuasremoteidmanager_setareacode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_setareacode_inline">setAreaCode</a></div></div><div class="inline-doc" id="iuasremoteidmanager_setareacode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setAreaCode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IDJIError <span class="title">setAreaCode</span><span class="params">(AreaCode areaCode)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">Set the area code of country or area. The following functions can not be used unless the corresponding area code is set. <br><br>Currently the supported country or area list and the supported function list is as follows: <li>Japan: remote identification broadcast of drone, registration number of drone.</li> <li>Frence: EID Switch</li> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IAreaCodeManager/IAreaCodeManager.html#iareacodemanager_areacode">AreaCode</a> <font color="#000">areaCode</font></font></td><td><font color="#666"><i>Area code of country or area.</i></font></td></tr></table></html>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJIError/DJIError.html#djierror">IDJIError</a></font></td><td><font color="#666"><i>Return the setting execution result of area code.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v2">描述：</h5>
+<p><font color="#666">设置国家区域码，设置了相应的国家区域码以后才能使用下列功能。 <br><br>目前支持的国家或地区列表和支持的功能列表如下： <li>日本：无人机远程识别广播, 无人机注册码</li> <li>法国：EID开关</li> <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IAreaCodeManager/IAreaCodeManager.html#iareacodemanager_areacode">AreaCode</a> <font color="#000">areaCode</font></font></td><td><font color="#666"><i>国家区域码</i></font></td></tr></table></html>
+<h5 id="返回值：">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJIError/DJIError.html#djierror">IDJIError</a></font></td><td><font color="#666"><i>返回设置国家区域码的执行结果。</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="remote-identification-broadcast-of-the-drone">Remote identification broadcast of the drone</h4>
+<h4 id="无人机远程识别广播">无人机远程识别广播</h4>
 <div class="api-row" id="iuasremoteidmanager_getuasremoteidstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_getuasremoteidstatus_inline">getUASRemoteIDStatus</a></div></div><div class="inline-doc" id="iuasremoteidmanager_getuasremoteidstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUASRemoteIDStatus</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">UASRemoteIDStatus <span class="title">getUASRemoteIDStatus</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">Get the remote identification status of the drone system. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html#iuasremoteidmanager_uasremoteidstatus">UASRemoteIDStatus</a></font></td><td><font color="#666"><i>Return the remote identification status of the drone system.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v3">描述：</h5>
+<p><font color="#666">获取无人机系统远程识别（RID）状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="返回值：-v2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html#iuasremoteidmanager_uasremoteidstatus">UASRemoteIDStatus</a></font></td><td><font color="#666"><i>返回无人机系统远程识别状态。</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_adduasremoteidstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_adduasremoteidstatuslistener_inline">addUASRemoteIDStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_adduasremoteidstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addUASRemoteIDStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addUASRemoteIDStatusListener</span><span class="params">(UASRemoteIDStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">Add the remote identification status listener of the drone system. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html#iuasremoteidmanager_uasremoteidstatuslistener">UASRemoteIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The remote identification status listener of the drone system</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v4">描述：</h5>
+<p><font color="#666">添加无人机系统远程识别状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html#iuasremoteidmanager_uasremoteidstatuslistener">UASRemoteIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>无人机系统远程识别状态的监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_removeuasremoteidstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_removeuasremoteidstatuslistener_inline">removeUASRemoteIDStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_removeuasremoteidstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeUASRemoteIDStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeUASRemoteIDStatusListener</span><span class="params">(UASRemoteIDStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">Remove the remote identification status listener of the drone system. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html#iuasremoteidmanager_uasremoteidstatuslistener">UASRemoteIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The remote identification status listener of the drone system</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v5">描述：</h5>
+<p><font color="#666">移除无人机系统远程识别状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatusListener.html#iuasremoteidmanager_uasremoteidstatuslistener">UASRemoteIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>无人机系统远程识别状态的监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_clearuasremoteidstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_clearuasremoteidstatuslistener_inline">clearUASRemoteIDStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_clearuasremoteidstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>clearUASRemoteIDStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearUASRemoteIDStatusListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">Remove all the remote identification status listeners of the drone system. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v6">描述：</h5>
+<p><font color="#666">移除所有无人机系统远程识别状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <html><p><br></p></html>
-<h4 id="eid-switch">EID Switch</h4>
+<h4 id="eid开关">EID开关</h4>
 <div class="api-row" id="iuasremoteidmanager_setelectronicidenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_setelectronicidenabled_inline">setElectronicIDEnabled</a></div></div><div class="inline-doc" id="iuasremoteidmanager_setelectronicidenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setElectronicIDEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setElectronicIDEnabled</span><span class="params">(<span class="keyword">boolean</span> isEnabled, @NonNull CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666">Enable or disable the EID function. After this function is enabled, the drone will broadcast the EID. <br>EID is an electronic ID standard dedined by Frence. The value is the flight control SN of the drone. The prefix <code>1581</code> means it is a droen produced by DJI. For DJI flight control SN that is not starting with <code>1581</code>, <code>1581</code> should be added to the flight control SN. For example: <li>For M300 RTK, this value is <code>1581</code> + the flight control SN(<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_serialnumber">KeySerialNumber</a></code>)</li> <li>for M30 Series, this value is the flight control SN(<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_serialnumber">KeySerialNumber</a></code>)</li> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>true</code> means the EID function is enabled.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of the execution result.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v7">描述：</h5>
+<p><font color="#666">开启或者关闭电子ID(EID)功能。开启此功能后，无人机会向外广播EID。 <br>EID是法国定义的一种电子ID标准，该值为无人机的飞控SN。1581前缀则表示是DJI生产的无人机。对于非1581开头的DJI飞控SN，需要把1581拼在飞控SN前缀。例如： <li>对于M300 RTK机型，该值为1581+飞控SN(<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_serialnumber">KeySerialNumber</a></code>)</li> <li>对于M30系列机型，该值为飞控SN(<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_serialnumber">KeySerialNumber</a></code>)</li> <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>true</code>表示开启EID功能。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_getelectronicidenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_getelectronicidenabled_inline">getElectronicIDEnabled</a></div></div><div class="inline-doc" id="iuasremoteidmanager_getelectronicidenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getElectronicIDEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getElectronicIDEnabled</span><span class="params">(@NonNull CommonCallbacks.CompletionCallbackWithParam&lt;Boolean&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666">Get whether the EID is enabled. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of the execution result.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v8">描述：</h5>
+<p><font color="#666">获取EID是否开启。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v5">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;Boolean&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_addelectronicidstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_addelectronicidstatuslistener_inline">addElectronicIDStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_addelectronicidstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addElectronicIDStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addElectronicIDStatusListener</span><span class="params">(ElectronicIDStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
-<p><font color="#666">Add the listener of EID status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_ElectronicIDStatusListener.html#iuasremoteidmanager_electronicidstatuslistener">ElectronicIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener of EID status</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v9">描述：</h5>
+<p><font color="#666">添加EID状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v6">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_ElectronicIDStatusListener.html#iuasremoteidmanager_electronicidstatuslistener">ElectronicIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>EID状态的监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_removeelectronicidstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_removeelectronicidstatuslistener_inline">removeElectronicIDStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_removeelectronicidstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeElectronicIDStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeElectronicIDStatusListener</span><span class="params">(ElectronicIDStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
-<p><font color="#666">Remove the listener of EID status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_ElectronicIDStatusListener.html#iuasremoteidmanager_electronicidstatuslistener">ElectronicIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener of EID status</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v10">描述：</h5>
+<p><font color="#666">移除EID状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v7">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_ElectronicIDStatusListener.html#iuasremoteidmanager_electronicidstatuslistener">ElectronicIDStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>EID状态的监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_clearallelectronicidstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_clearallelectronicidstatuslistener_inline">clearAllElectronicIDStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_clearallelectronicidstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>clearAllElectronicIDStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllElectronicIDStatusListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
-<p><font color="#666">Remove all the listeners of EID status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v11">描述：</h5>
+<p><font color="#666">移除所有EID状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <html><p><br></p></html>
-<h4 id="registration-number-of-the-drone">Registration number of the drone</h4>
+<h4 id="无人机注册码">无人机注册码</h4>
 <div class="api-row" id="iuasremoteidmanager_setuaregistrationnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_setuaregistrationnumber_inline">setUARegistrationNumber</a></div></div><div class="inline-doc" id="iuasremoteidmanager_setuaregistrationnumber_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setUARegistrationNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setUARegistrationNumber</span><span class="params">(String number, @NonNull CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
-<p><font color="#666">Set the registration number based on the drone management policies and regulations of different countries. <li>The drone registration number application entrance of Japan: <a href="https://www.dips.mlit.go.jp" target="_blank" rel="noopener">https://www.dips.mlit.go.jp</a>，无人机注册码的格式为：{&quot;registration_code&quot;:&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,&quot;key_info&quot;:&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,&quot;nonce_info&quot;:&quot;xxxxxxxxxxxx&quot;}，设置了无人机注册码以后，<code><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html#iuasremoteidmanager_uasremoteidstatus_isbroadcastremoteidenabled">isBroadcastRemoteIdEnabled</a></code>将会被开启。</li> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">number</font></font></td><td><font color="#666"><i>The information registration number of the drone</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of the execution result.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v12">描述：</h5>
+<p><font color="#666">设置无人机注册码。需要根据各国的无人机管制政策法规进行设置。 <li>日本无人机注册码申请入口：<a href="https://www.dips.mlit.go.jp" target="_blank" rel="noopener">https://www.dips.mlit.go.jp</a>，无人机注册码的格式为：{&quot;registration_code&quot;:&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,&quot;key_info&quot;:&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,&quot;nonce_info&quot;:&quot;xxxxxxxxxxxx&quot;}，设置了无人机注册码以后，<code><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UASRemoteIDStatus.html#iuasremoteidmanager_uasremoteidstatus_isbroadcastremoteidenabled">isBroadcastRemoteIdEnabled</a></code>将会被开启。</li> <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v8">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">number</font></font></td><td><font color="#666"><i>无人机注册码信息。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_getuaregistrationnumber"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_getuaregistrationnumber_inline">getUARegistrationNumber</a></div></div><div class="inline-doc" id="iuasremoteidmanager_getuaregistrationnumber_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUARegistrationNumber</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getUARegistrationNumber</span><span class="params">(@NonNull CommonCallbacks.CompletionCallbackWithParam&lt;String&gt; callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
-<p><font color="#666">Get the set drone registration number. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the result of the execution result.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v13">描述：</h5>
+<p><font color="#666">获取设置的无人机注册码。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v9">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.CompletionCallbackWithParam&lt;String&gt; <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_adduaregistrationnumberstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_adduaregistrationnumberstatuslistener_inline">addUARegistrationNumberStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_adduaregistrationnumberstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addUARegistrationNumberStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addUARegistrationNumberStatusListener</span><span class="params">(UARegistrationNumberStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
-<p><font color="#666">Add the registration number status listener of the drone. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html#iuasremoteidmanager_uaregistrationnumberstatuslistener">UARegistrationNumberStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The registration number status listener of the drone</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v14">描述：</h5>
+<p><font color="#666">添加无人机注册码状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v10">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html#iuasremoteidmanager_uaregistrationnumberstatuslistener">UARegistrationNumberStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>无人机注册码状态的监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_removeuaregistrationnumberstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_removeuaregistrationnumberstatuslistener_inline">removeUARegistrationNumberStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_removeuaregistrationnumberstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeUARegistrationNumberStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeUARegistrationNumberStatusListener</span><span class="params">(UARegistrationNumberStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666">Remove the registration number status listener of the drone. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v11">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html#iuasremoteidmanager_uaregistrationnumberstatuslistener">UARegistrationNumberStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The registration number status listener of the drone</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v15">描述：</h5>
+<p><font color="#666">移除无人机注册码状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v11">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html#iuasremoteidmanager_uaregistrationnumberstatuslistener">UARegistrationNumberStatusListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>无人机注册码状态的监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="iuasremoteidmanager_clearalluaregistrationnumberstatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_clearalluaregistrationnumberstatuslistener_inline">clearAllUARegistrationNumberStatusListener</a></div></div><div class="inline-doc" id="iuasremoteidmanager_clearalluaregistrationnumberstatuslistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>clearAllUARegistrationNumberStatusListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllUARegistrationNumberStatusListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
-<p><font color="#666">Remove all the registration number status listeners of the drone. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v16">描述：</h5>
+<p><font color="#666">移除所有无人机注册码状态的监听器。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
@@ -606,22 +606,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>
@@ -632,15 +632,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
       </div>
     </div>
   </footer>

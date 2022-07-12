@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -20,14 +20,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
+          <li><a href="/login">登录</a></li>
+          <li><a href="/register" class="head-cta">注册</a></li>
         </ul>
         <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+              <li><a href="/user">个人中心</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
             </ul>
           </li>
         </ul>
@@ -37,9 +37,9 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a href="/document/19ce7591-d462-4634-ad87-b3a1dccd2cb6">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
           <ul class="hovedown-menu">
-            <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
+            <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
           </ul></span></nav>
     </div>
   </div>
@@ -450,64 +450,64 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>FileInfo</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileInfo</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666">The file information class for the file transfer method, including the types, data and files that need to be transferred. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="class-members">Class Members:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：">描述：</h5>
+<p><font color="#666">文件传输方式的文件信息类。包括需要传输的类型，数据和文件。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<h5 id="类成员">类成员:</h5>
 <div class="api-row" id="imegaphonemanager_fileinfo_setuploadtype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_fileinfo_setuploadtype_inline">setUploadType</a></div></div><div class="inline-doc" id="imegaphonemanager_fileinfo_setuploadtype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setUploadType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setUploadType</span><span class="params">(UploadType uploadType)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">To set the file type transferred, including local audio file data type and TTS binary data type. When the type is local audio file data, you need to call <code><a href="../../Components/IMegaphoneManager/IMegaphoneManager_FileInfo.html#imegaphonemanager_fileinfo_setfile">setFile</a></code> to set the local audio file path. When the type is TTS binary data, you need to call <code><a href="../../Components/IMegaphoneManager/IMegaphoneManager_FileInfo.html#imegaphonemanager_fileinfo_setdata">setData</a></code> to set the TTS binary data.</font></p>
-<h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMegaphoneManager/IMegaphoneManager.html#imegaphonemanager_uploadtype">UploadType</a> <font color="#000">uploadType</font></font></td><td><font color="#666"><i>File type transferred.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：-v2">描述：</h5>
+<p><font color="#666">设置传输的文件类型。包括本地音频文件数据类型和TTS二进制数据类型。 当类型为本地音频文件数据时，你需要调用<code><a href="../../Components/IMegaphoneManager/IMegaphoneManager_FileInfo.html#imegaphonemanager_fileinfo_setfile">setFile</a></code>设置本地音频文件路径。当类型为TTS二进制数据时，则需要调用<code><a href="../../Components/IMegaphoneManager/IMegaphoneManager_FileInfo.html#imegaphonemanager_fileinfo_setdata">setData</a></code>设置TTS二进制数据。</font></p>
+<h5 id="输入参数：">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMegaphoneManager/IMegaphoneManager.html#imegaphonemanager_uploadtype">UploadType</a> <font color="#000">uploadType</font></font></td><td><font color="#666"><i>传输的文件类型。</i></font></td></tr></table></html></div>
 <div class="api-row" id="imegaphonemanager_fileinfo_getuploadtype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_fileinfo_getuploadtype_inline">getUploadType</a></div></div><div class="inline-doc" id="imegaphonemanager_fileinfo_getuploadtype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUploadType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">UploadType <span class="title">getUploadType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">To get the file type transferred.</font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMegaphoneManager/IMegaphoneManager.html#imegaphonemanager_uploadtype">UploadType</a></font></td><td><font color="#666"><i>Return the file type transferred.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：-v3">描述：</h5>
+<p><font color="#666">获取传输的文件类型。</font></p>
+<h5 id="返回值：">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMegaphoneManager/IMegaphoneManager.html#imegaphonemanager_uploadtype">UploadType</a></font></td><td><font color="#666"><i>返回传输的文件类型。</i></font></td></tr></table></html></div>
 <div class="api-row" id="imegaphonemanager_fileinfo_setfile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_fileinfo_setfile_inline">setFile</a></div></div><div class="inline-doc" id="imegaphonemanager_fileinfo_setfile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setFile</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFile</span><span class="params">(File file)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">To set the path of the audio file that needs to be transferred to the megaphone.</font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">File <font color="#000">file</font></font></td><td><font color="#666"><i>The path of the audio file that needs to be transferred to the megaphone.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：-v4">描述：</h5>
+<p><font color="#666">设置需要传输给喊话器的音频文件路径。</font></p>
+<h5 id="输入参数：-v2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">File <font color="#000">file</font></font></td><td><font color="#666"><i>需要传输给喊话器的音频文件路径。</i></font></td></tr></table></html></div>
 <div class="api-row" id="imegaphonemanager_fileinfo_getfile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_fileinfo_getfile_inline">getFile</a></div></div><div class="inline-doc" id="imegaphonemanager_fileinfo_getfile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getFile</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">File <span class="title">getFile</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">To get the path of the audio file that needs to be transferred to the megaphone.</font></p>
-<h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">File</font></td><td><font color="#666"><i>Return the path of the audio file that needs to be transferred to the megaphone.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：-v5">描述：</h5>
+<p><font color="#666">获取需要传输给喊话器的音频文件路径。</font></p>
+<h5 id="返回值：-v2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">File</font></td><td><font color="#666"><i>返回需要传输给喊话器的音频文件路径。</i></font></td></tr></table></html></div>
 <div class="api-row" id="imegaphonemanager_fileinfo_setdata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_fileinfo_setdata_inline">setData</a></div></div><div class="inline-doc" id="imegaphonemanager_fileinfo_setdata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setData</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">byte</span>[] data)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">To set the TTS binary data that needs to be transmitted to the megaphone.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>The TTS binary data that needs to be transmitted to the megaphone.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：-v6">描述：</h5>
+<p><font color="#666">设置需要传输给喊话器的TTS二进制数据。</font></p>
+<h5 id="输入参数：-v3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>需要传输给喊话器的TTS二进制数据。</i></font></td></tr></table></html></div>
 <div class="api-row" id="imegaphonemanager_fileinfo_getdata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_fileinfo_getdata_inline">getData</a></div></div><div class="inline-doc" id="imegaphonemanager_fileinfo_getdata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getData</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] getData()</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666">To get the TTS binary data that needs to be transmitted to the megaphone.</font></p>
-<h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[]</font></td><td><font color="#666"><i>Return the TTS binary data that needs to be transmitted to the megaphone.</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.megaphone</font></td></tr></table></html>
+<h5 id="描述：-v7">描述：</h5>
+<p><font color="#666">获取需要传输给喊话器的TTS二进制数据。</font></p>
+<h5 id="返回值：-v3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[]</font></td><td><font color="#666"><i>返回需要传输给喊话器的TTS二进制数据。</i></font></td></tr></table></html></div>
 
         </div>
       </div>
@@ -516,22 +516,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>
@@ -542,15 +542,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
       </div>
     </div>
   </footer>
