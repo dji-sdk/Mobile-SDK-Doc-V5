@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a href="/document/19ce7591-d462-4634-ad87-b3a1dccd2cb6">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a href="https://developer.dji.com/doc/mobile-sdk-tutorial/cn/">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
           </ul></span></nav>
@@ -118,6 +118,8 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_VideoResolutionFrameRate.html">VideoResolutionFrameRate</a>
                                       </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStreamSettingsMsg.html">CameraStreamSettingsInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_CameraWatermarkSettings.html">CameraWatermarkSettings</a>
@@ -176,17 +178,35 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUState.html">IMUState</a>
-                                      </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_GoHomeAssessment.html">LowBatteryRTHInfo</a>
                                       </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html">AccessLockerVerifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1DeviceState.html">AccessLockerDeviceStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html">AccessLockerEncryptionStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html">AccessLockerModifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Accessory_Struct_PlayingAudioFileInfo.html">PlayingAudioFileInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Airlink_Struct_FrequencyInterference.html">FrequencyInterferenceInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmLinkQualityMsg.html">WlmLinkQualityLevelInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmDongleState.html">WlmDongleInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmDongleInfoMsg.html">WlmDongleListInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -324,6 +344,12 @@
                     <ul class="sub-menu">
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
                             </dd>
+                            <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
@@ -335,6 +361,18 @@
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
                             </dd>
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleData.html">ObstacleData</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleDataListener.html">ObstacleDataListener</a>
+                            </dd>
+                            <dd><a data-href="../IPerceptionManager/IRadarManager.html" class="sub-toggle">IRadarManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a>
+                                      </dd>
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -385,6 +423,16 @@
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
                             </dd>
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUpgradeManager/IUpgradeManager.html" class="sub-toggle">IUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_FirmwareInformation.html">FirmwareInformation</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponent.html">UpgradeableComponent</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponentListener.html">UpgradeableComponentListener</a>
                             </dd>
                     </ul>
                   </dd>

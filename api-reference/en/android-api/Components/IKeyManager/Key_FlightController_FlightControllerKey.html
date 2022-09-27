@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">Overview</a><a href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span></nav>
@@ -118,6 +118,8 @@
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_VideoResolutionFrameRate.html">VideoResolutionFrameRate</a>
                                       </dd>
+                                      <dd><a href="Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
+                                      </dd>
                                       <dd><a href="Value_Camera_Struct_CameraStreamSettingsMsg.html">CameraStreamSettingsInfo</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_CameraWatermarkSettings.html">CameraWatermarkSettings</a>
@@ -176,17 +178,35 @@
                                       </dd>
                                       <dd><a href="Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
                                       </dd>
-                                      <dd><a href="Value_FlightController_Struct_IMUState.html">IMUState</a>
-                                      </dd>
                                       <dd><a href="Value_FlightController_Struct_GoHomeAssessment.html">LowBatteryRTHInfo</a>
                                       </dd>
+                                      <dd><a href="Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
                                       <dd><a href="Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html">AccessLockerVerifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1DeviceState.html">AccessLockerDeviceStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1EncryptionState.html">AccessLockerEncryptionStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html">AccessLockerModifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
                                       <dd><a href="Value_Accessory_Struct_PlayingAudioFileInfo.html">PlayingAudioFileInfo</a>
                                       </dd>
                                       <dd><a href="Value_Airlink_Struct_FrequencyInterference.html">FrequencyInterferenceInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmLinkQualityMsg.html">WlmLinkQualityLevelInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmDongleState.html">WlmDongleInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmDongleInfoMsg.html">WlmDongleListInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -326,6 +346,12 @@
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
+                            <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
                     </ul>
@@ -335,6 +361,18 @@
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
                             </dd>
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleData.html">ObstacleData</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleDataListener.html">ObstacleDataListener</a>
+                            </dd>
+                            <dd><a data-href="../IPerceptionManager/IRadarManager.html" class="sub-toggle">IRadarManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a>
+                                      </dd>
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -385,6 +423,16 @@
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
                             </dd>
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUpgradeManager/IUpgradeManager.html" class="sub-toggle">IUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_FirmwareInformation.html">FirmwareInformation</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponent.html">UpgradeableComponent</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponentListener.html">UpgradeableComponentListener</a>
                             </dd>
                     </ul>
                   </dd>
@@ -535,13 +583,13 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>String<br><br> To get the serial number of flight controller. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
-<div class="api-row" id="key_flightcontroller_firmwareversion"><div class="api-col left">Firmware Version Number</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_firmwareversion_inline">KeyFirmwareVersion</a></div></div><div class="inline-doc" id="key_flightcontroller_firmwareversion_inline" <blockquote>
+<div class="api-row" id="key_flightcontroller_firmwareversion"><div class="api-col left">Firmware Version</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_firmwareversion_inline">KeyFirmwareVersion</a></div></div><div class="inline-doc" id="key_flightcontroller_firmwareversion_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyFirmwareVersion</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;String&gt; KeyFirmwareVersion = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FirmwareVersion"</span>, SingleValueConverter.StringConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>String<br><br> To get the firmware version number of flight controller. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<p><font color="#666"><b>Parameter: </b>String<br><br> To get the firmware version of flight controller. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <html><p><br></p></html>
 <h4 id="sensor">Sensor</h4>
@@ -591,7 +639,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStartCompassCalibration = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StartCompassCalibration"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
-<p><font color="#666">To start compass calibration. Make sure there are not any magnets or metal objects near the aircraft. Calibration status can be obtained through <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_compasscalibrationstate">KeyCompassCalibrationStatus</a></code>. <br><b>note:<br> Please do not start the compass calibration after the aircraft motor starts. call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_aremotorson">KeyAreMotorsOn</a></code> to judge whether the aircraft motor starts.</b> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<p><font color="#666">To start compass calibration. Make sure there are not any magnets or metal objects near the aircraft and lift the aircraft to about 1.5m above the groud. Calibration status can be obtained through <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_compasscalibrationstate">KeyCompassCalibrationStatus</a></code>. <br>The following is the operation process of compass calibration, taking M30 as an example: <li>1. Call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_startcompasscalibration">KeyStartCompassCalibration</a></code> to start compass calibration, <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fccompasscalibrationstate">CompassCalibrationState</a></code> will change to horizontal calibration state<code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fccompasscalibrationstate_horizontal">HORIZONTAL</a></code>, refer to the figure below to rotate the aircraft 360 degrees horizontally for horizontal calibration. <img src="https://terra-1-g.djicdn.com/71a7d383e71a4fb8887a310eb746b47f/msdk/API-DOC/H.jpg"></li> <li>2. After the horizontal calibration is successful, <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fccompasscalibrationstate">CompassCalibrationState</a></code> will change to vertical calibration state<code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fccompasscalibrationstate_vertical">VERTICAL</a></code>，refer to the figure below to rotate the aircraft 360 degrees vertically for vertical calibration. <img src="https://terra-1-g.djicdn.com/71a7d383e71a4fb8887a310eb746b47f/msdk/API-DOC/V.jpg"></li> <li>3. After the calibration is successful, <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fccompasscalibrationstate">CompassCalibrationState</a></code> will change to success state <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fccompasscalibrationstate_succeeded">SUCCEEDED</a></code>.</li> <br><b>note:<br> Please do not start the compass calibration after the aircraft motor starts. call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_aremotorson">KeyAreMotorsOn</a></code> to judge whether the aircraft motor starts.</b> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_stopcompasscalibration"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_stopcompasscalibration_inline">KeyStopCompassCalibration</a></div></div><div class="inline-doc" id="key_flightcontroller_stopcompasscalibration_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyStopCompassCalibration</h6></div>
@@ -631,30 +679,46 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStartIMUCalibration = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StartIMUCalibration"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
-<p><font color="#666">To start IMU calibration. For aircraft with multiple IMUs, this method will calibrate all IMUs. Keep the aircraft still and level during the calibration process, which will take 5 to 10 minutes. The execution status of IMU calibration can be got through KeyIMUStatus. Calling <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_rebootdevice">KeyRebootDevice</a></code> to restart the device after IMU calibration is suggested. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<p><font color="#666">To start IMU calibration. For aircraft with multiple IMUs, this method will calibrate all IMUs. Calling <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_rebootdevice">KeyRebootDevice</a></code> to restart the device after IMU calibration is suggested. <br><br>The following is the operation process of IMU calibration: <li>1. Call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_startimucalibration">KeyStartIMUCalibration</a></code> to start IMU calibration, and listen <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_imucalibrationhint">KeyIMUCalibrationInfo</a></code> to get the IMU calibration information. <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_imucalibrationstate">IMUCalibrationState</a></code> change to <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_imucalibrationstate_calibrating">CALIBRATING</a></code> indicates that IMU calibration is successfully started.</li> <li>2. Call <code><a href="../../Components/IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html#value_flightcontroller_struct_imucalibrationhint_getorientationstocalibrate">getOrientationsToCalibrate</a></code> to get the aircraft orientations that have not been calibrated yet. Reference to the figure in <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_imucalibrationorientation">IMUCalibrationOrientation</a></code>, place the aircraft in turn for IMU calibration in each direction, and keep the aircraft stationary and level during the calibration process.</li> <li>3. Call <code><a href="../../Components/IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html#value_flightcontroller_struct_imucalibrationhint_getorientationcalibrationstate">getOrientationCalibrationState</a></code> to get the IMU calibration state for each orientation, when the calibraion status changes to  <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_imuorientationcalibrationstate_completed">SUCCESSFUL</a></code> then put the aircraft in the next direction.</li> <li>3. When the uncalibrated orientation list <code><a href="../../Components/IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html#value_flightcontroller_struct_imucalibrationhint_getorientationstocalibrate">getOrientationsToCalibrate</a></code> is empty, and the calibraion state  <code><a href="../../Components/IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html#value_flightcontroller_struct_imucalibrationhint_getorientationcalibrationstate">getOrientationCalibrationState</a></code> changes to <code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_imucalibrationstate_successful">SUCCESSFUL</a></code> indicates that the IMU calibraion has been completed.</li> <br><b>note:<br> Please do not start the IMU calibration after the aircraft motor starts. call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_aremotorson">KeyAreMotorsOn</a></code> to judge whether the aircraft motor starts.</b> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_flightcontroller_imucalibrationhint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_imucalibrationhint_inline">KeyIMUCalibrationInfo</a></div></div><div class="inline-doc" id="key_flightcontroller_imucalibrationhint_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyIMUCalibrationInfo</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;IMUCalibrationInfo&gt; KeyIMUCalibrationInfo = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"IMUCalibrationInfo", new DJIValueConverter&lt;&gt;(IMUCalibrationInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("IMUCalibrationHint")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html#value_flightcontroller_struct_imucalibrationhint">IMUCalibrationInfo</a></code><br><br> To get IMU calibration information. IMU calibration includes IMU calibration of multiple aircraft orientations. IMU calibration information includes the overall calibration status of IMU, the calibration status of each aircraft orientation, as well as the list of uncalibrated aircraft orientations and the list of calibrated aircraft orientations. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_ultrasonicheight"><div class="api-col left">Ultrasound</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_ultrasonicheight_inline">KeyUltrasonicHeight</a></div></div><div class="inline-doc" id="key_flightcontroller_ultrasonicheight_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyUltrasonicHeight</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyUltrasonicHeight = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"UltrasonicHeight"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Integer<br><br> To get the height of ultrasound distance measuring. unit:dm. The maximum measurable distance is 25.5 meters. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="description-v25">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> To get the height of ultrasound distance measuring. The height is the distance measured from top to bottom after the aircraft takes off. unit:dm. The maximum measurable distance is 25.5 meters. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_windwarning"><div class="api-col left">Wind Speed</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_windwarning_inline">KeyWindWarning</a></div></div><div class="inline-doc" id="key_flightcontroller_windwarning_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyWindWarning</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;WindWarning&gt; KeyWindWarning = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"WindWarning"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(WindWarning<span class="class">.<span class="keyword">class</span>,<span class="title">FCWindWarningMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
-<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fcwindwarning">WindWarning</a></code><br><br> To get current wind speed. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="description-v26">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fcwindwarning">WindWarning</a></code><br><br> To get current wind speed level. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_flightcontroller_windspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_windspeed_inline">KeyWindSpeed</a></div></div><div class="inline-doc" id="key_flightcontroller_windspeed_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyWindSpeed</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyWindSpeed = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"WindSpeed"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v27">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Integer<br><br> To get current wind speed, unit: dm/s. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_winddirection"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_winddirection_inline">KeyWindDirection</a></div></div><div class="inline-doc" id="key_flightcontroller_winddirection_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyWindDirection</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;WindDirection&gt; KeyWindDirection = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"WindDirection"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(WindDirection<span class="class">.<span class="keyword">class</span>,<span class="title">FCWindDirectionStatusMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fcwinddirectionstatus">WindDirection</a></code><br><br> To get current wind direction and the world coordinate is used. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <html><p><br></p></html>
@@ -664,23 +728,31 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyMultipleFlightModeEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"MultipleFlightModeEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that flight mode switch is allowed. Flight mode can be set to T - tripod, A - attitude, P(N) - position, S - sport mode by flipping the three-segment selector switch on the remote control. <code>false</code> means the flight mode will maintain P(N) - position mode and can not be changed. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<h5 id="description-v29">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that flight mode switch is allowed. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_keyflightmode">KeyFlightMode</a></code> can be set to T - tripod, A - attitude, P(N) - position, S - sport mode by flipping the three-segment selector switch on the remote control. <code>false</code> means the flight mode will maintain P(N) - position mode and can not be changed. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
-<div class="api-row" id="key_flightcontroller_remotecontrollerflightmode"><div class="api-col left">Remote Controller Switch Mode</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_remotecontrollerflightmode_inline">KeyRemoteControllerFlightMode</a></div></div><div class="inline-doc" id="key_flightcontroller_remotecontrollerflightmode_inline" <blockquote>
+<div class="api-row" id="key_flightcontroller_remotecontrollerflightmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_remotecontrollerflightmode_inline">KeyRemoteControllerFlightMode</a></div></div><div class="inline-doc" id="key_flightcontroller_remotecontrollerflightmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyRemoteControllerFlightMode</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;RemoteControllerFlightMode&gt; KeyRemoteControllerFlightMode = <span class="keyword">new</span> KeyRemoteControllerFlightMode().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_remotecontrollerflightmode">RemoteControllerFlightMode</a></code><br><br> To get the remote controller switch Mode. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_flightcontroller_keyflightmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_keyflightmode_inline">KeyFlightMode</a></div></div><div class="inline-doc" id="key_flightcontroller_keyflightmode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyFlightMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;FlightMode&gt; KeyFlightMode = <span class="keyword">new</span> KeyFlightMode().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v31">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_flightmode">FlightMode</a></code><br><br> To get the flight Mode. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_isfailsafe"><div class="api-col left">Fail Safe</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_isfailsafe_inline">KeyIsFailSafe</a></div></div><div class="inline-doc" id="key_flightcontroller_isfailsafe_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyIsFailSafe</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsFailSafe = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsFailSafe"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that the aircraft is out of control and is about to perform fail safe behavior. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_failsafeaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_failsafeaction_inline">KeyFailsafeAction</a></div></div><div class="inline-doc" id="key_flightcontroller_failsafeaction_inline" <blockquote>
@@ -688,7 +760,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;FailsafeAction&gt; KeyFailsafeAction = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FailsafeAction"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(FailsafeAction<span class="class">.<span class="keyword">class</span>,<span class="title">FCFailsafeActionMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_fcfailsafeaction">FailsafeAction</a></code><br><br> To set and get fail safe behavior. When the remote controller loses connection with the aircraft, the aircraft will perform according to the set fail safe behavior. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_lowbatterywarningthreshold"><div class="api-col left">Low Power</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_lowbatterywarningthreshold_inline">KeyLowBatteryWarningThreshold</a></div></div><div class="inline-doc" id="key_flightcontroller_lowbatterywarningthreshold_inline" <blockquote>
@@ -696,7 +768,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyLowBatteryWarningThreshold = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"LowBatteryWarningThreshold"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> To set and get the threshold for battery low power warning. The threshold is a percentage and the range is [15,50]. When the battery power is lower than the threshold, the aircraft will make a low battery alarm. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_islowbatterywarning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_islowbatterywarning_inline">KeyIsLowBatteryWarning</a></div></div><div class="inline-doc" id="key_flightcontroller_islowbatterywarning_inline" <blockquote>
@@ -704,7 +776,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsLowBatteryWarning = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsLowBatteryWarning"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that the battery is in low power status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_seriouslowbatterywarningthreshold"><div class="api-col left">Severely Low Battery</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_seriouslowbatterywarningthreshold_inline">KeySeriousLowBatteryWarningThreshold</a></div></div><div class="inline-doc" id="key_flightcontroller_seriouslowbatterywarningthreshold_inline" <blockquote>
@@ -712,7 +784,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeySeriousLowBatteryWarningThreshold = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"SeriousLowBatteryWarningThreshold"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> To get the threshold of severely low battery warning. The default threshold is 10%, and it can not be set for Matrice 30 Series. If the battery power is lower than the threshold, the aircraft will go back to home. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_isseriouslowbatterywarning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_isseriouslowbatterywarning_inline">KeyIsSeriousLowBatteryWarning</a></div></div><div class="inline-doc" id="key_flightcontroller_isseriouslowbatterywarning_inline" <blockquote>
@@ -720,7 +792,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsSeriousLowBatteryWarning = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsSeriousLowBatteryWarning"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that the battery is in severely low status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_ledssettings"><div class="api-col left">LED</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_ledssettings_inline">KeyLEDsSettings</a></div></div><div class="inline-doc" id="key_flightcontroller_ledssettings_inline" <blockquote>
@@ -728,7 +800,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;LEDsSettings&gt; KeyLEDsSettings = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"LEDsSettings"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(LEDsSettings<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_LEDsSettings.html#value_flightcontroller_struct_ledssettings">LEDsSettings</a></code><br><br> LED related settings. The settings for forearm lights, status indicators and night lights are supported. <br><br><code><i>Supportd since MSDK 5.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_aremotorson"><div class="api-col left">Motor ESC</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_aremotorson_inline">KeyAreMotorsOn</a></div></div><div class="inline-doc" id="key_flightcontroller_aremotorson_inline" <blockquote>
@@ -736,7 +808,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyAreMotorsOn = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"AreMotorsOn"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means the motor starts. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_lockmotors"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_lockmotors_inline">KeyLockMotors</a></div></div><div class="inline-doc" id="key_flightcontroller_lockmotors_inline" <blockquote>
@@ -744,7 +816,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyLockMotors = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"LockMotors"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
+<h5 id="description-v40">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that the motor is locked and will not turn when the remote controller stick is moved. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_escbeepenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_escbeepenabled_inline">KeyESCBeepEnabled</a></div></div><div class="inline-doc" id="key_flightcontroller_escbeepenabled_inline" <blockquote>
@@ -752,7 +824,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyESCBeepEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"ESCBeepEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
+<h5 id="description-v41">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means the ESC beeping function is opened. When the aircraft loses contact by accident, this function can be turned on to identify the position of the aircraft by sound. If motors are running, Stop them and try again. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_coordinatedturnenabled"><div class="api-col left">Coordinated Turn</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_coordinatedturnenabled_inline">KeyCoordinatedTurnEnabled</a></div></div><div class="inline-doc" id="key_flightcontroller_coordinatedturnenabled_inline" <blockquote>
@@ -760,7 +832,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyCoordinatedTurnEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"CoordinatedTurnEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v39">Description:</h5>
+<h5 id="description-v42">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means the coordinated turn function is opened. When the aircraft turns, the node follows the flight direction. There is no sideslip flight, and the resistance of flight is smaller. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_navigationsatellitesystemsource"><div class="api-col left">GNSS</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_navigationsatellitesystemsource_inline">KeyNavigationSatelliteSystemSource</a></div></div><div class="inline-doc" id="key_flightcontroller_navigationsatellitesystemsource_inline" <blockquote>
@@ -768,7 +840,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;NavigationSatelliteSystem&gt; KeyNavigationSatelliteSystemSource = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"NavigationSatelliteSystemSource"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(NavigationSatelliteSystem<span class="class">.<span class="keyword">class</span>,<span class="title">NavigationSatelliteSystemMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v40">Description:</h5>
+<h5 id="description-v43">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_navigationsatellitesystem">NavigationSatelliteSystem</a></code><br><br> To set the GNSS used. The GNSS is only supported when the RTK location function is closed, and can not be changed when the aircraft is in the air. After the GNSS is switched, do not take off until satellite signal strength reaches at least level 3. If RTK location function is opened, the aircraft will use GPS, GLONASS, Galileo and Beidou GNSS. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <html><p><br></p></html>
@@ -778,7 +850,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStartTakeoff = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StartTakeoff"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v41">Description:</h5>
+<h5 id="description-v44">Description:</h5>
 <p><font color="#666">To start the autonomously taking off of the aircraft. When the aircraft hovers at an altitude of 1.2 meters(4 feet) above the ground, taking off is completed. If the motor is already opened, this command can not be executed. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_stoptakeoff"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_stoptakeoff_inline">KeyStopTakeoff</a></div></div><div class="inline-doc" id="key_flightcontroller_stoptakeoff_inline" <blockquote>
@@ -786,7 +858,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStopTakeoff = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StopTakeoff"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v42">Description:</h5>
+<h5 id="description-v45">Description:</h5>
 <p><font color="#666">To stop the autonomous take-off of the aircraft. If this interface is called before autonomous take-off is finished, the aircraft will stop taking off and hover at the current altitude. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_startautolanding"><div class="api-col left">Landing</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_startautolanding_inline">KeyStartAutoLanding</a></div></div><div class="inline-doc" id="key_flightcontroller_startautolanding_inline" <blockquote>
@@ -794,7 +866,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStartAutoLanding = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StartAutoLanding"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v43">Description:</h5>
+<h5 id="description-v46">Description:</h5>
 <p><font color="#666">To start the autonomous landing of the aircraft. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_stopautolanding"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_stopautolanding_inline">KeyStopAutoLanding</a></div></div><div class="inline-doc" id="key_flightcontroller_stopautolanding_inline" <blockquote>
@@ -802,7 +874,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStopAutoLanding = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StopAutoLanding"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v44">Description:</h5>
+<h5 id="description-v47">Description:</h5>
 <p><font color="#666">To stop the autonomuous landing of the aircraft. If this interface is called during the autonomous landing process, the aircraft will stop landing and hover at the current altitude. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_confirmlanding"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_confirmlanding_inline">KeyConfirmLanding</a></div></div><div class="inline-doc" id="key_flightcontroller_confirmlanding_inline" <blockquote>
@@ -810,7 +882,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyConfirmLanding = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"ConfirmLanding"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v45">Description:</h5>
+<h5 id="description-v48">Description:</h5>
 <p><font color="#666">To confirm continue landing. When the aircraft is at an altitude of less than 0.7 meters above the ground, the aircraft will stop landing and wait for confirmation. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_islandingconfirmationneeded">KeyIsLandingConfirmationNeeded</a></code> can be used to check whether landing confirmation is needed. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_rebootdevice"><div class="api-col left">Restart</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_rebootdevice_inline">KeyRebootDevice</a></div></div><div class="inline-doc" id="key_flightcontroller_rebootdevice_inline" <blockquote>
@@ -818,7 +890,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyRebootDevice = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"RebootDevice"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v46">Description:</h5>
+<h5 id="description-v49">Description:</h5>
 <p><font color="#666">To restart the core device of the aircraft. It is suggested to call this method after IMU calibration. <br><b>note:<br> Please do not restart the core device of the aircraft after the aircraft motor starts. call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_aremotorson">KeyAreMotorsOn</a></code> to judge whether the aircraft motor starts.</b> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_heightlimitrange"><div class="api-col left">Maximum Altitude</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_heightlimitrange_inline">KeyHeightLimitRange</a></div></div><div class="inline-doc" id="key_flightcontroller_heightlimitrange_inline" <blockquote>
@@ -826,7 +898,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;IntMinMax&gt; KeyHeightLimitRange = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HeightLimitRange"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(IntMinMax<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v47">Description:</h5>
+<h5 id="description-v50">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntMinMax</a></code><br><br>
 To get the height limit setting range. Unit: meter.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -836,7 +908,7 @@ To get the height limit setting range. Unit: meter.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyHeightLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HeightLimit"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v48">Description:</h5>
+<h5 id="description-v51">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br>
 To set the maximum flight altitude of the aircraft. Unit: meter. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_heightlimitrange">KeyHeightLimitRange</a></code> can be used to get setting range.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -846,7 +918,7 @@ To set the maximum flight altitude of the aircraft. Unit: meter. <code><a href="
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsNearHeightLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsNearHeightLimit"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v49">Description:</h5>
+<h5 id="description-v52">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br>
 <code>true</code> means the aircraft has reached the maximum flight altitude.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -856,7 +928,7 @@ To set the maximum flight altitude of the aircraft. Unit: meter. <code><a href="
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyDistanceLimitEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"DistanceLimitEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v50">Description:</h5>
+<h5 id="description-v53">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br>
 <code>true</code> means the distance limitation switch is opened. After this switch is opened, <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_distancelimit">KeyDistanceLimit</a></code> can be used to set the maximum flight distance of the aircraft.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -866,7 +938,7 @@ To set the maximum flight altitude of the aircraft. Unit: meter. <code><a href="
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;IntMinMax&gt; KeyDistanceLimitRange = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"DistanceLimitRange"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(IntMinMax<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v51">Description:</h5>
+<h5 id="description-v54">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntMinMax</a></code><br><br>
 To get diatance limitation setting range. Unit: meter.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -876,7 +948,7 @@ To get diatance limitation setting range. Unit: meter.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyDistanceLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"DistanceLimit"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v52">Description:</h5>
+<h5 id="description-v55">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br>
 To set the maximum flight distance of the aircraft. Unit: meter. This value is the distance between aircraft and home point. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_distancelimitrange">KeyDistanceLimitRange</a></code> can be used to get the setting range.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -886,7 +958,7 @@ To set the maximum flight distance of the aircraft. Unit: meter. This value is t
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsNearDistanceLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsNearDistanceLimit"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v53">Description:</h5>
+<h5 id="description-v56">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br>
 <code>true</code> means the aircraft has reached the maximum flight distance.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -898,7 +970,7 @@ To set the maximum flight distance of the aircraft. Unit: meter. This value is t
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsHomeLocationSet = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsHomeLocationSet"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v54">Description:</h5>
+<h5 id="description-v57">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means home point has been set. When the GPS signal is good, the aircraft will automatically set the current position as home point. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_ishomelocationset">KeyIsHomeLocationSet</a></code> will return <code>true</code>. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_homelocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_homelocation_inline">KeyHomeLocation</a></div></div><div class="inline-doc" id="key_flightcontroller_homelocation_inline" <blockquote>
@@ -906,7 +978,7 @@ To set the maximum flight distance of the aircraft. Unit: meter. This value is t
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;LocationCoordinate2D&gt; KeyHomeLocation = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HomeLocation"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(LocationCoordinate2D<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v55">Description:</h5>
+<h5 id="description-v58">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a></code><br><br>
 To set and get current home point location, including longitude and latitude. When GPS signal is good, aircraft will automatically set current position as home point. This key can also be used to change home point location.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -916,7 +988,7 @@ To set and get current home point location, including longitude and latitude. Wh
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyGoHomeHeight = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GoHomeHeight"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v56">Description:</h5>
+<h5 id="description-v59">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br>
 To set and get relative altitude when returning home. Unit: meter. This value is related to the altitude when taking off. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_gohomeheightrange">KeyGoHomeHeightRange</a></code> can be used to get return-to-home height setting range.
 If the horizontal distance between aircraft and home point is within 50 meters, the aircraft will ignore the set return-to-home altitude and return at current altitude. If the forward vision system does not work properly, the aircraft will climb to the set altitude and return.
@@ -927,7 +999,7 @@ If the horizontal distance between aircraft and home point is within 50 meters, 
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;IntMinMax&gt; KeyGoHomeHeightRange = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GoHomeHeightRange"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(IntMinMax<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v57">Description:</h5>
+<h5 id="description-v60">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntMinMax</a></code><br><br>
 To get the setting range of the return-to-home altitude. Unit: meter.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -937,23 +1009,15 @@ To get the setting range of the return-to-home altitude. Unit: meter.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyHomeLocationUsingCurrentAircraftLocation = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HomeLocationUsingCurrentAircraftLocation"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v58">Description:</h5>
+<h5 id="description-v61">Description:</h5>
 <p><font color="#666">To set current aircraft location as home point location. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-</div>
-<div class="api-row" id="key_flightcontroller_homelocationusingcurrentremotecontrollerlocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_homelocationusingcurrentremotecontrollerlocation_inline">KeyHomeLocationUsingCurrentRemoteControllerLocation</a></div></div><div class="inline-doc" id="key_flightcontroller_homelocationusingcurrentremotecontrollerlocation_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyHomeLocationUsingCurrentRemoteControllerLocation</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;LocationCoordinate2D,EmptyMsg&gt; KeyHomeLocationUsingCurrentRemoteControllerLocation = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HomeLocationUsingCurrentRemoteControllerLocation"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(LocationCoordinate2D<span class="class">.<span class="keyword">class</span>),<span class="title">EmptyValueConverter</span>.<span class="title">converter</span>).<span class="title">canGet</span>(<span class="title">false</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">false</span>).<span class="title">canPerformAction</span>(<span class="title">true</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v59">Description:</h5>
-<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a></code><br><br> To set current remote controller location as home point location. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_startgohome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_startgohome_inline">KeyStartGoHome</a></div></div><div class="inline-doc" id="key_flightcontroller_startgohome_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyStartGoHome</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStartGoHome = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StartGoHome"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v60">Description:</h5>
+<h5 id="description-v62">Description:</h5>
 <p><font color="#666">To start intelligent return-to-home. When the GPS signal is not good, intelligent return-to-home can not be started. Intelligent return-to-home can also be started by the smart return-to-home button on the remote controller. During the return-to-home home process, the user can control the altitude of the aircraft with the throttle stick and control the speed of the aircraft with the pitch stick to avoid obstacles. During the return-to-home process, the user can regain control of the aircraft after exiting the intelligent return-to-home home via the intelligent return-to-home button or by calling <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_stopgohome">KeyStopGoHome</a></code>. <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_gohomestatus">KeyGoHomeStatus</a></code> can be used to get intelligent return-to-home status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_stopgohome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_stopgohome_inline">KeyStopGoHome</a></div></div><div class="inline-doc" id="key_flightcontroller_stopgohome_inline" <blockquote>
@@ -961,7 +1025,7 @@ To get the setting range of the return-to-home altitude. Unit: meter.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStopGoHome = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StopGoHome"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v61">Description:</h5>
+<h5 id="description-v63">Description:</h5>
 <p><font color="#666">To stop intelligent return-to-home. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_gohomestatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_gohomestatus_inline">KeyGoHomeStatus</a></div></div><div class="inline-doc" id="key_flightcontroller_gohomestatus_inline" <blockquote>
@@ -969,15 +1033,15 @@ To get the setting range of the return-to-home altitude. Unit: meter.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GoHomeState&gt; KeyGoHomeStatus = <span class="keyword">new</span> KeyGoHomeStatus().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v62">Description:</h5>
+<h5 id="description-v64">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_gohomestate">GoHomeState</a></code><br><br> To get intelligent return-to-home status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_smartbatteryrthenabled"><div class="api-col left">Low Battery Return-to-Home</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_smartbatteryrthenabled_inline">KeyLowBatteryRTHEnabled</a></div></div><div class="inline-doc" id="key_flightcontroller_smartbatteryrthenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyLowBatteryRTHEnabled</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyLowBatteryRTHEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"LowBatteryRTHEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"SmartBatteryRTHEnabled"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyLowBatteryRTHEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"LowBatteryRTHEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"SmartBatteryRTHEnabled"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v63">Description:</h5>
+<h5 id="description-v65">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means intelligent low battery return-to-home function is opened. To avoid unnecessary dangers dangerous due to the low battery, aircraft will intelligently judge whether the current battery is sufficient according to the flight position information. If current battery power is only enough to complete the return-to-home process, MSDK will prompt whether operate the return-to-home process. If the user does not make a selection within 10s, MSDK will automatically return-to-home after 10s. During the returning process, you can short press the smart return-to-home button on the remote control to cancel the return-to-home process. Smart low battery return-to-home only occurs once during one flight. If the user cancels the low-battery return-to-home reminder and continues to fly, the aircraft may be forced to land due to insufficient power when returning, resulting in the aircraft being lost or crashed. For security reasons, it is not recommended to turn this function off. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_gohomeassessment"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_gohomeassessment_inline">KeyLowBatteryRTHInfo</a></div></div><div class="inline-doc" id="key_flightcontroller_gohomeassessment_inline" <blockquote>
@@ -985,8 +1049,55 @@ To get the setting range of the return-to-home altitude. Unit: meter.
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;LowBatteryRTHInfo&gt; KeyLowBatteryRTHInfo = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"LowBatteryRTHInfo", new DJIValueConverter&lt;&gt;(LowBatteryRTHInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("GoHomeAssessment")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v64">Description:</h5>
+<h5 id="description-v66">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_GoHomeAssessment.html#value_flightcontroller_struct_gohomeassessment">LowBatteryRTHInfo</a></code><br><br> To get related information of the intelligent low battery power. This function is only valid when <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_smartbatteryrthenabled">KeyLowBatteryRTHEnabled</a></code> is enabled. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+</div>
+<html><p><br></p></html>
+<h4 id="security-code">Security Code</h4>
+<div class="api-row" id="key_flightcontroller_accesslockerv1alldevicestates"><div class="api-col left">Device Status</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1alldevicestates_inline">KeyAccessLockerAllDeviceStatus</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1alldevicestates_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyAccessLockerAllDeviceStatus</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;List&lt;AccessLockerDeviceStatus&gt;&gt; KeyAccessLockerAllDeviceStatus = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerAllDeviceStatus", new SingleValueConverter&lt;&gt;((Class)List.class,AccessLockerV1AllDeviceStates.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("AccessLockerV1AllDeviceStates")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v67">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>List&lt;<code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1DeviceState.html#value_flightcontroller_struct_accesslockerv1devicestate">AccessLockerDeviceStatus</a></code>&gt;<br><br> Get the security code status of the storage device. Through this interface, you can obtain whether the storage device on the aircraft supports the security code function, whether the security code function is enabled, and whether the security code needs to be verified. <br>Security code is to keep your media data safe. After the security code is set, the MSDK App needs to perform password verification after connecting to the aircraft. After the verification is passed, it can take photos, record videos and read and write media data in the storage device. <br><li><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html#value_flightcontroller_struct_accesslockerv1encryptionstate_getisfeaturesupported">getIsFeatureSupported</a></code> is <code>true</code>, indicating that the storage device supports the security code function. You can call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1setupuseraccount">KeyAccessLockerSetSecurityCode</a></code> to set the security code. </li> <li><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html#value_flightcontroller_struct_accesslockerv1encryptionstate_getisfeatureenabled">getIsFeatureEnabled</a></code> is <code>true</code>, indicating that the security code function of the storage device is enabled. You can call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1modifyuseraccount">KeyAccessLockerModifySecurityCode</a></code> for security code modification. If you forget the security code, you can call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1resetuseraccount">KeyAccessLockerResetSecurityCode</a></code> to reset the security code. </li> <li><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html#value_flightcontroller_struct_accesslockerv1encryptionstate_getisfeatureneedtobeverified">getIsFeatureNeedToBeVerified</a></code> is <code>true</code>, indicating that the storage device needs to verify the security code. Please call <code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1verifyuseraccount">KeyAccessLockerVerifySecurityCode</a></code> for security code verification, otherwise, you will not be able to take photos and record videos, and you will not be able to read and write media data in the storage device. The security code is usually required to be verified when the aircraft is restarted or the storage device is inserted. </li> <li>Security code is neither saved on device nor accessible by DJI. </li> <li>It is not possible to reset security code. If security code is lost, format SD card to delete code. </li> <li>Security code settings only available for Zenmuse H20 and Matrice 30 series cameras. Zenmuse P1, Zenmuse L1, and third-party payloads currently not supported. <br><br><code><i>Supported since MSDK 5.1.0</i></code></li></font></p>
+</div>
+<div class="api-row" id="key_flightcontroller_accesslockerv1setupuseraccount"><div class="api-col left">Set Security Code</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1setupuseraccount_inline">KeyAccessLockerSetSecurityCode</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1setupuseraccount_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyAccessLockerSetSecurityCode</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerSetSecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerSetSecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerSetSecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerSetSecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1SetupUserAccount")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v68">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1setupuseraccountinfo">AccessLockerSetSecurityCodeInfo</a></code><br><br> Set a security code. The device and storage type can be selected for security code setting through this interface.</font></p>
+ <li>The storage device will be formatted after setting the security code, please make sure the media data has been backed up. </li>
+ <li>Please keep the security code in a safe place. If you lose it, you will not be able to retrieve it. You can only unlock the storage device by formatting it. </li>
+ <li>you should set a security code with a length of at least 4 characters. It is recommended that use numbers, uppercase and lowercase letters to form the security code.</li>
+ <br><br><code><i>Supported since MSDK 5.1.0</i></code>
+</div>
+<div class="api-row" id="key_flightcontroller_accesslockerv1verifyuseraccount"><div class="api-col left">Verify Security Code</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1verifyuseraccount_inline">KeyAccessLockerVerifySecurityCode</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1verifyuseraccount_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyAccessLockerVerifySecurityCode</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerVerifySecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerVerifySecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerVerifySecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerVerifySecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1VerifyUserAccount")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v69">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1verifyuseraccountinfo">AccessLockerVerifySecurityCodeInfo</a></code><br><br> Verify the security code. The security code can be verified through this interface. After the verification is passed, you can take photos, record videos and read and write media data in the storage device.
+<br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_flightcontroller_accesslockerv1modifyuseraccount"><div class="api-col left">Modify Security Code</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1modifyuseraccount_inline">KeyAccessLockerModifySecurityCode</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1modifyuseraccount_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyAccessLockerModifySecurityCode</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerModifySecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerModifySecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerModifySecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerModifySecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1ModifyUserAccount")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v70">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1modifyuseraccountinfo">AccessLockerModifySecurityCodeInfo</a></code><br><br> Modify the security code. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_flightcontroller_accesslockerv1resetuseraccount"><div class="api-col left">Reset Security Code</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1resetuseraccount_inline">KeyAccessLockerResetSecurityCode</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1resetuseraccount_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyAccessLockerResetSecurityCode</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerResetSecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerResetSecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerResetSecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerResetSecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1ResetUserAccount")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v71">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1resetuseraccountinfo">AccessLockerResetSecurityCodeInfo</a></code><br><br> Reset the security code. Reset the security security code will format the storage device, please make sure the media data is backed up. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
 </div>
 
         </div>

@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a href="/document/19ce7591-d462-4634-ad87-b3a1dccd2cb6">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a href="https://developer.dji.com/doc/mobile-sdk-tutorial/cn/">文档</a><a href="/mobile-sdk/downloads">下载</a><a href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
           </ul></span></nav>
@@ -118,6 +118,8 @@
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_VideoResolutionFrameRate.html">VideoResolutionFrameRate</a>
                                       </dd>
+                                      <dd><a href="Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
+                                      </dd>
                                       <dd><a href="Value_Camera_Struct_CameraStreamSettingsMsg.html">CameraStreamSettingsInfo</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_CameraWatermarkSettings.html">CameraWatermarkSettings</a>
@@ -176,17 +178,35 @@
                                       </dd>
                                       <dd><a href="Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
                                       </dd>
-                                      <dd><a href="Value_FlightController_Struct_IMUState.html">IMUState</a>
-                                      </dd>
                                       <dd><a href="Value_FlightController_Struct_GoHomeAssessment.html">LowBatteryRTHInfo</a>
                                       </dd>
+                                      <dd><a href="Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
                                       <dd><a href="Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html">AccessLockerVerifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1DeviceState.html">AccessLockerDeviceStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1EncryptionState.html">AccessLockerEncryptionStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html">AccessLockerModifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
                                       <dd><a href="Value_Accessory_Struct_PlayingAudioFileInfo.html">PlayingAudioFileInfo</a>
                                       </dd>
                                       <dd><a href="Value_Airlink_Struct_FrequencyInterference.html">FrequencyInterferenceInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmLinkQualityMsg.html">WlmLinkQualityLevelInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmDongleState.html">WlmDongleInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmDongleInfoMsg.html">WlmDongleListInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -324,6 +344,12 @@
                     <ul class="sub-menu">
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
                             </dd>
+                            <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
@@ -335,6 +361,18 @@
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
                             </dd>
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleData.html">ObstacleData</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleDataListener.html">ObstacleDataListener</a>
+                            </dd>
+                            <dd><a data-href="../IPerceptionManager/IRadarManager.html" class="sub-toggle">IRadarManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a>
+                                      </dd>
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -385,6 +423,16 @@
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
                             </dd>
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUpgradeManager/IUpgradeManager.html" class="sub-toggle">IUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_FirmwareInformation.html">FirmwareInformation</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponent.html">UpgradeableComponent</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponentListener.html">UpgradeableComponentListener</a>
                             </dd>
                     </ul>
                   </dd>
@@ -528,7 +576,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;GimbalAngleRotation,EmptyMsg&gt; KeyRotateByAngle = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"RotateByAngle"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(GimbalAngleRotation<span class="class">.<span class="keyword">class</span>),<span class="title">EmptyValueConverter</span>.<span class="title">converter</span>).<span class="title">canGet</span>(<span class="title">false</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">false</span>).<span class="title">canPerformAction</span>(<span class="title">true</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="描述：-v10">描述：</h5>
-<p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Gimbal_Struct_GimbalAngleRotation.html#value_gimbal_struct_gimbalanglerotation">GimbalAngleRotation</a></code><br><br> 用角度模式旋转云台的俯仰角度、横滚角度和偏航角度。支持相对角度模式和绝对角度模式。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Gimbal_Struct_GimbalAngleRotation.html#value_gimbal_struct_gimbalanglerotation">GimbalAngleRotation</a></code><br><br> 用角度模式旋转云台的俯仰角度、横滚角度和偏航角度。支持相对角度模式和绝对角度模式。
+<br><b>注意：<br>不同的云台负载的可控制角度不一样，以下提供了一种方法获取云台的最大最小限位角度：请通过遥控器的滚轮控制云台到俯仰，横滚和偏航的最大最小限位，然后调用<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_gimbalattitude">KeyGimbalAttitude</a></code>即可获取到该云台的可调限位角度。</b>
+<br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_rotatebyspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_rotatebyspeed_inline">KeyRotateBySpeed</a></div></div><div class="inline-doc" id="key_gimbal_rotatebyspeed_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyRotateBySpeed</h6></div>
@@ -560,7 +610,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;Double,EmptyMsg&gt; KeyFineTuneYawInDegrees = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FineTuneYawInDegrees"</span>, SingleValueConverter.DoubleConverter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="描述：-v14">描述：</h5>
-<p><font color="#666"><b>参数: </b>Double<br><br> 云台偏航轴可以通过自定义偏移量进行微调。当云台回中后仍然有小角度偏移，可用此功能进行云台调平。单次可微调的范围是[-2.0, 2.0]，单位：度，总共可微调的范围是[-10.0, 10.0]，单位：度， 如果偏移量为负数，云台将在逆时针方向微调指定的度数。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_yawadjustdegree">KeyFineTuneYawTotalDegree</a></code>获取总共微调的偏移量。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<p><font color="#666"><b>参数: </b>Double<br><br> 云台偏航轴可以通过自定义偏移量进行微调。当云台回中后仍然有小角度偏移，可用此功能进行云台微调，使得云台水平居中。单次可微调的范围是[-2.0, 2.0]，单位：度，总共可微调的范围是[-10.0, 10.0]，单位：度， 如果偏移量为负数，云台将在逆时针方向微调指定的度数。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_yawadjustdegree">KeyFineTuneYawTotalDegree</a></code>获取总共微调的偏移量。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_finetunerollindegrees"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_finetunerollindegrees_inline">KeyFineTuneRollInDegrees</a></div></div><div class="inline-doc" id="key_gimbal_finetunerollindegrees_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyFineTuneRollInDegrees</h6></div>
@@ -568,7 +618,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;Double,EmptyMsg&gt; KeyFineTuneRollInDegrees = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FineTuneRollInDegrees"</span>, SingleValueConverter.DoubleConverter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="描述：-v15">描述：</h5>
-<p><font color="#666"><b>参数: </b>Double<br><br> 云台横滚轴可以通过自定义偏移量进行微调。当云台回中后仍然有小角度偏移，可用此功能进行云台调平。单次可微调的范围是[-2.0, 2.0]，单位：度，总共可微调的范围是[-10.0, 10.0]，单位：度， 如果偏移量为负数，云台将在逆时针方向微调指定的度数。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_rolladjustdegree">KeyFineTuneRollTotalDegree</a></code>获取总共微调的偏移量。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<p><font color="#666"><b>参数: </b>Double<br><br> 云台横滚轴可以通过自定义偏移量进行微调。当云台回中后仍然有小角度偏移，可用此功能进行云台调平，使得云台水平居中。单次可微调的范围是[-2.0, 2.0]，单位：度，总共可微调的范围是[-10.0, 10.0]，单位：度， 如果偏移量为负数，云台将在逆时针方向微调指定的度数。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_rolladjustdegree">KeyFineTuneRollTotalDegree</a></code>获取总共微调的偏移量。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_calibrategimbal"><div class="api-col left">校准</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_calibrategimbal_inline">KeyGimbalCalibrate</a></div></div><div class="inline-doc" id="key_gimbal_calibrategimbal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyGimbalCalibrate</h6></div>
