@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">Overview</a><a href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span></nav>
@@ -118,7 +118,11 @@
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_VideoResolutionFrameRate.html">VideoResolutionFrameRate</a>
                                       </dd>
-                                      <dd><a href="Value_Camera_Struct_CameraStreamSettingsMsg.html">CameraStreamSettingsInfo</a>
+                                      <dd><a href="Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_CameraWatermarkSettings.html">CameraWatermarkSettings</a>
                                       </dd>
@@ -176,17 +180,39 @@
                                       </dd>
                                       <dd><a href="Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
                                       </dd>
-                                      <dd><a href="Value_FlightController_Struct_IMUState.html">IMUState</a>
+                                      <dd><a href="Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_GoHomeAssessment.html">LowBatteryRTHInfo</a>
                                       </dd>
+                                      <dd><a href="Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
                                       <dd><a href="Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html">AccessLockerVerifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1DeviceState.html">AccessLockerDeviceStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1EncryptionState.html">AccessLockerEncryptionStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html">AccessLockerModifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
                                       <dd><a href="Value_Accessory_Struct_PlayingAudioFileInfo.html">PlayingAudioFileInfo</a>
                                       </dd>
                                       <dd><a href="Value_Airlink_Struct_FrequencyInterference.html">FrequencyInterferenceInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmLinkQualityMsg.html">WlmLinkQualityLevelInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmDongleState.html">WlmDongleInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Airlink_Struct_WlmDongleInfoMsg.html">WlmDongleListInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -266,6 +292,8 @@
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileDownloadListener.html">MediaFileDownloadListener</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ILiveStreamManager.html" class="sub-toggle">ILiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -326,6 +354,12 @@
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
+                            <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
                     </ul>
@@ -335,6 +369,18 @@
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
                             </dd>
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleData.html">ObstacleData</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleDataListener.html">ObstacleDataListener</a>
+                            </dd>
+                            <dd><a data-href="../IPerceptionManager/IRadarManager.html" class="sub-toggle">IRadarManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a>
+                                      </dd>
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -380,11 +426,69 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../ILTEManager/ILTEManager.html" class="sub-toggle">ILTEManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ILTEManager/ILTEManager_LTEAuthenticationInfo.html">LTEAuthenticationInfo</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTELinkInfo.html">LTELinkInfo</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTEAuthenticationInfoListener.html">LTEAuthenticationInfoListener</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTELinkInfoListener.html">LTELinkInfoListener</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTEDongleInfoListener.html">LTEDongleInfoListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IPayloadCenter/IPayloadCenter.html" class="sub-toggle">IPayloadCenter<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IPayloadCenter/IPayloadManager.html" class="sub-toggle">IPayloadManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadBasicInfoListener.html">PayloadBasicInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidgetInfoListener.html">PayloadWidgetInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadDataListener.html">PayloadDataListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadBasicInfo.html">PayloadBasicInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidgetInfo.html">PayloadWidgetInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidget.html">PayloadWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_FloatingWindowWidget.html">FloatingWindowWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_SpeakerWidget.html">SpeakerWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_TextInputBoxWidget.html">TextInputBoxWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_IconFilePath.html">IconFilePath</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_SubItems.html">SubItems</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/Value_Payload_Struct_CustomizeRcButtonConfig.html">CustomizeRcButtonConfig</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/Value_Payload_Struct_WidgetValue.html">WidgetValue</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
                             </dd>
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUpgradeManager/IUpgradeManager.html" class="sub-toggle">IUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_FirmwareInformation.html">FirmwareInformation</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponent.html">UpgradeableComponent</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponentListener.html">UpgradeableComponentListener</a>
                             </dd>
                     </ul>
                   </dd>
@@ -456,12 +560,20 @@
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="basic-information">Basic Information</h4>
+<div class="api-row" id="key_airlink_connection"><div class="api-col left">Connected Status</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_connection_inline">KeyConnection</a></div></div><div class="inline-doc" id="key_airlink_connection_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyConnection</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyConnection = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"Connection"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br> <code>true</code> means that airlink is connected. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+</div>
 <div class="api-row" id="key_airlink_airlinktype"><div class="api-col left">Airlink Type</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_airlinktype_inline">KeyAirLinkType</a></div></div><div class="inline-doc" id="key_airlink_airlinktype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyAirLinkType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;AirLinkType&gt; KeyAirLinkType = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"AirLinkType"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(AirLinkType<span class="class">.<span class="keyword">class</span>,<span class="title">AirLinkTypeMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
+<h5 id="description-v3">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_airlinktype">AirLinkType</a></code><br><br>
 get the tpye of airlink.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -471,7 +583,7 @@ get the tpye of airlink.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeySignalQuality = <span class="keyword">new</span> KeySignalQuality()</span><br><span class="line">           .canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> Get the signal quality of the airlink. Unit: percentage. If the signal quality is below 40%, that means the signal quality is bad. If the signal quality is between 40% and 60%, that means the signal quality is normal. If the signal quality is above 60%, then means the signal quality is good. <br><br><code><i>MSDK 5.0.0 start support</i></code></font></p>
 </div>
 <div class="api-row" id="key_airlink_dynamicdatarate"><div class="api-col left">Airlink Data Rate</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_dynamicdatarate_inline">KeyVideoDataRate</a></div></div><div class="inline-doc" id="key_airlink_dynamicdatarate_inline" <blockquote>
@@ -479,7 +591,7 @@ get the tpye of airlink.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Double&gt; KeyVideoDataRate = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"VideoDataRate"</span>, SingleValueConverter.DoubleConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"DynamicDataRate"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Double<br><br>
 Get the airlink dynamic data rate, unit: Mbps. This is the dynamic data rate for download link from aircraft to remote controller.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -487,9 +599,9 @@ Get the airlink dynamic data rate, unit: Mbps. This is the dynamic data rate for
 <div class="api-row" id="key_airlink_frequencypointrssiinfo"><div class="api-col left">Frequency Interference Information</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_frequencypointrssiinfo_inline">KeyFrequencyInterference</a></div></div><div class="inline-doc" id="key_airlink_frequencypointrssiinfo_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyFrequencyInterference</h6></div>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;List&lt;FrequencyInterferenceInfo&gt;&gt; KeyFrequencyInterference = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"FrequencyInterference", new SingleValueConverter&lt;&gt;((Class)List.class,FrequencyPointRSSIInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("FrequencyPointRSSIInfo")</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;List&lt;FrequencyInterferenceInfo&gt;&gt; KeyFrequencyInterference = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"FrequencyInterference", new SingleValueConverter&lt;&gt;((Class)List.class,FrequencyPointRSSIInfo.class)).canGet(false).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("FrequencyPointRSSIInfo")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>List&lt;<code><a href="../../Components/IKeyManager/Value_Airlink_Struct_FrequencyInterference.html#value_airlink_struct_frequencyinterference">FrequencyInterferenceInfo</a></code>&gt;<br><br>
 Get the information of frequency interference
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -501,7 +613,7 @@ Get the information of frequency interference
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;List&lt;FrequencyBand&gt;&gt; KeyFrequencyBandRange = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"FrequencyBandRange", new SingleValueConverter&lt;&gt;((Class)List.class,AirlinkFrequencyBandRangeMsg.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("AirlinkFrequencyBandRange")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>List&lt;<code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_airlinkfrequencyband">FrequencyBand</a></code>&gt;<br><br>
 Get the available frequency band range.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -511,7 +623,7 @@ Get the available frequency band range.
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;FrequencyBand&gt; KeyFrequencyBand = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"FrequencyBand", new SingleValueConverter&lt;&gt;(FrequencyBand.class,AirlinkFrequencyBandMsg.class)).canGet(true).canSet(true).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("AirlinkFrequencyBand")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_airlinkfrequencyband">FrequencyBand</a></code><br><br>
 Set the working frequency.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -521,7 +633,7 @@ Set the working frequency.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;ChannelSelectionMode&gt; KeyChannelSelectionMode = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"ChannelSelectionMode"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(ChannelSelectionMode<span class="class">.<span class="keyword">class</span>,<span class="title">ChannelSelectionModeMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_channelselectionmode">ChannelSelectionMode</a></code><br><br>
 Set the channel selection mode, support auto and manual mode.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -531,7 +643,7 @@ Set the channel selection mode, support auto and manual mode.
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;Bandwidth&gt; KeyBandwidth = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"Bandwidth", new SingleValueConverter&lt;&gt;(Bandwidth.class,AirlinkBandwidthMsg.class)).canGet(true).canSet(true).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("AirlinkBandwidth")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_airlinkbandwidth">Bandwidth</a></code><br><br>
 Set the bandwidth of download link. Only availble when<code><a href="../../Components/IKeyManager/Key_Airlink_AirlinkKey.html#key_airlink_channelselectionmode">KeyChannelSelectionMode</a></code>is<code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_channelselectionmode_manual">MANUAL</a></code>.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -541,7 +653,7 @@ Set the bandwidth of download link. Only availble when<code><a href="../../Compo
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;IntMinMax&gt; KeyFrequencyPointRange = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"FrequencyPointRange", new DJIValueConverter&lt;&gt;(IntMinMax.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("FrequencyPointIndexRange")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntMinMax</a></code><br><br>
 Get the available frequency point range.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -551,12 +663,38 @@ Get the available frequency point range.
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyFrequencyPoint = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"FrequencyPoint"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"FrequencyPointIndex"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br>
 Set the frequency point. Only availble when<code><a href="../../Components/IKeyManager/Key_Airlink_AirlinkKey.html#key_airlink_channelselectionmode">KeyChannelSelectionMode</a></code>is<code><a href="../../Components/IKeyManager/DJIValue.html#value_airlink_enum_channelselectionmode_manual">MANUAL</a></code>.
 You can call<code><a href="../../Components/IKeyManager/Key_Airlink_AirlinkKey.html#key_airlink_frequencypointindexrange">KeyFrequencyPointRange</a></code>to get the available frequency point range.
 You can call<code><a href="../../Components/IKeyManager/Key_Airlink_AirlinkKey.html#key_airlink_frequencypointrssiinfo">KeyFrequencyInterference</a></code> to get the frequency point with a strong RSSI and select the frequency point between the frequency range.
 <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+</div>
+<html><p><br></p></html>
+<h4 id="wireless-link-manager">Wireless Link Manager</h4>
+<div class="api-row" id="key_airlink_wlmlinkquality"><div class="api-col left">Signal Quality</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_wlmlinkquality_inline">KeyWlmLinkQualityLevel</a></div></div><div class="inline-doc" id="key_airlink_wlmlinkquality_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyWlmLinkQualityLevel</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;WlmLinkQualityLevelInfo&gt; KeyWlmLinkQualityLevel = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"WlmLinkQualityLevel", new DJIValueConverter&lt;&gt;(WlmLinkQualityLevelInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("WlmLinkQuality")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Airlink_Struct_WlmLinkQualityMsg.html#value_airlink_struct_wlmlinkqualitymsg">WlmLinkQualityLevelInfo</a></code><br><br> Get the signal quality level of wireless link manager. The signal quality level of OcuSync link and LTE link can be obtained through this interface. <br><b>Notic: <br> It is recommended to use <code><a href="../../Components/ILTEManager/ILTEManager.html#iltemanager">ILTEManager</a></code> with more complete functions, support LTE authentication, and enable and disable the enhanced transmission function.</b> <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_airlink_wlmuavdongleinfo"><div class="api-col left">TLE Dongle Information</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_wlmuavdongleinfo_inline">KeyWlmAircraftDongleListInfo</a></div></div><div class="inline-doc" id="key_airlink_wlmuavdongleinfo_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyWlmAircraftDongleListInfo</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;WlmDongleListInfo&gt; KeyWlmAircraftDongleListInfo = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"WlmAircraftDongleListInfo", new DJIValueConverter&lt;&gt;(WlmDongleListInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("WlmUavDongleInfo")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Airlink_Struct_WlmDongleInfoMsg.html#value_airlink_struct_wlmdongleinfomsg">WlmDongleListInfo</a></code><br><br> Gets the LTE dongle list information on the aircraft. The information and working status of the dongle plugged into the aircraft can be obtained through this interface. <br><b>Notic: <br> It is recommended to use <code><a href="../../Components/ILTEManager/ILTEManager.html#iltemanager">ILTEManager</a></code> with more complete functions, support LTE authentication, and enable and disable the enhanced transmission function.</b> <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_airlink_wlmrcdongleinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_airlink_wlmrcdongleinfo_inline">KeyWlmRcDongleListInfo</a></div></div><div class="inline-doc" id="key_airlink_wlmrcdongleinfo_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyWlmRcDongleListInfo</h6></div>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;WlmDongleListInfo&gt; KeyWlmRcDongleListInfo = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"WlmRcDongleListInfo", new DJIValueConverter&lt;&gt;(WlmDongleListInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("WlmRcDongleInfo")</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Airlink_Struct_WlmDongleInfoMsg.html#value_airlink_struct_wlmdongleinfomsg">WlmDongleListInfo</a></code><br><br> Gets the LTE dongle list information on the remote controller. The information and working status of the dongle plugged into the remote controller can be obtained through this interface. <br><b>Notic: <br> It is recommended to use <code><a href="../../Components/ILTEManager/ILTEManager.html#iltemanager">ILTEManager</a></code> with more complete functions, support LTE authentication, and enable and disable the enhanced transmission function.</b> <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
 </div>
 
         </div>

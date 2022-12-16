@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">Overview</a><a href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span></nav>
@@ -118,7 +118,11 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_VideoResolutionFrameRate.html">VideoResolutionFrameRate</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStreamSettingsMsg.html">CameraStreamSettingsInfo</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_CameraWatermarkSettings.html">CameraWatermarkSettings</a>
                                       </dd>
@@ -176,17 +180,39 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUState.html">IMUState</a>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_GoHomeAssessment.html">LowBatteryRTHInfo</a>
                                       </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html">AccessLockerVerifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1DeviceState.html">AccessLockerDeviceStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html">AccessLockerEncryptionStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html">AccessLockerModifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Accessory_Struct_PlayingAudioFileInfo.html">PlayingAudioFileInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Airlink_Struct_FrequencyInterference.html">FrequencyInterferenceInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmLinkQualityMsg.html">WlmLinkQualityLevelInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmDongleState.html">WlmDongleInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmDongleInfoMsg.html">WlmDongleListInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -266,6 +292,8 @@
                                       </dd>
                                       <dd><a href="IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
+                                      <dd><a href="IMediaManager_MediaFileDownloadListener.html">MediaFileDownloadListener</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="ILiveStreamManager.html" class="sub-toggle">ILiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -326,6 +354,12 @@
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
+                            <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
                     </ul>
@@ -335,6 +369,18 @@
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
                             </dd>
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleData.html">ObstacleData</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleDataListener.html">ObstacleDataListener</a>
+                            </dd>
+                            <dd><a data-href="../IPerceptionManager/IRadarManager.html" class="sub-toggle">IRadarManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a>
+                                      </dd>
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -380,11 +426,69 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../ILTEManager/ILTEManager.html" class="sub-toggle">ILTEManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ILTEManager/ILTEManager_LTEAuthenticationInfo.html">LTEAuthenticationInfo</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTELinkInfo.html">LTELinkInfo</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTEAuthenticationInfoListener.html">LTEAuthenticationInfoListener</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTELinkInfoListener.html">LTELinkInfoListener</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTEDongleInfoListener.html">LTEDongleInfoListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IPayloadCenter/IPayloadCenter.html" class="sub-toggle">IPayloadCenter<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IPayloadCenter/IPayloadManager.html" class="sub-toggle">IPayloadManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadBasicInfoListener.html">PayloadBasicInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidgetInfoListener.html">PayloadWidgetInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadDataListener.html">PayloadDataListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadBasicInfo.html">PayloadBasicInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidgetInfo.html">PayloadWidgetInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidget.html">PayloadWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_FloatingWindowWidget.html">FloatingWindowWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_SpeakerWidget.html">SpeakerWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_TextInputBoxWidget.html">TextInputBoxWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_IconFilePath.html">IconFilePath</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_SubItems.html">SubItems</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/Value_Payload_Struct_CustomizeRcButtonConfig.html">CustomizeRcButtonConfig</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/Value_Payload_Struct_WidgetValue.html">WidgetValue</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
                             </dd>
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUpgradeManager/IUpgradeManager.html" class="sub-toggle">IUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_FirmwareInformation.html">FirmwareInformation</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponent.html">UpgradeableComponent</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponentListener.html">UpgradeableComponentListener</a>
                             </dd>
                     </ul>
                   </dd>
@@ -551,13 +655,22 @@
 <p><font color="#666">Get the video source on this video channel. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_StreamSource.html#ivideostreammanager_streamsource">StreamSource</a></font></td><td><font color="#666"><i>Return the video source on this video channel.</i></font></td></tr></table></html></div>
+<div class="api-row" id="ivideostreammanager_ivideochannel_getvideostreamformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideochannel_getvideostreamformat_inline">getVideoStreamFormat</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideochannel_getvideostreamformat_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getVideoStreamFormat</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@NonNull</span></span><br><span class="line">    <span class="function">VideoStreamFormat <span class="title">getVideoStreamFormat</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.interfaces</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">Get the video stream format on this video channel. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel.html#ivideostreammanager_videostreamformat">VideoStreamFormat</a></font></td><td><font color="#666"><i>Return the video stream format on this video channel.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="ivideostreammanager_ivideochannel_videochanneltype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_ivideochannel_videochanneltype_inline">VideoChannelType</a></div></div><div class="inline-doc" id="ivideostreammanager_ivideochannel_videochanneltype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>VideoChannelType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> VideoChannelType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.channel</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">The type of video channel. Every video channel has an unique video channel type. The main video channel has the highest priority. When the transmitting bandwidth is narrow, we will ensure the main video channel is working properly first. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideochannel_videochanneltype_primarystreamchannel_inline"></a>PRIMARY_STREAM_CHANNEL</font></td><td><font color="#666">Primary video channel, highest priority, we will make sure this channel is working properly when the transmitting bandwidth is narrow.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideochannel_videochanneltype_secondarystreamchannel_inline"></a>SECONDARY_STREAM_CHANNEL</font></td><td><font color="#666">Deputy video channel, lower priority than the primary video channel.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideochannel_videochanneltype_extendedstreamchannel_inline"></a>EXTENDED_STREAM_CHANNEL</font></td><td><font color="#666">Extended video channel, lowest priority. It will lose data packet when the transmitting bandwidth is narrow.</font></td></tr></table></html>
@@ -568,11 +681,22 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> VideoChannelState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.channel</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">The state of video channel. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideochannel_videochannelstate_close_inline"></a>CLOSE</font></td><td><font color="#666">Current video channel is disabled.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_ivideochannel_videochannelstate_on_inline"></a>ON</font></td><td><font color="#666">Current video channel is enabled.</font></td></tr></table></html>
 <h5 id="class-members-v3">Class Members:</h5>
+</div>
+<div class="api-row" id="ivideostreammanager_videostreamformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#ivideostreammanager_videostreamformat_inline">VideoStreamFormat</a></div></div><div class="inline-doc" id="ivideostreammanager_videostreamformat_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>VideoStreamFormat</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> VideoStreamFormat</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.common.video.stream</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Video Stream format. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+<h5 id="enum-members-v3">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_videostreamformat_h264_inline"></a>H264</font></td><td><font color="#666">H264.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#ivideostreammanager_videostreamformat_h265_inline"></a>H265</font></td><td><font color="#666">H265.</font></td></tr></table></html>
+<h5 id="class-members-v4">Class Members:</h5>
 </div>
 <div class="api-row" id="ivideostreammanager_ivideochannel_streamdatalistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel_StreamDataListener.html">StreamDataListener</a></div></div><div class="api-row" id="ivideostreammanager_ivideochannel_videochannelstatechangelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html">VideoChannelStateChangeListener</a></div></div>
 

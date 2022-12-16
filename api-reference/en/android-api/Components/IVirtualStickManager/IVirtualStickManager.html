@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a href="/document/fa8f7ff4-1c05-4550-918e-0282f27752b9">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">Overview</a><a href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span></nav>
@@ -118,7 +118,11 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_VideoResolutionFrameRate.html">VideoResolutionFrameRate</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_Camera_Struct_CameraStreamSettingsMsg.html">CameraStreamSettingsInfo</a>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_CameraWatermarkSettings.html">CameraWatermarkSettings</a>
                                       </dd>
@@ -176,17 +180,39 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
                                       </dd>
-                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUState.html">IMUState</a>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_GoHomeAssessment.html">LowBatteryRTHInfo</a>
                                       </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html">AccessLockerVerifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1DeviceState.html">AccessLockerDeviceStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html">AccessLockerEncryptionStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html">AccessLockerModifySecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Accessory_Struct_PlayingAudioFileInfo.html">PlayingAudioFileInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Airlink_Struct_FrequencyInterference.html">FrequencyInterferenceInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmLinkQualityMsg.html">WlmLinkQualityLevelInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmDongleState.html">WlmDongleInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Airlink_Struct_WlmDongleInfoMsg.html">WlmDongleListInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -266,6 +292,8 @@
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/IMediaManager_VideoPlayStateListener.html">VideoPlayStateListener</a>
                                       </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_MediaFileDownloadListener.html">MediaFileDownloadListener</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ILiveStreamManager.html" class="sub-toggle">ILiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -326,6 +354,12 @@
                             </dd>
                             <dd><a href="IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
+                            <dd><a data-href="Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
                     </ul>
@@ -335,6 +369,18 @@
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
                             </dd>
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInformationListener.html">PerceptionInformationListener</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleData.html">ObstacleData</a>
+                            </dd>
+                            <dd><a href="../IPerceptionManager/IPerceptionManager_ObstacleDataListener.html">ObstacleDataListener</a>
+                            </dd>
+                            <dd><a data-href="../IPerceptionManager/IRadarManager.html" class="sub-toggle">IRadarManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformation.html">RadarInformation</a>
+                                      </dd>
+                                      <dd><a href="../IPerceptionManager/IRadarManager_RadarInformationListener.html">RadarInformationListener</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -380,11 +426,69 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../ILTEManager/ILTEManager.html" class="sub-toggle">ILTEManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ILTEManager/ILTEManager_LTEAuthenticationInfo.html">LTEAuthenticationInfo</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTELinkInfo.html">LTELinkInfo</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTEAuthenticationInfoListener.html">LTEAuthenticationInfoListener</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTELinkInfoListener.html">LTELinkInfoListener</a>
+                            </dd>
+                            <dd><a href="../ILTEManager/ILTEManager_LTEDongleInfoListener.html">LTEDongleInfoListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IPayloadCenter/IPayloadCenter.html" class="sub-toggle">IPayloadCenter<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../IPayloadCenter/IPayloadManager.html" class="sub-toggle">IPayloadManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadBasicInfoListener.html">PayloadBasicInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidgetInfoListener.html">PayloadWidgetInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadDataListener.html">PayloadDataListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadBasicInfo.html">PayloadBasicInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidgetInfo.html">PayloadWidgetInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_PayloadWidget.html">PayloadWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_FloatingWindowWidget.html">FloatingWindowWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_SpeakerWidget.html">SpeakerWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_TextInputBoxWidget.html">TextInputBoxWidget</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_IconFilePath.html">IconFilePath</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IPayloadManager_SubItems.html">SubItems</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/Value_Payload_Struct_CustomizeRcButtonConfig.html">CustomizeRcButtonConfig</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/Value_Payload_Struct_WidgetValue.html">WidgetValue</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a>
                             </dd>
                             <dd><a href="../IMegaphoneManager/IMegaphoneManager_RealTimeTransimissionStateListener.html">RealTimeTransimissionStateListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IUpgradeManager/IUpgradeManager.html" class="sub-toggle">IUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_FirmwareInformation.html">FirmwareInformation</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponent.html">UpgradeableComponent</a>
+                            </dd>
+                            <dd><a href="../IUpgradeManager/IUpgradeManager_UpgradeableComponentListener.html">UpgradeableComponentListener</a>
                             </dd>
                     </ul>
                   </dd>
@@ -490,39 +594,57 @@
 <p><font color="#666">To get the right stick instance of the virtual stick. Right stick controls the roll axis and pitch axis of the aircraft. <ul> <li>When the stick moves left, the horizontalPosition is negative. The aircraft will fly left when looking down at the aircraft.</li> <li>When the stick moves right, the horizontalPosition is positive. The aircraft will fly right when looking down at the aircraft.</li> <li>When the stick moves upward, the verticalPosition is positive. The aircraft will fly forward when looking down at the aircraft.</li> <li>When the stick moves downward, the verticalPosition is negative. The aircraft will fly backward when looking down at the aircraft.</li> </ul> <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_DJIStick.html#ivirtualstickmanager_djistick">IStick</a></font></td><td><font color="#666"><i>Return the instance of right stick.</i></font></td></tr></table></html></div>
+<div class="api-row" id="ivirtualstickmanager_setvirtualstickadvancedmodeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivirtualstickmanager_setvirtualstickadvancedmodeenabled_inline">setVirtualStickAdvancedModeEnabled</a></div></div><div class="inline-doc" id="ivirtualstickmanager_setvirtualstickadvancedmodeenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setVirtualStickAdvancedModeEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVirtualStickAdvancedModeEnabled</span><span class="params">(<span class="keyword">boolean</span> isEnabled)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">Enable virtual stick advanced mode. In advanced mode, the control data of left stick <code><a href="../../Components/IVirtualStickManager/IVirtualStickManager.html#ivirtualstickmanager_getleftstick">getLeftStick</a></code> and right stick <code><a href="../../Components/IVirtualStickManager/IVirtualStickManager.html#ivirtualstickmanager_getleftstick">getLeftStick</a></code> will no longer take effect, you can call <code><a href="../../Components/IVirtualStickManager/IVirtualStickManager.html#ivirtualstickmanager_sendvirtualstickadvancedparam">sendVirtualStickAdvancedParam</a></code> to set more advanced control parameters for use with more complex application scenarios, such as using a virtual stick to implement waypoint-related functions. <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>true</code> means enable virtual stick advanced mode.</i></font></td></tr></table></html></div>
+<div class="api-row" id="ivirtualstickmanager_sendvirtualstickadvancedparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivirtualstickmanager_sendvirtualstickadvancedparam_inline">sendVirtualStickAdvancedParam</a></div></div><div class="inline-doc" id="ivirtualstickmanager_sendvirtualstickadvancedparam_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>sendVirtualStickAdvancedParam</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendVirtualStickAdvancedParam</span><span class="params">(@NonNull VirtualStickFlightControlParam param)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Send virtual stick advanced control parameters. <li>Please call <code><a href="../../Components/IVirtualStickManager/IVirtualStickManager.html#ivirtualstickmanager_setvirtualstickadvancedmodeenabled">setVirtualStickAdvancedModeEnabled</a></code> to enable advanced mode before using this interface. </li> <li>Developers can send control parameters at a specific frequency according to their own needs. The recommended sending frequency is between 5Hz and 25Hz. </li> <li>For detailed usage of advanced control parameters, please refer to <a href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/basic-introduction/basic-concepts/flight-controller.html#virtual-sticks" target="_blank" rel="noopener">Virtual stick</a></li> <li>For advanced control parameter ranges, please refer to: <code><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html#ivirtualstickmanager_virtualstickrange">VirtualStickRange</a></code>.</li> <br><br><code><i>Supported since MSDK 5.1.0</i></code></font></p>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html#value_flightcontroller_struct_virtualstickflightcontrolparam">VirtualStickFlightControlParam</a> <font color="#000">param</font></font></td><td><font color="#666"><i>Advanced mode parameters.</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivirtualstickmanager_setvirtualstickstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivirtualstickmanager_setvirtualstickstatelistener_inline">setVirtualStickStateListener</a></div></div><div class="inline-doc" id="ivirtualstickmanager_setvirtualstickstatelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setVirtualStickStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVirtualStickStateListener</span><span class="params">(VirtualStickStateListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">To set the listener of the virtual stick status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html#ivirtualstickmanager_virtualstickstatelistener">VirtualStickStateListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener of the virtual stick status</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivirtualstickmanager_removevirtualstickstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivirtualstickmanager_removevirtualstickstatelistener_inline">removeVirtualStickStateListener</a></div></div><div class="inline-doc" id="ivirtualstickmanager_removevirtualstickstatelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeVirtualStickStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeVirtualStickStateListener</span><span class="params">(VirtualStickStateListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Remove the listener of the virtual stick status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html#ivirtualstickmanager_virtualstickstatelistener">VirtualStickStateListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener of the virtual stick status</i></font></td></tr></table></html></div>
 <div class="api-row" id="ivirtualstickmanager_clearallvirtualstickstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#ivirtualstickmanager_clearallvirtualstickstatelistener_inline">clearAllVirtualStickStateListener</a></div></div><div class="inline-doc" id="ivirtualstickmanager_clearallvirtualstickstatelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>clearAllVirtualStickStateListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clearAllVirtualStickStateListener</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Clean all the listener of the virtual stick status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="ivirtualstickmanager_djistick"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a></div></div><div class="api-row" id="ivirtualstickmanager_virtualstickstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a></div></div><div class="api-row" id="ivirtualstickmanager_virtualstickstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a></div></div><div class="api-row" id="value_flightcontroller_enum_flightcontrolauthority"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#value_flightcontroller_enum_flightcontrolauthority_inline">FlightControlAuthority</a></div></div><div class="inline-doc" id="value_flightcontroller_enum_flightcontrolauthority_inline" <blockquote>
+<div class="api-row" id="ivirtualstickmanager_djistick"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a></div></div><div class="api-row" id="ivirtualstickmanager_virtualstickstatelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a></div></div><div class="api-row" id="value_flightcontroller_struct_virtualstickflightcontrolparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html">VirtualStickFlightControlParam</a></div></div><div class="api-row" id="ivirtualstickmanager_virtualstickstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a></div></div><div class="api-row" id="value_flightcontroller_enum_flightcontrolauthority"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#value_flightcontroller_enum_flightcontrolauthority_inline">FlightControlAuthority</a></div></div><div class="inline-doc" id="value_flightcontroller_enum_flightcontrolauthority_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>FlightControlAuthority</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> FlightControlAuthority implements JNIProguardKeepTag</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Flight control authority. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthority_rc_inline"></a>RC</font></td><td><font color="#666">Remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthority_msdk_inline"></a>MSDK</font></td><td><font color="#666">MSDK.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthority_osdk_inline"></a>OSDK</font></td><td><font color="#666">OSDK.</font></td></tr></table></html>
@@ -533,7 +655,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> FlightControlAuthorityChangeReason implements JNIProguardKeepTag</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.flightcontroller</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Flight control authority change reason. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_msdk_request_inline"></a>MSDK_REQUEST</font></td><td><font color="#666">MSDK got the flight control authority.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_osdk_request_inline"></a>OSDK_REQUEST</font></td><td><font color="#666">OSDK got the flight control authority.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_rc_lost_inline"></a>RC_LOST</font></td><td><font color="#666">Remote controller lost contact, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_rc_not_p_mode_inline"></a>RC_NOT_P_MODE</font></td><td><font color="#666">The flight mode of the aircraft is not P mode, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_rc_switch_inline"></a>RC_SWITCH</font></td><td><font color="#666">The flight mode of the aircraft is switched, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_rc_pause_stop_inline"></a>RC_PAUSE_STOP</font></td><td><font color="#666">The pause button is pressed, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_rc_one_key_go_home_inline"></a>RC_ONE_KEY_GO_HOME</font></td><td><font color="#666">The aircraft is going home, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_battery_low_go_home_inline"></a>BATTERY_LOW_GO_HOME</font></td><td><font color="#666">The aircraft is going home because of the low battery, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_battery_super_low_landing_inline"></a>BATTERY_SUPER_LOW_LANDING</font></td><td><font color="#666">The aircraft is landing because of the low battery, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_osdk_lost_inline"></a>OSDK_LOST</font></td><td><font color="#666">OSDK lost contact, reset flight control authority to the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightcontroller_enum_flightcontrolauthoritychangereason_near_boundary_inline"></a>NEAR_BOUNDARY</font></td><td><font color="#666">The aircraft is nearby the flyzone, reset flight control authority to the remote controller.</font></td></tr></table></html>
