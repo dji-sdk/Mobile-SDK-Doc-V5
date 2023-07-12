@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -207,6 +207,10 @@
                                       <dd><a href="Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html">AccessLockerResetSecurityCodeInfo</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html">AccessLockerSetSecurityCodeInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AirSenseAirplaneState.html">AirSenseAirplaneState</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_Struct_AirSenseSystemInformation.html">AirSenseSystemInformation</a>
                                       </dd>
                                       <dd><a href="Value_Battery_Struct_BatteryLedsControlMsg.html">BatteryLedsInfo</a>
                                       </dd>
@@ -827,7 +831,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;RcFirmwareType,EmptyMsg&gt; KeySwitchRcFirmware = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"SwitchRcFirmware"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(RcFirmwareType<span class="class">.<span class="keyword">class</span>,<span class="title">RcFirmwareMsg</span>.<span class="title">class</span>),<span class="title">EmptyValueConverter</span>.<span class="title">converter</span>).<span class="title">canGet</span>(<span class="title">false</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">false</span>).<span class="title">canPerformAction</span>(<span class="title">true</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="描述：-v26">描述：</h5>
-<p><font color="#666">切换遥控器固件类型。以DJI RC Plus遥控器为例：DJI RC Plus遥控器可以用于M30系列机型， M300 RTK机型和M350 RTK机型。你可以调用这个接口切换不同机型的固件，然后调用<code><a href="../../Components/IKeyManager/Key_RemoteController_RemoteControllerKey.html#key_remotecontroller_rcrequestpairing">KeyRequestPairing</a></code>进行对频使用。 <br><br><code><i>MSDK 5.4.0开始支持</i></code></font></p>
+<p><font color="#666">切换遥控器固件类型。以DJI RC Plus遥控器为例：DJI RC Plus遥控器可以用于M30系列机型，M300 RTK机型和M350 RTK机型。你可以调用这个接口切换不同机型的固件，然后调用<code><a href="../../Components/IKeyManager/Key_RemoteController_RemoteControllerKey.html#key_remotecontroller_rcrequestpairing">KeyRequestPairing</a></code>进行对频使用。 <br><br><code><i>MSDK 5.4.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_remotecontroller_rcrequestpairing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_remotecontroller_rcrequestpairing_inline">KeyRequestPairing</a></div></div><div class="inline-doc" id="key_remotecontroller_rcrequestpairing_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyRequestPairing</h6></div>
