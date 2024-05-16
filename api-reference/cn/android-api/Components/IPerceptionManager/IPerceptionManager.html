@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -120,9 +120,15 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_MSDKZoomRatiosRange.html">ZoomRatiosRange</a>
                                       </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_VideoPreRecordDurationMsg.html">VideoPreRecordDurationInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_VideoRecordPlanMsg.html">VideoRecordPlanInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_IsRecordingInfoMsg.html">VideoRecordingStatus</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
@@ -133,6 +139,8 @@
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_CustomExpandNameSettings.html">CustomExpandNameSettings</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_WatermarkDisplayContentSettings.html">WatermarkDisplayContentSettings</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_ZoomPointTargetMsg.html">ZoomTargetPointInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html">ThermalGainModeTemperatureRange</a>
                                       </dd>
@@ -185,6 +193,8 @@
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RCModeChannelTypeMsg.html">MultiControlChannelInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_LookAtInfo.html">LookAtInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
@@ -285,6 +295,10 @@
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -682,7 +696,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setObstacleAvoidanceEnabled</span><span class="params">(<span class="keyword">boolean</span> isEnabled, @NonNull</span></span></span><br><span class="line"><span class="function"><span class="params">        PerceptionDirection direction, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.perception</font></td></tr></table></html>
 <h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">开启或者关闭感知避障子开关。只有当总开关<code><a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_setoverallobstacleavoidanceenabled">setOverallObstacleAvoidanceEnabled</a></code>开启后，子开关才能被开启。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
+<p><font color="#666">开启或者关闭感知避障子开关。 <br><br><b>注意： 对于不支持<code><a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_obstacleavoidancetype_brake">BRAKE</a></code>类型的机型，比如Mini 3和Mini 3 Pro无法独立开启或者关闭感知避障子开关。</b> <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v5">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>true</code>表示开启感知避障子开关。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull             <a href="../../Components/IPerceptionManager/IPerceptionManager.html#iperceptionmanager_perceptiondirection">PerceptionDirection</a> <font color="#000">direction</font></font></td><td><font color="#666"><i>感知避障子开关的方向。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
 <div class="api-row" id="iperceptionmanager_getobstacleavoidanceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iperceptionmanager_getobstacleavoidanceenabled_inline">getObstacleAvoidanceEnabled</a></div></div><div class="inline-doc" id="iperceptionmanager_getobstacleavoidanceenabled_inline" <blockquote>

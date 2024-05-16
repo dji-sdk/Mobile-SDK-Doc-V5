@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -120,9 +120,15 @@
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_MSDKZoomRatiosRange.html">ZoomRatiosRange</a>
                                       </dd>
+                                      <dd><a href="Value_Camera_Struct_VideoPreRecordDurationMsg.html">VideoPreRecordDurationInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_VideoRecordPlanMsg.html">VideoRecordPlanInfo</a>
+                                      </dd>
                                       <dd><a href="Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_IsRecordingInfoMsg.html">VideoRecordingStatus</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
@@ -133,6 +139,8 @@
                                       <dd><a href="Value_Camera_Struct_CustomExpandNameSettings.html">CustomExpandNameSettings</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_WatermarkDisplayContentSettings.html">WatermarkDisplayContentSettings</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_ZoomPointTargetMsg.html">ZoomTargetPointInfo</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html">ThermalGainModeTemperatureRange</a>
                                       </dd>
@@ -185,6 +193,8 @@
                                       <dd><a href="Value_RemoteController_Struct_RCModeChannelTypeMsg.html">MultiControlChannelInfo</a>
                                       </dd>
                                       <dd><a href="Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_LookAtInfo.html">LookAtInfo</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
@@ -285,6 +295,10 @@
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -859,7 +873,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;RcFirmwareInfo&gt; KeyRcFirmwareInfo = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"RcFirmwareInfo"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(RcFirmwareInfo<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="描述：-v25">描述：</h5>
-<p><font color="#666">获取遥控器当前的固件信息。 <br><br><code><i>MSDK 5.4.0开始支持</i></code></font></p>
+<p><font color="#666">获取遥控器当前的固件信息。 <br><br><b>注意： 此Key只支持DJI RC Plus遥控器和DJI RC N1遥控器，用于获取遥控器固件信息进行固件类型切换。</b> <br><br><code><i>MSDK 5.4.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_remotecontroller_switchrcfirmware"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_remotecontroller_switchrcfirmware_inline">KeySwitchRcFirmware</a></div></div><div class="inline-doc" id="key_remotecontroller_switchrcfirmware_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeySwitchRcFirmware</h6></div>

@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -120,9 +120,15 @@
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_MSDKZoomRatiosRange.html">ZoomRatiosRange</a>
                                       </dd>
+                                      <dd><a href="Value_Camera_Struct_VideoPreRecordDurationMsg.html">VideoPreRecordDurationInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_VideoRecordPlanMsg.html">VideoRecordPlanInfo</a>
+                                      </dd>
                                       <dd><a href="Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_IsRecordingInfoMsg.html">VideoRecordingStatus</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
@@ -133,6 +139,8 @@
                                       <dd><a href="Value_Camera_Struct_CustomExpandNameSettings.html">CustomExpandNameSettings</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_WatermarkDisplayContentSettings.html">WatermarkDisplayContentSettings</a>
+                                      </dd>
+                                      <dd><a href="Value_Camera_Struct_ZoomPointTargetMsg.html">ZoomTargetPointInfo</a>
                                       </dd>
                                       <dd><a href="Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html">ThermalGainModeTemperatureRange</a>
                                       </dd>
@@ -185,6 +193,8 @@
                                       <dd><a href="Value_RemoteController_Struct_RCModeChannelTypeMsg.html">MultiControlChannelInfo</a>
                                       </dd>
                                       <dd><a href="Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_LookAtInfo.html">LookAtInfo</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
@@ -285,6 +295,10 @@
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -1084,12 +1098,20 @@
 <h5 id="描述：-v55">描述：</h5>
 <p><font color="#666">重启飞行器的核心设备。建议在IMU校准后调用此方法。 <br><b>注意：<br> 请勿在飞行器电机起转后重启飞行器的核心设备。可通过<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_aremotorson">KeyAreMotorsOn</a></code>判断飞行器电机是否起转。</b> <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
+<div class="api-row" id="key_flightcontroller_msdklookat"><div class="api-col left">看向目标点</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_msdklookat_inline">KeyLookAt</a></div></div><div class="inline-doc" id="key_flightcontroller_msdklookat_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLookAt</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;LookAtInfo, EmptyMsg&gt; KeyLookAt = <span class="keyword">new</span> KeyLookAt().canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="描述：-v56">描述：</h5>
+<p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_LookAtInfo.html#value_flightcontroller_lookatinfo">LookAtInfo</a></code><br><br> 看向目标点。可设置Pin点位置，让飞行器看向目标点。 <br><br><code><i>MSDK 5.9.0开始支持</i></code></font></p>
+</div>
 <div class="api-row" id="key_flightcontroller_heightlimitrange"><div class="api-col left">限高</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_heightlimitrange_inline">KeyHeightLimitRange</a></div></div><div class="inline-doc" id="key_flightcontroller_heightlimitrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyHeightLimitRange</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;IntValueConfig&gt; KeyHeightLimitRange = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HeightLimitRange"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(IntValueConfig<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v56">描述：</h5>
+<h5 id="描述：-v57">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntValueConfig</a></code><br><br>
 获取限高设置范围，单位：米。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1099,7 +1121,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyHeightLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HeightLimit"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v57">描述：</h5>
+<h5 id="描述：-v58">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br>
 设置飞行器的最大飞行高度。单位：米。可通过<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_heightlimitrange">KeyHeightLimitRange</a></code>获取设置范围。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1109,7 +1131,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsNearHeightLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsNearHeightLimit"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v58">描述：</h5>
+<h5 id="描述：-v59">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br>
 <code>true</code>表示飞行器已达到最大飞行高度。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1119,7 +1141,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyDistanceLimitEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"DistanceLimitEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v59">描述：</h5>
+<h5 id="描述：-v60">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br>
 <code>true</code>表示开启限远开关。开启此开关后，你可以通过<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_distancelimit">KeyDistanceLimit</a></code>设置飞行器的最大飞行距离。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1129,7 +1151,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;IntValueConfig&gt; KeyDistanceLimitRange = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"DistanceLimitRange"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(IntValueConfig<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v60">描述：</h5>
+<h5 id="描述：-v61">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntValueConfig</a></code><br><br>
 获取限远设置范围，单位：米。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1139,7 +1161,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyDistanceLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"DistanceLimit"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v61">描述：</h5>
+<h5 id="描述：-v62">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br>
 设置飞行器的最大飞行距离。单位：米。此距离是飞行器与返航点之间的距离。可通过<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_distancelimitrange">KeyDistanceLimitRange</a></code>获取设置范围。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1149,7 +1171,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsNearDistanceLimit = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsNearDistanceLimit"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v62">描述：</h5>
+<h5 id="描述：-v63">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br>
 <code>true</code>表示飞行器已达到最大飞行距离。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1161,7 +1183,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyIsHomeLocationSet = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"IsHomeLocationSet"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v63">描述：</h5>
+<h5 id="描述：-v64">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br> <code>true</code>表示返航点已设置。当GPS信号良好时，飞行器会自动把当前飞行器位置设置为返航点，此时<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_ishomelocationset">KeyIsHomeLocationSet</a></code>将返回<code>true</code>。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_homelocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_homelocation_inline">KeyHomeLocation</a></div></div><div class="inline-doc" id="key_flightcontroller_homelocation_inline" <blockquote>
@@ -1169,7 +1191,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;LocationCoordinate2D&gt; KeyHomeLocation = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HomeLocation"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(LocationCoordinate2D<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v64">描述：</h5>
+<h5 id="描述：-v65">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a></code><br><br>
 设置和获取当前返航点的位置，包括经纬度。当GPS信号良好时，飞行器会自动把当前飞行器位置设置为返航点，你也可以使用这个key改变返航点位置。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1179,7 +1201,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyGoHomeHeight = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GoHomeHeight"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v65">描述：</h5>
+<h5 id="描述：-v66">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br>
 设置和获取返航时的相对高度，单位：米。此相对高度是相对于起飞时的高度。可通过<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_gohomeheightrange">KeyGoHomeHeightRange</a></code>获取返航高度设置范围。
 如果飞行器水平距离返航点50米内，飞行器将忽略设置的返航高度，以飞行器当前高度返航。如果此时前视视觉系统未正常工作，飞行器将上升到预设的高度进行返航。
@@ -1190,7 +1212,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;IntValueConfig&gt; KeyGoHomeHeightRange = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GoHomeHeightRange"</span>, <span class="keyword">new</span> DJIValueConverter&lt;&gt;(IntValueConfig<span class="class">.<span class="keyword">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v66">描述：</h5>
+<h5 id="描述：-v67">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Common_Struct_IntValueConfig.html#value_common_struct_intvalueconfig">IntValueConfig</a></code><br><br>
 获取返航高度设置范围，单位：米。
 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -1200,7 +1222,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyHomeLocationUsingCurrentAircraftLocation = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"HomeLocationUsingCurrentAircraftLocation"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v67">描述：</h5>
+<h5 id="描述：-v68">描述：</h5>
 <p><font color="#666">将飞行器的当前位置设置为返航点位置。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_startgohome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_startgohome_inline">KeyStartGoHome</a></div></div><div class="inline-doc" id="key_flightcontroller_startgohome_inline" <blockquote>
@@ -1208,7 +1230,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStartGoHome = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StartGoHome"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v68">描述：</h5>
+<h5 id="描述：-v69">描述：</h5>
 <p><font color="#666">启动智能返航。当GPS信号不好的时候，不可启动智能返航功能。 你也可以通过遥控器智能返航按键启动智能返航，返航过程用户可通过油门杆控制飞行器高度和俯仰杆控制飞行器速度以躲避障碍物。返航过程中，通过遥控器上的智能返航按键或者调用<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_stopgohome">KeyStopGoHome</a></code>退出智能返航后，用户可重新获得飞行器控制权。你可以通过<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_gohomestatus">KeyGoHomeStatus</a></code>获取智能返航状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_stopgohome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_stopgohome_inline">KeyStopGoHome</a></div></div><div class="inline-doc" id="key_flightcontroller_stopgohome_inline" <blockquote>
@@ -1216,7 +1238,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyStopGoHome = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"StopGoHome"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v69">描述：</h5>
+<h5 id="描述：-v70">描述：</h5>
 <p><font color="#666">停止智能返航。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_gohomestatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_gohomestatus_inline">KeyGoHomeStatus</a></div></div><div class="inline-doc" id="key_flightcontroller_gohomestatus_inline" <blockquote>
@@ -1224,7 +1246,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GoHomeState&gt; KeyGoHomeStatus = <span class="keyword">new</span> KeyGoHomeStatus().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v70">描述：</h5>
+<h5 id="描述：-v71">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_gohomestate">GoHomeState</a></code><br><br> 获取智能返航状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_smartbatteryrthenabled"><div class="api-col left">低电量返航</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_smartbatteryrthenabled_inline">KeyLowBatteryRTHEnabled</a></div></div><div class="inline-doc" id="key_flightcontroller_smartbatteryrthenabled_inline" <blockquote>
@@ -1232,7 +1254,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyLowBatteryRTHEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"LowBatteryRTHEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"SmartBatteryRTHEnabled"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v71">描述：</h5>
+<h5 id="描述：-v72">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br> <code>true</code>表示开启智能低电量返航功能。为防止因电池电量不足而出现不必要的危险，飞行器将会根据飞行的位置信息，智能地判断当前电量是否充足。若当前电量仅够完成返航过程，MSDK将提示是否需要执行返航。若用户在10秒内不作选择，则10秒后飞行器将自动进入返航。返航过程中可短按遥控器智能返航按键取消返航过程。智能低电量返航在同一次飞行过程中仅出现一次。如果用户取消低电量返航提醒并继续飞行，将可能导致飞行器返回时电量不足而迫降，造成飞行器丢失或坠毁。为了安全起见，不建议关闭此功能。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_msdklowbatteryrthinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_msdklowbatteryrthinfo_inline">KeyLowBatteryRTHInfo</a></div></div><div class="inline-doc" id="key_flightcontroller_msdklowbatteryrthinfo_inline" <blockquote>
@@ -1240,7 +1262,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;LowBatteryRTHInfo&gt; KeyLowBatteryRTHInfo = <span class="keyword">new</span> KeyLowBatteryRTHInfo().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v72">描述：</h5>
+<h5 id="描述：-v73">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_GoHomeAssessment.html#value_flightcontroller_struct_gohomeassessment">LowBatteryRTHInfo</a></code><br><br> 获取智能低电量返航相关信息。仅在<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_smartbatteryrthenabled">KeyLowBatteryRTHEnabled</a></code>开启后有效。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_msdklowbatteryrthconfirm"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_msdklowbatteryrthconfirm_inline">KeyLowBatteryRTHConfirm</a></div></div><div class="inline-doc" id="key_flightcontroller_msdklowbatteryrthconfirm_inline" <blockquote>
@@ -1248,7 +1270,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;Boolean, EmptyMsg&gt; KeyLowBatteryRTHConfirm = <span class="keyword">new</span> KeyLowBatteryRTHConfirm().canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v73">描述：</h5>
+<h5 id="描述：-v74">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br> 确认或者取消返航操作。当调用<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_msdklowbatteryrthinfo">KeyLowBatteryRTHInfo</a></code>获取到的状态为<code><a href="../../Components/IKeyManager/DJIValue.html#value_flightcontroller_enum_smartrthstate_counting_down">COUNTING_DOWN</a></code>时，你可以调用此接口确认或者取消返航操作。 <code>true</code>表示确认返航。<code>false</code>表示取消返航。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
 <html><p><br></p></html>
@@ -1258,7 +1280,7 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;List&lt;AccessLockerDeviceStatus&gt;&gt; KeyAccessLockerAllDeviceStatus = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerAllDeviceStatus", new SingleValueConverter&lt;&gt;((Class)List.class,AccessLockerV1AllDeviceStates.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("AccessLockerV1AllDeviceStates")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v74">描述：</h5>
+<h5 id="描述：-v75">描述：</h5>
 <p><font color="#666"><b>参数: </b>List&lt;<code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1DeviceState.html#value_flightcontroller_struct_accesslockerv1devicestate">AccessLockerDeviceStatus</a></code>&gt;<br><br> 获取存储设备的安全密码状态。可通过此接口获取飞行器上的存储设备是否支持安全密码功能，是否开启安全密码功能以及是否需要验证安全密码。 <br>安全密码是为了保护您的媒体数据安全。设置安全密码后，MSDK App连接飞行器后需要进行密码校验，验证通过后才可以进行拍照录像以及读写存储设备中的媒体数据。 <br><li><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html#value_flightcontroller_struct_accesslockerv1encryptionstate_getisfeaturesupported">getIsFeatureSupported</a></code>为<code>true</code>，表示该存储设备支持安全密码功能。你可以调用<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1setupuseraccount">KeyAccessLockerSetSecurityCode</a></code>设置安全密码。</li> <li><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html#value_flightcontroller_struct_accesslockerv1encryptionstate_getisfeatureenabled">getIsFeatureEnabled</a></code>为<code>true</code>，表示该存储设备的安全密码功能已开启。你可以调用<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1modifyuseraccount">KeyAccessLockerModifySecurityCode</a></code>进行安全密码修改。如果你忘记了安全密码，你可以调用<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1resetuseraccount">KeyAccessLockerResetSecurityCode</a></code>重置安全密码。</li> <li><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1EncryptionState.html#value_flightcontroller_struct_accesslockerv1encryptionstate_getisfeatureneedtobeverified">getIsFeatureNeedToBeVerified</a></code>为<code>true</code>，表示该存储设备需要验证安全密码。请调用<code><a href="../../Components/IKeyManager/Key_FlightController_FlightControllerKey.html#key_flightcontroller_accesslockerv1verifyuseraccount">KeyAccessLockerVerifySecurityCode</a></code>进行安全密码验证，否则将无法进行拍照录像，并且无法读写存储设备中的媒体数据。当飞行器重启或者存储设备拔插后通常需要验证安全密码。</li> <li>DJI不会在设备上存储用户密码，也不会回传DJI。</li> <li>用户忘记密码后，不支持找回密码。如您不慎遗失安全密码，只能通过格式化的方式来解锁存储设备。</li> <li>安全密码仅支持禅思H20系列相机，M30系列机型相机及Mavic 3行业系列相机，暂不支持禅思 P1、禅思 L1以及其他第三方负载。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></li></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_accesslockerv1setupuseraccount"><div class="api-col left">设置安全密码</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1setupuseraccount_inline">KeyAccessLockerSetSecurityCode</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1setupuseraccount_inline" <blockquote>
@@ -1266,7 +1288,7 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerSetSecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerSetSecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerSetSecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerSetSecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1SetupUserAccount")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v75">描述：</h5>
+<h5 id="描述：-v76">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1setupuseraccountinfo">AccessLockerSetSecurityCodeInfo</a></code><br><br> 设置安全密码。可通过此接口选择设备和存储类型进行安全密码设置。 <li>设置安全密码后存储设备将被格式化，请确认媒体数据已备份。</li> <li>请妥善保管安全密码，遗失后将无法找回，只能通过格式化的方式来解锁存储设备。</li> <li>你设置的密码长度需要至少4位，建议使用数字,大写、小写字母组成密码。</li>
 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
 </div>
@@ -1275,7 +1297,7 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerVerifySecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerVerifySecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerVerifySecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerVerifySecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1VerifyUserAccount")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v76">描述：</h5>
+<h5 id="描述：-v77">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1verifyuseraccountinfo">AccessLockerVerifySecurityCodeInfo</a></code><br><br> 校验安全密码。可通过此接口校验安全密码，验证通过后才可以进行拍照录像以及读写存储设备中的媒体数据。
 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
 </div>
@@ -1284,7 +1306,7 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerModifySecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerModifySecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerModifySecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerModifySecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1ModifyUserAccount")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v77">描述：</h5>
+<h5 id="描述：-v78">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1modifyuseraccountinfo">AccessLockerModifySecurityCodeInfo</a></code><br><br> 修改安全密码。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_flightcontroller_accesslockerv1resetuseraccount"><div class="api-col left">重置安全密码</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_accesslockerv1resetuseraccount_inline">KeyAccessLockerResetSecurityCode</a></div></div><div class="inline-doc" id="key_flightcontroller_accesslockerv1resetuseraccount_inline" <blockquote>
@@ -1292,17 +1314,25 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIActionKeyInfo&lt;AccessLockerResetSecurityCodeInfo,EmptyMsg&gt; KeyAccessLockerResetSecurityCode = new DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"AccessLockerResetSecurityCode", new DJIValueConverter&lt;&gt;(AccessLockerResetSecurityCodeInfo.class),EmptyValueConverter.converter).canGet(false).canSet(false).canListen(false).canPerformAction(true).setIsEvent(false).setInnerIdentifier("AccessLockerV1ResetUserAccount")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v78">描述：</h5>
+<h5 id="描述：-v79">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html#value_flightcontroller_struct_accesslockerv1resetuseraccountinfo">AccessLockerResetSecurityCodeInfo</a></code><br><br> 重置安全密码。重置安全密码将会格式化存储设备，请确认媒体数据已备份。 <br><br><code><i>MSDK 5.1.0开始支持</i></code></font></p>
 </div>
 <html><p><br></p></html>
 <h4 id="airsense">AirSense</h4>
+<div class="api-row" id="key_flightcontroller_airsensesystemsupported"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_airsensesystemsupported_inline">KeyAirSenseSystemSupported</a></div></div><div class="inline-doc" id="key_flightcontroller_airsensesystemsupported_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyAirSenseSystemSupported</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyAirSenseSystemSupported = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"AirSenseSystemSupported"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="描述：-v80">描述：</h5>
+<p><font color="#666"><b>参数: </b>Boolean<br><br> 是否支持DJI AirSense 系统。 <br><br><code><i>MSDK 5.9.0开始支持</i></code></font></p>
+</div>
 <div class="api-row" id="key_flightcontroller_msdkairsensesysteminformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_flightcontroller_msdkairsensesysteminformation_inline">KeyAirSenseSystemInformation</a></div></div><div class="inline-doc" id="key_flightcontroller_msdkairsensesysteminformation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyAirSenseSystemInformation</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;AirSenseSystemInformation&gt; KeyAirSenseSystemInformation = <span class="keyword">new</span> KeyAirSenseSystemInformation().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v79">描述：</h5>
+<h5 id="描述：-v81">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_Struct_AirSenseSystemInformation.html#value_flightcontroller_struct_airsensesysteminformation">AirSenseSystemInformation</a></code><br><br> 获取 DJI AirSense 系统的信息。包含警告级别和检测到的飞机（安装了 AirSense 系统的载人飞行器，譬如民航、直升机等，简称飞机）的详细状态。<br> DJI AirSense 仅在特定情况下发出附近飞机的警告，它不会控制 DJI 飞行器自动避开其他飞机。请确保您的飞行器始终在视线范围内飞行并始终谨慎飞行。收到警告后，将飞行器降低到安全高度。此外，DJI AirSense 有以下限制：<br> <li>DJI AirSense 只能接收 1090ES（RTCA DO-260）或 UAT（RTCA Do-282）标准下配备 ADS-B 输出设备的飞机发送的信息。对于没有 ADS-B 输出或 ADS-B 输出故障的飞机，DJI AirSense 无法接收相关广播信息或发出警告。</li> <li>当飞机与 DJI 飞行器之间有障碍物时，DJI 飞行器将无法接收到飞机发送的 ADS-B 信息或告警。</li> <li>DJI AirSense 可能会因环境变化和干扰而收不到飞机发送的 ADS-B 信息或发出警告。强烈建议谨慎飞行，并在飞行过程中注意周围环境。</li> <li>DJI AirSense 无法在 DJI 飞行器无法准确定位时发出警告。</li> <li>DJI AirSense 在禁用或配置错误时无法接收飞机发送的 ADS-B 消息或发出警告。</li> <br><br><code><i>MSDK 5.5.0开始支持</i></code></font></p>
 </div>
 

@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -120,9 +120,15 @@
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_MSDKZoomRatiosRange.html">ZoomRatiosRange</a>
                                       </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_VideoPreRecordDurationMsg.html">VideoPreRecordDurationInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_VideoRecordPlanMsg.html">VideoRecordPlanInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_LaserMeasureInformationMsg.html">LaserMeasureInformation</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html">MultiSpectralFusionDisplayRange</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_IsRecordingInfoMsg.html">VideoRecordingStatus</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_MSDKCameraStreamSettings.html">CameraStreamSettingsInfo</a>
                                       </dd>
@@ -133,6 +139,8 @@
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_CustomExpandNameSettings.html">CustomExpandNameSettings</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_WatermarkDisplayContentSettings.html">WatermarkDisplayContentSettings</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_Camera_Struct_ZoomPointTargetMsg.html">ZoomTargetPointInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html">ThermalGainModeTemperatureRange</a>
                                       </dd>
@@ -185,6 +193,8 @@
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RCModeChannelTypeMsg.html">MultiControlChannelInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html">FiveDimensionPressedStatus</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_LookAtInfo.html">LookAtInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncControlMsg.html">MultiGimbalSyncControlInfo</a>
                                       </dd>
@@ -285,6 +295,10 @@
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
+                                      </dd>
+                                      <dd><a href="../IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -750,7 +764,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendDataToPayload</span><span class="params">(<span class="keyword">byte</span>[] data, @NonNull <span class="keyword">final</span> CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Send command data to the payload. The maximum bandwidth of this channel is 3KBytes/s. <br><br><code><i>Supported since MSDK 5.2.0</i></code></font></p>
+<p><font color="#666">Send command data to the payload. The maximum bandwidth of this channel is 3KBytes/s. <br><b>Note:<br> M300 RTK can only send a maximum of 100 bytes at a time. Other supported aircraft can send a maximum of 255 bytes at a time.</b> <br><br><code><i>Supported since MSDK 5.2.0</i></code></font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">byte[] <font color="#000">data</font></font></td><td><font color="#666"><i>Data to be sent to the payload.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull final <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Return the callback of execution result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
