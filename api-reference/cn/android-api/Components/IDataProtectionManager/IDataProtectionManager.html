@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -654,13 +654,14 @@
 <h5 id="描述：">描述：</h5>
 <p><font color="#666">数据保护管理类用于保护用户数据。为了完成功能逻辑或者上报埋点数据，DJI MSDK会在后台将用户数据发送到DJI服务器。你可以调用相关接口同意或者不同意DJI MSDK上报用户数据。 <br><br><b>注意： 此类只管理DJI MSDK后台上报的用户数据，不会管理通过调用接口的方式传入的用户数据。</b> <br><br><code><i>MSDK 5.6.0开始支持</i></code></font></p>
 <h5 id="类成员">类成员:</h5>
+<h4 id="产品改进计划">产品改进计划</h4>
 <div class="api-row" id="idjidataprotectionmanager_agreetoproductimprovement"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#idjidataprotectionmanager_agreetoproductimprovement_inline">agreeToProductImprovement</a></div></div><div class="inline-doc" id="idjidataprotectionmanager_agreetoproductimprovement_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>agreeToProductImprovement</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">agreeToProductImprovement</span><span class="params">(<span class="keyword">boolean</span> isAgree)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">同意或不同意产品改进计划。通过该计划，DJI MSDK将收集DJI设备UUID、移动设备UUID以及您的诊断数据和用量数据进行用户行为分析，此分析有助于DJI改进产品和服务。 <br><br><code><i>Supported since MSDK 5.6.0</i></code></font></p>
+<p><font color="#666">同意或不同意产品改进计划。通过该计划，DJI MSDK将收集DJI设备UUID、移动设备UUID以及您的诊断数据和用量数据进行用户行为分析，此分析有助于DJI改进产品和服务。 <br><br><code><i>MSDK 5.6.0开始支持</i></code></font></p>
 <h5 id="输入参数：">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isAgree</font></font></td><td><font color="#666"><i><code>true</code> 表示同意产品改进计划。</i></font></td></tr></table></html></div>
 <div class="api-row" id="idjidataprotectionmanager_isagreetoproductimprovement"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#idjidataprotectionmanager_isagreetoproductimprovement_inline">isAgreeToProductImprovement</a></div></div><div class="inline-doc" id="idjidataprotectionmanager_isagreetoproductimprovement_inline" <blockquote>
@@ -669,9 +670,47 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isAgreeToProductImprovement</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">获取是否同意产品改进计划。 <br><br><code><i>Supported since MSDK 5.6.0</i></code></font></p>
+<p><font color="#666">获取是否同意产品改进计划。 <br><br><code><i>MSDK 5.6.0开始支持</i></code></font></p>
 <h5 id="返回值：">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> 表示同意产品改进计划。</i></font></td></tr></table></html></div>
+<html><p><br></p></html>
+<h4 id="msdk-日志">MSDK 日志</h4>
+<div class="api-row" id="idjidataprotectionmanager_enablemsdklog"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#idjidataprotectionmanager_enablemsdklog_inline">enableMSDKLog</a></div></div><div class="inline-doc" id="idjidataprotectionmanager_enablemsdklog_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>enableMSDKLog</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enableMSDKLog</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v4">描述：</h5>
+<p><font color="#666">开启或者关闭MSDK日志存储功能，此功能默认开启。可通过<code><a href="../../Components/IDataProtectionManager/IDataProtectionManager.html#idjidataprotectionmanager_getmsdklogpath">getMSDKLogPath</a></code>获取日志的存储路径。当MSDK发生问题时，可将此MSDK日志发送给DJI分析和定位解决问题。当日志过多的时候可以调用 <code><a href="../../Components/IDataProtectionManager/IDataProtectionManager.html#idjidataprotectionmanager_clearmsdklog">clearMSDKLog</a></code> 清除日志。 <br><br><code><i>MSDK 5.10.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code> 表示开启MSDK的日志存储功能。</i></font></td></tr></table></html></div>
+<div class="api-row" id="idjidataprotectionmanager_ismsdklogenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#idjidataprotectionmanager_ismsdklogenabled_inline">isMSDKLogEnabled</a></div></div><div class="inline-doc" id="idjidataprotectionmanager_ismsdklogenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>isMSDKLogEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isMSDKLogEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v5">描述：</h5>
+<p><font color="#666">获取是否开启MSDK日志存储功能。 <br><br><code><i>MSDK 5.10.0开始支持</i></code></font></p>
+<h5 id="返回值：-v2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> 表示开启MSDK日志存储功能。</i></font></td></tr></table></html></div>
+<div class="api-row" id="idjidataprotectionmanager_getmsdklogpath"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#idjidataprotectionmanager_getmsdklogpath_inline">getMSDKLogPath</a></div></div><div class="inline-doc" id="idjidataprotectionmanager_getmsdklogpath_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getMSDKLogPath</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getMSDKLogPath</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v6">描述：</h5>
+<p><font color="#666">获取MSDK的存储路径。 <br><br><code><i>MSDK 5.10.0开始支持</i></code></font></p>
+<h5 id="返回值：-v3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>返回MSDK的存储路径。</i></font></td></tr></table></html></div>
+<div class="api-row" id="idjidataprotectionmanager_clearmsdklog"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#idjidataprotectionmanager_clearmsdklog_inline">clearMSDKLog</a></div></div><div class="inline-doc" id="idjidataprotectionmanager_clearmsdklog_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>clearMSDKLog</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">clearMSDKLog</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v7">描述：</h5>
+<p><font color="#666">清除MSDK日志。 <br><br><code><i>MSDK 5.10.0开始支持</i></code></font></p>
+<h5 id="返回值：-v4">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> 表示成功清除MSDK日志。</i></font></td></tr></table></html></div>
 
         </div>
       </div>

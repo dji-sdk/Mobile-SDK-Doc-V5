@@ -680,7 +680,7 @@
 <h5 id="描述：-v4">描述：</h5>
 <p><font color="#666">将相机码流的画面显示到特定的的surface中，单个surface只能显示一个相机的码流画面。如果针对同一个surface多次调用此接口，将进行该surface的参数更新，比如更新相机索引，surface的宽高和缩放类型。 <br><b>注意：<br> 如果你希望显示不同相机镜头的画面，你可以调用<code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_cameravideostreamsource">KeyCameraVideoStreamSource</a></code>进行相机镜头切换。</b> <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v3">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>设置需要进行码流显示的相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull Surface <font color="#000">surface</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface。支持SurfaceView、TextureView和MediaCodeC的surface，不支持GLSurfaceView的surface以及任何和OpenGL绑定的surface。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">surfaceWidth</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface宽度。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">surfaceHeight</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface高度。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager.html#icamerastreammanager_scaletype">ScaleType</a> <font color="#000">scaleType</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface的缩放类型。</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>设置需要进行码流显示的相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull Surface <font color="#000">surface</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface。支持SurfaceView、TextureView和MediaCodeC的surface，不支持GLSurfaceView的surface以及任何和OpenGL绑定的surface。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">surfaceWidth</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface宽度。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">surfaceHeight</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface高度。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull ScaleType <font color="#000">scaleType</font></font></td><td><font color="#666"><i>设置需要进行码流显示的surface的缩放类型。</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_removecamerastreamsurface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_removecamerastreamsurface_inline">removeCameraStreamSurface</a></div></div><div class="inline-doc" id="icamerastreammanager_removecamerastreamsurface_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeCameraStreamSurface</h6></div>
 
@@ -758,16 +758,13 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_mimetype_h264_inline"></a>H264</font></td><td><font color="#666">H264</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_mimetype_h265_inline"></a>H265</font></td><td><font color="#666">H265</font></td></tr></table></html>
 <h5 id="class-members">Class Members:</h5>
 </div>
-<div class="api-row" id="icamerastreammanager_scaletype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_scaletype_inline">ScaleType</a></div></div><div class="inline-doc" id="icamerastreammanager_scaletype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>ScaleType</h6></div>
+<div class="api-row" id="icamerastreammanager_scaletype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_scaletype_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_scaletype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ScaleType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v13">描述：</h5>
 <p><font color="#666">画面缩放类型。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
-<h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_scaletype_fix_xy_inline"></a>FIX_XY</font></td><td><font color="#666">拉伸铺满。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_scaletype_center_crop_inline"></a>CENTER_CROP</font></td><td><font color="#666">裁剪适应铺满。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_scaletype_center_inside_inline"></a>CENTER_INSIDE</font></td><td><font color="#666">缩放适应。</font></td></tr></table></html>
-<h5 id="class-members-v2">Class Members:</h5>
 </div>
 <div class="api-row" id="icamerastreammanager_frameformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_frameformat_inline">FrameFormat</a></div></div><div class="inline-doc" id="icamerastreammanager_frameformat_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>FrameFormat</h6></div>
@@ -776,9 +773,9 @@
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v14">描述：</h5>
 <p><font color="#666">帧数据格式。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
-<h5 id="enum-members-v3">Enum Members:</h5>
+<h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_yuv420_888_inline"></a>YUV420_888</font></td><td><font color="#666">YUV420_888</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_yuv444_888_inline"></a>YUV444_888</font></td><td><font color="#666">YUV444_888</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_yuy2_inline"></a>YUY2</font></td><td><font color="#666">YUV2</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_nv21_inline"></a>NV21</font></td><td><font color="#666">NV21</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_rgba_8888_inline"></a>RGBA_8888</font></td><td><font color="#666">RGBA_8888</font></td></tr></table></html>
-<h5 id="class-members-v3">Class Members:</h5>
+<h5 id="class-members-v2">Class Members:</h5>
 </div>
 <div class="api-row" id="icamerastreammanager_pinpointinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a></div></div><div class="api-row" id="icamerastreammanager_pinpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a></div></div><html><p><br></p></html>
 <h4 id="members">Members</h4>
@@ -789,9 +786,9 @@
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.datacenter.camera.view</font></td></tr></table></html>
 <h5 id="描述：-v15">描述：</h5>
 <p><font color="#666">Pin点回调结果。</font></p>
-<h5 id="enum-members-v4">Enum Members:</h5>
+<h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_success_inline"></a>SUCCESS</font></td><td><font color="#666">成功获取Pin点位置，Pin点在图传界面中。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_success_but_out_of_screen_inline"></a>SUCCESS_BUT_OUT_OF_SCREEN</font></td><td><font color="#666">成功获取Pin点位置，但该点不在图传界面中，应该显示在侧面，请参考DJI Pilot。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_failed_inline"></a>FAILED</font></td><td><font color="#666">获取Pin点位置失败。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_invalid_drone_position_inline"></a>INVALID_DRONE_POSITION</font></td><td><font color="#666">获取Pin点位置失败，因为无法获取飞行器位置。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_invalid_point_position_inline"></a>INVALID_POINT_POSITION</font></td><td><font color="#666">获取Pin点位置失败，因为设置的GPS位置是无效的。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_gimbal_atti_error_inline"></a>GIMBAL_ATTI_ERROR</font></td><td><font color="#666">获取Pin点位置失败，因为云台姿态是无效的。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_camera_error_inline"></a>CAMEAR_ERROR</font></td><td><font color="#666">获取Pin点位置失败，因为相机错误。</font></td></tr></table></html>
-<h5 id="class-members-v4">Class Members:</h5>
+<h5 id="class-members-v3">Class Members:</h5>
 </div>
 
         </div>
