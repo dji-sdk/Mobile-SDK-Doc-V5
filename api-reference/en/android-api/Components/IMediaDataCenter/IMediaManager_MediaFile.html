@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -288,12 +288,6 @@
                             </dd>
                             <dd><a data-href="ICameraStreamManager.html" class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
-                                      </dd>
-                                      <dd><a href="ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
-                                      </dd>
-                                      <dd><a href="ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
-                                      </dd>
                                       <dd><a href="ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -678,7 +672,10 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getFileName</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.datacenter.media</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Get name of media file. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
+<p><font color="#666">Get name of media file.
+<br><b>Notice:<br>
+Zenmuse P1 cannot obtain the extension name of the customized file. This is a legacy issue in the camera protocol design.</b><br>
+<br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>Return name of media file.</i></font></td></tr></table></html></div>
 <div class="api-row" id="imediamanager_mediafile_getfilesize"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#imediamanager_mediafile_getfilesize_inline">getFileSize</a></div></div><div class="inline-doc" id="imediamanager_mediafile_getfilesize_inline" <blockquote>

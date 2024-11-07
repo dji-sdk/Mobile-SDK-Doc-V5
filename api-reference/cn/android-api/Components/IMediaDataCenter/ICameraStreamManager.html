@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -288,12 +288,6 @@
                             </dd>
                             <dd><a data-href class="sub-toggle">ICameraStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a>
-                                      </dd>
-                                      <dd><a href="ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a>
-                                      </dd>
-                                      <dd><a href="ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a>
-                                      </dd>
                                       <dd><a href="ICameraStreamManager_StreamInfo.html">StreamInfo</a>
                                       </dd>
                                       <dd><a href="ICameraStreamManager_PinPointInfo.html">PinPointInfo</a>
@@ -662,7 +656,7 @@
 <h5 id="描述：-v2">描述：</h5>
 <p><font color="#666">设置可用相机监听器。通过此监听器可以监听可用的相机索引。获取到可用的相机索引以后可以调用<code><a href="../../Components/IMediaDataCenter/ICameraStreamManager.html#icamerastreammanager_putcamerastreamsurface">putCameraStreamSurface</a></code>显示特定相机的码流。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html#icamerastreammanager_availablecameraupdatedlistener">AvailableCameraUpdatedListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>可用相机监听器</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull AvailableCameraUpdatedListener <font color="#000">listener</font></font></td><td><font color="#666"><i>可用相机监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_removeavailablecameraupdatedlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_removeavailablecameraupdatedlistener_inline">removeAvailableCameraUpdatedListener</a></div></div><div class="inline-doc" id="icamerastreammanager_removeavailablecameraupdatedlistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeAvailableCameraUpdatedListener</h6></div>
 
@@ -671,7 +665,7 @@
 <h5 id="描述：-v3">描述：</h5>
 <p><font color="#666">移除可用相机监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v2">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html#icamerastreammanager_availablecameraupdatedlistener">AvailableCameraUpdatedListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>可用相机监听器</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull AvailableCameraUpdatedListener <font color="#000">listener</font></font></td><td><font color="#666"><i>可用相机监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_putcamerastreamsurface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_putcamerastreamsurface_inline">putCameraStreamSurface</a></div></div><div class="inline-doc" id="icamerastreammanager_putcamerastreamsurface_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>putCameraStreamSurface</h6></div>
 
@@ -698,7 +692,7 @@
 <h5 id="描述：-v6">描述：</h5>
 <p><font color="#666">添加码流数据监听器。通过此监听器可以接收指定相机的码流数据。你可以使用此码流数据自行解码显示或者实现第三方直播等功能。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v5">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>设置需要监听的相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html#icamerastreammanager_receivestreamlistener">ReceiveStreamListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>码流数据监听器</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>设置需要监听的相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull ReceiveStreamListener <font color="#000">listener</font></font></td><td><font color="#666"><i>码流数据监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_removereceivestreamlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_removereceivestreamlistener_inline">removeReceiveStreamListener</a></div></div><div class="inline-doc" id="icamerastreammanager_removereceivestreamlistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeReceiveStreamListener</h6></div>
 
@@ -707,7 +701,7 @@
 <h5 id="描述：-v7">描述：</h5>
 <p><font color="#666">移除码流数据监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v6">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html#icamerastreammanager_receivestreamlistener">ReceiveStreamListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>码流数据监听器</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull ReceiveStreamListener <font color="#000">listener</font></font></td><td><font color="#666"><i>码流数据监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_addframelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_addframelistener_inline">addFrameListener</a></div></div><div class="inline-doc" id="icamerastreammanager_addframelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addFrameListener</h6></div>
 
@@ -716,7 +710,7 @@
 <h5 id="描述：-v8">描述：</h5>
 <p><font color="#666">添加帧数据监听器。通过此监听器可以监听指定相机解码后的帧数据，你可以使用帧数据实现AI识别等功能。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v7">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>设置需要监听的相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager.html#icamerastreammanager_frameformat">FrameFormat</a> <font color="#000">format</font></font></td><td><font color="#666"><i>设置需要监听的帧格式。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html#icamerastreammanager_cameraframelistener">CameraFrameListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>帧数据监听器</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>设置需要监听的相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull FrameFormat <font color="#000">format</font></font></td><td><font color="#666"><i>设置需要监听的帧格式。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull CameraFrameListener <font color="#000">listener</font></font></td><td><font color="#666"><i>帧数据监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_removeframelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_removeframelistener_inline">removeFrameListener</a></div></div><div class="inline-doc" id="icamerastreammanager_removeframelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeFrameListener</h6></div>
 
@@ -725,7 +719,7 @@
 <h5 id="描述：-v9">描述：</h5>
 <p><font color="#666">移除帧数据监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v8">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html#icamerastreammanager_cameraframelistener">CameraFrameListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>帧数据监听器</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull CameraFrameListener <font color="#000">listener</font></font></td><td><font color="#666"><i>帧数据监听器</i></font></td></tr></table></html></div>
 <div class="api-row" id="icamerastreammanager_setkeepalivevideodecoder"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_setkeepalivevideodecoder_inline">setKeepAliveDecoding</a></div></div><div class="inline-doc" id="icamerastreammanager_setkeepalivevideodecoder_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setKeepAliveDecoding</h6></div>
 
@@ -747,35 +741,53 @@
 <h5 id="返回值：">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPointInfo.html#icamerastreammanager_pinpointinfo">PinPointInfo</a></font></td><td><font color="#666"><i>返回Pin点信息。</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="icamerastreammanager_availablecameraupdatedlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_AvailableCameraUpdatedListener.html">AvailableCameraUpdatedListener</a></div></div><div class="api-row" id="icamerastreammanager_cameraframelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_CameraFrameListener.html">CameraFrameListener</a></div></div><div class="api-row" id="icamerastreammanager_receivestreamlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_ReceiveStreamListener.html">ReceiveStreamListener</a></div></div><div class="api-row" id="icamerastreammanager_streaminfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a></div></div><div class="api-row" id="icamerastreammanager_mimetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_mimetype_inline">MimeType</a></div></div><div class="inline-doc" id="icamerastreammanager_mimetype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>MimeType</h6></div>
+<div class="api-row" id="icamerastreammanager_availablecameraupdatedlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_availablecameraupdatedlistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_availablecameraupdatedlistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">AvailableCameraUpdatedListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v12">描述：</h5>
+<p><font color="#666">可用相机监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="icamerastreammanager_cameraframelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_cameraframelistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_cameraframelistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CameraFrameListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v13">描述：</h5>
+<p><font color="#666">帧数据监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="icamerastreammanager_receivestreamlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_receivestreamlistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_receivestreamlistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ReceiveStreamListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v14">描述：</h5>
+<p><font color="#666">码流数据监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="icamerastreammanager_streaminfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a></div></div><div class="api-row" id="icamerastreammanager_mimetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_mimetype_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_mimetype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> MimeType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v12">描述：</h5>
+<h5 id="描述：-v15">描述：</h5>
 <p><font color="#666">编解码的媒体类型，支持H264和H265。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
-<h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_mimetype_h264_inline"></a>H264</font></td><td><font color="#666">H264</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_mimetype_h265_inline"></a>H265</font></td><td><font color="#666">H265</font></td></tr></table></html>
-<h5 id="class-members">Class Members:</h5>
 </div>
 <div class="api-row" id="icamerastreammanager_scaletype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_scaletype_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_scaletype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ScaleType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v13">描述：</h5>
+<h5 id="描述：-v16">描述：</h5>
 <p><font color="#666">画面缩放类型。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
-<div class="api-row" id="icamerastreammanager_frameformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_frameformat_inline">FrameFormat</a></div></div><div class="inline-doc" id="icamerastreammanager_frameformat_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>FrameFormat</h6></div>
+<div class="api-row" id="icamerastreammanager_frameformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_frameformat_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_frameformat_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> FrameFormat</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v14">描述：</h5>
+<h5 id="描述：-v17">描述：</h5>
 <p><font color="#666">帧数据格式。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
-<h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_yuv420_888_inline"></a>YUV420_888</font></td><td><font color="#666">YUV420_888</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_yuv444_888_inline"></a>YUV444_888</font></td><td><font color="#666">YUV444_888</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_yuy2_inline"></a>YUY2</font></td><td><font color="#666">YUV2</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_nv21_inline"></a>NV21</font></td><td><font color="#666">NV21</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_frameformat_rgba_8888_inline"></a>RGBA_8888</font></td><td><font color="#666">RGBA_8888</font></td></tr></table></html>
-<h5 id="class-members-v2">Class Members:</h5>
 </div>
 <div class="api-row" id="icamerastreammanager_pinpointinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a></div></div><div class="api-row" id="icamerastreammanager_pinpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a></div></div><html><p><br></p></html>
 <h4 id="members">Members</h4>
@@ -784,11 +796,11 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> Result</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.datacenter.camera.view</font></td></tr></table></html>
-<h5 id="描述：-v15">描述：</h5>
+<h5 id="描述：-v18">描述：</h5>
 <p><font color="#666">Pin点回调结果。</font></p>
-<h5 id="enum-members-v3">Enum Members:</h5>
+<h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_success_inline"></a>SUCCESS</font></td><td><font color="#666">成功获取Pin点位置，Pin点在图传界面中。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_success_but_out_of_screen_inline"></a>SUCCESS_BUT_OUT_OF_SCREEN</font></td><td><font color="#666">成功获取Pin点位置，但该点不在图传界面中，应该显示在侧面，请参考DJI Pilot。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_failed_inline"></a>FAILED</font></td><td><font color="#666">获取Pin点位置失败。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_invalid_drone_position_inline"></a>INVALID_DRONE_POSITION</font></td><td><font color="#666">获取Pin点位置失败，因为无法获取飞行器位置。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_invalid_point_position_inline"></a>INVALID_POINT_POSITION</font></td><td><font color="#666">获取Pin点位置失败，因为设置的GPS位置是无效的。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_gimbal_atti_error_inline"></a>GIMBAL_ATTI_ERROR</font></td><td><font color="#666">获取Pin点位置失败，因为云台姿态是无效的。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_camera_error_inline"></a>CAMEAR_ERROR</font></td><td><font color="#666">获取Pin点位置失败，因为相机错误。</font></td></tr></table></html>
-<h5 id="class-members-v3">Class Members:</h5>
+<h5 id="class-members">Class Members:</h5>
 </div>
 
         </div>
