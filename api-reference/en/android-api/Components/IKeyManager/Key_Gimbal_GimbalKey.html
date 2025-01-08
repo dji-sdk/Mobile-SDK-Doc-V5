@@ -104,9 +104,13 @@
                             </dd>
                             <dd><a data-href="DJIValue.html" class="sub-toggle">DJIValue<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="Value_FlightController_LightGimbalTotalAdjustInfo.html">LightGimbalTotalAdjustInfo</a>
+                                      </dd>
                                       <dd><a href="Value_Gimbal_Struct_GimbalCalibrationState.html">GimbalCalibrationStatusInfo</a>
                                       </dd>
                                       <dd><a href="Value_Gimbal_Struct_GimbalAttitudeRange.html">GimbalAttitudeRange</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_LightGimbalAdjustInfo.html">LightGimbalAdjustInfo</a>
                                       </dd>
                                       <dd><a href="Value_Gimbal_Struct_GimbalAngleRotation.html">GimbalAngleRotation</a>
                                       </dd>
@@ -203,6 +207,8 @@
                                       <dd><a href="Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_GoHomeInfo.html">GoHomeInfo</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
                                       </dd>
@@ -683,10 +689,10 @@
 </div>
 <html><p><br></p></html>
 <h4 id="basic-operation">Basic Operation</h4>
-<div class="api-row" id="key_gimbal_gimbalmode"><div class="api-col left">Mode</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalmode_inline">KeyGimbalMode</a></div></div><div class="inline-doc" id="key_gimbal_gimbalmode_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">final </font>KeyGimbalMode</h6></div>
+<div class="api-row" id="key_gimbal_gimbalmode"><div class="api-col left">Mode</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalmode_inline">KeyGimbalCMode</a></div></div><div class="inline-doc" id="key_gimbal_gimbalmode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyGimbalCMode</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GimbalMode&gt; KeyGimbalMode = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GimbalMode"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(GimbalMode<span class="class">.<span class="keyword">class</span>,<span class="title">GimbalModeMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;GimbalMode&gt; KeyGimbalCMode = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"GimbalCMode", new SingleValueConverter&lt;&gt;(GimbalMode.class,GimbalModeMsg.class)).canGet(true).canSet(true).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("GimbalMode")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_gimbal_enum_gimbalmode">GimbalMode</a></code><br><br> Set gimbal mode. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
@@ -763,12 +769,44 @@
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Double<br><br> Get total offset value of gimbal roll axis. Fine-tune can be done through <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_finetunerollindegrees">KeyFineTuneRollInDegrees</a></code>. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalcalibrate"><div class="api-col left">Searchlight AL1</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalcalibrate_inline">KeyLightGimbalCalibrate</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalcalibrate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalCalibrate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg, EmptyMsg&gt; KeyLightGimbalCalibrate = <span class="keyword">new</span> KeyLightGimbalCalibrate().canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Start automatic calibration of the searchlight gimbal. You can monitor the calibration status through <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalcalibrationstatus">KeyLightGimbalCalibrationStatus</a></code>. Only supports Searchlight AL1. <br><br><code><i>Supported since MSDK 5.12.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalcalibrationstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalcalibrationstatus_inline">KeyLightGimbalCalibrationStatus</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalcalibrationstatus_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalCalibrationStatus</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GimbalCalibrationStatusInfo&gt; KeyLightGimbalCalibrationStatus = <span class="keyword">new</span> KeyLightGimbalCalibrationStatus().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Gimbal_Struct_GimbalCalibrationState.html#value_gimbal_struct_gimbalcalibrationstate">GimbalCalibrationStatusInfo</a></code><br><br> Get the searchlight gimbal calibration status and progress. The searchlight gimbal calibration status and progress can be obtained only after calling <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalcalibrate">KeyLightGimbalCalibrate</a></code> to start the searchlight gimbal calibration. <br><br><code><i>Supported since MSDK 5.12.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalfinetunepitchindegrees"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalfinetunepitchindegrees_inline">KeyLightGimbalFineTunePitchInDegrees</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalfinetunepitchindegrees_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalFineTunePitchInDegrees</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;LightGimbalAdjustInfo, EmptyMsg&gt; KeyLightGimbalFineTunePitchInDegrees = <span class="keyword">new</span> KeyLightGimbalFineTunePitchInDegrees().canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_LightGimbalAdjustInfo.html#value_flightcontroller_lightgimbaladjustinfo">LightGimbalAdjustInfo</a></code><br><br> The searchlight gimbal pitch axis can be fine-tuned by a custom offset. When the searchlight gimbal still has a small angle offset after returning to the center, this function can be used to level the gimbal. The single fine-tuning range is [-2.0, 2.0], unit: degree, and the total fine-tuning range is [-10.0, 10.0], unit: degree. If the offset is a negative number, the searchlight gimbal will fine-tune the specified degree in the counterclockwise direction. The total fine-tuning offset can be obtained through <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalpitchtotalindegrees">KeyLightGimbalPitchTotalInDegrees</a></code>. <br><br><code><i>Supported since MSDK 5.12.0</i></code></font></p>
+</div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalpitchtotalindegrees"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalpitchtotalindegrees_inline">KeyLightGimbalPitchTotalInDegrees</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalpitchtotalindegrees_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalPitchTotalInDegrees</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;LightGimbalTotalAdjustInfo&gt; KeyLightGimbalPitchTotalInDegrees = <span class="keyword">new</span> KeyLightGimbalPitchTotalInDegrees().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_FlightController_LightGimbalTotalAdjustInfo.html#value_flightcontroller_lightgimbaltotaladjustinfo">LightGimbalTotalAdjustInfo</a></code><br><br> Get the total offset of the searchlight gimbal pitch axis. Fine-tune it via <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalfinetunepitchindegrees">KeyLightGimbalFineTunePitchInDegrees</a></code>. <br><br><code><i>Supported since MSDK 5.12.0</i></code></font></p>
+</div>
 <div class="api-row" id="key_gimbal_calibrategimbal"><div class="api-col left">Calibration</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_calibrategimbal_inline">KeyGimbalCalibrate</a></div></div><div class="inline-doc" id="key_gimbal_calibrategimbal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyGimbalCalibrate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyGimbalCalibrate = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GimbalCalibrate"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"CalibrateGimbal"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Start gimbal automatic calibration. Calibration status can be monitored through <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_gimbalcalibrationstate">KeyGimbalCalibrationStatus</a></code>. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_gimbalcalibrationstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalcalibrationstate_inline">KeyGimbalCalibrationStatus</a></div></div><div class="inline-doc" id="key_gimbal_gimbalcalibrationstate_inline" <blockquote>
@@ -776,7 +814,7 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;GimbalCalibrationStatusInfo&gt; KeyGimbalCalibrationStatus = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"GimbalCalibrationStatus", new DJIValueConverter&lt;&gt;(GimbalCalibrationStatusInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("GimbalCalibrationState")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666"><b>Parameter: </b><code><a href="../../Components/IKeyManager/Value_Gimbal_Struct_GimbalCalibrationState.html#value_gimbal_struct_gimbalcalibrationstate">GimbalCalibrationStatusInfo</a></code><br><br> Get gimbal calibration status and calibration progress after you called <code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_calibrategimbal">KeyGimbalCalibrate</a></code> to start gimbal calibration. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_restorefactorysettings"><div class="api-col left">Fatory Setting</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_restorefactorysettings_inline">KeyRestoreFactorySettings</a></div></div><div class="inline-doc" id="key_gimbal_restorefactorysettings_inline" <blockquote>
@@ -784,7 +822,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyRestoreFactorySettings = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"RestoreFactorySettings"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Restore gimbal parameter to fatory setting. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <html><p><br></p></html>
@@ -794,7 +832,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyPitchRangeExtensionEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PitchRangeExtensionEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Boolean<br><br> Set to enable or disable the pitch range extension of gimbal. Taking M30 series for example, their gimbal is mounted under the drone. When the pitch range extension of gimbal is disabled, the pitch range is [45, -90]. When the pitch range extension of gimbal is enabled, the range extends to [45, -120]. It means when the pitch range extension of gimbal is enabled and the gimbal pitch axis is moving downward, the angle can reach -120 degrees. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_pitchcontrollermaxspeed"><div class="api-col left">Maximum Speed Percentage</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_pitchcontrollermaxspeed_inline">KeyPitchControlMaxSpeed</a></div></div><div class="inline-doc" id="key_gimbal_pitchcontrollermaxspeed_inline" <blockquote>
@@ -802,7 +840,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyPitchControlMaxSpeed = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PitchControlMaxSpeed"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"PitchControllerMaxSpeed"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> Set maximum spped of gimbal pitch control. This value is a percentage, the range is [1,100]. The larger the value, the faster the speed. 100% means that gimbal is controlled by maximum physical speed it can reached. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_yawcontrollermaxspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_yawcontrollermaxspeed_inline">KeyYawControlMaxSpeed</a></div></div><div class="inline-doc" id="key_gimbal_yawcontrollermaxspeed_inline" <blockquote>
@@ -810,7 +848,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyYawControlMaxSpeed = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"YawControlMaxSpeed"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"YawControllerMaxSpeed"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> Set maximum spped of gimbal yaw control. This value is a percentage, the range is [1,100]. The larger the value, the faster the speed. 100% means that gimbal is controlled by maximum physical speed it can reached. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_pitchsmoothingfactor"><div class="api-col left">Slow Start/Stop</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_pitchsmoothingfactor_inline">KeyPitchSmoothingFactor</a></div></div><div class="inline-doc" id="key_gimbal_pitchsmoothingfactor_inline" <blockquote>
@@ -818,7 +856,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyPitchSmoothingFactor = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PitchSmoothingFactor"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> Set gimbal to slow start/stop in pitch direction. The range is [0,30]. The larger the value, the longer the buffer distance of controlling gimbal pitch axis to start/stop turning. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_yawsmoothingfactor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_yawsmoothingfactor_inline">KeyYawSmoothingFactor</a></div></div><div class="inline-doc" id="key_gimbal_yawsmoothingfactor_inline" <blockquote>
@@ -826,7 +864,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyYawSmoothingFactor = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"YawSmoothingFactor"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666"><b>Parameter: </b>Integer<br><br> Set gimbal to slow start/stop in yaw direction. The range is [0,30]. The larger the value, the longer the buffer distance of controlling gimbal pitch axis to start/stop turning. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_gimbalverticalshotenabled"><div class="api-col left">Vertical Shot</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalverticalshotenabled_inline">KeyGimbalVerticalShotEnabled</a></div></div><div class="inline-doc" id="key_gimbal_gimbalverticalshotenabled_inline" <blockquote>
@@ -834,7 +872,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyGimbalVerticalShotEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GimbalVerticalShotEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666"><b>Parameter:</b>Boolean<br><br> Set to enable or disable vertical shooting. Typically used in consumer aircraft. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
 </div>
 

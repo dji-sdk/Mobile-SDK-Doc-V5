@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -104,9 +104,13 @@
                             </dd>
                             <dd><a data-href="../IKeyManager/DJIValue.html" class="sub-toggle">DJIValue<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IKeyManager/Value_FlightController_LightGimbalTotalAdjustInfo.html">LightGimbalTotalAdjustInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_Gimbal_Struct_GimbalCalibrationState.html">GimbalCalibrationStatusInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Gimbal_Struct_GimbalAttitudeRange.html">GimbalAttitudeRange</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_LightGimbalAdjustInfo.html">LightGimbalAdjustInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Gimbal_Struct_GimbalAngleRotation.html">GimbalAngleRotation</a>
                                       </dd>
@@ -203,6 +207,8 @@
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_GoHomeInfo.html">GoHomeInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
                                       </dd>
@@ -740,13 +746,69 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate3D.html#value_common_struct_locationcoordinate3d">LocationCoordinate3D</a> <font color="#000">pointPos</font></font></td><td><font color="#666"><i>GPS位置，可以通过<code><a href="../../Components/IKeyManager/Key_Camera_CameraKey.html#key_camera_lasermeasureinformation">KeyLaserMeasureInformation</a></code>的 <code><a href="../../Components/IKeyManager/Value_Camera_Struct_LaserMeasureInformationMsg.html#value_camera_struct_lasermeasureinformationmsg_getlocation3d">getLocation3D</a></code>接口获取位置，也可以通过地图获取位置。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>设置当前码流显示的相机索引。</i></font></td></tr></table></html>
 <h5 id="返回值：">返回值：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPointInfo.html#icamerastreammanager_pinpointinfo">PinPointInfo</a></font></td><td><font color="#666"><i>返回Pin点信息。</i></font></td></tr></table></html></div>
+<div class="api-row" id="icamerastreammanager_enablevisionassist"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_enablevisionassist_inline">enableVisionAssist</a></div></div><div class="inline-doc" id="icamerastreammanager_enablevisionassist_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>enableVisionAssist</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enableVisionAssist</span><span class="params">(<span class="keyword">boolean</span> enabled, @Nullable CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v12">描述：</h5>
+<p><font color="#666">开启辅助影像功能。辅助影像功能开启后，飞行界面右下角会显示视觉传感器画面（Spotlight Pro、航线飞行、返航模式下不支持开启飞行辅助影像）。你可以调用<code><a href="../../Components/IMediaDataCenter/ICameraStreamManager.html#icamerastreammanager_setvisionassistmode">setVisionAssistViewDirection</a></code>切换辅助影像的方向。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v11">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>true</code>表示开启辅助影像。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
+<div class="api-row" id="icamerastreammanager_setvisionassistmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_setvisionassistmode_inline">setVisionAssistViewDirection</a></div></div><div class="inline-doc" id="icamerastreammanager_setvisionassistmode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setVisionAssistViewDirection</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVisionAssistViewDirection</span><span class="params">(VisionAssistDirection direction, @Nullable CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v13">描述：</h5>
+<p><font color="#666">设置辅助影像方向。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v12">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IMediaDataCenter/ICameraStreamManager.html#value_flightassistant_enum_assistantvideomode">VisionAssistDirection</a> <font color="#000">direction</font></font></td><td><font color="#666"><i>辅助影像方向。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@Nullable <a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
+<div class="api-row" id="icamerastreammanager_addvisionassiststatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_addvisionassiststatuslistener_inline">addVisionAssistStatusListener</a></div></div><div class="inline-doc" id="icamerastreammanager_addvisionassiststatuslistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>addVisionAssistStatusListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addVisionAssistStatusListener</span><span class="params">(@NonNull VisionAssistStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v14">描述：</h5>
+<p><font color="#666">添加辅助影像状态监听器。通过此监听器可以获取辅助影像的开关状态，设置的辅助影像的方向以及支持的辅助影像方向范围等功能。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v13">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull VisionAssistStatusListener <font color="#000">listener</font></font></td><td><font color="#666"><i>辅助影像状态监听器</i></font></td></tr></table></html></div>
+<div class="api-row" id="icamerastreammanager_removevisionassiststatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_removevisionassiststatuslistener_inline">removeVisionAssistStatusListener</a></div></div><div class="inline-doc" id="icamerastreammanager_removevisionassiststatuslistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>removeVisionAssistStatusListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeVisionAssistStatusListener</span><span class="params">(@NonNull VisionAssistStatusListener listener)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v15">描述：</h5>
+<p><font color="#666">移除辅助影像状态监听器。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v14">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull VisionAssistStatusListener <font color="#000">listener</font></font></td><td><font color="#666"><i>辅助影像状态监听器</i></font></td></tr></table></html></div>
+<div class="api-row" id="icamerastreammanager_setstreamencoderbitrate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_setstreamencoderbitrate_inline">setStreamEncoderBitrate</a></div></div><div class="inline-doc" id="icamerastreammanager_setstreamencoderbitrate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setStreamEncoderBitrate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStreamEncoderBitrate</span><span class="params">(ComponentIndexType cameraIndex, <span class="keyword">int</span> bitrate)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v16">描述：</h5>
+<p><font color="#666">设置编码器的码率，单位：bit/s。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v15">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>相机索引。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">bitrate</font></font></td><td><font color="#666"><i>编码器的码率。</i></font></td></tr></table></html></div>
+<div class="api-row" id="icamerastreammanager_getstreamencoderbitrate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_getstreamencoderbitrate_inline">getStreamEncoderBitrate</a></div></div><div class="inline-doc" id="icamerastreammanager_getstreamencoderbitrate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getStreamEncoderBitrate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getStreamEncoderBitrate</span><span class="params">(ComponentIndexType cameraIndex)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v17">描述：</h5>
+<p><font color="#666">获取编码器的码率。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v16">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/KeyTools.html#value_common_enum_componentindextype">ComponentIndexType</a> <font color="#000">cameraIndex</font></font></td><td><font color="#666"><i>相机索引。</i></font></td></tr></table></html>
+<h5 id="返回值：-v2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回对应相机索引的编码器码率。</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="icamerastreammanager_availablecameraupdatedlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_availablecameraupdatedlistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_availablecameraupdatedlistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">AvailableCameraUpdatedListener</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v12">描述：</h5>
+<h5 id="描述：-v18">描述：</h5>
 <p><font color="#666">可用相机监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="icamerastreammanager_cameraframelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_cameraframelistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_cameraframelistener_inline" <blockquote>
@@ -754,7 +816,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CameraFrameListener</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v13">描述：</h5>
+<h5 id="描述：-v19">描述：</h5>
 <p><font color="#666">帧数据监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="icamerastreammanager_receivestreamlistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_receivestreamlistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_receivestreamlistener_inline" <blockquote>
@@ -762,15 +824,34 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ReceiveStreamListener</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v14">描述：</h5>
+<h5 id="描述：-v20">描述：</h5>
 <p><font color="#666">码流数据监听器。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="icamerastreammanager_visionassiststatuslistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_visionassiststatuslistener_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_visionassiststatuslistener_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">VisionAssistStatusListener</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="描述：-v21">描述：</h5>
+<p><font color="#666">辅助影像监听器。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="value_flightassistant_enum_assistantvideomode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#value_flightassistant_enum_assistantvideomode_inline">VisionAssistDirection</a></div></div><div class="inline-doc" id="value_flightassistant_enum_assistantvideomode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>VisionAssistDirection</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> VisionAssistDirection implements JNIProguardKeepTag</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.value.flightassistant</font></td></tr></table></html>
+<h5 id="描述：-v22">描述：</h5>
+<p><font color="#666">辅助影像模式。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_off_inline"></a>OFF</font></td><td><font color="#666">关闭。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_front_inline"></a>FRONT</font></td><td><font color="#666">手动模式：前。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_left_inline"></a>LEFT</font></td><td><font color="#666">手动模式：左。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_right_inline"></a>RIGHT</font></td><td><font color="#666">手动模式：右。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_up_inline"></a>UP</font></td><td><font color="#666">手动模式：上。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_down_inline"></a>DOWN</font></td><td><font color="#666">手动模式：下。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#value_flightassistant_enum_assistantvideomode_auto_inline"></a>AUTO</font></td><td><font color="#666">自动模式，相机将基于飞行方向自动切换视觉传感器画面。</font></td></tr></table></html>
+<h5 id="class-members">Class Members:</h5>
 </div>
 <div class="api-row" id="icamerastreammanager_streaminfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_StreamInfo.html">StreamInfo</a></div></div><div class="api-row" id="icamerastreammanager_mimetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_mimetype_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_mimetype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> MimeType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v15">描述：</h5>
+<h5 id="描述：-v23">描述：</h5>
 <p><font color="#666">编解码的媒体类型，支持H264和H265。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="icamerastreammanager_scaletype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_scaletype_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_scaletype_inline" <blockquote>
@@ -778,7 +859,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> ScaleType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v16">描述：</h5>
+<h5 id="描述：-v24">描述：</h5>
 <p><font color="#666">画面缩放类型。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="icamerastreammanager_frameformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#icamerastreammanager_frameformat_inline"></a></div></div><div class="inline-doc" id="icamerastreammanager_frameformat_inline" <blockquote>
@@ -786,7 +867,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> FrameFormat</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="描述：-v17">描述：</h5>
+<h5 id="描述：-v25">描述：</h5>
 <p><font color="#666">帧数据格式。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="icamerastreammanager_pinpointinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPointInfo.html">PinPointInfo</a></div></div><div class="api-row" id="icamerastreammanager_pinpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMediaDataCenter/ICameraStreamManager_PinPoint.html">PinPoint</a></div></div><html><p><br></p></html>
@@ -796,11 +877,11 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> Result</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.datacenter.camera.view</font></td></tr></table></html>
-<h5 id="描述：-v18">描述：</h5>
+<h5 id="描述：-v26">描述：</h5>
 <p><font color="#666">Pin点回调结果。</font></p>
-<h5 id="enum-members">Enum Members:</h5>
+<h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_success_inline"></a>SUCCESS</font></td><td><font color="#666">成功获取Pin点位置，Pin点在图传界面中。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_success_but_out_of_screen_inline"></a>SUCCESS_BUT_OUT_OF_SCREEN</font></td><td><font color="#666">成功获取Pin点位置，但该点不在图传界面中，应该显示在侧面，请参考DJI Pilot。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_failed_inline"></a>FAILED</font></td><td><font color="#666">获取Pin点位置失败。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_invalid_drone_position_inline"></a>INVALID_DRONE_POSITION</font></td><td><font color="#666">获取Pin点位置失败，因为无法获取飞行器位置。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_invalid_point_position_inline"></a>INVALID_POINT_POSITION</font></td><td><font color="#666">获取Pin点位置失败，因为设置的GPS位置是无效的。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_gimbal_atti_error_inline"></a>GIMBAL_ATTI_ERROR</font></td><td><font color="#666">获取Pin点位置失败，因为云台姿态是无效的。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#icamerastreammanager_pinpointresult_camera_error_inline"></a>CAMEAR_ERROR</font></td><td><font color="#666">获取Pin点位置失败，因为相机错误。</font></td></tr></table></html>
-<h5 id="class-members">Class Members:</h5>
+<h5 id="class-members-v2">Class Members:</h5>
 </div>
 
         </div>

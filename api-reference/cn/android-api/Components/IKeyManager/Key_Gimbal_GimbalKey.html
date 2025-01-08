@@ -104,9 +104,13 @@
                             </dd>
                             <dd><a data-href="DJIValue.html" class="sub-toggle">DJIValue<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="Value_FlightController_LightGimbalTotalAdjustInfo.html">LightGimbalTotalAdjustInfo</a>
+                                      </dd>
                                       <dd><a href="Value_Gimbal_Struct_GimbalCalibrationState.html">GimbalCalibrationStatusInfo</a>
                                       </dd>
                                       <dd><a href="Value_Gimbal_Struct_GimbalAttitudeRange.html">GimbalAttitudeRange</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_LightGimbalAdjustInfo.html">LightGimbalAdjustInfo</a>
                                       </dd>
                                       <dd><a href="Value_Gimbal_Struct_GimbalAngleRotation.html">GimbalAngleRotation</a>
                                       </dd>
@@ -203,6 +207,8 @@
                                       <dd><a href="Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
+                                      <dd><a href="Value_FlightController_GoHomeInfo.html">GoHomeInfo</a>
                                       </dd>
                                       <dd><a href="Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
                                       </dd>
@@ -684,10 +690,10 @@
 </div>
 <html><p><br></p></html>
 <h4 id="基本操作">基本操作</h4>
-<div class="api-row" id="key_gimbal_gimbalmode"><div class="api-col left">模式</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalmode_inline">KeyGimbalMode</a></div></div><div class="inline-doc" id="key_gimbal_gimbalmode_inline" <blockquote>
+<div class="api-row" id="key_gimbalkey_gimbalmode"><div class="api-col left">模式</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_gimbalmode_inline">KeyGimbalMode</a></div></div><div class="inline-doc" id="key_gimbalkey_gimbalmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyGimbalMode</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GimbalMode&gt; KeyGimbalMode = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GimbalMode"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(GimbalMode<span class="class">.<span class="keyword">class</span>,<span class="title">GimbalModeMsg</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">true</span>).<span class="title">canSet</span>(<span class="title">true</span>).<span class="title">canListen</span>(<span class="title">true</span>).<span class="title">canPerformAction</span>(<span class="title">false</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GimbalMode&gt; KeyGimbalMode = <span class="keyword">new</span> KeyGimbalMode().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="描述：-v6">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/DJIValue.html#value_gimbal_enum_gimbalmode">GimbalMode</a></code><br><br> 设置云台模式。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
@@ -766,12 +772,44 @@
 <h5 id="描述：-v15">描述：</h5>
 <p><font color="#666"><b>参数: </b>Double<br><br> 获取云台横滚轴总偏移量。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_finetunerollindegrees">KeyFineTuneRollInDegrees</a></code>进行微调。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalcalibrate"><div class="api-col left">AL1 探照灯</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalcalibrate_inline">KeyLightGimbalCalibrate</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalcalibrate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalCalibrate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg, EmptyMsg&gt; KeyLightGimbalCalibrate = <span class="keyword">new</span> KeyLightGimbalCalibrate().canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="描述：-v16">描述：</h5>
+<p><font color="#666">启动探照灯云台自动校准。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalcalibrationstatus">KeyLightGimbalCalibrationStatus</a></code>监听校准状态。 仅支持AL1 探照灯。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalcalibrationstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalcalibrationstatus_inline">KeyLightGimbalCalibrationStatus</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalcalibrationstatus_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalCalibrationStatus</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;GimbalCalibrationStatusInfo&gt; KeyLightGimbalCalibrationStatus = <span class="keyword">new</span> KeyLightGimbalCalibrationStatus().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="描述：-v17">描述：</h5>
+<p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Gimbal_Struct_GimbalCalibrationState.html#value_gimbal_struct_gimbalcalibrationstate">GimbalCalibrationStatusInfo</a></code><br><br> 获取探照灯云台校准状态和校准进度。调用<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalcalibrate">KeyLightGimbalCalibrate</a></code>启动探照灯云台校准后才能获取探照灯云台校准状态和校准进度。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalfinetunepitchindegrees"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalfinetunepitchindegrees_inline">KeyLightGimbalFineTunePitchInDegrees</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalfinetunepitchindegrees_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalFineTunePitchInDegrees</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;LightGimbalAdjustInfo, EmptyMsg&gt; KeyLightGimbalFineTunePitchInDegrees = <span class="keyword">new</span> KeyLightGimbalFineTunePitchInDegrees().canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="描述：-v18">描述：</h5>
+<p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_LightGimbalAdjustInfo.html#value_flightcontroller_lightgimbaladjustinfo">LightGimbalAdjustInfo</a></code><br><br> 探照灯云台俯仰轴可以通过自定义偏移量进行微调。当探照灯云台回中后仍然有小角度偏移，可用此功能进行云台调平。单次可微调的范围是[-2.0, 2.0]，单位：度，总共可微调的范围是[-10.0, 10.0]，单位：度， 如果偏移量为负数，探照灯云台将在逆时针方向微调指定的度数。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalpitchtotalindegrees">KeyLightGimbalPitchTotalInDegrees</a></code>获取总共微调的偏移量。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+</div>
+<div class="api-row" id="key_gimbalkey_keylightgimbalpitchtotalindegrees"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbalkey_keylightgimbalpitchtotalindegrees_inline">KeyLightGimbalPitchTotalInDegrees</a></div></div><div class="inline-doc" id="key_gimbalkey_keylightgimbalpitchtotalindegrees_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">final </font>KeyLightGimbalPitchTotalInDegrees</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;LightGimbalTotalAdjustInfo&gt; KeyLightGimbalPitchTotalInDegrees = <span class="keyword">new</span> KeyLightGimbalPitchTotalInDegrees().canGet(<span class="keyword">true</span>).canSet(<span class="keyword">false</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
+<h5 id="描述：-v19">描述：</h5>
+<p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_FlightController_LightGimbalTotalAdjustInfo.html#value_flightcontroller_lightgimbaltotaladjustinfo">LightGimbalTotalAdjustInfo</a></code><br><br> 获取探照灯云台俯仰轴总偏移量。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbalkey_keylightgimbalfinetunepitchindegrees">KeyLightGimbalFineTunePitchInDegrees</a></code>进行微调。 <br><br><code><i>MSDK 5.12.0开始支持</i></code></font></p>
+</div>
 <div class="api-row" id="key_gimbal_calibrategimbal"><div class="api-col left">校准</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_calibrategimbal_inline">KeyGimbalCalibrate</a></div></div><div class="inline-doc" id="key_gimbal_calibrategimbal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">final </font>KeyGimbalCalibrate</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyGimbalCalibrate = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GimbalCalibrate"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"CalibrateGimbal"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v16">描述：</h5>
+<h5 id="描述：-v20">描述：</h5>
 <p><font color="#666">启动云台自动校准。可通过<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_gimbalcalibrationstate">KeyGimbalCalibrationStatus</a></code>监听校准状态。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_gimbalcalibrationstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalcalibrationstate_inline">KeyGimbalCalibrationStatus</a></div></div><div class="inline-doc" id="key_gimbal_gimbalcalibrationstate_inline" <blockquote>
@@ -779,7 +817,7 @@
 
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">static final DJIKeyInfo&lt;GimbalCalibrationStatusInfo&gt; KeyGimbalCalibrationStatus = new DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),"GimbalCalibrationStatus", new DJIValueConverter&lt;&gt;(GimbalCalibrationStatusInfo.class)).canGet(true).canSet(false).canListen(true).canPerformAction(false).setIsEvent(false).setInnerIdentifier("GimbalCalibrationState")</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v17">描述：</h5>
+<h5 id="描述：-v21">描述：</h5>
 <p><font color="#666"><b>参数: </b><code><a href="../../Components/IKeyManager/Value_Gimbal_Struct_GimbalCalibrationState.html#value_gimbal_struct_gimbalcalibrationstate">GimbalCalibrationStatusInfo</a></code><br><br> 获取云台校准状态和校准进度。调用<code><a href="../../Components/IKeyManager/Key_Gimbal_GimbalKey.html#key_gimbal_calibrategimbal">KeyGimbalCalibrate</a></code>启动云台校准后才能获取云台校准状态和校准进度。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_restorefactorysettings"><div class="api-col left">出厂设置</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_restorefactorysettings_inline">KeyRestoreFactorySettings</a></div></div><div class="inline-doc" id="key_gimbal_restorefactorysettings_inline" <blockquote>
@@ -787,7 +825,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;EmptyMsg,EmptyMsg&gt; KeyRestoreFactorySettings = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"RestoreFactorySettings"</span>, EmptyValueConverter.converter,EmptyValueConverter.converter).canGet(<span class="keyword">false</span>).canSet(<span class="keyword">false</span>).canListen(<span class="keyword">false</span>).canPerformAction(<span class="keyword">true</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v18">描述：</h5>
+<h5 id="描述：-v22">描述：</h5>
 <p><font color="#666">将云台参数恢复到出厂设置。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <html><p><br></p></html>
@@ -797,7 +835,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyPitchRangeExtensionEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PitchRangeExtensionEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v19">描述：</h5>
+<h5 id="描述：-v23">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br> 设置开启或者关闭云台俯仰限位扩展。以M30系列机型为例，它们的云台是下置的，在未开启限位扩展时，云台俯仰限位的角度范围为[45, -90]，在开启限位扩展后，角度范围扩展到[45, -120]。也就是说开启俯仰限位扩展后，当云台俯仰轴往下调节时，角度可以控制到-120度。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_pitchcontrollermaxspeed"><div class="api-col left">最大速度百分比</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_pitchcontrollermaxspeed_inline">KeyPitchControlMaxSpeed</a></div></div><div class="inline-doc" id="key_gimbal_pitchcontrollermaxspeed_inline" <blockquote>
@@ -805,7 +843,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyPitchControlMaxSpeed = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PitchControlMaxSpeed"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"PitchControllerMaxSpeed"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v20">描述：</h5>
+<h5 id="描述：-v24">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br> 设置云台俯仰控制的最大速度，该数值为百分比，范围：[1，100]。数值越大速度越快，100%则表示云台所能达到的最大物理速度进行控制。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_yawcontrollermaxspeed"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_yawcontrollermaxspeed_inline">KeyYawControlMaxSpeed</a></div></div><div class="inline-doc" id="key_gimbal_yawcontrollermaxspeed_inline" <blockquote>
@@ -813,7 +851,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyYawControlMaxSpeed = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"YawControlMaxSpeed"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>).setInnerIdentifier(<span class="string">"YawControllerMaxSpeed"</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v21">描述：</h5>
+<h5 id="描述：-v25">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br> 设置云台偏航控制的最大速度，该数值为百分比，范围：[1，100]。数值越大速度越快，100%则表示云台所能达到的最大物理速度进行控制。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_pitchsmoothingfactor"><div class="api-col left">缓启/停</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_pitchsmoothingfactor_inline">KeyPitchSmoothingFactor</a></div></div><div class="inline-doc" id="key_gimbal_pitchsmoothingfactor_inline" <blockquote>
@@ -821,7 +859,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyPitchSmoothingFactor = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PitchSmoothingFactor"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v22">描述：</h5>
+<h5 id="描述：-v26">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br> 设置云台俯仰缓启/停，范围：[0,30]，数值越大，控制云台俯仰轴启动/停止转动的缓冲距离越长。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_yawsmoothingfactor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_yawsmoothingfactor_inline">KeyYawSmoothingFactor</a></div></div><div class="inline-doc" id="key_gimbal_yawsmoothingfactor_inline" <blockquote>
@@ -829,7 +867,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Integer&gt; KeyYawSmoothingFactor = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"YawSmoothingFactor"</span>, SingleValueConverter.IntegerConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v23">描述：</h5>
+<h5 id="描述：-v27">描述：</h5>
 <p><font color="#666"><b>参数: </b>Integer<br><br> 设置云台偏航缓启/停，范围：[0,30]，数值越大，控制云台偏航轴启动/停止转动的缓冲距离越长。 <br><br><code><i>MSDK 5.0.0开始支持</i></code></font></p>
 </div>
 <div class="api-row" id="key_gimbal_gimbalverticalshotenabled"><div class="api-col left">竖拍</div><div class="api-col middle" style="color:#AAA"> </div><div class="api-col right"><a class="trigger" href="#key_gimbal_gimbalverticalshotenabled_inline">KeyGimbalVerticalShotEnabled</a></div></div><div class="inline-doc" id="key_gimbal_gimbalverticalshotenabled_inline" <blockquote>
@@ -837,7 +875,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIKeyInfo&lt;Boolean&gt; KeyGimbalVerticalShotEnabled = <span class="keyword">new</span> DJIKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"GimbalVerticalShotEnabled"</span>, SingleValueConverter.BooleanConverter).canGet(<span class="keyword">true</span>).canSet(<span class="keyword">true</span>).canListen(<span class="keyword">true</span>).canPerformAction(<span class="keyword">false</span>).setIsEvent(<span class="keyword">false</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
-<h5 id="描述：-v24">描述：</h5>
+<h5 id="描述：-v28">描述：</h5>
 <p><font color="#666"><b>参数: </b>Boolean<br><br> 设置开启或者关闭竖拍。通常用于消费类机型。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
 </div>
 

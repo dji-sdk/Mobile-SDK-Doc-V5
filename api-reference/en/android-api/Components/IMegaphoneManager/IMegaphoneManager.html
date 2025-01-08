@@ -104,9 +104,13 @@
                             </dd>
                             <dd><a data-href="../IKeyManager/DJIValue.html" class="sub-toggle">DJIValue<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="../IKeyManager/Value_FlightController_LightGimbalTotalAdjustInfo.html">LightGimbalTotalAdjustInfo</a>
+                                      </dd>
                                       <dd><a href="../IKeyManager/Value_Gimbal_Struct_GimbalCalibrationState.html">GimbalCalibrationStatusInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Gimbal_Struct_GimbalAttitudeRange.html">GimbalAttitudeRange</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_LightGimbalAdjustInfo.html">LightGimbalAdjustInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_Gimbal_Struct_GimbalAngleRotation.html">GimbalAngleRotation</a>
                                       </dd>
@@ -203,6 +207,8 @@
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_MultiGimbalSyncStatus.html">MultiGimbalSyncStatus</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_IMUCalibrationHint.html">IMUCalibrationInfo</a>
+                                      </dd>
+                                      <dd><a href="../IKeyManager/Value_FlightController_GoHomeInfo.html">GoHomeInfo</a>
                                       </dd>
                                       <dd><a href="../IKeyManager/Value_FlightController_Struct_LEDsSettings.html">LEDsSettings</a>
                                       </dd>
@@ -855,7 +861,7 @@
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Speaker working mode. Includes TTS text mode and voice mode. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_workmode_tts_inline"></a>TTS</font></td><td><font color="#666">TTS mode. Input text is converted into voice to play.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_workmode_voice_inline"></a>VOICE</font></td><td><font color="#666">Voice mode. Input voice to play.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_workmode_tts_inline"></a>TTS</font></td><td><font color="#666">TTS mode. Input text is converted into voice to play.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_workmode_voice_inline"></a>VOICE</font></td><td><font color="#666">Voice mode. Input voice to play.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_workmode_real_time_inline"></a>REAL_TIME</font></td><td><font color="#666">Real time mode. Only support by AS1 Megaphone.</font></td></tr></table></html>
 <h5 id="class-members-v3">Class Members:</h5>
 </div>
 <div class="api-row" id="imegaphonemanager_playmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_playmode_inline">PlayMode</a></div></div><div class="inline-doc" id="imegaphonemanager_playmode_inline" <blockquote>
@@ -877,7 +883,7 @@
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">Speaker status. <br><br><code><i>Supported since MSDK 5.0.0</i></code></font></p>
 <h5 id="enum-members-v4">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_idel_inline"></a>IDEL</font></td><td><font color="#666">The megaphone is idle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_in_transmission_inline"></a>IN_TRANSMISSION</font></td><td><font color="#666">The megaphone is in data transmission status.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_playing_inline"></a>PLAYING</font></td><td><font color="#666">The megaphone is in data playing status.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_in_exception_inline"></a>IN_EXCEPTION</font></td><td><font color="#666">The microphone is in an abnormal status. Please contact the equipment provider to solve it.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_tts_in_conversion_inline"></a>TTS_IN_CONVERSION</font></td><td><font color="#666">TTS is being converted to voice.</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_idle_inline"></a>IDLE</font></td><td><font color="#666">The megaphone is idle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_in_transmission_inline"></a>IN_TRANSMISSION</font></td><td><font color="#666">The megaphone is in data transmission status.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_playing_inline"></a>PLAYING</font></td><td><font color="#666">The megaphone is in data playing status.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_in_exception_inline"></a>IN_EXCEPTION</font></td><td><font color="#666">The microphone is in an abnormal status. Please contact the equipment provider to solve it.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#imegaphonemanager_megaphonestatus_tts_in_conversion_inline"></a>TTS_IN_CONVERSION</font></td><td><font color="#666">TTS is being converted to voice.</font></td></tr></table></html>
 <h5 id="class-members-v5">Class Members:</h5>
 </div>
 <div class="api-row" id="imegaphonemanager_fileinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IMegaphoneManager/IMegaphoneManager_FileInfo.html">FileInfo</a></div></div><div class="api-row" id="imegaphonemanager_uploadtype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#imegaphonemanager_uploadtype_inline">UploadType</a></div></div><div class="inline-doc" id="imegaphonemanager_uploadtype_inline" <blockquote>
