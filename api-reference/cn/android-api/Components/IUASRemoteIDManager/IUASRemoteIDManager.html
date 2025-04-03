@@ -406,6 +406,62 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager.html" class="sub-toggle">IIntelligentFlightManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html">IntelligentFlightInfoListener</a>
+                            </dd>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html">AutoSensingInfoListener</a>
+                            </dd>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfo.html">IntelligentFlightInfo</a>
+                            </dd>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html">AutoSensingInfo</a>
+                            </dd>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
+                            </dd>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html">SmartTrackInfo</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html">SmartTrackTarget</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html" class="sub-toggle">ISpotLightManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SpotLightManager_SpotLightCapability.html">SpotLightCapability</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SpotLightManager_SpotLightTarget.html">SpotLightTarget</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html" class="sub-toggle">IPOIMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POICapability.html">POICapability</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POIInfo.html">POIInfo</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POIParam.html">POIParam</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POITarget.html">POITarget</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html" class="sub-toggle">IFlyToMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToCapability.html">FlyToCapability</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToInfo.html">FlyToInfo</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToParam.html">FlyToParam</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToTarget.html">FlyToTarget</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../IPerceptionManager/IPerceptionManager.html" class="sub-toggle">IPerceptionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../IPerceptionManager/IPerceptionManager_PerceptionInfo.html">PerceptionInfo</a>
@@ -676,7 +732,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IDJIError <span class="title">setUASRemoteIDAreaStrategy</span><span class="params">(AreaStrategy strategy)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
 <h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">设置国家区域策略，设置了相应的国家区域策略以后才能使用该国家或地区支持的无人机远程识别(RID)功能。MSDK在获取到当前所在地区的国家区域码后，会默认设置相应的国家区域策略。如果你需要设置其他国家区域策略进行开发调试，可以调用此接口设置相应的国家区域码。 <br><br>目前支持的国家或地区列表和支持策略如下： <li>美国：无人机远程识别广播</li> <li>欧盟：无人机远程识别广播, 欧盟认证C-Class, 操作者注册码</li> <li>日本：无人机远程识别广播, 无人机注册码</li> <li>中国：无人机远程识别广播, 实名制</li> <li>法国：EID开关</li> <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
+<p><font color="#666">设置国家区域策略，设置了相应的国家区域策略以后才能使用该国家或地区支持的无人机远程识别(RID)功能。MSDK在获取到当前所在地区的国家区域码后，会默认设置相应的国家区域策略。如果你需要设置其他国家区域策略进行开发调试，可以调用此接口设置相应的国家区域码。 <br><br>目前支持的国家或地区列表和支持策略如下： <li>美国：无人机远程识别广播</li> <li>欧盟：无人机远程识别广播, 欧盟认证C-Class, 操作者注册码</li> <li>新加坡：无人机远程识别广播, 操作者注册码</li> <li>阿联酋：无人机远程识别广播, 操作者注册码</li> <li>日本：无人机远程识别广播, 无人机注册码</li> <li>中国：无人机远程识别广播, 实名制</li> <li>法国：EID开关</li> <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v2">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IUASRemoteIDManager/IUASRemoteIDManager.html#iuasremoteidmanager_areastrategy">AreaStrategy</a> <font color="#000">strategy</font></font></td><td><font color="#666"><i>国家区域策略</i></font></td></tr></table></html>
 <h5 id="返回值：-v2">返回值：</h5>
@@ -932,7 +988,7 @@
 <p><font color="#666">无人机远程识别国家区域策略。
 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_us_strategy_inline"></a>US_STRATEGY</font></td><td><font color="#666">美国策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_france_strategy_inline"></a>FRANCE_STRATEGY</font></td><td><font color="#666">法国策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_japan_strategy_inline"></a>JAPAN_STRATEGY</font></td><td><font color="#666">日本策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_european_strategy_inline"></a>EUROPEAN_STRATEGY</font></td><td><font color="#666">欧盟策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_china_strategy_inline"></a>CHINA_STRATEGY</font></td><td><font color="#666">中国策略。</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_us_strategy_inline"></a>US_STRATEGY</font></td><td><font color="#666">美国策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_france_strategy_inline"></a>FRANCE_STRATEGY</font></td><td><font color="#666">法国策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_japan_strategy_inline"></a>JAPAN_STRATEGY</font></td><td><font color="#666">日本策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_european_strategy_inline"></a>EUROPEAN_STRATEGY</font></td><td><font color="#666">欧盟策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_singapore_strategy_inline"></a>SINGAPORE_STRATEGY</font></td><td><font color="#666">新加坡策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_united_arab_emirates_strategy_inline"></a>UNITED_ARAB_EMIRATES_STRATEGY</font></td><td><font color="#666">阿联酋策略。</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iuasremoteidmanager_areastrategy_china_strategy_inline"></a>CHINA_STRATEGY</font></td><td><font color="#666">中国策略。</font></td></tr></table></html>
 <h5 id="class-members">Class Members:</h5>
 </div>
 <div class="api-row" id="iuasremoteidmanager_remoteidworkingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iuasremoteidmanager_remoteidworkingstate_inline">RemoteIdWorkingState</a></div></div><div class="inline-doc" id="iuasremoteidmanager_remoteidworkingstate_inline" <blockquote>
