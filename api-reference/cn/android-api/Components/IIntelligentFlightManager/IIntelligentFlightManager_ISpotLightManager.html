@@ -418,6 +418,8 @@
                             </dd>
                             <dd><a href="IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
                             </dd>
+                            <dd><a href="IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a>
+                            </dd>
                             <dd><a data-href="IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
@@ -593,6 +595,16 @@
                                       <dd><a href="../IPayloadCenter/Value_Payload_Struct_CustomizeRcButtonConfig.html">CustomizeRcButtonConfig</a>
                                       </dd>
                                       <dd><a href="../IPayloadCenter/Value_Payload_Struct_WidgetValue.html">WidgetValue</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../IPayloadCenter/IIntelligentBoxManager.html" class="sub-toggle">IIntelligentBoxManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfoListener.html">IntelligentBoxInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfo.html">IntelligentBoxInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxAppInfo.html">IntelligentBoxAppInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -784,6 +796,24 @@
 <p><font color="#666">更新任务参数。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v8">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">SpotLightParam <font color="#000">param</font></font></td><td><font color="#666"><i>聚焦功能的参数。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_spotlightmanager_enterspotlightmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_spotlightmanager_enterspotlightmode_inline">enterSpotLightMode</a></div></div><div class="inline-doc" id="iintelligentflightmanager_spotlightmanager_enterspotlightmode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>enterSpotLightMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">enterSpotLightMode</span><span class="params">(CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent.spotlight</font></td></tr></table></html>
+<h5 id="描述：-v10">描述：</h5>
+<p><font color="#666">进入聚焦模式。 <br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
+<h5 id="输入参数：-v9">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>A callback that returns the execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_spotlightmanager_exitspotlightmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_spotlightmanager_exitspotlightmode_inline">exitSpotLightMode</a></div></div><div class="inline-doc" id="iintelligentflightmanager_spotlightmanager_exitspotlightmode_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>exitSpotLightMode</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">exitSpotLightMode</span><span class="params">(CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent.spotlight</font></td></tr></table></html>
+<h5 id="描述：-v11">描述：</h5>
+<p><font color="#666">退出聚焦模式。 <br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
+<h5 id="输入参数：-v10">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>A callback that returns the execution result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="iintelligentflightmanager_spotlightmanager_spotlightcapability"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_SpotLightManager_SpotLightCapability.html">SpotLightCapability</a></div></div><div class="api-row" id="iintelligentflightmanager_spotlightmanager_spotlighttarget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_SpotLightManager_SpotLightTarget.html">SpotLightTarget</a></div></div>
 

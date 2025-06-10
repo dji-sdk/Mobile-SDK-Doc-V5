@@ -418,6 +418,8 @@
                             </dd>
                             <dd><a href="IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
                             </dd>
+                            <dd><a href="IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a>
+                            </dd>
                             <dd><a data-href="IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
@@ -596,6 +598,16 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../IPayloadCenter/IIntelligentBoxManager.html" class="sub-toggle">IIntelligentBoxManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfoListener.html">IntelligentBoxInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfo.html">IntelligentBoxInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxAppInfo.html">IntelligentBoxAppInfo</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -732,6 +744,26 @@
 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
 <h5 id="输入参数：-v2">输入参数：</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html#iintelligentflightmanager_autosensingtarget">AutoSensingTarget</a> <font color="#000">target</font></font></td><td><font color="#666"><i>跟随目标信息</i></font></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate_inline">onIntelligentModelUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onIntelligentModelUpdate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">onIntelligentModelUpdate</span><span class="params">(@NonNull List&lt;IntelligentModel&gt; models)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
+<h5 id="描述：-v4">描述：</h5>
+<p><font color="#666">当智能模型列表发生变化时会回调此方法。
+<br><br><code><i>MSDK 5.15.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull List&lt;<a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html#iintelligentflightmanager_intelligentmodel">IntelligentModel</a>&gt; <font color="#000">models</font></font></td><td><font color="#666"><i>智能模型列表</i></font></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate_inline">onRunningIntelligentModelUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onRunningIntelligentModelUpdate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">onRunningIntelligentModelUpdate</span><span class="params">(<span class="keyword">int</span> modelId)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
+<h5 id="描述：-v5">描述：</h5>
+<p><font color="#666">当运行智能模型发生变化时会回调此方法。
+<br><br><code><i>MSDK 5.15.0开始支持</i></code></font></p>
+<h5 id="输入参数：-v4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">modelId</font></font></td><td><font color="#666"><i>运行中的模型ID</i></font></td></tr></table></html></div>
 
         </div>
       </div>

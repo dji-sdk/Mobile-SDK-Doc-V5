@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
@@ -418,6 +418,8 @@
                             </dd>
                             <dd><a href="IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
                             </dd>
+                            <dd><a href="IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a>
+                            </dd>
                             <dd><a data-href="IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
@@ -598,6 +600,16 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a data-href="../IPayloadCenter/IIntelligentBoxManager.html" class="sub-toggle">IIntelligentBoxManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfoListener.html">IntelligentBoxInfoListener</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxInfo.html">IntelligentBoxInfo</a>
+                                      </dd>
+                                      <dd><a href="../IPayloadCenter/IIntelligentBoxManager_IntelligentBoxAppInfo.html">IntelligentBoxAppInfo</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../IMegaphoneManager/IMegaphoneManager.html" class="sub-toggle">IMegaphoneManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -759,12 +771,21 @@
 <p><font color="#666">Stops the auto sensing function. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback for returning the execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_selectintelligentmodel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_selectintelligentmodel_inline">selectIntelligentModel</a></div></div><div class="inline-doc" id="iintelligentflightmanager_selectintelligentmodel_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>selectIntelligentModel</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectIntelligentModel</span><span class="params">(<span class="keyword">int</span> modelId, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Select intelligent model function. <br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">modelId</font></font></td><td><font color="#666"><i>the id of model on aricraft</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>Callback for returning the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_getsmarttrackmissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_getsmarttrackmissionmanager_inline">getSmartTrackMissionManager</a></div></div><div class="inline-doc" id="iintelligentflightmanager_getsmarttrackmissionmanager_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getSmartTrackMissionManager</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ISmartTrackMissionManager <span class="title">getSmartTrackMissionManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Retrieves the SmartTrackMissionManager instance for the intelligent flight function, which provides functionalities to turn on and off the track function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html#iintelligentflightmanager_ismarttrackmissionmanager">ISmartTrackMissionManager</a></font></td><td><font color="#666"><i>Returns the <code>SmartTrackMissionManager</code> instance for the intelligent flight function.</i></font></td></tr></table></html></div>
@@ -773,7 +794,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ISpotLightManager <span class="title">getSpotLightManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Retrieves the SpotLightManager instance for the intelligent flight function, which provides functionalities to turn on and off the SpotLight function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html#iintelligentflightmanager_ispotlightmanager">ISpotLightManager</a></font></td><td><font color="#666"><i>Returns the SpotLightManager instance for the intelligent flight function.</i></font></td></tr></table></html></div>
@@ -782,7 +803,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IPOIMissionManager <span class="title">getPOIMissionManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Retrieves the POIMissionManager instance for the intelligent flight function, which provides functionalities to turn on and off the POI function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html#iintelligentflightmanager_ipoimissionmanager">IPOIMissionManager</a></font></td><td><font color="#666"><i>Returns the POIMissionManager instance for the intelligent flight function.</i></font></td></tr></table></html></div>
@@ -791,7 +812,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">IFlyToMissionManager <span class="title">getFlyToMissionManager</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.interfaces</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Retrieves the FlyToMissionManager instance for the intelligent flight function, which provides functionalities to turn on and off the fly to target point function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html#iintelligentflightmanager_iflytomissionmanager">IFlyToMissionManager</a></font></td><td><font color="#666"><i>Returns the FlyToMissionManager instance for the intelligent flight function.</i></font></td></tr></table></html></div>
@@ -799,9 +820,9 @@
 <div class="api-row" id="iintelligentflightmanager_intelligentflightinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html">IntelligentFlightInfoListener</a></div></div><div class="api-row" id="iintelligentflightmanager_autosensinginfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html">AutoSensingInfoListener</a></div></div><div class="api-row" id="iintelligentflightmanager_intelligentflightinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfo.html">IntelligentFlightInfo</a></div></div><div class="api-row" id="iintelligentflightmanager_missiontype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_missiontype_inline">MissionType</a></div></div><div class="inline-doc" id="iintelligentflightmanager_missiontype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>MissionType</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> MissionType</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">enum</span> MissionType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Intelligent Flight function types. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_poi_inline"></a>POI</font></td><td><font color="#666">POI</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_spotlight_inline"></a>SPOTLIGHT</font></td><td><font color="#666">SpotLight</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_spotlight_track_inline"></a>TRACK</font></td><td><font color="#666">Track</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_fly_to_inline"></a>FLY_TO</font></td><td><font color="#666">Fly to the target point</font></td></tr></table></html>
@@ -810,9 +831,9 @@
 <div class="api-row" id="iintelligentflightmanager_targettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_targettype_inline">TargetType</a></div></div><div class="inline-doc" id="iintelligentflightmanager_targettype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>TargetType</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> TargetType</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">enum</span> TargetType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Target types for the intelligent flight function. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_index_inline"></a>INDEX</font></td><td><font color="#666">Index type</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_location_inline"></a>LOCATION</font></td><td><font color="#666">Location type</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_rect_inline"></a>RECT</font></td><td><font color="#666">Rectangle area type</font></td></tr></table></html>
@@ -821,15 +842,15 @@
 <div class="api-row" id="iintelligentflightmanager_autosensinginfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html">AutoSensingInfo</a></div></div><div class="api-row" id="iintelligentflightmanager_autosensingtarget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a></div></div><div class="api-row" id="iintelligentflightmanager_autosensingtargettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensingtargettype_inline">AutoSensingTargetType</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensingtargettype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>AutoSensingTargetType</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> AutoSensingTargetType</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">enum</span> AutoSensingTargetType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Target types for auto sensing. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_person_inline"></a>PERSON</font></td><td><font color="#666">Person</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_car_inline"></a>CAR</font></td><td><font color="#666">Car</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_boat_inline"></a>BOAT</font></td><td><font color="#666">Boat</font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_person_inline"></a>PERSON</font></td><td><font color="#666">Person</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_car_inline"></a>CAR</font></td><td><font color="#666">Car</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_boat_inline"></a>BOAT</font></td><td><font color="#666">Boat</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_custom_inline"></a>CUSTOM</font></td><td><font color="#666">Custom</font></td></tr></table></html>
 <h5 id="class-members-v4">Class Members:</h5>
 </div>
-<div class="api-row" id="iintelligentflightmanager_ismarttrackmissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html">ISmartTrackMissionManager</a></div></div><div class="api-row" id="iintelligentflightmanager_ispotlightmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html">ISpotLightManager</a></div></div><div class="api-row" id="iintelligentflightmanager_ipoimissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html">IPOIMissionManager</a></div></div><div class="api-row" id="iintelligentflightmanager_iflytomissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html">IFlyToMissionManager</a></div></div>
+<div class="api-row" id="iintelligentflightmanager_intelligentmodel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a></div></div><div class="api-row" id="iintelligentflightmanager_ismarttrackmissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html">ISmartTrackMissionManager</a></div></div><div class="api-row" id="iintelligentflightmanager_ispotlightmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html">ISpotLightManager</a></div></div><div class="api-row" id="iintelligentflightmanager_ipoimissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html">IPOIMissionManager</a></div></div><div class="api-row" id="iintelligentflightmanager_iflytomissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html">IFlyToMissionManager</a></div></div>
 
         </div>
       </div>
