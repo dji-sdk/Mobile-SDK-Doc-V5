@@ -688,12 +688,6 @@
                   </dd>
                   <dd><a href="../IDataProtectionManager/IDataProtectionManager.html">IDataProtectionManager</a>
                   </dd>
-                  <dd><a data-href="../IDeviceStatusManager/IDeviceStatusManager.html" class="sub-toggle">IDeviceStatusManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a href="../IDeviceStatusManager/IDeviceStatusManager_DJIDeviceStatusChangeListener.html">DJIDeviceStatusChangeListener</a>
-                            </dd>
-                    </ul>
-                  </dd>
                   <dd><a data-href="../IDeviceHealthManager/IDeviceHealthManager.html" class="sub-toggle">IDeviceHealthManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../IDeviceHealthManager/IDeviceHealthManager_DJIDeviceHealthInfo.html">DJIDeviceHealthInfo</a>
@@ -1257,7 +1251,7 @@ Gets multi-gimbal Synchronization control status.
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> DJIActionKeyInfo&lt;PropellerRotationCommand,PropellerRotationCommandResult&gt; KeyPropellerRotation = <span class="keyword">new</span> DJIActionKeyInfo&lt;&gt;(componentType.value(),subComponentType.value(),<span class="string">"PropellerRotation"</span>, <span class="keyword">new</span> SingleValueConverter&lt;&gt;(PropellerRotationCommand<span class="class">.<span class="keyword">class</span>,<span class="title">PropellerRotationCommandMsg</span>.<span class="title">class</span>),<span class="title">new</span> <span class="title">DJIValueConverter</span>&lt;&gt;(<span class="title">PropellerRotationCommandResult</span>.<span class="title">class</span>)).<span class="title">canGet</span>(<span class="title">false</span>).<span class="title">canSet</span>(<span class="title">false</span>).<span class="title">canListen</span>(<span class="title">false</span>).<span class="title">canPerformAction</span>(<span class="title">true</span>).<span class="title">setIsEvent</span>(<span class="title">false</span>)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.sdk.keyvalue.key</font></td></tr></table></html>
 <h5 id="description-v64">Description:</h5>
-<p><font color="#666"><b>Parameter: </b>Boolean<br><br> Aircraft slow propeller function. <br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br> Aircraft slow propeller function. <br><b>Note: <br> Gimbal slow propeller currently supports only one direction of rotation.</b> <br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
 </div>
 <html><p><br></p></html>
 <h4 id="return-to-home-function">Return-to-Home Function</h4>
