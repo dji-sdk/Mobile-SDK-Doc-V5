@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -24,14 +24,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">登录</a></li>
-          <li><a href="/register" class="head-cta">注册</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register" class="head-cta">Register</a></li>
         </ul>
         <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">个人中心</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
+              <li><a href="/user">User Center</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -41,9 +41,9 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/cn/">文档</a><a href="/mobile-sdk/downloads">下载</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
+      <nav><a href="/mobile-sdk">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
-            <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
+            <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span></nav>
     </div>
   </div>
@@ -398,13 +398,13 @@
                     <ul class="sub-menu">
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
                             </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
+                            </dd>
                             <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
                                       </dd>
                               </ul>
-                            </dd>
-                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
@@ -429,6 +429,8 @@
                                       <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
                                       </dd>
                                       <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html">SmartTrackInfo</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackParam.html">SmartTrackParam</a>
                                       </dd>
                                       <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html">SmartTrackTarget</a>
                                       </dd>
@@ -672,9 +674,9 @@
                             </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatus.html">UARegistrationNumberStatus</a>
                             </dd>
-                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html">UARegistrationNumberStatusListener</a>
-                            </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_CClassStatusListener.html">CClassStatusListener</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html">UARegistrationNumberStatusListener</a>
                             </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_OperatorRegistrationNumberStatus.html">OperatorRegistrationNumberStatus</a>
                             </dd>
@@ -718,176 +720,177 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>FlyZoneLicenseInfo</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyZoneLicenseInfo</span> <span class="keyword">implements</span> <span class="title">KeepProguard</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：">描述：</h5>
-<p><font color="#666">限飞区解禁证书类。包括解禁证书基本信息，比如证书类型，有效期，证书绑定的飞行器飞控SN，使能状态等。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="类成员">类成员:</h5>
-<h4 id="基础信息">基础信息</h4>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666">Restricted fly zone licenses class. Including the basic information of the unlocking licenses, such as license type, validity period, flight controller SN bound to the license, enabling status, etc. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="class-members">Class Members:</h5>
+<h4 id="basic-information">Basic Information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlicensetype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlicensetype_inline">getLicenseType</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlicensetype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLicenseType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">FlySafeLicenseType <span class="title">getLicenseType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书类型。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlySafeLicenseType</font></td><td><font color="#666"><i>返回限飞区解禁证书类型。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Gets the type of the restricted fly zone licnese.
+<br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlySafeLicenseType</font></td><td><font color="#666"><i>Returns the type of the restricted fly zone licnese.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getsn"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getsn_inline">getSN</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getsn_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getSN</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getSN</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书绑定的飞行器飞控SN。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v2">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>返回限飞区解禁证书绑定的飞行器飞控SN。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Gets the flight controller SN of the aircraft that is bound to the licnese. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>Returns the flight controller SN of the aircraft that is bound to the licnese.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getstarttimestamp"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getstarttimestamp_inline">getStartTimeStamp</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getstarttimestamp_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getStartTimeStamp</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getStartTimeStamp</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v4">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书有效期的开始时间戳。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v3">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>返回限飞区解禁证书有效期的开始时间戳。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Gets the start timestamp of the validity period of the restricted fly zone license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>Returns the start timestamp of the validity period of the restricted fly zone license.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getendtimestamp"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getendtimestamp_inline">getEndTimeStamp</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getendtimestamp_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getEndTimeStamp</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getEndTimeStamp</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v5">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书有效期的结束时间戳。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v4">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>返回限飞区解禁证书有效期的结束时间戳。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">Gets the end timestamp of the validity period of the restricted fly zone license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">long</font></td><td><font color="#666"><i>Returns the send timestamp of the validity period of the restricted fly zone license.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlicenseid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlicenseid_inline">getLicenseId</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlicenseid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLicenseId</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLicenseId</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书ID。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v5">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回限飞区解禁证书ID。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">Gets the ID of the restricted fly zone release license. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the ID of the restricted fly zone release license.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_isenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_isenabled_inline">isEnabled</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_isenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isEnabled</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isEnabled</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v7">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书是否生效。你可以调用<code><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_setflyzonelicensesenabled">setFlyZoneLicensesEnabled</a></code>使能或者关闭解禁证书。使能解禁证书以后，飞行器将可以在限飞区正常起飞。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v6">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>返回限飞区解禁证书是否生效。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Gets whether the restricted fly zone license is valid. You can call <code><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_setflyzonelicensesenabled">setFlyZoneLicensesEnabled</a></code> to enable or disable the licnese. After enabling the license, the aircraft will be able to take off normally in the restricted fly zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v6">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>Returns whether the restricted fly zone license is valid.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_isvalid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_isvalid_inline">isValid</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_isvalid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>isValid</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v8">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书是否有效。如果证书已经失效，请重新在DJI官网申请解禁证书。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v7">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>返回限飞区解禁证是否有效。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Gets whether the restricted fly zone licnese is valid. If the licnese has expired, please re-apply the license on the DJI official website. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v7">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>Returns whether the restricted fly zone licnese is valid.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getdescription"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getdescription_inline">getDescription</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getdescription_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getDescription</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">String <span class="title">getDescription</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v9">描述：</h5>
-<p><font color="#666">获取限飞区解禁证书的描述。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v8">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>返回限飞区解禁证书的描述。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Gets the description of the restricted fly zone licnese. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v8">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</font></td><td><font color="#666"><i>Returns the description of the restricted fly zone licnese.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="限飞区解禁信息">限飞区解禁信息</h4>
+<h4 id="restricted-fly-zone-unlock-information">Restricted Fly Zone Unlock information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getflyzoneids"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getflyzoneids_inline">getFlyZoneIDs</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getflyzoneids_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getFlyZoneIDs</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">List&lt;Integer&gt; <span class="title">getFlyZoneIDs</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v10">描述：</h5>
-<p><font color="#666">获取限飞区ID。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v9">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;Integer&gt;</font></td><td><font color="#666"><i>返回限飞区ID。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Gets the ID of unlock restricted fly zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v9">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;Integer&gt;</font></td><td><font color="#666"><i>Returns the ID of unlock restricted fly zone.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="圆柱解禁信息">圆柱解禁信息</h4>
+<h4 id="cylinder-zone-unlock-information">Cylinder Zone Unlock Information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude_inline">getCylinderLatitude</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlatitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCylinderLatitude</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getCylinderLatitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v11">描述：</h5>
-<p><font color="#666">获取圆柱解禁区的纬度。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v10">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>返回圆柱解禁区的纬度。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Gets the latitude of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v10">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Returns the latitude of the unlock cylinder zone.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude_inline">getCylinderLongitude</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderlongitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCylinderLongitude</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getCylinderLongitude</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v12">描述：</h5>
-<p><font color="#666">获取圆柱解禁区的经度。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v11">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>返回圆柱解禁区的经度。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666">Gets the longitude of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v11">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Returns the longitude of the unlock cylinder zone.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderradius_inline">getCylinderRadius</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCylinderRadius</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getCylinderRadius</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v13">描述：</h5>
-<p><font color="#666">获取圆柱解禁区的半径。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v12">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>返回圆柱解禁区的半径。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">Gets the radius of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v12">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>Returns the radius of the unlock cylinder zone.</i></font></td></tr></table></html></div>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcylinderheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcylinderheight_inline">getCylinderHeight</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcylinderheight_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCylinderHeight</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCylinderHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v14">描述：</h5>
-<p><font color="#666">获取圆柱解禁区的限高高度。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v13">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回圆柱解禁区的限高高度。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666">Gets the height limit of the unlock cylinder zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v13">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the height limit of the cylinder zone.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="多边形解禁信息">多边形解禁信息</h4>
+<h4 id="polygon-zone-unlock-information">Polygon Zone Unlock Information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getpolygonpoints"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getpolygonpoints_inline">getPolygonPoints</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getpolygonpoints_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getPolygonPoints</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">List&lt;LocationCoordinate2D&gt; <span class="title">getPolygonPoints</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v15">描述：</h5>
-<p><font color="#666">获取多边形解禁区的范围。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v14">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a>&gt;</font></td><td><font color="#666"><i>返回多边形解禁区的范围。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666">Gets the range of the unlock polygon zone. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v14">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../../Components/IKeyManager/Value_Common_Struct_LocationCoordinate2D.html#value_common_struct_locationcoordinate2d">LocationCoordinate2D</a>&gt;</font></td><td><font color="#666"><i>Returns the range of the polygon zone.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="限高解禁信息">限高解禁信息</h4>
+<h4 id="height-limit-unlock-information">Height Limit Unlock Information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getlimitedheight"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getlimitedheight_inline">getLimitedHeight</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getlimitedheight_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLimitedHeight</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLimitedHeight</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v16">描述：</h5>
-<p><font color="#666">获取限高高度。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v15">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回限高高度。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Gets the unlock height limit. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v15">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the unlock height limit.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="国家解禁信息">国家解禁信息</h4>
+<h4 id="country-unlock-information">Country Unlock Information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getcountryid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getcountryid_inline">getCountryId</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getcountryid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getCountryId</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getCountryId</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v17">描述：</h5>
-<p><font color="#666">获取国家解禁区ID。 <br><br><code><i>MSDK 5.3.0开始支持</i></code></font></p>
-<h5 id="返回值：-v16">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>返回国家解禁区ID。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">Gets the country unlock zone ID. <br><br><code><i>Supported since MSDK 5.3.0</i></code></font></p>
+<h5 id="return-v16">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>Returns the country unlock zone ID.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
-<h4 id="rid解禁信息">RID解禁信息</h4>
+<h4 id="rid-unlock-information">RID Unlock Information</h4>
 <div class="api-row" id="iflyzonemanager_flyzonelicenseinfo_getridunlocktype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iflyzonemanager_flyzonelicenseinfo_getridunlocktype_inline">getRidUnlockType</a></div></div><div class="inline-doc" id="iflyzonemanager_flyzonelicenseinfo_getridunlocktype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getRidUnlockType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">RidUnlockType <span class="title">getRidUnlockType</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
-<h5 id="描述：-v18">描述：</h5>
-<p><font color="#666">获取RID解禁类型。 <br><br><code><i>MSDK 5.8.0开始支持</i></code></font></p>
-<h5 id="返回值：-v17">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_ridunlocktype">RidUnlockType</a></font></td><td><font color="#666"><i>返回RID解禁类型。</i></font></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.aircraft.flysafe.info</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">Gets the RID unlock type. <br><br><code><i>Supported since MSDK 5.8.0</i></code></font></p>
+<h5 id="return-v17">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IFlyZoneManager/IFlyZoneManager.html#iflyzonemanager_ridunlocktype">RidUnlockType</a></font></td><td><font color="#666"><i>Returns the RID unlock type.</i></font></td></tr></table></html></div>
 
         </div>
       </div>
@@ -896,22 +899,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">搜索 Mobile SDK 文档
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
-            <div v-show="searchLoading" class="text-center">加载中...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
+            <div v-show="searchLoading" class="text-center">Loading...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
             </div>
           </div>
         </div>
@@ -922,15 +925,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
       </div>
     </div>
   </footer>
