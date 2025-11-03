@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -718,52 +718,56 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>AutoSensingInfoListener</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">AutoSensingInfoListener</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
-<p><font color="#666">Auto sensing function information listener. <br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
-<h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onautosensinginfoupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onautosensinginfoupdate_inline">onAutoSensingInfoUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onautosensinginfoupdate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onAutoSensingInfoUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onAutoSensingInfoUpdate</span><span class="params">(@NonNull AutoSensingInfo info)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
-<p><font color="#666">This method will be called back when the auto sensing information changes.
-<br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
-<h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html#iintelligentflightmanager_autosensinginfo">AutoSensingInfo</a> <font color="#000">info</font></font></td><td><font color="#666"><i>Auto sensing information</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_ontrackingtargetupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_ontrackingtargetupdate_inline">onTrackingTargetUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_ontrackingtargetupdate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onTrackingTargetUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">onTrackingTargetUpdate</span><span class="params">(@NonNull AutoSensingTarget target)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">This method is called back when the Tracking target changes.
-<br><br><code><i>Supported since MSDK 5.14.0</i></code></font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html#iintelligentflightmanager_autosensingtarget">AutoSensingTarget</a> <font color="#000">target</font></font></td><td><font color="#666"><i>Tracking target information</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate_inline">onIntelligentModelUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onIntelligentModelUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">onIntelligentModelUpdate</span><span class="params">(@NonNull List&lt;IntelligentModel&gt; models)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">This method is called back when the Intelligent model list changes.
-<br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull List&lt;<a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html#iintelligentflightmanager_intelligentmodel">IntelligentModel</a>&gt; <font color="#000">models</font></font></td><td><font color="#666"><i>Intelligent model list</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate_inline">onRunningIntelligentModelUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onRunningIntelligentModelUpdate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">onRunningIntelligentModelUpdate</span><span class="params">(<span class="keyword">int</span> modelId)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">This method is called back when the running modelId changes.
-<br><br><code><i>Supported since MSDK 5.15.0</i></code></font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">modelId</font></font></td><td><font color="#666"><i>The id of model on aircraft</i></font></td></tr></table></html></div>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>AutoSensingInfoListener</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">AutoSensingInfoListener</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="Description">Description:</h5>
+<p><font color="#666">Auto sensing function information listener. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
+<h5 id="Class-Members">Class Members:</h5>
+<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onautosensinginfoupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onautosensinginfoupdate_inline">onAutoSensingInfoUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onautosensinginfoupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onAutoSensingInfoUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">onAutoSensingInfoUpdate</span><span class="params">(<span class="meta">@NonNull</span> AutoSensingInfo info)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="Description-2">Description:</h5>
+<p><font color="#666">This method will be called back when the auto sensing information changes.<br>
+<br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
+<h5 id="Input-Parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html#iintelligentflightmanager_autosensinginfo">AutoSensingInfo</a> <font color="#000">info</td><td><font color="#666"><i>Auto sensing information</i></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_ontrackingtargetupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_ontrackingtargetupdate_inline">onTrackingTargetUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_ontrackingtargetupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onTrackingTargetUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">onTrackingTargetUpdate</span><span class="params">(<span class="meta">@NonNull</span> AutoSensingTarget target)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="Description-3">Description:</h5>
+<p><font color="#666">This method is called back when the Tracking target changes.<br>
+<br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
+<h5 id="Input-Parameters-2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html#iintelligentflightmanager_autosensingtarget">AutoSensingTarget</a> <font color="#000">target</td><td><font color="#666"><i>Tracking target information</i></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate_inline">onIntelligentModelUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onintelligentmodelupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onIntelligentModelUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">onIntelligentModelUpdate</span><span class="params">(<span class="meta">@NonNull</span> List&lt;IntelligentModel&gt; models)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="Description-4">Description:</h5>
+<p><font color="#666">This method is called back when the Intelligent model list changes.<br>
+<br><br><code><i>Supported since MSDK 5.15.0</i></code></p>
+<h5 id="Input-Parameters-3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull List&lt;<a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html#iintelligentflightmanager_intelligentmodel">IntelligentModel</a>&gt; <font color="#000">models</td><td><font color="#666"><i>Intelligent model list</i></td></tr></table></html></div>
+<div class="api-row" id="iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate_inline">onRunningIntelligentModelUpdate</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensinginfolistener_onrunningintelligentmodelupdate_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>onRunningIntelligentModelUpdate</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">onRunningIntelligentModelUpdate</span><span class="params">(<span class="type">int</span> modelId)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="Description-5">Description:</h5>
+<p><font color="#666">This method is called back when the running modelId changes.<br>
+<br><br><code><i>Supported since MSDK 5.15.0</i></code></p>
+<h5 id="Input-Parameters-4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">modelId</td><td><font color="#666"><i>The id of model on aircraft</i></td></tr></table></html></div>
 
         </div>
       </div>
