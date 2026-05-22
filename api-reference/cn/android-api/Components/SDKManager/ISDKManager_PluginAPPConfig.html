@@ -1,5 +1,5 @@
 <script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en" style="padding-bottom:0px" class="local"></html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,39 +14,9 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../../images/dji-logo@2x.png">Developer</a></div>
-      <div id="header-navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/mobile-sdk">Mobile SDK</a></li>
-          <li><a href="/ux-sdk">UX SDK</a></li>
-          <li><a href="/onboard-sdk">Onboard SDK</a></li>
-          <li><a href="/payload-sdk">Payload SDK</a></li>
-          <li><a href="/windows-sdk">Windows SDK</a></li>
-        </ul>
-        <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">登录</a></li>
-          <li><a href="/register" class="head-cta">注册</a></li>
-        </ul>
-        <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
-            <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">个人中心</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../../images/dji-logo@2x.png">Android SDK API Reference</a></div>
     </div>
   </nav>
-  <div data-offset-top="60" data-spy="affix" class="sub-nav">
-    <div class="container">
-      <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/cn/">文档</a><a href="/mobile-sdk/downloads">下载</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
-          <ul class="hovedown-menu">
-            <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
-          </ul></span></nav>
-    </div>
-  </div>
   <div id="documentation-page" class="documentation-page">
     <div class="container">
       <div class="site-sidebar">
@@ -72,9 +42,17 @@
           <dl>
             <dt>Manager Classes
             </dt>
-                  <dd><a data-href="../SDKManager/DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="DJISDKManager.html" class="sub-toggle">ISDKManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../SDKManager/ISDKManager_SDKManagerCallback.html">SDKManagerCallback</a>
+                            <dd><a href="ISDKManager_SDKManagerCallback.html">SDKManagerCallback</a>
+                            </dd>
+                            <dd><a href="ISDKManager_InitSettings.html">InitSettings</a>
+                            </dd>
+                            <dd><a href="" class="active">PluginAPPConfig</a>
+                            </dd>
+                            <dd><a href="ISDKManager_APPVersion.html">APPVersion</a>
+                            </dd>
+                            <dd><a href="ISDKManager_OpenLocation.html">OpenLocation</a>
                             </dd>
                     </ul>
                   </dd>
@@ -334,6 +312,8 @@
                                       </dd>
                                       <dd><a href="../IMediaDataCenter/IMediaManager_MediaFrameListener.html">MediaFrameListener</a>
                                       </dd>
+                                      <dd><a href="../IMediaDataCenter/IMediaManager_PhotoAIInfo.html">PhotoAIInfo</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../IMediaDataCenter/ILiveStreamManager.html" class="sub-toggle">ILiveStreamManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -410,61 +390,63 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="IIntelligentFlightManager.html" class="sub-toggle">IIntelligentFlightManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager.html" class="sub-toggle">IIntelligentFlightManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="IIntelligentFlightManager_IntelligentFlightInfoListener.html">IntelligentFlightInfoListener</a>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html">IntelligentFlightInfoListener</a>
                             </dd>
-                            <dd><a href="IIntelligentFlightManager_AutoSensingInfoListener.html">AutoSensingInfoListener</a>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html">AutoSensingInfoListener</a>
                             </dd>
-                            <dd><a href="IIntelligentFlightManager_IntelligentFlightInfo.html">IntelligentFlightInfo</a>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfo.html">IntelligentFlightInfo</a>
                             </dd>
-                            <dd><a href="IIntelligentFlightManager_AutoSensingInfo.html">AutoSensingInfo</a>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html">AutoSensingInfo</a>
                             </dd>
-                            <dd><a href="IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a>
                             </dd>
-                            <dd><a href="IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a>
                             </dd>
-                            <dd><a data-href="IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html" class="sub-toggle">ISmartTrackMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html">SmartTrackInfo</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html">SmartTrackInfo</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html">SmartTrackTarget</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html">SmartTrackTarget</a>
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="IIntelligentFlightManager_ISpotLightManager.html" class="sub-toggle">ISpotLightManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html" class="sub-toggle">ISpotLightManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="IIntelligentFlightManager_SpotLightManager_SpotLightCapability.html">SpotLightCapability</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SpotLightManager_SpotLightCapability.html">SpotLightCapability</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_SpotLightManager_SpotLightTarget.html">SpotLightTarget</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SpotLightManager_SpotLightTarget.html">SpotLightTarget</a>
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="IIntelligentFlightManager_IPOIMissionManager.html" class="sub-toggle">IPOIMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html" class="sub-toggle">IPOIMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="IIntelligentFlightManager_POIMissionManager_POICapability.html">POICapability</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POICapability.html">POICapability</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_POIMissionManager_POIInfo.html">POIInfo</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POIInfo.html">POIInfo</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_POIMissionManager_POIParam.html">POIParam</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POIParam.html">POIParam</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_POIMissionManager_POITarget.html">POITarget</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_POIMissionManager_POITarget.html">POITarget</a>
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="IIntelligentFlightManager_IFlyToMissionManager.html" class="sub-toggle">IFlyToMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="../IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html" class="sub-toggle">IFlyToMissionManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="IIntelligentFlightManager_FlyToMissionManager_FlyToCapability.html">FlyToCapability</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToCapability.html">FlyToCapability</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_FlyToMissionManager_FlyToInfo.html">FlyToInfo</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToInfo.html">FlyToInfo</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_FlyToMissionManager_FlyToParam.html">FlyToParam</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToParam.html">FlyToParam</a>
                                       </dd>
-                                      <dd><a href="IIntelligentFlightManager_FlyToMissionManager_FlyToTarget.html">FlyToTarget</a>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_FlyToMissionManager_FlyToTarget.html">FlyToTarget</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_AutoParsingMask.html">AutoParsingMask</a>
                             </dd>
                     </ul>
                   </dd>
@@ -700,6 +682,104 @@
                   </dd>
           </dl>
           <dl>
+            <dt>Open Pilot Classes
+            </dt>
+                  <dd><a href="../IFileTransferManager/IFileTransferManager.html">IFileTransferManager</a>
+                  </dd>
+                  <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager.html" class="sub-toggle">IRemoteViewPageManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnClickListener.html">IRemoteViewOnClickListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnCheckedChangeListener.html">IRemoteViewOnCheckedChangeListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_IRemoteViewOnItemSelectedListener.html">IRemoteViewOnItemSelectedListener</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_RemoteView.html">RemoteView</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_LayoutParam.html">LayoutParam</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_WidgetLayoutParam.html">WidgetLayoutParam</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ActivityConfig.html">ActivityConfig</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor.html" class="sub-toggle">ShapeDescriptor<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ShapeDescriptor_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemData.html">ListItemData</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_ListItemOperation.html">ListItemOperation</a>
+                            </dd>
+                            <dd><a href="../IRemoteViewPageManager/IRemoteViewPageManager_DividerConfig.html">DividerConfig</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../INavigateManager/INavigateManager.html" class="sub-toggle">INavigateManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../INavigateManager/INavigateManager_NavigateAction.html">NavigateAction</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IMapWidgetManager/IMapWidgetManager.html" class="sub-toggle">IMapWidgetManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolygonOptions.html">MapPolygonOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapPolylineOptions.html">MapPolylineOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapCircleOptions.html">MapCircleOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapMarkerOptions.html">MapMarkerOptions</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidget.html">MapWidget</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapWidgetItem.html">MapWidgetItem</a>
+                            </dd>
+                            <dd><a href="../IMapWidgetManager/IMapWidgetManager_MapElement.html">MapElement</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IARManager/IARManager.html" class="sub-toggle">IARManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IARManager/IARManager_ARPointConfig.html">ARPointConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARPointInfo.html">ARPointInfo</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARTextConfig.html">ARTextConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconPerspectiveConfig.html">ARIconPerspectiveConfig</a>
+                            </dd>
+                            <dd><a href="../IARManager/IARManager_ARIconOrthographicConfig.html">ARIconOrthographicConfig</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../ICameraViewDrawingManager/ICameraViewDrawingManager.html" class="sub-toggle">ICameraViewDrawingManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_DrawingBoxInfo.html">DrawingBoxInfo</a>
+                            </dd>
+                            <dd><a href="../ICameraViewDrawingManager/ICameraViewDrawingManager_OpenDoubleRect.html">OpenDoubleRect</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager.html" class="sub-toggle">IRemoteDialogManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogMessage.html">DialogMessage</a>
+                            </dd>
+                            <dd><a data-href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig.html" class="sub-toggle">DialogConfig<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogConfig_Builder.html">Builder</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_DialogElementConfig.html">DialogElementConfig</a>
+                            </dd>
+                            <dd><a href="../IRemoteDialogManager/IRemoteDialogManager_IDialogMessageListener.html">IDialogMessageListener</a>
+                            </dd>
+                    </ul>
+                  </dd>
+          </dl>
+          <dl>
             <dt>Misc Classes
             </dt>
                   <dd><a href="../DJIError/DJIError.html">IDJIError</a>
@@ -716,86 +796,112 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>Capability></h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMissionManager</span>&lt;<span class="title">Target</span>, <span class="title">Param</span>, <span class="title">Info</span>, <span class="title">Capability</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>PluginAPPConfig</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">PluginAPPConfig</span> <span class="keyword">implements</span> <span class="title class_">Parcelable</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
 <h5 id="描述：">描述：</h5>
-<p><font color="#666">智能飞行功能任务管理类。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
+<p><font color="#666">插件APP信息配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
 <h5 id="类成员">类成员:</h5>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_addmissioncapabilitylistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_addmissioncapabilitylistener_inline">addMissionCapabilityListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_addmissioncapabilitylistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>addMissionCapabilityListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addMissionCapabilityListener</span><span class="params">(IMissionCapabilityListener&lt;Capability&gt; listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v2">描述：</h5>
-<p><font color="#666">添加智能飞行功能任务能力集监听器。用于获取不同的任务类型的能力集。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
+<div class="api-row" id="isdkmanager_pluginappconfig_getpluginappversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_getpluginappversion_inline">getPluginAppVersion</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_getpluginappversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getPluginAppVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">APPVersion <span class="title function_">getPluginAppVersion</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-2">描述：</h5>
+<p><font color="#666">获取APP版本信息。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="返回值：">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/ISDKManager_APPVersion.html#isdkmanager_appversion">APPVersion</a></td><td><font color="#666"><i>返回APP版本信息对象。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_setpluginappversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_setpluginappversion_inline">setPluginAppVersion</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_setpluginappversion_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setPluginAppVersion</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setPluginAppVersion</span><span class="params">(APPVersion pluginAppVersion)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-3">描述：</h5>
+<p><font color="#666">设置APP版本信息。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
 <h5 id="输入参数：">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">IMissionCapabilityListener&lt;Capability&gt; <font color="#000">listener</font></font></td><td><font color="#666"><i>智能飞行功能任务能力集监听器。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_removemissioncapabilitylistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_removemissioncapabilitylistener_inline">removeMissionCapabilityListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_removemissioncapabilitylistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>removeMissionCapabilityListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeMissionCapabilityListener</span><span class="params">(IMissionCapabilityListener&lt;Capability&gt; listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v3">描述：</h5>
-<p><font color="#666">移除智能飞行功能任务能力集监听器。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v2">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">IMissionCapabilityListener&lt;Capability&gt; <font color="#000">listener</font></font></td><td><font color="#666"><i>智能飞行功能任务能力集监听器。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_addmissioninfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_addmissioninfolistener_inline">addMissionInfoListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_addmissioninfolistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>addMissionInfoListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addMissionInfoListener</span><span class="params">(IMissionInfoListener&lt;Info, Target&gt; listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v4">描述：</h5>
-<p><font color="#666">添加智能飞行功能任务信息监听器。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v3">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">IMissionInfoListener&lt;Info, Target&gt; <font color="#000">listener</font></font></td><td><font color="#666"><i>智能飞行功能任务信息监听器。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_removemissioninfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_removemissioninfolistener_inline">removeMissionInfoListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_removemissioninfolistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>removeMissionInfoListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeMissionInfoListener</span><span class="params">(IMissionInfoListener&lt;Info, Target&gt; listener)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v5">描述：</h5>
-<p><font color="#666">移除智能飞行功能任务信息监听器。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v4">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">IMissionInfoListener&lt;Info, Target&gt; <font color="#000">listener</font></font></td><td><font color="#666"><i>智能飞行功能任务信息监听器。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_startmission"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_startmission_inline">startMission</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_startmission_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>startMission</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">startMission</span><span class="params">(Target target, Param param, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v6">描述：</h5>
-<p><font color="#666">开启任务。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v5">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Target <font color="#000">target</font></font></td><td><font color="#666"><i>智能飞行任务的目标。</i></font></td></tr><tr valign="top"><td><font color="#70BF41">Param <font color="#000">param</font></font></td><td><font color="#666"><i>智能飞行任务的的参数。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_stopmission"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_stopmission_inline">stopMission</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_stopmission_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>stopMission</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stopMission</span><span class="params">(CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v7">描述：</h5>
-<p><font color="#666">结束任务。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v6">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_updatemissiontarget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_updatemissiontarget_inline">updateMissionTarget</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_updatemissiontarget_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>updateMissionTarget</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updateMissionTarget</span><span class="params">(Target target, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v8">描述：</h5>
-<p><font color="#666">更新任务目标。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v7">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Target <font color="#000">target</font></font></td><td><font color="#666"><i>智能飞行任务的目标。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_updatemissionparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_imissionmanager_updatemissionparam_inline">updateMissionParam</a></div></div><div class="inline-doc" id="iintelligentflightmanager_imissionmanager_updatemissionparam_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>updateMissionParam</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updateMissionParam</span><span class="params">(Param param, CommonCallbacks.CompletionCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>包：</i></font></td><td width="85%"><font color="#999">dji.v5.manager.intelligent</font></td></tr></table></html>
-<h5 id="描述：-v9">描述：</h5>
-<p><font color="#666">更新任务参数。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></font></p>
-<h5 id="输入参数：-v8">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Param <font color="#000">param</font></font></td><td><font color="#666"><i>智能飞行任务的参数。</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>返回执行结果的回调。</i></font></td></tr></table></html></div>
-<h5 id="related">Related:</h5>
-<div class="api-row" id="iintelligentflightmanager_imissionmanager_imissioncapabilitylistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IMissionManager_IMissionCapabilityListener.html">IMissionCapabilityListener<missioncapability></missioncapability></a></div></div><div class="api-row" id="iintelligentflightmanager_imissionmanager_imissioninfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IMissionManager_IMissionInfoListener.html">IMissionInfoListener<info,target></info,target></a></div></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/SDKManager/ISDKManager_APPVersion.html#isdkmanager_appversion">APPVersion</a> <font color="#000">pluginAppVersion</td><td><font color="#666"><i>APP版本信息。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_gettitle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_gettitle_inline">getTitle</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_gettitle_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getTitle</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getTitle</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-4">描述：</h5>
+<p><font color="#666">获取插件标题。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="返回值：-2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>返回插件标题字符串。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_settitle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_settitle_inline">setTitle</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_settitle_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setTitle</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setTitle</span><span class="params">(String title)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-5">描述：</h5>
+<p><font color="#666">设置插件标题。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="输入参数：-2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">title</td><td><font color="#666"><i>插件标题字符串。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_getdescription"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_getdescription_inline">getDescription</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_getdescription_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getDescription</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getDescription</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-6">描述：</h5>
+<p><font color="#666">获取插件描述信息。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="返回值：-3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>返回描述文本内容。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_setdescription"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_setdescription_inline">setDescription</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_setdescription_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setDescription</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setDescription</span><span class="params">(String description)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-7">描述：</h5>
+<p><font color="#666">设置插件描述信息。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="输入参数：-3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">description</td><td><font color="#666"><i>描述文本内容。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_geticonresfilename"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_geticonresfilename_inline">getIconResFileName</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_geticonresfilename_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getIconResFileName</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String <span class="title function_">getIconResFileName</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-8">描述：</h5>
+<p><font color="#666">获取插件图标资源文件名。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="返回值：-4">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String</td><td><font color="#666"><i>返回图标资源文件名。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_seticonresfilename"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_seticonresfilename_inline">setIconResFileName</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_seticonresfilename_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setIconResFileName</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setIconResFileName</span><span class="params">(String iconResFileName)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-9">描述：</h5>
+<p><font color="#666">设置插件图标资源文件名。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="输入参数：-4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">iconResFileName</td><td><font color="#666"><i>图标资源文件名。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_gethomepageonclickaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_gethomepageonclickaction_inline">getHomePageOnClickAction</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_gethomepageonclickaction_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>getHomePageOnClickAction</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">NavigateAction <span class="title function_">getHomePageOnClickAction</span><span class="params">()</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-10">描述：</h5>
+<p><font color="#666">获取插件首页点击动作配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="返回值：-5">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/INavigateManager/INavigateManager_NavigateAction.html#inavigatemanager_navigateaction">NavigateAction</a></td><td><font color="#666"><i>返回导航动作对象。</i></td></tr></table></html></div>
+<div class="api-row" id="isdkmanager_pluginappconfig_sethomepageonclickaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#isdkmanager_pluginappconfig_sethomepageonclickaction_inline">setHomePageOnClickAction</a></div></div><div class="inline-doc" id="isdkmanager_pluginappconfig_sethomepageonclickaction_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>setHomePageOnClickAction</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setHomePageOnClickAction</span><span class="params">(NavigateAction homePageOnClickAction)</span> </span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.open.pilot.base.manager</td></tr></table></html>
+<h5 id="描述：-11">描述：</h5>
+<p><font color="#666">设置插件首页点击动作配置。 <br><br><code><i>MSDK 6.0.0开始支持</i></code></p>
+<h5 id="输入参数：-5">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/INavigateManager/INavigateManager_NavigateAction.html#inavigatemanager_navigateaction">NavigateAction</a> <font color="#000">homePageOnClickAction</td><td><font color="#666"><i>导航动作对象。</i></td></tr></table></html></div>
 
         </div>
       </div>
@@ -826,22 +932,6 @@
       </div>
     </div>
   </div>
-  <footer id="site-footer" class="site-footer">
-    <div class="container">
-      <div class="foot-nav row">
-        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
-      </div>
-      <div class="foot-copyright row">
-        <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
-      </div>
-    </div>
-  </footer>
   <script type="text/javascript">
     window.Config = window.config = {
       sdk: "mobile-sdk",
