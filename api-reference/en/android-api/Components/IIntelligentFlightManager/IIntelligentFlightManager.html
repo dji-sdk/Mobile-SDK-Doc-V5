@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><script>window.pathPrefix="../../";</script><!DOCTYPE html>
+<script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -24,14 +24,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register" class="head-cta">Register</a></li>
+          <li><a href="/login">登录</a></li>
+          <li><a href="/register" class="head-cta">注册</a></li>
         </ul>
         <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">User Center</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+              <li><a href="/user">个人中心</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
             </ul>
           </li>
         </ul>
@@ -41,9 +41,9 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk">概览</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/cn/">文档</a><a href="/mobile-sdk/downloads">下载</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
           <ul class="hovedown-menu">
-            <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
+            <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
           </ul></span></nav>
     </div>
   </div>
@@ -398,13 +398,13 @@
                     <ul class="sub-menu">
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
                             </dd>
-                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
-                            </dd>
                             <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
@@ -429,8 +429,6 @@
                                       <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
                                       </dd>
                                       <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html">SmartTrackInfo</a>
-                                      </dd>
-                                      <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackParam.html">SmartTrackParam</a>
                                       </dd>
                                       <dd><a href="IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html">SmartTrackTarget</a>
                                       </dd>
@@ -674,9 +672,9 @@
                             </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatus.html">UARegistrationNumberStatus</a>
                             </dd>
-                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_CClassStatusListener.html">CClassStatusListener</a>
-                            </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html">UARegistrationNumberStatusListener</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_CClassStatusListener.html">CClassStatusListener</a>
                             </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_OperatorRegistrationNumberStatus.html">OperatorRegistrationNumberStatus</a>
                             </dd>
@@ -720,146 +718,156 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>IIntelligentFlightManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IIntelligentFlightManager</span> </span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description">Description:</h5>
-<p><font color="#666">Class that is used to manage intelligent flight, which supports advanced intelligent functions such as auto sensing, spotlight, POI, Track and flying to the target point. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Class-Members">Class Members:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：">描述：</h5>
+<p><font color="#666">此类是智能飞行管理类，支持飞行器的自动识别，聚焦（Spotlight），环绕（POI），智能跟随（Track），飞向目标点等高级智能功能。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="类成员">类成员:</h5>
+<div class="api-row" id="iintelligentflightmanager_addintelligentflightinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_addintelligentflightinfolistener_inline">addIntelligentFlightInfoListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_addintelligentflightinfolistener_inline"
+<blockquote>
+<div class="article"><h6 ><font color="#AAA">method </font>addIntelligentFlightInfoListener</h6></div>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">addIntelligentFlightInfoListener</span><span class="params">(IntelligentFlightInfoListener listener)</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-2">描述：</h5>
+<p><font color="#666">添加智能飞行功能信息监听器。用于获取连接机型支持的智能飞行功能类型列表，以及当前运行的智能飞行功能类型等信息。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="输入参数：">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html#iintelligentflightmanager_intelligentflightinfolistener">IntelligentFlightInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>智能飞行功能信息监听器。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_removeintelligentflightinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_removeintelligentflightinfolistener_inline">removeIntelligentFlightInfoListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_removeintelligentflightinfolistener_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>removeIntelligentFlightInfoListener</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">removeIntelligentFlightInfoListener</span><span class="params">(IntelligentFlightInfoListener listener)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-2">Description:</h5>
-<p><font color="#666">Removes the intelligent flight function information listener. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Input-Parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html#iintelligentflightmanager_intelligentflightinfolistener">IntelligentFlightInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>Intelligent Flight function information listener.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-3">描述：</h5>
+<p><font color="#666">移除智能飞行功能信息监听器。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="输入参数：-2">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html#iintelligentflightmanager_intelligentflightinfolistener">IntelligentFlightInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>智能飞行功能信息监听器。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_addautosensinginfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_addautosensinginfolistener_inline">addAutoSensingInfoListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_addautosensinginfolistener_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>addAutoSensingInfoListener</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">addAutoSensingInfoListener</span><span class="params">(AutoSensingInfoListener listener)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-3">Description:</h5>
-<p><font color="#666">Adds an auto sensing function information listener. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Input-Parameters-2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html#iintelligentflightmanager_autosensinginfolistener">AutoSensingInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>Auto sensing function information listener.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-4">描述：</h5>
+<p><font color="#666">添加自动识别功能信息监听器。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="输入参数：-3">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html#iintelligentflightmanager_autosensinginfolistener">AutoSensingInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>自动识别功能信息监听器。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_removeautosensinginfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_removeautosensinginfolistener_inline">removeAutoSensingInfoListener</a></div></div><div class="inline-doc" id="iintelligentflightmanager_removeautosensinginfolistener_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>removeAutoSensingInfoListener</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">removeAutoSensingInfoListener</span><span class="params">(AutoSensingInfoListener listener)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-4">Description:</h5>
-<p><font color="#666">Removes the auto sensing function information listener. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Input-Parameters-3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html#iintelligentflightmanager_autosensinginfolistener">AutoSensingInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>Auto sensing function information listener.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-5">描述：</h5>
+<p><font color="#666">移除自动识别功能信息监听器。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="输入参数：-4">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html#iintelligentflightmanager_autosensinginfolistener">AutoSensingInfoListener</a> <font color="#000">listener</td><td><font color="#666"><i>自动识别功能信息监听器。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_startautosensing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_startautosensing_inline">startAutoSensing</a></div></div><div class="inline-doc" id="iintelligentflightmanager_startautosensing_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>startAutoSensing</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">startAutoSensing</span><span class="params">(CommonCallbacks.CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-5">Description:</h5>
-<p><font color="#666">Starts the auto sensing function. Once activated, the information about the aircraft’s auto sensing can be accessed through <code><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager.html#iintelligentflightmanager_addautosensinginfolistener">addAutoSensingInfoListener</a></code>. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Input-Parameters-4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>Callback for returning the execution result.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-6">描述：</h5>
+<p><font color="#666">开启自动识别功能。功能开启后，通过<code><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager.html#iintelligentflightmanager_addautosensinginfolistener">addAutoSensingInfoListener</a></code>可以监听到飞行器自动识别的信息。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="输入参数：-5">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>返回执行结果的回调。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_stopautosensing"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_stopautosensing_inline">stopAutoSensing</a></div></div><div class="inline-doc" id="iintelligentflightmanager_stopautosensing_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>stopAutoSensing</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">stopAutoSensing</span><span class="params">(CommonCallbacks.CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-6">Description:</h5>
-<p><font color="#666">Stops the auto sensing function. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Input-Parameters-5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>Callback for returning the execution result.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-7">描述：</h5>
+<p><font color="#666">关闭自动识别功能。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="输入参数：-6">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>返回执行结果的回调。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_selectintelligentmodel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_selectintelligentmodel_inline">selectIntelligentModel</a></div></div><div class="inline-doc" id="iintelligentflightmanager_selectintelligentmodel_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>selectIntelligentModel</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">selectIntelligentModel</span><span class="params">(<span class="type">int</span> modelId, CommonCallbacks.CompletionCallback callback)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-7">Description:</h5>
-<p><font color="#666">Select intelligent model function. <br><br><code><i>Supported since MSDK 5.15.0</i></code></p>
-<h5 id="Input-Parameters-6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">modelId</td><td><font color="#666"><i>the id of model on aricraft</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>Callback for returning the execution result.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-8">描述：</h5>
+<p><font color="#666">选择飞机模型功能。 <br><br><code><i>MSDK 5.15.0开始支持</i></code></p>
+<h5 id="输入参数：-7">输入参数：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">modelId</td><td><font color="#666"><i>运行中的模型ID</i></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/DJICommonCallbacks/DJICommonCallbacks.html#djicommoncallbacks">CommonCallbacks</a>.<a href="../../Components/DJICommonCallbacks/DJICommonCallbacks_CompletionCallback.html#djicommoncallbacks_completioncallback">CompletionCallback</a> <font color="#000">callback</td><td><font color="#666"><i>返回执行结果的回调。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_getsmarttrackmissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_getsmarttrackmissionmanager_inline">getSmartTrackMissionManager</a></div></div><div class="inline-doc" id="iintelligentflightmanager_getsmarttrackmissionmanager_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getSmartTrackMissionManager</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ISmartTrackMissionManager <span class="title function_">getSmartTrackMissionManager</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-8">Description:</h5>
-<p><font color="#666">Retrieves the SmartTrackMissionManager instance for the intelligent flight function, which provides functionalities to turn on and off the track function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html#iintelligentflightmanager_ismarttrackmissionmanager">ISmartTrackMissionManager</a></td><td><font color="#666"><i>Returns the <code>SmartTrackMissionManager</code> instance for the intelligent flight function.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-9">描述：</h5>
+<p><font color="#666">获取智能飞行功能的SmartTrackMissionManager实例，该实例用于提供跟随功能的开启和关闭，以及参数设置等功能。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="返回值：">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html#iintelligentflightmanager_ismarttrackmissionmanager">ISmartTrackMissionManager</a></td><td><font color="#666"><i>返回智能飞行功能的SmartTrackMissionManager实例。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_getspotlightmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_getspotlightmanager_inline">getSpotLightManager</a></div></div><div class="inline-doc" id="iintelligentflightmanager_getspotlightmanager_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getSpotLightManager</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ISpotLightManager <span class="title function_">getSpotLightManager</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-9">Description:</h5>
-<p><font color="#666">Retrieves the SpotLightManager instance for the intelligent flight function, which provides functionalities to turn on and off the SpotLight function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Return-2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html#iintelligentflightmanager_ispotlightmanager">ISpotLightManager</a></td><td><font color="#666"><i>Returns the SpotLightManager instance for the intelligent flight function.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-10">描述：</h5>
+<p><font color="#666">获取智能飞行功能的SpotLightManager实例，该实例用于提供聚焦功能的开启和关闭，以及参数设置等功能。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="返回值：-2">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html#iintelligentflightmanager_ispotlightmanager">ISpotLightManager</a></td><td><font color="#666"><i>返回智能飞行功能的SpotLightManager实例。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_getpoimissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_getpoimissionmanager_inline">getPOIMissionManager</a></div></div><div class="inline-doc" id="iintelligentflightmanager_getpoimissionmanager_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getPOIMissionManager</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IPOIMissionManager <span class="title function_">getPOIMissionManager</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-10">Description:</h5>
-<p><font color="#666">Retrieves the POIMissionManager instance for the intelligent flight function, which provides functionalities to turn on and off the POI function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Return-3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html#iintelligentflightmanager_ipoimissionmanager">IPOIMissionManager</a></td><td><font color="#666"><i>Returns the POIMissionManager instance for the intelligent flight function.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-11">描述：</h5>
+<p><font color="#666">获取智能飞行功能的POIMissionManager实例，该实例用于提供环绕功能的开启和关闭，以及参数设置等功能。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="返回值：-3">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html#iintelligentflightmanager_ipoimissionmanager">IPOIMissionManager</a></td><td><font color="#666"><i>返回智能飞行功能的POIMissionManager实例。</i></td></tr></table></html></div>
 <div class="api-row" id="iintelligentflightmanager_getflytomissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_getflytomissionmanager_inline">getFlyToMissionManager</a></div></div><div class="inline-doc" id="iintelligentflightmanager_getflytomissionmanager_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getFlyToMissionManager</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IFlyToMissionManager <span class="title function_">getFlyToMissionManager</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
-<h5 id="Description-11">Description:</h5>
-<p><font color="#666">Retrieves the FlyToMissionManager instance for the intelligent flight function, which provides functionalities to turn on and off the fly to target point function, as well as parameter settings. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
-<h5 id="Return-4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html#iintelligentflightmanager_iflytomissionmanager">IFlyToMissionManager</a></td><td><font color="#666"><i>Returns the FlyToMissionManager instance for the intelligent flight function.</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
+<h5 id="描述：-12">描述：</h5>
+<p><font color="#666">获取智能飞行功能的FlyToMissionManager实例，该实例用于提供飞行目标点功能的开启和关闭，以及参数设置等功能。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
+<h5 id="返回值：-4">返回值：</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html#iintelligentflightmanager_iflytomissionmanager">IFlyToMissionManager</a></td><td><font color="#666"><i>返回智能飞行功能的FlyToMissionManager实例。</i></td></tr></table></html></div>
 <h5 id="Related">Related:</h5>
 <div class="api-row" id="iintelligentflightmanager_intelligentflightinfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfoListener.html">IntelligentFlightInfoListener</a></div></div><div class="api-row" id="iintelligentflightmanager_autosensinginfolistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfoListener.html">AutoSensingInfoListener</a></div></div><div class="api-row" id="iintelligentflightmanager_intelligentflightinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentFlightInfo.html">IntelligentFlightInfo</a></div></div><div class="api-row" id="iintelligentflightmanager_missiontype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_missiontype_inline">MissionType</a></div></div><div class="inline-doc" id="iintelligentflightmanager_missiontype_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">enum </font>MissionType</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">enum</span> <span class="title class_">MissionType</span> </span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
-<h5 id="Description-12">Description:</h5>
-<p><font color="#666">Intelligent Flight function types. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="描述：-13">描述：</h5>
+<p><font color="#666">智能飞行功能类型。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
 <h5 id="Enum-Members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_poi_inline"></a>POI</td><td><font color="#666">POI</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_spotlight_inline"></a>SPOTLIGHT</td><td><font color="#666">SpotLight</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_spotlight_track_inline"></a>TRACK</td><td><font color="#666">Track</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_fly_to_inline"></a>FLY_TO</td><td><font color="#666">Fly to the target point</td></tr></table></html>
-<h5 id="Class-Members-2">Class Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_poi_inline"></a>POI</td><td><font color="#666">环绕功能。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_spotlight_inline"></a>SPOTLIGHT</td><td><font color="#666">聚焦功能。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_spotlight_track_inline"></a>TRACK</td><td><font color="#666">跟随功能。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_missiontype_fly_to_inline"></a>FLY_TO</td><td><font color="#666">飞向目标点功能。</td></tr></table></html>
+<h5 id="Class-Members">Class Members:</h5>
 </div>
 <div class="api-row" id="iintelligentflightmanager_targettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_targettype_inline">TargetType</a></div></div><div class="inline-doc" id="iintelligentflightmanager_targettype_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">enum </font>TargetType</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">enum</span> <span class="title class_">TargetType</span> </span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
-<h5 id="Description-13">Description:</h5>
-<p><font color="#666">Target types for the intelligent flight function. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="描述：-14">描述：</h5>
+<p><font color="#666">智能飞行功能的目标类型。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
 <h5 id="Enum-Members-2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_index_inline"></a>INDEX</td><td><font color="#666">Index type</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_location_inline"></a>LOCATION</td><td><font color="#666">Location type</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_rect_inline"></a>RECT</td><td><font color="#666">Rectangle area type</td></tr></table></html>
-<h5 id="Class-Members-3">Class Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_index_inline"></a>INDEX</td><td><font color="#666">索引类型。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_location_inline"></a>LOCATION</td><td><font color="#666">位置类型。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_targettype_rect_inline"></a>RECT</td><td><font color="#666">框选类型。</td></tr></table></html>
+<h5 id="Class-Members-2">Class Members:</h5>
 </div>
 <div class="api-row" id="iintelligentflightmanager_autosensinginfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingInfo.html">AutoSensingInfo</a></div></div><div class="api-row" id="iintelligentflightmanager_autosensingtarget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_AutoSensingTarget.html">AutoSensingTarget</a></div></div><div class="api-row" id="iintelligentflightmanager_autosensingtargettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#iintelligentflightmanager_autosensingtargettype_inline">AutoSensingTargetType</a></div></div><div class="inline-doc" id="iintelligentflightmanager_autosensingtargettype_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">enum </font>AutoSensingTargetType</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="keyword">enum</span> <span class="title class_">AutoSensingTargetType</span> </span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
-<h5 id="Description-14">Description:</h5>
-<p><font color="#666">Target types for auto sensing. <br><br><code><i>Supported since MSDK 5.14.0</i></code></p>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent</td></tr></table></html>
+<h5 id="描述：-15">描述：</h5>
+<p><font color="#666">自动识别的目标类型。 <br><br><code><i>MSDK 5.14.0开始支持</i></code></p>
 <h5 id="Enum-Members-3">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_person_inline"></a>PERSON</td><td><font color="#666">Person</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_car_inline"></a>CAR</td><td><font color="#666">Car</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_boat_inline"></a>BOAT</td><td><font color="#666">Boat</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_custom_inline"></a>CUSTOM</td><td><font color="#666">Custom</td></tr></table></html>
-<h5 id="Class-Members-4">Class Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_person_inline"></a>PERSON</td><td><font color="#666">人。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_car_inline"></a>CAR</td><td><font color="#666">车。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_boat_inline"></a>BOAT</td><td><font color="#666">船。</td></tr><tr valign="top"><td><font color="#70BF41"><a href="#iintelligentflightmanager_autosensingtargettype_custom_inline"></a>CUSTOM</td><td><font color="#666">自定义。</td></tr></table></html>
+<h5 id="Class-Members-3">Class Members:</h5>
 </div>
 <div class="api-row" id="iintelligentflightmanager_intelligentmodel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IntelligentModel.html">IntelligentModel</a></div></div><div class="api-row" id="iintelligentflightmanager_ismarttrackmissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISmartTrackMissionManager.html">ISmartTrackMissionManager</a></div></div><div class="api-row" id="iintelligentflightmanager_ispotlightmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_ISpotLightManager.html">ISpotLightManager</a></div></div><div class="api-row" id="iintelligentflightmanager_ipoimissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IPOIMissionManager.html">IPOIMissionManager</a></div></div><div class="api-row" id="iintelligentflightmanager_iflytomissionmanager"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/IIntelligentFlightManager/IIntelligentFlightManager_IFlyToMissionManager.html">IFlyToMissionManager</a></div></div>
 
@@ -870,22 +878,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">Search Mobile SDK Document
+            <h2 class="title">搜索 Mobile SDK 文档
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
-            <div v-show="searchLoading" class="text-center">Loading...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
+            <div v-show="searchLoading" class="text-center">加载中...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
             </div>
           </div>
         </div>
@@ -896,15 +904,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
       </div>
     </div>
   </footer>
