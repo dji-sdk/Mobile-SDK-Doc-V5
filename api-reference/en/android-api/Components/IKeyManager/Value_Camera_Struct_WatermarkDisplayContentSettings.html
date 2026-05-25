@@ -24,14 +24,14 @@
           <li><a href="/windows-sdk">Windows SDK</a></li>
         </ul>
         <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
-          <li><a href="/login">登录</a></li>
-          <li><a href="/register" class="head-cta">注册</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register" class="head-cta">Register</a></li>
         </ul>
         <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
           <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
             <ul class="hovedown-menu hovedown-menu-right">
-              <li><a href="/user">个人中心</a></li>
-              <li><a href="javascript:void(0);" v-on="click: logout">登出</a></li>
+              <li><a href="/user">User Center</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -41,9 +41,9 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">概览</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/cn/">文档</a><a href="/mobile-sdk/downloads">下载</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/zh-cn">技术支持</a><span class="active hovedown menu-item">中文<span class="caret"></span>
+      <nav><a href="/mobile-sdk">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
-            <li><a href="/api-reference-v5/android-api/index.html">English</a></li>
+            <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span></nav>
     </div>
   </div>
@@ -398,13 +398,13 @@
                     <ul class="sub-menu">
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_DJIStick.html">IStick</a>
                             </dd>
+                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
+                            </dd>
                             <dd><a data-href="../IVirtualStickManager/Value_FlightController_Struct_VirtualStickFlightControlParam.html" class="sub-toggle">VirtualStickFlightControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickRange.html">VirtualStickRange</a>
                                       </dd>
                               </ul>
-                            </dd>
-                            <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickStateListener.html">VirtualStickStateListener</a>
                             </dd>
                             <dd><a href="../IVirtualStickManager/IVirtualStickManager_VirtualStickState.html">VirtualStickState</a>
                             </dd>
@@ -429,6 +429,8 @@
                                       <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html">SmartTrackCapability</a>
                                       </dd>
                                       <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html">SmartTrackInfo</a>
+                                      </dd>
+                                      <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackParam.html">SmartTrackParam</a>
                                       </dd>
                                       <dd><a href="../IIntelligentFlightManager/IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html">SmartTrackTarget</a>
                                       </dd>
@@ -672,9 +674,9 @@
                             </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatus.html">UARegistrationNumberStatus</a>
                             </dd>
-                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html">UARegistrationNumberStatusListener</a>
-                            </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_CClassStatusListener.html">CClassStatusListener</a>
+                            </dd>
+                            <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_UARegistrationNumberStatusListener.html">UARegistrationNumberStatusListener</a>
                             </dd>
                             <dd><a href="../IUASRemoteIDManager/IUASRemoteIDManager_OperatorRegistrationNumberStatus.html">OperatorRegistrationNumberStatus</a>
                             </dd>
@@ -718,195 +720,195 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>WatermarkDisplayContentSettings</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WatermarkDisplayContentSettings</span> <span class="keyword">implements</span> <span class="title class_">DJIValue</span>, JNIProguardKeepTag, ByteStream</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：">描述：</h5>
-<p><font color="#666">相机水印内容信息设置。</p>
-<h5 id="类成员">类成员:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description">Description:</h5>
+<p><font color="#666">The content information settings of the camera watermark.</p>
+<h5 id="Class-Members">Class Members:</h5>
 <h4 id="Members">Members</h4>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getdronetypeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getdronetypeenabled_inline">getDroneTypeEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getdronetypeenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getDroneTypeEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Boolean <span class="title function_">getDroneTypeEnabled</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-2">描述：</h5>
-<p><font color="#666"><b>参数: </b>Boolean<br><br><br>
-<code>true</code>表示水印中增加机型信息。</p>
-<h5 id="返回值：">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code>表示水印中增加机型信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-2">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br><br>
+<code>true</code> means to add drone type information to the watermark.</p>
+<h5 id="Return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code> means to add drone type information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setdronetypeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setdronetypeenabled_inline">setDroneTypeEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setdronetypeenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setDroneTypeEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setDroneTypeEnabled</span><span class="params">(Boolean droneTypeEnabled)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-3">描述：</h5>
-<p><font color="#666">设置是否在水印中增加机型信息。</p>
-<h5 id="输入参数：">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">droneTypeEnabled</td><td><font color="#666"><i><code>true</code>表示水印中增加机型信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-3">Description:</h5>
+<p><font color="#666">To set whether to add drone type information to the watermark.</p>
+<h5 id="Input-Parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">droneTypeEnabled</td><td><font color="#666"><i><code>true</code> means to add drone type information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getdronesnenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getdronesnenabled_inline">getDroneSnEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getdronesnenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getDroneSnEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Boolean <span class="title function_">getDroneSnEnabled</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-4">描述：</h5>
-<p><font color="#666"><b>参数: </b>Boolean<br><br><br>
-<code>true</code>表示水印中增加飞行器SN信息。</p>
-<h5 id="返回值：-2">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code>表示水印中增加飞行器SN信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-4">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br><br>
+<code>true</code> means to add drone SN information to the watermark.</p>
+<h5 id="Return-2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code> means to add drone SN information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setdronesnenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setdronesnenabled_inline">setDroneSnEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setdronesnenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setDroneSnEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setDroneSnEnabled</span><span class="params">(Boolean droneSnEnabled)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-5">描述：</h5>
-<p><font color="#666">设置是否在水印中增加飞行器SN信息。</p>
-<h5 id="输入参数：-2">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">droneSnEnabled</td><td><font color="#666"><i><code>true</code>表示水印中增加飞行器SN信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-5">Description:</h5>
+<p><font color="#666">To set whether to add drone SN information to the watermark.</p>
+<h5 id="Input-Parameters-2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">droneSnEnabled</td><td><font color="#666"><i><code>true</code> means to add drone SN information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getdatetimeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getdatetimeenabled_inline">getDateTimeEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getdatetimeenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getDateTimeEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Boolean <span class="title function_">getDateTimeEnabled</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-6">描述：</h5>
-<p><font color="#666"><b>参数: </b>Boolean<br><br><br>
-<code>true</code>表示水印中增加时间信息。</p>
-<h5 id="返回值：-3">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code>表示水印中增加时间信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-6">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br><br>
+<code>true</code> means to add time information to the watermark.</p>
+<h5 id="Return-3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code> means to add time information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setdatetimeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setdatetimeenabled_inline">setDateTimeEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setdatetimeenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setDateTimeEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setDateTimeEnabled</span><span class="params">(Boolean dateTimeEnabled)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-7">描述：</h5>
-<p><font color="#666">设置是否在水印中增加时间信息。</p>
-<h5 id="输入参数：-3">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">dateTimeEnabled</td><td><font color="#666"><i><code>true</code>表示水印中增加时间信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-7">Description:</h5>
+<p><font color="#666">To set whether to add time information to the watermark.</p>
+<h5 id="Input-Parameters-3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">dateTimeEnabled</td><td><font color="#666"><i><code>true</code> means to add time information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getgpslonlatenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getgpslonlatenabled_inline">getGpsLonLatEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getgpslonlatenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getGpsLonLatEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Boolean <span class="title function_">getGpsLonLatEnabled</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-8">描述：</h5>
-<p><font color="#666"><b>参数: </b>Boolean<br><br><br>
-<code>true</code>表示水印中增加飞行器经纬度位置信息。</p>
-<h5 id="返回值：-4">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code>表示水印中增加飞行器经纬度位置信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-8">Description:</h5>
+<p><font color="#666"><b>Parameter: </b>Boolean<br><br><br>
+<code>true</code> means to add the drone longitude and latitude location information to the watermark.</p>
+<h5 id="Return-4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code> means to add the drone longitude and latitude location information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setgpslonlatenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setgpslonlatenabled_inline">setGpsLonLatEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setgpslonlatenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setGpsLonLatEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setGpsLonLatEnabled</span><span class="params">(Boolean gpsLonLatEnabled)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-9">描述：</h5>
-<p><font color="#666">设置是否在水印中增加飞行器经纬度位置信息。你可以通过<code><a href="../../Components/IKeyManager/Value_Camera_Struct_WatermarkDisplayContentSettings.html#value_camera_struct_watermarkdisplaycontentsettings_getlonlat">getLonLatFormat</a></code>设置经纬度的显示格式。</p>
-<h5 id="输入参数：-4">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">gpsLonLatEnabled</td><td><font color="#666"><i><code>true</code>表示水印中增加飞行器经纬度位置信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-9">Description:</h5>
+<p><font color="#666">To set whether to add the drone longitude and latitude location information to the watermark. You can set the display format of longitude and latitude location information through <code><a href="../../Components/IKeyManager/Value_Camera_Struct_WatermarkDisplayContentSettings.html#value_camera_struct_watermarkdisplaycontentsettings_getlonlat">getLonLatFormat</a></code>.</p>
+<h5 id="Input-Parameters-4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">gpsLonLatEnabled</td><td><font color="#666"><i><code>true</code> means to add the drone longitude and latitude location information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getlonlat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getlonlat_inline">getLonLatFormat</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getlonlat_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getLonLatFormat</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LonLatFormat <span class="title function_">getLonLatFormat</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-10">描述：</h5>
-<p><font color="#666">获取水印中经纬度的显示格式。</p>
-<h5 id="返回值：-5">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lonlatformat">LonLatFormat</a></td><td><font color="#666"><i>返回水印中经纬度的显示格式。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-10">Description:</h5>
+<p><font color="#666">To get the display format of the latitude and longitude in the watermark.</p>
+<h5 id="Return-5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lonlatformat">LonLatFormat</a></td><td><font color="#666"><i>Return the display format of the latitude and longitude in the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setlonlat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setlonlat_inline">setLonLatFormat</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setlonlat_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setLonLatFormat</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setLonLatFormat</span><span class="params">(LonLatFormat lonLatFormat)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-11">描述：</h5>
-<p><font color="#666">设置水印中经纬度的显示格式。</p>
-<h5 id="输入参数：-5">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lonlatformat">LonLatFormat</a> <font color="#000">lonLatFormat</td><td><font color="#666"><i>水印中经纬度的显示格式。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-11">Description:</h5>
+<p><font color="#666">To set the display format of the latitude and longitude in the watermark.</p>
+<h5 id="Input-Parameters-5">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lonlatformat">LonLatFormat</a> <font color="#000">lonLatFormat</td><td><font color="#666"><i>The display format of the latitude and longitude in the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getgpsaltitudeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getgpsaltitudeenabled_inline">getGpsAltitudeEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getgpsaltitudeenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getGpsAltitudeEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Boolean <span class="title function_">getGpsAltitudeEnabled</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-12">描述：</h5>
-<p><font color="#666"><code>true</code>表示水印中增加飞行器高度信息。</p>
-<h5 id="返回值：-6">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code>表示水印中增加飞行器高度信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-12">Description:</h5>
+<p><font color="#666"><code>true</code> means to add aircraft altitude information to the watermark.</p>
+<h5 id="Return-6">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code> means to add aircraft altitude information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setgpsaltitudeenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setgpsaltitudeenabled_inline">setGpsAltitudeEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setgpsaltitudeenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setGpsAltitudeEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setGpsAltitudeEnabled</span><span class="params">(Boolean gpsAltitudeEnabled)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-13">描述：</h5>
-<p><font color="#666">设置是否在水印中增加飞行器高度信息。</p>
-<h5 id="输入参数：-6">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">gpsAltitudeEnabled</td><td><font color="#666"><i><code>true</code>表示水印中增加飞行器高度信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-13">Description:</h5>
+<p><font color="#666">To set whether to add aircraft altitude information to the watermark.</p>
+<h5 id="Input-Parameters-6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">gpsAltitudeEnabled</td><td><font color="#666"><i><code>true</code> means to add aircraft altitude information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getunit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getunit_inline">getLengthUnit</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getunit_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getLengthUnit</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LengthUnit <span class="title function_">getLengthUnit</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-14">描述：</h5>
-<p><font color="#666">获取水印中高度的显示单位。</p>
-<h5 id="返回值：-7">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lengthunit">LengthUnit</a></td><td><font color="#666"><i>返回水印中高度的显示单位。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-14">Description:</h5>
+<p><font color="#666">To get the display unit for height in the watermark.</p>
+<h5 id="Return-7">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lengthunit">LengthUnit</a></td><td><font color="#666"><i>Returns the display unit for height in the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setunit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setunit_inline">setLengthUnit</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setunit_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setLengthUnit</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setLengthUnit</span><span class="params">(LengthUnit lengthUnit)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-15">描述：</h5>
-<p><font color="#666">设置水印中高度的显示单位。</p>
-<h5 id="输入参数：-7">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lengthunit">LengthUnit</a> <font color="#000">lengthUnit</td><td><font color="#666"><i>水印中高度的显示单位。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-15">Description:</h5>
+<p><font color="#666">To set the display unit for height in the watermark.</p>
+<h5 id="Input-Parameters-7">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_lengthunit">LengthUnit</a> <font color="#000">lengthUnit</td><td><font color="#666"><i>The display unit for height in the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getusercustomstringenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getusercustomstringenabled_inline">getUserCustomStringEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getusercustomstringenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getUserCustomStringEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Boolean <span class="title function_">getUserCustomStringEnabled</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-16">描述：</h5>
-<p><font color="#666"><code>true</code>表示水印中增加自定义文案信息。</p>
-<h5 id="返回值：-8">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code>表示水印中增加自定义文案信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-16">Description:</h5>
+<p><font color="#666"><code>true</code> means to add custom copy information to the watermark.</p>
+<h5 id="Return-8">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean</td><td><font color="#666"><i><code>true</code> means to add custom copy information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setusercustomstringenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setusercustomstringenabled_inline">setUserCustomStringEnabled</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setusercustomstringenabled_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setUserCustomStringEnabled</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setUserCustomStringEnabled</span><span class="params">(Boolean userCustomStringEnabled)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-17">描述：</h5>
-<p><font color="#666">设置是否在水印中增加自定义文案信息。</p>
-<h5 id="输入参数：-8">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">userCustomStringEnabled</td><td><font color="#666"><i><code>true</code>表示水印中增加自定义文案信息。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-17">Description:</h5>
+<p><font color="#666">To set whether to add custom copy information to the watermark.</p>
+<h5 id="Input-Parameters-8">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Boolean <font color="#000">userCustomStringEnabled</td><td><font color="#666"><i><code>true</code> means to add custom copy information to the watermark.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_getlocate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_getlocate_inline">getScreenLocation</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_getlocate_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>getScreenLocation</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ControlLocation <span class="title function_">getScreenLocation</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-18">描述：</h5>
-<p><font color="#666">获取水印在相机屏幕中显示的位置。</p>
-<h5 id="返回值：-9">返回值：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_controllocation">ControlLocation</a></td><td><font color="#666"><i>返回水印在相机屏幕中显示的位置。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-18">Description:</h5>
+<p><font color="#666">To get where the watermark is displayed on the camera screen.</p>
+<h5 id="Return-9">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_controllocation">ControlLocation</a></td><td><font color="#666"><i>Return where the watermark is displayed on the camera screen.</i></td></tr></table></html></div>
 <div class="api-row" id="value_camera_struct_watermarkdisplaycontentsettings_setlocate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#value_camera_struct_watermarkdisplaycontentsettings_setlocate_inline">setScreenLocation</a></div></div><div class="inline-doc" id="value_camera_struct_watermarkdisplaycontentsettings_setlocate_inline"
 <blockquote>
 <div class="article"><h6 ><font color="#AAA">method </font>setScreenLocation</h6></div>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">setScreenLocation</span><span class="params">(ControlLocation screenLocation)</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>包：</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
-<h5 id="描述：-19">描述：</h5>
-<p><font color="#666">设置水印在相机屏幕中显示的位置。</p>
-<h5 id="输入参数：-9">输入参数：</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_controllocation">ControlLocation</a> <font color="#000">screenLocation</td><td><font color="#666"><i>水印在相机屏幕中显示的位置。</i></td></tr></table></html></div>
+<html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.sdk.keyvalue.value.camera</td></tr></table></html>
+<h5 id="Description-19">Description:</h5>
+<p><font color="#666">To set where the watermark is displayed on the camera screen.</p>
+<h5 id="Input-Parameters-9">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/IKeyManager/DJIValue.html#value_common_enum_controllocation">ControlLocation</a> <font color="#000">screenLocation</td><td><font color="#666"><i>Where the watermark is displayed on the camera screen.</i></td></tr></table></html></div>
 
         </div>
       </div>
@@ -915,22 +917,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title">搜索 Mobile SDK 文档
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;搜索结果
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
                   <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
                   <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
             </ul>
-            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">加载更多</a></div>
-            <div v-show="searchLoading" class="text-center">加载中...
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
+            <div v-show="searchLoading" class="text-center">Loading...
             </div>
-            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">未找到结果
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
             </div>
           </div>
         </div>
@@ -941,15 +943,15 @@
     <div class="container">
       <div class="foot-nav row">
         <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">资讯</span><a href="/products">产品</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">社区</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">联系我们</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
-        <nav class="link-list col-xs-2"><span class="title">商务合作</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
         <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
       </div>
       <div class="foot-copyright row">
         <div class="col-xs-3 foot-logo"><img src="../../images/dji-logo-foot.png"></div>
-        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI 大疆创新 版权所有</span><a href="/policies/privacy">隐私政策</a><a href="/policies/terms">使用条款</a></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2022 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
       </div>
     </div>
   </footer>
