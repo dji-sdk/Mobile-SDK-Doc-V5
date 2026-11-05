@@ -403,7 +403,7 @@ Searchdoc.Panel.prototype = $.extend({}, Searchdoc.Navigation, new function() {
         }
     })
     // 侧栏内部滚动（sticky 状态下 searcher 位置不动，但保险起见也监听）
-    $(document).on('scroll', '.site-sidebar', function () {
+    $('.site-sidebar').on('scroll.docSearchPanel', function () {
         if ($('#panel').hasClass('panel_results_open')) {
             positionResultPanel()
         }

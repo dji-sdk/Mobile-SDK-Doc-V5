@@ -12,69 +12,6 @@ var panel
   var w = $(window)
   var titles = sidebar.find('dl > dd > a')
 
-  var isCacheKey = function(hash){
-    return hash.lastIndexOf('_key') == (hash.length - 4)
-  }
-  var initHashScroll = function () {
-    // first time scroll
-    var hash = window.location.hash.toLowerCase()
-    if (!!hash) {
-      window.location.hash = ''
-      setTimeout(function () {
-        window.history.pushState(null, null, hash)
-        scrollTo($(hash))
-      }, 1)
-    }
-
-    // click #hash to scroll
-    $('a[href^="#"]').click(function (e) {
-      e.preventDefault()
-      var target = $(this)
-      // if(!target.hasClass('trigger')){
-        var hash = target.attr('href').toLowerCase()
-        var targetDom = null
-        if(isCacheKey(hash)){
-          targetDom = target
-        }else{
-          targetDom = $(hash)
-        }
-        scrollTo(targetDom, function() {
-          window.history.pushState(null, null, hash)
-        })
-      // }
-    })
-    var openHashTag = function(hash, callback){
-      if(isCacheKey(hash)){
-        // pass
-      }else if(hash.lastIndexOf('_inline') != (hash.length - 7)){
-        hash += '_inline'
-      }
-      var targetModuleDom = $('a[href="' + hash + '"]')
-      function doClick(){
-        setTimeout(
-            function(){
-              targetModuleDom.click()
-            }, 400
-          )
-      }
-      if(targetModuleDom && targetModuleDom.length > 0){
-        var preDocs = targetModuleDom.parents('.inline-doc')
-        if(preDocs && preDocs.length > 0){
-          var preId = preDocs.eq(0).attr('id')
-          openHashTag('#' + preId, doClick)
-        }else{
-          doClick()
-          callback && callback()
-        }
-      }
-    }
-    openHashTag(hash)
-    $(window).bind('hashchange', function(e){
-      var hash = window.location.hash.toLowerCase()
-      openHashTag(hash)
-    })
-  }
-
   var initSidebar = function () {
     // fix & resize sidebar
     window.addEventListener('scroll', function () {
@@ -102,12 +39,16 @@ var panel
       var target = $(this)
       var href = target.attr('data-href')
       var hasHref = !!(href && href.length)
+      if (!window.DocRuntime.plainClick(e)) {
+        if (hasHref) window.open(href, '_blank', 'noopener')
+        return
+      }
 
       // 判断"当前页是否就是该菜单主页"：比较 pathname 结尾（兼容相对/绝对路径）
       var isCurrentPage = false
       if (hasHref) {
         var currentPath = window.location.pathname
-        if (currentPath.endsWith(href) || window.location.href.endsWith(href)) {
+        if (new URL(href, window.location.href).pathname === currentPath) {
           isCurrentPage = true
         }
       }
@@ -134,7 +75,7 @@ var panel
   }
 
   // init sidebar scroll poistion to active title
-  var SIDEBAR_SCROLL_KEY = 'docSidebarScrollTop'
+  var SIDEBAR_SCROLL_KEY = 'docSidebarScrollTop:' + new URL(window.DocSearchIndexUrl, location.href).pathname
 
   // 只在"从左栏点击链接"时记录侧栏滚动位置。
   // 用捕获阶段的 click，早于 .sub-toggle 那个 click 处理器里的同步跳转。
@@ -145,8 +86,12 @@ var panel
       var t = e.target
       while (t && t !== sidebar[0]) {
         if (t.tagName === 'A') {
+          var link = $(t), href = link.attr('data-href') || link.attr('href')
+          if (!window.DocRuntime.plainClick(e) || t.target || !href || /^(#|javascript:)/i.test(href)) return
+          var targetUrl = new URL(href, location.href)
+          if (targetUrl.pathname === location.pathname) return
           try {
-            sessionStorage.setItem(SIDEBAR_SCROLL_KEY, String(sidebarInner.scrollTop()))
+            sessionStorage.setItem(SIDEBAR_SCROLL_KEY, JSON.stringify({ top: sidebarInner.scrollTop(), target: targetUrl.href, time: Date.now() }))
           } catch (err) {}
           return
         }
@@ -163,7 +108,8 @@ var panel
     }else{
       var mainTitles = $('.sub-toggle')
       for(var i = 0; i < mainTitles.length; i++){
-        if(location.href.endsWith(mainTitles.eq(i).attr('data-href'))){
+        var candidateHref = mainTitles.eq(i).attr('data-href')
+        if(candidateHref === '' || (candidateHref && new URL(candidateHref, location.href).pathname === location.pathname)){
           currentTitle = mainTitles.eq(i)
           currentTitle.addClass('active')
           break
@@ -186,47 +132,27 @@ var panel
     } catch (e) {}
     if (savedTop !== null) {
       try { sessionStorage.removeItem(SIDEBAR_SCROLL_KEY) } catch (e) {}
-      var targetTop = parseInt(savedTop, 10) || 0
-
-      // 立即恢复一次
-      sidebarInner.scrollTop(targetTop)
-
-      // 兜底：有其他代码（如 initHashScroll 触发的锚点跳转、jQuery 事件处理器等）
-      // 会在 initSidebarScroll 之后同步或异步地把 sidebar 的 scrollTop 改回 0。
-      // 用 rAF + 短延迟多次覆盖，确保最终位置是我们想要的目标值。
-      window.requestAnimationFrame(function () {
-        sidebarInner.scrollTop(targetTop)
-      })
-      setTimeout(function () {
-        sidebarInner.scrollTop(targetTop)
-      }, 100)
-      setTimeout(function () {
-        sidebarInner.scrollTop(targetTop)
-      }, 400)
-      return
+      try {
+        var saved = JSON.parse(savedTop)
+        if (saved.target === location.href && Date.now() - saved.time < 60000) {
+          sidebarInner.scrollTop(saved.top || 0)
+          return
+        }
+      } catch (e) {}
     }
 
     // 没有记录时（跳转来源不是左栏，例如从正文/TOC/外链跳转、或直接打开链接/刷新）：
     // 把当前高亮项滚动到侧栏可视区域垂直居中位置
-    if (currentTitle[0] == sidebarInner.find('a')[0]) return false;
+    if (!currentTitle.length || !sidebarInner.length || currentTitle[0] == sidebarInner.find('a')[0]) return false;
     var sidebarHeight = sidebarInner.height()
-    var itemTop = currentTitle.position().top
+    var itemTop = currentTitle[0].getBoundingClientRect().top - sidebarInner[0].getBoundingClientRect().top + sidebarInner.scrollTop()
     var itemHeight = currentTitle.outerHeight()
     // 目标 scrollTop：让当前项中心对齐侧栏可视区域中心
     var top = itemTop - (sidebarHeight - itemHeight) / 2
     if (top < 0) top = 0
     var targetTop = top
-    // 立即设置 + 兜底覆盖（防止被其他 JS 改回 0）
+    // 一次恢复即可；延迟重复写入会覆盖用户随后主动滚动。
     sidebarInner.scrollTop(targetTop)
-    window.requestAnimationFrame(function () {
-      sidebarInner.scrollTop(targetTop)
-    })
-    setTimeout(function () {
-      sidebarInner.scrollTop(targetTop)
-    }, 100)
-    setTimeout(function () {
-      sidebarInner.scrollTop(targetTop)
-    }, 400)
   }
 
   // make .article table scrollable
@@ -272,13 +198,6 @@ var panel
     }
   }
 
-  var scrollTo = function (target, cb) {
-    if(target.length > 0) {
-      cb = cb || function() {}
-      $('html, body').stop().animate({scrollTop: Math.ceil($(target).offset().top - 50)}, cb);
-    }
-  }
-
   function placeholder() {
     if ($('<input type="text">')[0].placeholder !== undefined) return;
 
@@ -301,7 +220,10 @@ var panel
     var r = window.location.search.substr(1).match(reg);
     // 读取端使用 decodeURIComponent（UTF-8 安全）；unescape 已废弃且按 Latin-1 解码，
     // 会把中文搜索词变成乱码。同时将 + 还原为空格（URL 编码约定）
-    if (r != null && r != 'undefined') return decodeURIComponent(r[2].replace(/\+/g, ' ')); return null;
+    if (r != null && r != 'undefined') {
+      try { return decodeURIComponent(r[2].replace(/\+/g, ' ')) } catch (e) { return null }
+    }
+    return null;
   }
 
   $(function() {
@@ -309,25 +231,27 @@ var panel
       var tree = [];
       // var searchKey = getUrlParam('search')
       $('#links').hide();
-      panel = new Searchdoc.Panel($('#panel'), search_data, tree, top.frames[1]);
-      $('#search').focus();
-
-      // var s = window.parent.location.search.match(/\?q=([^&]+)/);
       var s = getUrlParam('search'), index = parseInt(getUrlParam('i'))
-      if (s) {
-          // s = decodeURIComponent(s[1]).replace(/\+/g, ' ');
-          if (s.length > 0)
-          {
-            $('#search').val(s);
-            panel.search(s, false, index);
-          }
+      if (s) $('#search').val(s)
+      var searchLoading = false
+      function ensureSearch() {
+        if (panel || searchLoading) return
+        searchLoading = true
+        $('#search').attr('aria-busy', 'true')
+        window.DocRuntime.loadSearchIndex().done(function () {
+          if (!panel) panel = new Searchdoc.Panel($('#panel'), search_data, tree, window)
+          var value = $('#search').val()
+          if (value) panel.search(value, false, index)
+          $('#search').removeAttr('aria-busy').removeAttr('title')
+        }).fail(function () {
+          $('#search').removeAttr('aria-busy').attr('title', '搜索加载失败，请再次点击重试')
+        }).always(function () { searchLoading = false })
       }
-      setTimeout(function(){
-        initHashScroll()
-      }, 300)
+      $('#search').on('focus.docSearch input.docSearch click.docSearch', ensureSearch)
+      if (s) ensureSearch()
       $('.clean-search').on('click', function(){
-        $('#search').val('');
-        panel.search('', false, 0);
+         $('#search').val('');
+         if (panel) panel.search('', false, 0);
       })
   })
 
@@ -362,9 +286,16 @@ var panel
       }
     }
 
-    $tocPanel.css({ top: top + 'px', height: maxH + 'px' })
+    var metrics = top + ':' + maxH
+    if ($tocPanel.data('doc-metrics') !== metrics) {
+      $tocPanel.data('doc-metrics', metrics).css({ top: top + 'px', height: maxH + 'px' })
+    }
   }
-  $(window).on('scroll resize', updateTocTop)
+  var tocTopFrame = null
+  $(window).on('scroll.docTocTop resize.docTocTop', function () {
+    if (tocTopFrame !== null) return
+    tocTopFrame = window.requestAnimationFrame(function () { tocTopFrame = null; updateTocTop() })
+  })
   updateTocTop()
 })()
 
@@ -411,7 +342,7 @@ var panel
       var href = $link.eq(0).attr('href')
       // 整行可点跳转
       $row.on('click', function(e) {
-        if (e.target.tagName.toLowerCase() === 'a') return
+        if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
         if (href) window.location.href = href
       })
     }
@@ -1381,9 +1312,11 @@ var panel
           }
         })
         colorizeJavaSignature($fig)
-        $fig.find('pre').scrollLeft(0)
-        // 等布局完成后按真实组件宽度判断；仅超宽签名按参数组换行
-        var format = function () { wrapLongSignatureParams($fig) }
+        // 所有同步卡片转换结束后再复位滚动，避免每改一张卡片就强制布局。
+        var format = function () {
+          $fig.find('pre').scrollLeft(0)
+          wrapLongSignatureParams($fig)
+        }
         if (window.requestAnimationFrame) window.requestAnimationFrame(format)
         else setTimeout(format, 0)
       })
@@ -1890,7 +1823,7 @@ var panel
         var targetId = $(this).attr('data-target')
         var $target = $(document.getElementById(targetId))
         if (!$target.length) return
-        $('html, body').stop().animate({ scrollTop: $target.offset().top - 80 }, 300)
+        window.DocRuntime.navigate('#' + targetId, { history: true })
         $target.addClass('ifm-flash')
         setTimeout(function () { $target.removeClass('ifm-flash') }, 1600)
       })
@@ -1989,69 +1922,15 @@ var panel
       transformInlineDoc($doc, type, name)
     })
 
-    // 兜底：轮询检查未处理的 class-inline-doc（防止事件未触发）
-    var pollCount = 0
-    var pollTimer = setInterval(function () {
-      pollCount++
-      $('.class-inline-doc.ifm-method-doc:not(.ifm-processed)').each(function () {
-        var $doc = $(this)
-        if ($doc.children().length > 0) {
-          var type = $doc.attr('data-ifm-type') || 'class'
-          var name = $doc.attr('data-ifm-name') || ''
-          transformInlineDoc($doc, type, name)
-        }
-      })
-      if (pollCount > 40) clearInterval(pollTimer)  // 最多轮询 8 秒
-    }, 200)
+    // 已有内容已同步转换；异步内容由 ready 事件转换，不对整页轮询。
 
     // ===== 7. 重建 TOC：概览 / 成员索引 / 方法与枚举 / 相关类型 =====
     // 收集顶层 class api-rows（在 injectClassInlineDocs 后仍保留 id）
     var ifmTocItems = []  // { anchorId, label } — 供 onScroll 判定高亮
-    var ifmOnScrollBound = false
-
-    function ifmOnScroll() {
-      if (!ifmTocItems.length) return
-      var $tocList = $('.site-toc-list')
-      if (!$tocList.length) return
-      var scrollTop = $(window).scrollTop()
-      var threshold = scrollTop + 150
-      var current = ifmTocItems[0].anchorId
-      for (var i = 0; i < ifmTocItems.length; i++) {
-        var el = document.getElementById(ifmTocItems[i].anchorId)
-        if (!el) continue
-        var $el = $(el)
-        if ($el.css('display') === 'none') continue
-        if ($el.offset().top <= threshold) {
-          current = ifmTocItems[i].anchorId
-        }
-      }
-      $tocList.find('a').removeClass('active')
-      if (current) {
-        var $activeLink = $tocList.find('a[data-target="' + current + '"]').addClass('active')
-        // TOC 内自动滚动：让 active 项保持可见
-        if ($activeLink.length) {
-          var $tocScrollBox = $tocList.closest('.site-toc-inner')
-          if ($tocScrollBox.length) {
-            var boxTop = $tocScrollBox.offset().top
-            var boxH = $tocScrollBox.outerHeight()
-            var linkTop = $activeLink.offset().top
-            var linkH = $activeLink.outerHeight()
-            if (linkTop < boxTop + 40 || linkTop + linkH > boxTop + boxH - 40) {
-              var curScroll = $tocScrollBox.scrollTop()
-              var relTop = linkTop - boxTop + curScroll
-              var target = relTop - (boxH - linkH) / 2
-              if (target < 0) target = 0
-              $tocScrollBox.stop().animate({ scrollTop: target }, 200)
-            }
-          }
-        }
-      }
-    }
 
     function rebuildIfmToc() {
       var $tocList = $('.site-toc-list')
       if (!$tocList.length) return
-      $tocList.off('click')
       $tocList.empty()
       ifmTocItems = []
 
@@ -2117,28 +1996,24 @@ var panel
         })
       }
 
-      // TOC 点击：平滑滚动
-      $tocList.on('click', 'a', function (e) {
-        var scrollTarget = $(this).attr('data-scroll')
-        if (!scrollTarget) return
-        e.preventDefault()
-        var $target = $(document.getElementById(scrollTarget))
-        if ($target.length) {
-          $('html, body').stop().animate({ scrollTop: $target.offset().top - 80 }, 300)
-        }
-      })
-
-      // 绑定 ifm 专属滚动高亮（只绑定一次）
-      if (!ifmOnScrollBound) {
-        $(window).on('scroll.ifmToc resize.ifmToc', ifmOnScroll)
-        ifmOnScrollBound = true
-      }
-      // 触发一次高亮 + TOC 高度重算
-      ifmOnScroll()
-      $(window).trigger('scroll')
+      // 单一共享高亮器；TOC / 正文链接共用委托导航，不重复绑定。
+      window.DocRuntime.setToc(ifmTocItems)
     }
 
-    if (config.keepCustomToc) {
+    var $staticToc = $('.site-toc-list[data-static-toc]')
+    if ($staticToc.length) {
+      // 初始概览落在正文容器；增强后移交给可见的 Overview，避免重复 ID。
+      $article.removeAttr('id')
+      $eyebrow.filter('.ifm-eyebrow').attr('id', 'ifm-overview')
+      $staticToc.find('a').each(function () {
+        var $link = $(this)
+        var target = window.DocRuntime.resolveTarget('#' + $link.attr('data-target'))
+        if (!target) return
+        $link.attr('href', '#' + target.id).attr('data-target', target.id).attr('data-scroll', target.id)
+        ifmTocItems.push({ anchorId: target.id })
+      })
+      window.DocRuntime.setToc(ifmTocItems)
+    } else if (config.keepCustomToc) {
       // 手工分组页（DJIValue 等）：保留全局 TOC（按文档顺序 + h4/subGroup 主题分组），
       // 不执行 rebuildIfmToc。但成员行被隐藏后，TOC 锚点需重定向到对应的 inline 卡片。
       $article.find('.api-row.api-row-hidden').each(function () {
@@ -2169,12 +2044,8 @@ var panel
         $(window).trigger('scroll')
       }
     } else {
-      // 立即重建一次；异步 class-inline-doc 完成后再重建（确保相关类 desc 也齐全）
+      // 名称和顺序已由本页 DOM 提供；异步预览完成只更新布局，不重建目录。
       rebuildIfmToc()
-      $(document).off('classInlineDocReady.ifmToc').on('classInlineDocReady.ifmToc', function () {
-        // 稍延迟以确保 DOM 稳定
-        setTimeout(rebuildIfmToc, 100)
-      })
     }
 
     // 枚举成员示意图：点击当前页面弹窗预览（不另开窗口），
@@ -2204,6 +2075,7 @@ var panel
     $('.site-main .api-row.api-row-link').each(function () {
       var $row = $(this)
       if ($row.parents('.inline-doc').length) return
+      if ($.trim($row.find('.api-col.middle').first().text()).toLowerCase() !== 'class') return
       var $anchor = $row.find('.api-col.right a').eq(0)
       var href = $anchor.attr('href')
       if (!href) return
@@ -2212,15 +2084,16 @@ var panel
 
       // 构建期已内联的离线预览：跳过 AJAX，保留同一套 class 卡片和 TOC 逻辑。
       var $prebuilt = rowId ? $(document.getElementById(rowId + '_inline')) : $()
-      if ($prebuilt.length) {
+      if ($prebuilt.length && $prebuilt.children().length) {
         $prebuilt
           .addClass('class-inline-doc')
+          .attr('data-class-state', 'ready')
           .attr('data-class-href', href)
           .attr('data-class-name', name)
           .css('display', 'block')
           .off('click.offlineClass')
           .on('click.offlineClass', function (e) {
-            if ($(e.target).closest('a').length) return
+            if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
             window.location.href = href
           })
         $row.addClass('api-row-hidden').attr('data-class-inline-id', rowId + '_inline')
@@ -2233,6 +2106,7 @@ var panel
         .attr('id', rowId + '_inline')
         .attr('data-class-href', href)
         .attr('data-class-name', name)
+        .attr('data-class-state', 'pending')
         .css('display', 'block')
       $row.after($doc)
       // 隐藏外层 class 行（顶部 CLASS 标题栏由展开框内部的 blockquote+h6 承担，
@@ -2241,28 +2115,26 @@ var panel
       // 标记 class 行以便 TOC 定位到展开框
       $row.attr('data-class-inline-id', rowId + '_inline')
 
-      // 异步 fetch
-      $.ajax({
-        url: href,
-        dataType: 'html',
-        cache: true,
-        success: function (html) {
-          renderClassInlineDoc($doc, html, name, href)
-        },
-        error: function () {
-          $doc.remove() // 拉不到就移除占位
-        }
-      })
+      // 离线缺少预构建或请求失败时保留目标卡片与独立页入口。
+      function fallback() {
+        $doc.empty().attr('data-class-state', 'failed').attr('data-class-fallback', href)
+          .addClass('ifm-method-doc')
+          .append($('<a>').attr('href', href).text(name + ' ↗'))
+        window.DocRuntime.invalidate()
+      }
+      if (window.location.protocol === 'file:') { fallback(); return }
+      window.DocRuntime.fetchClassHtml(href).done(function (html) {
+        try { if (!renderClassInlineDoc($doc, html, name, href)) fallback() } catch (e) { fallback() }
+      }).fail(fallback)
     })
   }
 
   function renderClassInlineDoc($doc, html, name, href) {
     // 解析远端 HTML，抽取 .site-main .article 的内容
-    var $wrap = $('<div>' + html + '</div>')
+    var $wrap = $('<div>').append($.parseHTML(html, document, false))
     var $remoteArticle = $wrap.find('.site-main .article').eq(0)
     if (!$remoteArticle.length) {
-      $doc.remove()
-      return
+      return false
     }
 
     // 只取"代码定义 + 描述段落"这类顶部内容，与 method/enum inline-doc 结构一致：
@@ -2329,15 +2201,17 @@ var panel
       }
     }
 
-    $doc.empty().append($content.children())
+    window.DocRuntime.rebaseLinks($content, href)
+    $doc.empty().append($content.children()).attr('data-class-state', 'ready')
     // 让整块可点击跳转到 class 独立页
     $doc.on('click', function (e) {
       // 内部真实链接允许正常工作
-      if ($(e.target).closest('a').length) return
+      if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
       window.location.href = href
     })
     // 触发事件，通知页面级增强器（如 ifm-page）可以对该 class-inline-doc 进行样式转换
     $doc.trigger('classInlineDocReady')
+    return true
   }
 
 
@@ -2407,12 +2281,14 @@ var panel
 
   // 2. 生成右侧 TOC：遍历所有 API 成员行（class / enum / method 都作为普通条目）
   var $tocList = $('.site-toc-list')
-  if (!$tocList.length) return false
+  if (!$tocList.length || $tocList.is('[data-static-toc]')) return false
 
   // 收集 items：遍历 .article 内部所有 h4 与 api-row 按文档顺序，
   // 同时记录每行所属的最近 h4 分组（若无 h4 则为 null）。
   // 也记录 .api-col.left 里的中文小分类文本（如"显示模式"），供手工分组页 TOC 使用。
   var isCustomGroupedPage = $('.site-main .article').hasClass('custom-grouped-page')
+  // 普通 Components 页由增强器直接构建最终 TOC，无需先构建再清空一遍。
+  if (!isCustomGroupedPage) return
   var items = []
   var currentH4 = null
   var currentLeft = null // 上一个非空的 .api-col.left 文本，用于让同分类相邻行继承
@@ -2538,65 +2414,9 @@ var panel
     }
   }
 
-  // 点击 TOC 平滑滚动
-  $tocList.on('click', 'a', function(e) {
-    e.preventDefault()
-    var id = $(this).attr('data-target')
-    var $target = $('#' + id)
-    if ($target.length) {
-      $('html, body').animate({ scrollTop: $target.offset().top - 80 }, 300)
-      window.history.pushState(null, null, '#' + id)
-    }
-  })
+  // 点击统一交由 DocRuntime，避免同一链接触发两次动画 / 历史写入。
 
-  // 滚动高亮当前项（默认高亮第一项，滚动后按位置切换）
-  // 判定线放在 sub-nav 吸顶位置下方一点（视口 150px 处，
-  // 即 header 60 + sub-nav 50 + 40 缓冲）：元素顶部越过这条线就算"进入阅读区"
-  function onScroll() {
-    var scrollTop = $(window).scrollTop()
-    var threshold = scrollTop + 150
-    var current = items[0] ? items[0].anchorId : null
-    for (var i = 0; i < items.length; i++) {
-      var $el = $('#' + items[i].anchorId)
-      // 跳过不存在或位置无效的元素
-      if (!$el.length) continue
-      if ($el.css('display') === 'none') {
-        // ifm 化页面成员行被隐藏（api-row-hidden），高亮定位回退到其展开卡片
-        var $inlineEl = $('#' + items[i].anchorId + '_inline')
-        if (!$inlineEl.length) continue
-        $el = $inlineEl
-      }
-      if ($el.offset().top <= threshold) {
-        current = items[i].anchorId
-      }
-    }
-
-    $tocList.find('a').removeClass('active')
-    if (current) {
-      var $activeLink = $tocList.find('a[data-target="' + current + '"]').addClass('active')
-      // TOC 内部自动滚动：active 项若不在可视区域，滚动到居中
-      if ($activeLink.length) {
-        var $tocScrollBox = $tocList.closest('.site-toc-inner')
-        if ($tocScrollBox.length) {
-          var boxTop = $tocScrollBox.offset().top
-          var boxH = $tocScrollBox.outerHeight()
-          var linkTop = $activeLink.offset().top
-          var linkH = $activeLink.outerHeight()
-          var curScroll = $tocScrollBox.scrollTop()
-          var relTop = linkTop - boxTop + curScroll
-          // 若 active 项超出上/下边界，居中定位
-          if (linkTop < boxTop + 40 || linkTop + linkH > boxTop + boxH - 40) {
-            var target = relTop - (boxH - linkH) / 2
-            if (target < 0) target = 0
-            $tocScrollBox.stop().animate({ scrollTop: target }, 200)
-          }
-        }
-      }
-    }
-  }
-
-  $(window).on('scroll', onScroll)
-  onScroll()
+  window.DocRuntime.setToc(items)
 })()
 
 // ============================================================
@@ -2608,4 +2428,5 @@ var panel
   if (typeof window.__enhancePageSpecific === 'function') {
     window.__enhancePageSpecific()
   }
+  window.DocRuntime.initNavigation()
 })()
