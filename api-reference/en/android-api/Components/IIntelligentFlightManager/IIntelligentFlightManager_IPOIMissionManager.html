@@ -46,7 +46,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk-v5/">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span><span class="sub-nav-version">Version：5.20.1</span></nav>
@@ -879,7 +879,7 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>IPOIMissionManager</h1></div>
+        <div id="ifm-overview" class="article"><div class="article"><h1 ><font color="#AAA">class </font>IPOIMissionManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IPOIMissionManager</span> <span class="keyword">extends</span> <span class="title class_">IMissionManager</span>&lt;POITarget, POIParam, POIInfo, POICapability&gt; </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.intelligent.poi</td></tr><tr valign="top"><td width=15%><font color="#999"><i>Inherits From:</i></td><td width=85%><font color="#999"><code>IMissionManager<POITarget, POIParam, POIInfo, POICapability></code></td></tr></table></html>
 <h5 id="Description">Description:</h5>
@@ -973,7 +973,8 @@
       <div class="site-toc">
         <div class="site-toc-inner">
           <div class="site-toc-title">On this page</div>
-          <ul class="site-toc-list"></ul>
+          <ul data-static-toc="true" class="site-toc-list"><li><a href="#ifm-overview" data-target="ifm-overview">Overview</a></li><li><a href="#Class-Members" data-target="ifm-members-nav">Member Index</a></li><li class="toc-group"><span class="toc-group-title">Methods</span></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_addmissioncapabilitylistener" data-target="iintelligentflightmanager_poimissionmanager_addmissioncapabilitylistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>addMissionCapabilityListener</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_removemissioncapabilitylistener" data-target="iintelligentflightmanager_poimissionmanager_removemissioncapabilitylistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>removeMissionCapabilityListener</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_addmissioninfolistener" data-target="iintelligentflightmanager_poimissionmanager_addmissioninfolistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>addMissionInfoListener</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_removemissioninfolistener" data-target="iintelligentflightmanager_poimissionmanager_removemissioninfolistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>removeMissionInfoListener</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_startmission" data-target="iintelligentflightmanager_poimissionmanager_startmission"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>startMission</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_stopmission" data-target="iintelligentflightmanager_poimissionmanager_stopmission"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>stopMission</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_updatemissiontarget" data-target="iintelligentflightmanager_poimissionmanager_updatemissiontarget"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>updateMissionTarget</a></li><li class="ifm-toc-method"><a href="#iintelligentflightmanager_poimissionmanager_updatemissionparam" data-target="iintelligentflightmanager_poimissionmanager_updatemissionparam"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>updateMissionParam</a></li><li class="toc-group"><span class="toc-group-title">Related Types</span></li><li class="ifm-toc-related"><a href="#iintelligentflightmanager_poimissionmanager_poicapability" data-target="iintelligentflightmanager_poimissionmanager_poicapability"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>POICapability</a></li><li class="ifm-toc-related"><a href="#iintelligentflightmanager_poimissionmanager_poiinfo" data-target="iintelligentflightmanager_poimissionmanager_poiinfo"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>POIInfo</a></li><li class="ifm-toc-related"><a href="#iintelligentflightmanager_poimissionmanager_poiparam" data-target="iintelligentflightmanager_poimissionmanager_poiparam"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>POIParam</a></li><li class="ifm-toc-related"><a href="#iintelligentflightmanager_poimissionmanager_poitarget" data-target="iintelligentflightmanager_poimissionmanager_poitarget"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>POITarget</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1020,6 +1021,7 @@
     </div>
   </footer>
   <script type="text/javascript">
+    window.DocSearchIndexUrl = "../../javascripts/search_index.js";
     window.Config = window.config = {
       sdk: "mobile-sdk",
       locale: "en",
@@ -1040,8 +1042,8 @@
   <script src="../../javascripts/base/footer.js" type="text/javascript"></script>
   <script src="../../javascripts/base/header.js" type="text/javascript"></script>
   <script src="../../javascripts/util/searcher.js" type="text/javascript"></script>
-  <script src="../../javascripts/search_index.js" type="text/javascript"></script>
   <script src="../../javascripts/searchdoc.js" type="text/javascript"></script>
+  <script src="../../javascripts/doc-runtime.js" type="text/javascript"></script>
   <script src="../../javascripts/api.js" type="text/javascript"></script>
   <!-- endbuild-->
   <script type="text/javascript">

@@ -46,7 +46,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk-v5/">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span><span class="sub-nav-version">Version：5.20.1</span></nav>
@@ -879,7 +879,7 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>MediaFile</h1></div>
+        <div id="ifm-overview" class="article"><div class="article"><h1 ><font color="#AAA">class </font>MediaFile</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MediaFile</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.datacenter.media</td></tr></table></html>
 <h5 id="Description">Description:</h5>
@@ -1081,7 +1081,8 @@
       <div class="site-toc">
         <div class="site-toc-inner">
           <div class="site-toc-title">On this page</div>
-          <ul class="site-toc-list"></ul>
+          <ul data-static-toc="true" class="site-toc-list"><li><a href="#ifm-overview" data-target="ifm-overview">Overview</a></li><li><a href="#Class-Members" data-target="ifm-members-nav">Member Index</a></li><li class="toc-group"><span class="toc-group-title">Methods</span></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getfileindex" data-target="imediamanager_mediafile_getfileindex"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getFileIndex</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getfiletype" data-target="imediamanager_mediafile_getfiletype"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getFileType</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getfilename" data-target="imediamanager_mediafile_getfilename"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getFileName</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getfilesize" data-target="imediamanager_mediafile_getfilesize"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getFileSize</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getdate" data-target="imediamanager_mediafile_getdate"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getDate</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getduration" data-target="imediamanager_mediafile_getduration"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getDuration</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getframerate" data-target="imediamanager_mediafile_getframerate"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getFrameRate</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getresolution" data-target="imediamanager_mediafile_getresolution"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getResolution</a></li><li class="ifm-toc-method"><a href="#imediamanager_mediafile_getphotoratio" data-target="imediamanager_mediafile_getphotoratio"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getPhotoRatio</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_getthumbnail" data-target="imediamanager_imediafile_getthumbnail"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getThumbNail</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_pullthumbnailfromcamera" data-target="imediamanager_imediafile_pullthumbnailfromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>pullThumbnailFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_pullpreviewfromcamera" data-target="imediamanager_imediafile_pullpreviewfromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>pullPreviewFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_stoppullpreviewfromcamera" data-target="imediamanager_imediafile_stoppullpreviewfromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>stopPullPreviewFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_pulloriginalmediafilefromcamera" data-target="imediamanager_imediafile_pulloriginalmediafilefromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>pullOriginalMediaFileFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_stoppulloriginalmediafilefromcamera" data-target="imediamanager_imediafile_stoppulloriginalmediafilefromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>stopPullOriginalMediaFileFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_pullxmpfiledatafromcamera" data-target="imediamanager_imediafile_pullxmpfiledatafromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>pullXMPFileDataFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_getxmpfiledata" data-target="imediamanager_imediafile_getxmpfiledata"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getXMPFileData</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_pullxmpcustominfofromcamera" data-target="imediamanager_imediafile_pullxmpcustominfofromcamera"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>pullXMPCustomInfoFromCamera</a></li><li class="ifm-toc-method"><a href="#imediamanager_imediafile_getxmpcustominfo" data-target="imediamanager_imediafile_getxmpcustominfo"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getXMPCustomInfo</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1128,6 +1129,7 @@
     </div>
   </footer>
   <script type="text/javascript">
+    window.DocSearchIndexUrl = "../../javascripts/search_index.js";
     window.Config = window.config = {
       sdk: "mobile-sdk",
       locale: "en",
@@ -1148,8 +1150,8 @@
   <script src="../../javascripts/base/footer.js" type="text/javascript"></script>
   <script src="../../javascripts/base/header.js" type="text/javascript"></script>
   <script src="../../javascripts/util/searcher.js" type="text/javascript"></script>
-  <script src="../../javascripts/search_index.js" type="text/javascript"></script>
   <script src="../../javascripts/searchdoc.js" type="text/javascript"></script>
+  <script src="../../javascripts/doc-runtime.js" type="text/javascript"></script>
   <script src="../../javascripts/api.js" type="text/javascript"></script>
   <!-- endbuild-->
   <script type="text/javascript">

@@ -46,7 +46,7 @@
   <div data-offset-top="60" data-spy="affix" class="sub-nav">
     <div class="container">
       <h1 class="logo">Mobile SDK</h1>
-      <nav><a href="/mobile-sdk">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
+      <nav><a href="/mobile-sdk-v5/">Overview</a><a target="_blank" rel="noopener" href="https://developer.dji.com/doc/mobile-sdk-tutorial/en/">Documentation</a><a href="/mobile-sdk/downloads">Downloads</a><a target="_blank" rel="noopener" href="https://sdk-forum.dji.net/hc/en-us">Support</a><span class="active hovedown menu-item">English<span class="caret"></span>
           <ul class="hovedown-menu">
             <li><a href="/cn/api-reference-v5/android-api/index.html">中文</a></li>
           </ul></span><span class="sub-nav-version">Version：5.20.1</span></nav>
@@ -879,7 +879,7 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1 ><font color="#AAA">class </font>IPipelineManager</h1></div>
+        <div id="ifm-overview" class="article"><div class="article"><h1 ><font color="#AAA">class </font>IPipelineManager</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IPipelineManager</span> </span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width=15%><font color="#999"><i>Package:</i></td><td width=85%><font color="#999">dji.v5.manager.interfaces</td></tr></table></html>
 <h5 id="Description">Description:</h5>
@@ -992,7 +992,8 @@
       <div class="site-toc">
         <div class="site-toc-inner">
           <div class="site-toc-title">On this page</div>
-          <ul class="site-toc-list"></ul>
+          <ul data-static-toc="true" class="site-toc-list"><li><a href="#ifm-overview" data-target="ifm-overview">Overview</a></li><li><a href="#Class-Members" data-target="ifm-members-nav">Member Index</a></li><li class="toc-group"><span class="toc-group-title">Methods</span></li><li class="ifm-toc-method"><a href="#ipipelinemanager_addpipelineconnectionlistener" data-target="ipipelinemanager_addpipelineconnectionlistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>addPipelineConnectionListener</a></li><li class="ifm-toc-method"><a href="#ipipelinemanager_removepipelineconnectionlistener" data-target="ipipelinemanager_removepipelineconnectionlistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>removePipelineConnectionListener</a></li><li class="ifm-toc-method"><a href="#ipipelinemanager_clearallpipelineconnectionlistener" data-target="ipipelinemanager_clearallpipelineconnectionlistener"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>clearAllPipelineConnectionListener</a></li><li class="ifm-toc-method"><a href="#ipipelinemanager_getpipelines" data-target="ipipelinemanager_getpipelines"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>getPipelines</a></li><li class="ifm-toc-method"><a href="#ipipelinemanager_connectpipeline" data-target="ipipelinemanager_connectpipeline"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>connectPipeline</a></li><li class="ifm-toc-method"><a href="#ipipelinemanager_disconnectpipeline" data-target="ipipelinemanager_disconnectpipeline"><span class="ifm-toc-kind ifm-toc-kind-method">M</span>disconnectPipeline</a></li><li class="toc-group"><span class="toc-group-title">Related Types</span></li><li class="ifm-toc-related"><a href="#ipipelinemanager_pipeline" data-target="ipipelinemanager_pipeline"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>Pipeline</a></li><li class="ifm-toc-related"><a href="#ipipelinemanager_dataresult" data-target="ipipelinemanager_dataresult"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>DataResult</a></li><li class="ifm-toc-related"><a href="#value_mop_enum_pipelinestate" data-target="value_mop_enum_pipelinestate"><span class="ifm-toc-kind ifm-toc-kind-enum">E</span>PipelineState</a></li><li class="ifm-toc-related"><a href="#value_mop_enum_pipelinedevicetype" data-target="value_mop_enum_pipelinedevicetype"><span class="ifm-toc-kind ifm-toc-kind-enum">E</span>PipelineDeviceType</a></li><li class="ifm-toc-related"><a href="#value_mop_enum_transmissioncontroltype" data-target="value_mop_enum_transmissioncontroltype"><span class="ifm-toc-kind ifm-toc-kind-enum">E</span>TransmissionControlType</a></li><li class="ifm-toc-related"><a href="#ipipelinemanager_pipelineconnectionlistener" data-target="ipipelinemanager_pipelineconnectionlistener"><span class="ifm-toc-kind ifm-toc-kind-class">C</span>PipelineConnectionListener</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1039,6 +1040,7 @@
     </div>
   </footer>
   <script type="text/javascript">
+    window.DocSearchIndexUrl = "../../javascripts/search_index.js";
     window.Config = window.config = {
       sdk: "mobile-sdk",
       locale: "en",
@@ -1059,8 +1061,8 @@
   <script src="../../javascripts/base/footer.js" type="text/javascript"></script>
   <script src="../../javascripts/base/header.js" type="text/javascript"></script>
   <script src="../../javascripts/util/searcher.js" type="text/javascript"></script>
-  <script src="../../javascripts/search_index.js" type="text/javascript"></script>
   <script src="../../javascripts/searchdoc.js" type="text/javascript"></script>
+  <script src="../../javascripts/doc-runtime.js" type="text/javascript"></script>
   <script src="../../javascripts/api.js" type="text/javascript"></script>
   <!-- endbuild-->
   <script type="text/javascript">
