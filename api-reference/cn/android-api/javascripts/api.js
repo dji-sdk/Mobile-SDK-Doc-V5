@@ -47,7 +47,7 @@ var panel
       // 判断"当前页是否就是该菜单主页"：比较 pathname 结尾（兼容相对/绝对路径）
       var isCurrentPage = false
       if (hasHref) {
-        var currentPath = window.location.pathname
+        var currentPath = new URL(window.DocNavigation.currentUrl()).pathname
         if (new URL(href, window.location.href).pathname === currentPath) {
           isCurrentPage = true
         }
@@ -60,14 +60,14 @@ var panel
           target.removeClass('active')
         } else {
           // 场景 1：当前页在子项 → 仅跳转到主页，不折叠
-          window.location.href = href
+          if (!window.DocNavigation.visit(href)) window.location.href = href
         }
       } else {
         // 未展开
         target.addClass('active')
         if (hasHref) {
           // 场景 3：展开 + 跳转
-          window.location.href = href
+          if (!window.DocNavigation.visit(href)) window.location.href = href
         }
         // 无主页：仅展开
       }
@@ -88,6 +88,7 @@ var panel
         if (t.tagName === 'A') {
           var link = $(t), href = link.attr('data-href') || link.attr('href')
           if (!window.DocRuntime.plainClick(e) || t.target || !href || /^(#|javascript:)/i.test(href)) return
+          if (window.DocNavigation.canVisit(href)) return
           var targetUrl = new URL(href, location.href)
           if (targetUrl.pathname === location.pathname) return
           try {
@@ -296,10 +297,16 @@ var panel
     if (tocTopFrame !== null) return
     tocTopFrame = window.requestAnimationFrame(function () { tocTopFrame = null; updateTocTop() })
   })
+  $(document).on('docPageMounted.docTocTop', function () {
+    $tocPanel.removeData('doc-metrics')
+    updateTocTop()
+  })
   updateTocTop()
 })()
 
 
+// 外壳只初始化一次，以下正文增强可在局部导航后重新执行。
+function initDocumentPage() {
 ;(function() {
   // 取消折叠：.trigger 不再绑定点击折叠，成员内容始终平铺展开
   // （保留 .trigger 元素本身，供锚点定位使用，但阻止其默认跳转与折叠行为）
@@ -343,7 +350,7 @@ var panel
       // 整行可点跳转
       $row.on('click', function(e) {
         if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
-        if (href) window.location.href = href
+        if (href) if (!window.DocNavigation.visit(href)) window.location.href = href
       })
     }
   })
@@ -591,7 +598,8 @@ var panel
       // 注意：运行时主题 JS 会给「展开链路」上的所有节点都加 active
       //（如 ICameraStreamManager 页：IMediaDataCenter 与 ICameraStreamManager 两个 active），
       // 当前页是链路最末端，必须取 .last()；取 .first() 会丢失最后一级当前页
-      var $cur = $sidebar.find('a.active').last()
+      var $cur = $sidebar.find('a[aria-current="page"]').first()
+      if (!$cur.length) $cur = $sidebar.find('a.active').last()
       if (!$cur.length) {
         $cur = $sidebar.find('a.sub-toggle').filter(function () {
           return !$(this).attr('data-href') && !$(this).attr('href')
@@ -1314,6 +1322,7 @@ var panel
         colorizeJavaSignature($fig)
         // 所有同步卡片转换结束后再复位滚动，避免每改一张卡片就强制布局。
         var format = function () {
+          if (!$.contains(document, $fig[0])) return
           $fig.find('pre').scrollLeft(0)
           wrapLongSignatureParams($fig)
         }
@@ -2094,7 +2103,7 @@ var panel
           .off('click.offlineClass')
           .on('click.offlineClass', function (e) {
             if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
-            window.location.href = href
+            if (!window.DocNavigation.visit(href)) window.location.href = href
           })
         $row.addClass('api-row-hidden').attr('data-class-inline-id', rowId + '_inline')
         return
@@ -2130,6 +2139,7 @@ var panel
   }
 
   function renderClassInlineDoc($doc, html, name, href) {
+    if (!$.contains(document, $doc[0])) return
     // 解析远端 HTML，抽取 .site-main .article 的内容
     var $wrap = $('<div>').append($.parseHTML(html, document, false))
     var $remoteArticle = $wrap.find('.site-main .article').eq(0)
@@ -2207,7 +2217,7 @@ var panel
     $doc.on('click', function (e) {
       // 内部真实链接允许正常工作
       if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
-      window.location.href = href
+      if (!window.DocNavigation.visit(href)) window.location.href = href
     })
     // 触发事件，通知页面级增强器（如 ifm-page）可以对该 class-inline-doc 进行样式转换
     $doc.trigger('classInlineDocReady')
@@ -2428,5 +2438,8 @@ var panel
   if (typeof window.__enhancePageSpecific === 'function') {
     window.__enhancePageSpecific()
   }
-  window.DocRuntime.initNavigation()
 })()
+}
+window.DocNavigation.init(initDocumentPage, '正在加载文档…')
+initDocumentPage()
+window.DocRuntime.initNavigation()
