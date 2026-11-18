@@ -20,9 +20,6 @@ html {
 html.local {
   padding-bottom: 0px;
 }
-html.local .documentation-page {
-  padding-top: 0px;
-}
 
 img {
   max-width: 100%;
@@ -1082,6 +1079,12 @@ label {
   left: auto;
   right: 0;
   min-width: 130px;
+}
+.sub-nav.sub-nav-local .container {
+  justify-content: flex-start;
+}
+.sub-nav.sub-nav-local .nav-right {
+  margin-left: 16px;
 }
 
 .site-footer {

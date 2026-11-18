@@ -221,9 +221,15 @@
 /* 同语种 API 页面局部导航：保留外壳，只替换正文和目录。 */
 ;(function (window, document, $) {
   'use strict'
-  var mountPage = null, root = null, mountedUrl = '', currentEntry = null
+  var mountPage = null, root = null, rootPathname = '', mountedUrl = '', currentEntry = null
   var entrySequence = 0, navigationSequence = 0, controller = null, pendingUrl = ''
   var entryPositions = Object.create(null), progressTimer = null, loadingText = ''
+  // 点击瞬间的侧栏高亮快照，失败回退时用于还原
+  var highlightSnapshot = null
+  // 协议绝对地址（http:、https:、//cdn... ）无需再做相对解析
+  var ABSOLUTE_URL = /^(?:[a-z][a-z0-9+.\-]*:|\/\/)/i
+  var SKIP_URL = /^(?:data:|javascript:|mailto:|tel:)/i
+  var LINK_ATTRS = ['href', 'src', 'data-class-href']
 
   function pageKey(url) { return url.pathname + url.search }
   function canVisit(href) {
@@ -239,11 +245,15 @@
   function freezeLinks($scope, base) {
     $scope.find('[href], [src], [data-class-href]').each(function () {
       var node = this
-      ;['href', 'src', 'data-class-href'].forEach(function (attr) {
+      for (var i = 0; i < LINK_ATTRS.length; i++) {
+        var attr = LINK_ATTRS[i]
         var value = node.getAttribute(attr)
-        if (value === null || /^(#|data:|javascript:|mailto:|tel:)/i.test(value)) return
+        if (value === null || value === '' || value.charAt(0) === '#') continue
+        // 已经是绝对地址的直接跳过：一次跳转里正文可能有上千个链接，
+        // 其中大量是 https 外链，逐个 new URL() 是纯浪费
+        if (ABSOLUTE_URL.test(value) || SKIP_URL.test(value)) continue
         node.setAttribute(attr, new URL(value, base).href)
-      })
+      }
     })
   }
   function restoreHashLinks() {
@@ -314,12 +324,41 @@
   function updateSidebar(url) {
     var $links = $('.site-sidebar .nav a[data-doc-path]')
     $links.removeAttr('aria-current').not('.sub-toggle').removeClass('active')
+    var target = url.pathname
     var $current = $links.filter(function () {
-      var href = this.getAttribute('data-href') || this.getAttribute('href')
-      return href && new URL(href, root).pathname === url.pathname
+      var docPath = this.getAttribute('data-doc-path')
+      if (!docPath) return false
+      // data-doc-path 是站点内绝对路径（/Components/...），补上部署前缀后直接字符串比较。
+      // 侧栏可达数百项，每次跳转都对每项 new URL() 开销明显，且这段在初次加载时也会执行。
+      return rootPathname + docPath === target
     }).first()
     $current.addClass('active').attr('aria-current', 'page')
     $current.parents('.sub-menu').each(function () { $(this).siblings('.sub-toggle').addClass('active') })
+  }
+  // 点击瞬间就把目标项切为选中态：等 fetch + 重建完成再更新，
+  // 用户会觉得"点了没反应"，这是局部导航最明显的迟滞来源
+  function highlightClicked(link) {
+    var $link = $(link)
+    var $nav = $('.site-sidebar .nav')
+    if (!$nav.length || !$link.closest('.site-sidebar .nav').length) return
+    highlightSnapshot = {
+      $active: $nav.find('a.active'),
+      $current: $nav.find('a[aria-current]')
+    }
+    $nav.find('a').not('.sub-toggle').removeClass('active')
+    $nav.find('a').removeAttr('aria-current')
+    $link.addClass('active').attr('aria-current', 'page')
+    $link.parents('.sub-menu').each(function () { $(this).siblings('.sub-toggle').addClass('active') })
+  }
+  function rollbackHighlight() {
+    if (!highlightSnapshot) return
+    var snapshot = highlightSnapshot
+    highlightSnapshot = null
+    var $nav = $('.site-sidebar .nav')
+    $nav.find('a').not('.sub-toggle').removeClass('active')
+    $nav.find('a').removeAttr('aria-current')
+    snapshot.$active.addClass('active')
+    if (snapshot.$current.length) snapshot.$current.attr('aria-current', 'page')
   }
   function restorePosition(url, saved, sidebarTop) {
     window.requestAnimationFrame(function () {
@@ -336,7 +375,8 @@
     options = options || {}
     if (!canVisit(href)) return false
     var url = new URL(href, mountedUrl || window.location.href)
-    if (options.history === false && pendingUrl === url.href) return true
+    // 同一目标仍在请求中：直接忽略重复点击，避免重复 fetch + 整页重建
+    if (pendingUrl === url.href) return true
     cancel()
     savePosition()
     if (pageKey(url) === pageKey(new URL(mountedUrl))) {
@@ -370,7 +410,7 @@
         position: 'fixed', right: 24, bottom: 24, zIndex: 2000, padding: '8px 12px',
         background: '#fff', color: '#526071', border: '1px solid #dce2ea', borderRadius: 6, pointerEvents: 'none'
       }).appendTo(document.body)
-    }, 150)
+    }, 0)
     var timeout = setTimeout(function () {
       if (sequence === navigationSequence) { cancel(); fallback(url) }
     }, 12000)
@@ -406,13 +446,18 @@
         $('.site-toc').attr('class', toc.className).empty().append($(toc).contents())
         document.title = parsed.title || document.title
         updateSidebar(url)
+        highlightSnapshot = null
         $('.site-sidebar').scrollTop(sidebarTop)
-        mountPage()
+        // 局部导航时把「不改变整体布局」的收尾增强延后一帧执行，
+        // 让正文先完成一次绘制，用户不必等待整轮 DOM 增强才看到内容。
+        // 首次加载不传参数，仍走完整同步路径（避免首屏闪烁）。
+        mountPage({ deferred: true })
         window.DocRuntime.attachPage()
         restorePosition(url, savedPosition, sidebarTop)
       })
       .catch(function (error) {
         if (sequence !== navigationSequence) return
+        rollbackHighlight()
         if (window.console) window.console.warn('文档局部导航回退为整页访问', error)
         fallback(url)
       })
@@ -454,6 +499,9 @@
     var match = window.location.pathname.match(/^(.*\/)Components\//)
     if (!match) return
     root = new URL(match[1], window.location.href)
+    // 侧栏 data-doc-path 不含部署前缀（如 /cn/api-reference-v5/android-api），
+    // 预先算好前缀供 updateSidebar 做纯字符串比较
+    rootPathname = root.pathname.replace(/\/$/, '')
     mountPage = initializer
     mountedUrl = window.location.href
     loadingText = text
@@ -473,7 +521,13 @@
       if (e.isDefaultPrevented() || !window.DocRuntime.plainClick(e) || this.target || this.hasAttribute('download')) return
       var href = this.getAttribute('href')
       if (!href || href.charAt(0) === '#') return
-      if (visit(href)) { e.docPageHandled = true; e.preventDefault() }
+      // 先切高亮再发起请求：点击即刻有反馈，不必等重建完成
+      var navigating = visit(href)
+      if (navigating) {
+        highlightClicked(this)
+        e.docPageHandled = true
+        e.preventDefault()
+      }
     })
   }
   window.DocNavigation = { init: init, visit: visit, canVisit: canVisit, pushHash: pushHash, handleHistory: handleHistory, currentUrl: currentUrl }

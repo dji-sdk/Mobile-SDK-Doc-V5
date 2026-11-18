@@ -308,7 +308,10 @@ var panel
 
 
 // 外壳只初始化一次，以下正文增强可在局部导航后重新执行。
-function initDocumentPage() {
+// options.deferred：局部导航时为 true，把不改变整体布局的收尾工作延后一帧，
+// 让正文先上屏；首次加载不传参数，仍走完整同步路径（避免首屏闪烁）。
+function initDocumentPage(options) {
+  var deferred = !!(options && options.deferred)
 ;(function() {
   // 取消折叠：.trigger 不再绑定点击折叠，成员内容始终平铺展开
   // （保留 .trigger 元素本身，供锚点定位使用，但阻止其默认跳转与折叠行为）
@@ -362,16 +365,14 @@ function initDocumentPage() {
   // 同时：把描述里的 <span class="deprecated-reason">...</span> 抽出，
   // 追加到顶部标题 (h6) 旁作为红色警示标签
   ;(function () {
+    function scanDeprecatedInlineDocs() {
     $('.site-main .inline-doc').each(function () {
       var $doc = $(this)
-      var deprecated = false
-      $doc.find('pre, code, .highlight').each(function () {
-        if (/@Deprecated\b/.test($(this).text())) {
-          deprecated = true
-          return false
-        }
-      })
-      if (!deprecated) return
+      // 只读 <pre>：hexo 输出里 pre 内嵌 code 与 .highlight，三者覆盖同一段代码文本，
+      // 逐个元素取 .text() 会让同一份文本被重复拷贝多遍
+      var $pre = $doc.find('pre')
+      var codeText = ($pre.length ? $pre : $doc.find('code')).text()
+      if (!/@Deprecated\b/.test(codeText)) return
       $doc.addClass('api-deprecated')
       var id = $doc.attr('id')
       if (id) {
@@ -414,6 +415,11 @@ function initDocumentPage() {
         $reason.remove()
       }
     })
+    }
+    // @Deprecated 只加类与徽章、不改变整体布局，局部导航时延后一帧执行，
+    // 让正文先完成绘制，不与整页重建挤在同一帧
+    if (deferred) window.requestAnimationFrame(scanDeprecatedInlineDocs)
+    else scanDeprecatedInlineDocs()
   })()
 
   // 正文结构重排：
