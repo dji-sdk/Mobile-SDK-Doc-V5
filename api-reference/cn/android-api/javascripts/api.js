@@ -264,14 +264,16 @@ var panel
   // initArticleTable()
 
   // 右侧 TOC 是 fixed 定位（sidebar 用 CSS sticky，无需 JS 调整）。
-  // 根据窗口滚动位置动态调整 TOC 的 top / height：
-  //   - top：窗口 scrollTop <= 60px → 110px；> 60px → 50px
+  // top 直接取顶部导航（.sub-nav）的实际底边，local 模式无 .sub-nav 时贴顶：
   //   - height：默认 100vh - top - 20，但若 footer 已进入视口则再向上收缩，避免与 footer 重叠
   var $tocPanel = $('.site-toc')
   function updateTocTop() {
     if (!$tocPanel.length) return
-    var scrollTop = $(window).scrollTop()
-    var top = scrollTop > 60 ? 50 : 110
+    var $subNav = $('.sub-nav').first()
+    var top = 20
+    if ($subNav.length) {
+      top = Math.max(0, Math.round($subNav[0].getBoundingClientRect().bottom))
+    }
     var winH = window.innerHeight
     var maxH = winH - top - 20  // 距底部 20px 呼吸空间
 

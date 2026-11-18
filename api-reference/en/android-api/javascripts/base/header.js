@@ -1,4 +1,5 @@
 (function() {
+  if (!document.getElementById('site-header')) return;
   new Vue({
     el: '#site-header',
     data: {
