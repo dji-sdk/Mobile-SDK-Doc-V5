@@ -7,7 +7,11 @@ var panel
   // 修正引用，否则"跳转后自动滚动定位到当前项"的逻辑会作用在错误的元素上，
   // 导致每次点击跳转后侧边栏都停留在顶部、看不到当前高亮项
   var sidebarInner = sidebar
-  var currentTitle = sidebar.find('a.active:first-child')
+  // 当前项优先取 aria-current="page"：构建期会给当前文档所在分支的祖先
+  // 静态加 active，若继续用 a.active:first-child 会选中排在前面的祖先，
+  // 导致滚动定位落到错误位置
+  var currentTitle = sidebar.find('a[aria-current="page"]')
+  if (!currentTitle.length) currentTitle = sidebar.find('a.active:first-child').not('.sub-toggle')
   var footer = $('.site-footer')
   var w = $(window)
   var titles = sidebar.find('dl > dd > a')
@@ -35,14 +39,32 @@ var panel
     //   2. 已展开(active) + 当前页就是该菜单主页 → 折叠（移除 active）
     //   3. 未展开 → 展开 + 跳转到主页
     // 特殊：data-href 为空（该一级菜单本身无主页）→ 已展开时直接折叠，未展开时直接展开
-    $('.site-sidebar .sub-toggle').on('click', function (e) {
+    // 事件委托：按需物化会产生新的 .sub-toggle，绑定一次性委托到侧栏容器
+    $('.site-sidebar').off('click.ifmSubToggle', '.sub-toggle').on('click.ifmSubToggle', '.sub-toggle', function (e) {
       var target = $(this)
-      var href = target.attr('data-href')
+      // 展开前先把该分支子菜单从内联数据取回（构建期裁剪掉的非当前分支）
+      if (window.DocRuntime && window.DocRuntime.materializeBranch) {
+        window.DocRuntime.materializeBranch(target)
+      }
+      // 按需物化生成的嵌套分支可能只有 href（没有 data-href），
+      // 两者都视为该分支的主页地址，否则无法正确判断折叠/跳转
+      var href = target.attr('data-href') || target.attr('href')
       var hasHref = !!(href && href.length)
       if (!window.DocRuntime.plainClick(e)) {
-        if (hasHref) window.open(href, '_blank', 'noopener')
+        // 有原生 href 的动态节点交给浏览器处理；仅旧式 data-href 节点手动打开。
+        if (!target.attr('href') && hasHref) {
+          e.preventDefault()
+          e.stopPropagation()
+          window.open(href, '_blank', 'noopener')
+        }
         return
       }
+      // 普通点击全部由本处理器接管：
+      // preventDefault 避免 <a href> 触发整页刷新；
+      // stopPropagation 避免文档级导航处理器再次处理同一次点击
+      // （否则折叠后会被重新标记为展开，并可能滚回正文顶部）
+      e.preventDefault()
+      e.stopPropagation()
 
       // 判断"当前页是否就是该菜单主页"：比较 pathname 结尾（兼容相对/绝对路径）
       var isCurrentPage = false
@@ -536,7 +558,15 @@ function initDocumentPage(options) {
   window.__enhancePageSpecific = function enhancePageSpecific() {
     var path = (window.location.pathname || '').toLowerCase()
 
-    if (!/\/components\//.test(path)) return
+    // 入口页地址是 index.html，但它代表某个具体文档。
+    // 只用 URL 判断会让入口页整个跳过增强（成员列表、筛选、面包屑都不生效），
+    // 因此优先采用页面声明的文档身份。
+    if (!/\/components\//.test(path)) {
+      var declared = document.querySelector('meta[name="doc-path"]')
+      var docPath = declared ? (declared.getAttribute('content') || '') : ''
+      if (!/components\//.test(docPath.toLowerCase())) return
+      path = '/' + docPath.replace(/^\//, '').toLowerCase()
+    }
 
     // ===== IIntelligentFlightManager：敲定版本，专属 workflow + interface kind =====
     if (/\/iintelligentflightmanager\.html$/.test(path)) {
@@ -777,6 +807,42 @@ function initDocumentPage(options) {
     } catch (_) { fallback() }
   }
 
+  // 从左侧菜单树推导面包屑层级；菜单项带 data-doc-path（站点内绝对路径）
+  function deriveBreadcrumbFromSidebar($, className) {
+    var $sidebar = $('.site-sidebar').first()
+    if (!$sidebar.length) return null
+    var path = window.location.pathname || ''
+    var fallback = null
+    var $link = $sidebar.find('a[data-doc-path]').filter(function () {
+      var $a = $(this)
+      var dp = $a.attr('data-doc-path') || ''
+      if (!dp) return false
+      if (path && path.indexOf(dp) >= 0) return true
+      if (!fallback && $.trim($a.clone().children().remove().end().text()) === className) fallback = $a
+      return false
+    }).first()
+    if (!$link.length) $link = fallback || $()
+    if (!$link.length) return null
+
+    var crumbs = [{ name: $.trim($link.clone().children().remove().end().text()), href: null }]
+    var $cur = $link
+    var guard = 0
+    while (guard++ < 12) {
+      var $ul = $cur.closest('ul.sub-menu')
+      if (!$ul.length) break
+      var $parentA = $ul.parent('dd').children('a').first()
+      if (!$parentA.length) break
+      crumbs.unshift({
+        name: $.trim($parentA.clone().children().remove().end().text()),
+        href: $parentA.attr('href') || $parentA.attr('data-href') || null
+      })
+      $cur = $parentA
+    }
+    var $dt = $link.closest('dl').children('dt').first()
+    if ($dt.length) crumbs.unshift({ name: $.trim($dt.text()), href: null })
+    return crumbs.length > 1 ? crumbs : null
+  }
+
   function enhanceManagerLikePage(config) {
     config = config || {}
     var $article = $('.site-main .article').first()
@@ -789,456 +855,8 @@ function initDocumentPage(options) {
       })
     }
 
-    // ===== Java 签名语法着色（按语法角色识别，不做单词全局替换） =====
-    // 颜色与 _documentation.scss 的 .jv-* 一致：
-    // 关键字与类型 #85288F / 注解 #978725 / 方法名与类名 #3D689D /
-    // 限定名前缀、形参名、标点 #454545
-    var JAVA_KEYWORDS = {
-      abstract: 1, assert: 1, boolean: 1, break: 1, byte: 1, case: 1, catch: 1, char: 1,
-      class: 1, const: 1, continue: 1, default: 1, do: 1, double: 1, else: 1, enum: 1,
-      extends: 1, final: 1, finally: 1, float: 1, for: 1, goto: 1, if: 1, implements: 1,
-      import: 1, instanceof: 1, int: 1, interface: 1, long: 1, native: 1, new: 1,
-      package: 1, private: 1, protected: 1, public: 1, return: 1, short: 1, static: 1,
-      strictfp: 1, super: 1, switch: 1, synchronized: 1, this: 1, throw: 1, throws: 1,
-      transient: 1, try: 1, void: 1, volatile: 1, while: 1, true: 1, false: 1, null: 1
-    }
-
-    function tokenizeJava(text) {
-      var tokens = []
-      var i = 0
-      while (i < text.length) {
-        var ch = text.charAt(i)
-        var rest = text.slice(i)
-        var m
-        if (/\s/.test(ch)) {
-          m = /^\s+/.exec(rest)
-          tokens.push({ type: 'ws', text: m[0], start: i, end: i + m[0].length })
-          i += m[0].length
-        } else if (ch === '@' && (m = /^@[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)*/.exec(rest))) {
-          tokens.push({ type: 'annotation', text: m[0], start: i, end: i + m[0].length })
-          i += m[0].length
-        } else if (/[A-Za-z_$]/.test(ch) && (m = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)*/.exec(rest))) {
-          tokens.push({ type: 'qualified', text: m[0], start: i, end: i + m[0].length })
-          i += m[0].length
-        } else if (/[0-9]/.test(ch) && (m = /^[0-9][\w.]*/.exec(rest))) {
-          tokens.push({ type: 'literal', text: m[0], start: i, end: i + m[0].length })
-          i += m[0].length
-        } else if (ch === '"' || ch === "'") {
-          var quote = ch
-          var j = i + 1
-          while (j < text.length) {
-            if (text.charAt(j) === '\\') j += 2
-            else if (text.charAt(j) === quote) { j++; break }
-            else j++
-          }
-          tokens.push({ type: 'literal', text: text.slice(i, j), start: i, end: j })
-          i = j
-        } else if (text.slice(i, i + 3) === '...') {
-          tokens.push({ type: 'punct', text: '...', start: i, end: i + 3 })
-          i += 3
-        } else {
-          tokens.push({ type: 'punct', text: ch, start: i, end: i + 1 })
-          i++
-        }
-      }
-      for (var k = 0; k < tokens.length; k++) tokens[k].idx = k
-      return tokens
-    }
-
-    function findJavaAnchor(start, end, anchors) {
-      if (!anchors) return ''
-      for (var i = 0; i < anchors.length; i++) {
-        if (start >= anchors[i].start && end <= anchors[i].end) return anchors[i].href
-      }
-      return ''
-    }
-
-    // 限定名：最后一段用实际类型/方法色，前面的包名或外层类型用深灰，点号用标点色
-    function renderQualifiedJava(text, lastClass, start, anchors) {
-      var parts = String(text).split('.')
-      var out = []
-      var pos = (start == null) ? 0 : start
-      for (var i = 0; i < parts.length; i++) {
-        if (i > 0) {
-          out.push('<wbr><span class="jv-punct">.</span>')
-          pos += 1
-        }
-        var segStart = pos
-        var segEnd = pos + parts[i].length
-        var cls = (i === parts.length - 1) ? lastClass : 'jv-prefix'
-        var html = '<span class="' + cls + '">' + escapeHtml(parts[i]) + '</span>'
-        var href = findJavaAnchor(segStart, segEnd, anchors)
-        if (href) html = '<a href="' + escapeHtml(href) + '">' + html + '</a>'
-        out.push(html)
-        pos = segEnd
-      }
-      return out.join('')
-    }
-
-    function renderJavaRole(token, anchors) {
-      var text = escapeHtml(token.text)
-      var role = token.role
-      var html
-      if (!role || role === 'plain' || role === 'ws') html = text
-      else if (role === 'annotation') html = '<span class="jv-annotation">' + text + '</span>'
-      else if (role === 'keyword') html = '<span class="jv-keyword">' + text + '</span>'
-      else if (role === 'method') html = renderQualifiedJava(token.text, 'jv-method', token.start, anchors)
-      else if (role === 'class-name') html = renderQualifiedJava(token.text, 'jv-class', token.start, anchors)
-      else if (role === 'type') html = renderQualifiedJava(token.text, 'jv-type', token.start, anchors)
-      else if (role === 'param') html = '<span class="jv-param">' + text + '</span>'
-      else if (role === 'punct') html = '<span class="jv-punct">' + text + '</span>'
-      else html = text
-      return (token.wbrBefore ? '<wbr>' : '') + html
-    }
-
-    // 标记类型表达式的结构断点（对应 Javadoc 的 <wbr> 用法）：
-    // 注解与类型之间、泛型 < 之前、泛型逗号之后、限定名 . 之前。
-    function markJavaBreakOpportunities(tokens) {
-      var angleDepth = 0
-      var prevNonWs = null
-      for (var i = 0; i < tokens.length; i++) {
-        var t = tokens[i]
-        if (t.type === 'ws') continue
-        if (prevNonWs && prevNonWs.type === 'annotation') t.wbrBefore = true
-        if (t.type === 'punct' && t.text === '<') t.wbrBefore = true
-        if (prevNonWs && prevNonWs.type === 'punct' && prevNonWs.text === ',' && angleDepth > 0) t.wbrBefore = true
-        if (t.type === 'punct' && t.text === '<') angleDepth++
-        else if (t.type === 'punct' && t.text === '>') { if (angleDepth > 0) angleDepth-- }
-        prevNonWs = t
-      }
-    }
-
-    function findJavaSignatureStructure(tokens) {
-      var depth = 0
-      var paramsOpen = -1
-      var paramsClose = -1
-      var methodNameIdx = -1
-      var declaration = false
-      for (var i = 0; i < tokens.length; i++) {
-        var t = tokens[i]
-        if (t.type === 'annotation') {
-          // 跳过注解参数 @Foo(...)，避免误判为方法参数
-          var k = i + 1
-          while (k < tokens.length && tokens[k].type === 'ws') k++
-          if (k < tokens.length && tokens[k].text === '(') {
-            var d = 1
-            i = k
-            while (i + 1 < tokens.length && d > 0) {
-              i++
-              if (tokens[i].text === '(') d++
-              else if (tokens[i].text === ')') d--
-            }
-          }
-          continue
-        }
-        if (t.type === 'punct' && t.text === '(') {
-          if (depth === 0 && paramsOpen < 0) {
-            var p = i - 1
-            while (p >= 0 && tokens[p].type === 'ws') p--
-            if (p >= 0 && tokens[p].type === 'qualified') {
-              methodNameIdx = p
-              paramsOpen = i
-            }
-          }
-          depth++
-        } else if (t.type === 'punct' && t.text === ')') {
-          depth--
-          if (depth === 0 && paramsOpen >= 0 && paramsClose < 0) paramsClose = i
-        }
-      }
-      if (paramsOpen < 0) {
-        for (var j = 0; j < tokens.length; j++) {
-          if (tokens[j].type === 'qualified' &&
-              (tokens[j].text === 'class' || tokens[j].text === 'interface' || tokens[j].text === 'enum')) {
-            declaration = true
-            break
-          }
-        }
-      }
-      return { methodNameIdx: methodNameIdx, paramsOpen: paramsOpen, paramsClose: paramsClose, declaration: declaration }
-    }
-
-    function assignJavaParamRoles(tokens, open, close) {
-      var segments = []
-      var current = []
-      var paren = 0, angle = 0, bracket = 0, brace = 0
-      for (var i = open + 1; i < close; i++) {
-        var t = tokens[i]
-        if (t.type === 'punct') {
-          var txt = t.text
-          if (txt === '(') paren++
-          else if (txt === ')') paren--
-          else if (txt === '<') angle++
-          else if (txt === '>') { if (angle > 0) angle-- }
-          else if (txt === '[') bracket++
-          else if (txt === ']') bracket--
-          else if (txt === '{') brace++
-          else if (txt === '}') brace--
-          else if (txt === ',' && paren === 0 && angle === 0 && bracket === 0 && brace === 0) {
-            segments.push(current)
-            current = []
-            continue
-          }
-        }
-        current.push(i)
-      }
-      if (current.length) segments.push(current)
-
-      segments.forEach(function (idxs) {
-        // 参数段中最后一个普通标识符是形参名，其余标识符是类型
-        var nameIdx = -1
-        for (var k = idxs.length - 1; k >= 0; k--) {
-          var tk = tokens[idxs[k]]
-          if (tk.type === 'ws' || tk.type === 'punct') continue
-          if (tk.type === 'annotation') continue
-          if (tk.type === 'qualified') { nameIdx = idxs[k]; break }
-        }
-        idxs.forEach(function (idx) {
-          var tt = tokens[idx]
-          if (tt.type === 'ws' || tt.role) return
-          if (tt.type === 'annotation') { tt.role = 'annotation'; return }
-          if (tt.type === 'literal') { tt.role = 'plain'; return }
-          if (tt.type === 'punct') { tt.role = 'punct'; return }
-          if (idx === nameIdx) { tt.role = 'param'; return }
-          if (JAVA_KEYWORDS[tt.text]) { tt.role = 'keyword'; return }
-          tt.role = 'type'
-        })
-      })
-    }
-
-    function assignJavaRoles(tokens, structure) {
-      var i, t
-      if (structure.methodNameIdx >= 0) {
-        for (i = 0; i < structure.paramsOpen; i++) {
-          t = tokens[i]
-          if (t.type === 'ws' || t.role) continue
-          if (t.type === 'annotation') t.role = 'annotation'
-          else if (t.type === 'literal') t.role = 'plain'
-          else if (t.type === 'punct') t.role = 'punct'
-          else if (i === structure.methodNameIdx) t.role = 'method'
-          else if (JAVA_KEYWORDS[t.text]) t.role = 'keyword'
-          else t.role = 'type'
-        }
-        tokens[structure.paramsOpen].role = 'punct'
-        tokens[structure.paramsClose].role = 'punct'
-        assignJavaParamRoles(tokens, structure.paramsOpen, structure.paramsClose)
-        for (i = structure.paramsClose + 1; i < tokens.length; i++) {
-          t = tokens[i]
-          if (t.type === 'ws' || t.role) continue
-          if (t.type === 'annotation') t.role = 'annotation'
-          else if (t.type === 'literal') t.role = 'plain'
-          else if (t.type === 'punct') t.role = 'punct'
-          else if (JAVA_KEYWORDS[t.text]) t.role = 'keyword'
-          else t.role = 'type'
-        }
-      } else if (structure.declaration) {
-        var afterTypeKeyword = false
-        for (i = 0; i < tokens.length; i++) {
-          t = tokens[i]
-          if (t.type === 'ws' || t.role) continue
-          if (t.type === 'annotation') { t.role = 'annotation'; continue }
-          if (t.type === 'literal') { t.role = 'plain'; continue }
-          if (t.type === 'punct') { t.role = 'punct'; continue }
-          if (JAVA_KEYWORDS[t.text]) {
-            t.role = 'keyword'
-            // class / interface / enum 后的第一个标识符是声明名，保持蓝色
-            if (t.text === 'class' || t.text === 'interface' || t.text === 'enum') afterTypeKeyword = true
-            continue
-          }
-          if (afterTypeKeyword) {
-            t.role = 'class-name'
-            afterTypeKeyword = false
-          } else {
-            t.role = 'type'
-          }
-        }
-      }
-    }
-
-    function colorizeJavaSignature($fig) {
-      if ($fig.attr('data-jv-colored')) return
-      var $lines = $fig.find('.line')
-      if (!$lines.length) return
-      var texts = []
-      $lines.each(function () { texts.push($(this).text()) })
-      var tokens = tokenizeJava(texts.join('\n'))
-      var structure = findJavaSignatureStructure(tokens)
-      // 只处理方法签名与 class/interface/enum 声明，避免影响字段/常量
-      if (structure.methodNameIdx < 0 && !structure.declaration) return
-      assignJavaRoles(tokens, structure)
-      markJavaBreakOpportunities(tokens)
-
-      // 按换行拆回每行 token，保留原有 .line 行结构
-      var lineTokens = [[]]
-      for (var i = 0; i < tokens.length; i++) {
-        var t = tokens[i]
-        if (t.type === 'ws' && t.text.indexOf('\n') >= 0) {
-          var parts = t.text.split('\n')
-          for (var p = 0; p < parts.length; p++) {
-            if (p > 0) lineTokens.push([])
-            if (parts[p]) lineTokens[lineTokens.length - 1].push({ type: 'ws', text: parts[p], role: 'ws', idx: -1 })
-          }
-        } else {
-          lineTokens[lineTokens.length - 1].push(t)
-        }
-      }
-      if (lineTokens.length === $lines.length + 1 && !lineTokens[lineTokens.length - 1].length) lineTokens.pop()
-      if (lineTokens.length !== $lines.length) return
-
-      var pOpen = structure.paramsOpen
-      var pClose = structure.paramsClose
-      $lines.each(function (lineIndex) {
-        var html = []
-        var opened = false
-        var list = lineTokens[lineIndex]
-        for (var k = 0; k < list.length; k++) {
-          var tk = list[k]
-          var isParam = (pOpen >= 0 && tk.idx >= pOpen && tk.idx <= pClose)
-          if (isParam && !opened) { html.push('<span class="params">'); opened = true }
-          if (!isParam && opened) { html.push('</span>'); opened = false }
-          html.push(renderJavaRole(tk, null))
-        }
-        if (opened) html.push('</span>')
-        $(this).html(html.join(''))
-      })
-      $fig.attr('data-jv-colored', '1')
-    }
-
-    function colorizeParamTypes($inline) {
-      $inline.find('table.ifm-params-table').each(function () {
-        var $tbl = $(this)
-        if ($tbl.hasClass('ifm-enum-table')) return
-        var isReturnTable = $tbl.hasClass('ifm-return-table')
-        $tbl.find('tbody tr').each(function () {
-          var $tds = $(this).children('td')
-          var $typeCode = (isReturnTable ? $tds.eq(0) : $tds.eq(1)).find('code').first()
-          if (!$typeCode.length || $typeCode.attr('data-jv-colored')) return
-        var anchors = []
-        var text = ''
-        ;(function walk(node) {
-          for (var c = node.firstChild; c; c = c.nextSibling) {
-            if (c.nodeType === 3) {
-              text += c.nodeValue
-            } else if (c.nodeType === 1) {
-              if (c.tagName === 'A') {
-                var start = text.length
-                text += c.textContent
-                anchors.push({ start: start, end: text.length, href: c.getAttribute('href') || '' })
-              } else {
-                walk(c)
-              }
-            }
-          }
-        })($typeCode[0])
-
-        var tokens = tokenizeJava(text)
-        for (var i = 0; i < tokens.length; i++) {
-          var t = tokens[i]
-          if (t.type === 'ws') { t.role = 'ws'; continue }
-          if (t.type === 'annotation') { t.role = 'annotation'; continue }
-          if (t.type === 'literal') { t.role = 'plain'; continue }
-          if (t.type === 'punct') { t.role = 'punct'; continue }
-          t.role = JAVA_KEYWORDS[t.text] ? 'keyword' : 'type'
-        }
-        markJavaBreakOpportunities(tokens)
-        var html = []
-        for (var j = 0; j < tokens.length; j++) html.push(renderJavaRole(tokens[j], anchors))
-          if (!$typeCode.parent().hasClass('ifm-type-scroll')) {
-            $typeCode.wrap('<span class="ifm-type-scroll"></span>')
-          }
-          $typeCode.html(html.join(''))
-          $typeCode.attr('data-jv-colored', '1')
-        })
-      })
-    }
-
-    // ===== 通用转换函数：将 inline-doc 转为 ifm-method-doc 卡片样式 =====
-    function transformInlineDoc($inline, type, name) {
-      if ($inline.hasClass('ifm-processed')) return
-      $inline.addClass('ifm-method-doc ifm-processed')
-
-      // class-inline-doc 由异步请求填充，无法被页面初始化时的全局
-      // @Deprecated 扫描覆盖；在转换时补充废弃状态。
-      if (/@Deprecated\b/.test($inline.find('figure.highlight, pre, code').text())) {
-        $inline.addClass('api-deprecated')
-        var inlineId = $inline.attr('id') || ''
-        if (inlineId) $('#' + inlineId.replace(/_inline$/, '')).addClass('api-deprecated')
-      }
-
-      var $h6 = $inline.find('h6').first()
-      var displayName = name || $.trim($h6.text().replace(/^(method|enum|class)\s+/i, ''))
-
-      // 提取版本
-      var memberSince = ''
-      var $memberTag = $inline.find('.msdk-support-tag code')
-      if ($memberTag.length) {
-        var sm = $memberTag.text().match(/MSDK\s+([\d.]+)/)
-        if (sm) memberSince = sm[1]
-      }
-      if (!memberSince) {
-        $inline.find('code').each(function () {
-          var m2 = $(this).text().match(/MSDK\s+([\d.]+)\s*开始支持/)
-          if (m2) { memberSince = m2[1]; return false }
-        })
-      }
-      var sinceBadge = memberSince ? '<span class="ifm-badge ifm-since-badge">Since MSDK ' + memberSince + '</span>' : ''
-      // 废弃卡片：标题行 Since 左侧显示"已废弃"badge（英文站同步时改为 Deprecated）
-      var deprecatedBadge = $inline.hasClass('api-deprecated')
-        ? '<span class="ifm-badge ifm-deprecated-badge">已废弃</span>'
-        : ''
-
-      // a) blockquote+h6 → 标题行
-      // 注意：hexo 生成的 HTML 有格式缺陷（<div class="inline-doc" ... 后未闭合 > 就换行），
-      // 浏览器解析后 <blockquote> 和其内部 <div class="article"><h6> 可能被拆成兄弟节点，
-      // $h6.closest('blockquote') 返回空 → 走 else 分支只 prepend title-row，
-      // 结果残留的 <div class="article"><h6>method xxx</h6></div> 变成"多余的一行标题"。
-      // 修复：无论 blockquote 是否找到，都主动清理所有相关残留节点。
-      var $blockquote = $h6.closest('blockquote')
-      var titleRowHtml =
-        '<div class="ifm-method-title-row">' +
-        '<span class="ifm-type-badge">' + escapeHtml(type) + '</span>' +
-        '<h3>' + escapeHtml(displayName) + '</h3>' +
-        deprecatedBadge +
-        sinceBadge +
-        '</div>'
-      if ($blockquote.length) {
-        $blockquote.replaceWith(titleRowHtml)
-      } else {
-        // class-inline-doc 或畸形 HTML：前置插入标题行
-        $inline.prepend(titleRowHtml)
-      }
-      // 兜底清理：删除 inline-doc 内所有残留的 h6 及其祖先 .article 包裹
-      // （这些是原始 blockquote/article 结构被浏览器解析畸形后遗留下来的）
-      $inline.find('h6').each(function () {
-        var $h6r = $(this)
-        // 若 h6 已经在 ifm-method-title-row 内（新建的），跳过
-        if ($h6r.closest('.ifm-method-title-row').length) return
-        var $ancestorArticle = $h6r.closest('div.article')
-        if ($ancestorArticle.length && $ancestorArticle[0] !== $inline[0]) {
-          $ancestorArticle.remove()
-        } else {
-          $h6r.remove()
-        }
-      })
-      // 兜底清理：删除 inline-doc 内空的 blockquote 或空的 .article 包裹（无实际内容）
-      $inline.find('blockquote').each(function () {
-        if (!$.trim($(this).text())) $(this).remove()
-      })
-      $inline.find('> div.article').each(function () {
-        if (!$.trim($(this).text())) $(this).remove()
-      })
-
-      // b) figure.highlight
-      // enum 的签名（@Keep enum XXX）冗余，与标题重复，隐藏
-      if (/^enum$/i.test(type)) {
-        $inline.find('figure.highlight').first().hide()
-      } else {
-        $inline.find('figure.highlight').first().addClass('ifm-signature-figure')
-      }
-      // 签名代码块行首 trim：生成器输出的签名行统一带前导缩进（全局 378/378 个
-      // 签名块均如此，如「@NonNull\n    void xxx()」），导致注解行与方法签名行
-      // 起始位置不对齐；仅对签名块（ifm-signature-figure）做行首空白 trim，
-      // 不影响用户代码示例块的正常缩进。同时复位横向滚动，防止长签名行
+    // 构建期已预渲染卡片内容（标题行 / 签名着色 / 参数表 / callout），
+    // 运行时只补做依赖真实渲染宽度的签名参数换行
       // 触发 overflow 滚动后注解行首字符被裁切
       // 计算 params 文本中的“顶层参数逗号”位置：忽略泛型 <A, B> 与注解参数 @X(a, b)
       function getSignatureParamBreaks(text) {
@@ -1319,185 +937,13 @@ function initDocumentPage(options) {
         })
       }
 
+    function transformInlineDoc($inline, type, name) {
+      if ($inline.hasClass('ifm-processed')) return
+      $inline.addClass('ifm-processed')
       $inline.find('figure.highlight.ifm-signature-figure').each(function () {
         var $fig = $(this)
-        $fig.find('.line').each(function () {
-          var node = this.firstChild
-          if (node && node.nodeType === 3) {
-            node.nodeValue = node.nodeValue.replace(/^\s+/, '')
-          }
-        })
-        colorizeJavaSignature($fig)
-        // 所有同步卡片转换结束后再复位滚动，避免每改一张卡片就强制布局。
-        var format = function () {
-          if (!$.contains(document, $fig[0])) return
-          $fig.find('pre').scrollLeft(0)
-          wrapLongSignatureParams($fig)
-        }
-        if (window.requestAnimationFrame) window.requestAnimationFrame(format)
-        else setTimeout(format, 0)
-      })
-
-      // c) 隐藏 table-supportedby
-      $inline.find('.table-supportedby').hide()
-
-      // d) h5 标题处理
-      $inline.find('h5').each(function () {
-        var $h5 = $(this)
-        var txt = $.trim($h5.text())
-        if (/^描述/.test(txt)) {
-          $h5.remove()
-        } else if (/^输入参数/.test(txt)) {
-          $h5.replaceWith('<h3 class="ifm-plain-heading">参数</h3>')
-        } else if (/^返回值/.test(txt)) {
-          $h5.replaceWith('<h3 class="ifm-plain-heading ifm-return-heading">返回值</h3>')
-        } else if (/^(Enum Members)/i.test(txt)) {
-          $h5.replaceWith('<h3 class="ifm-plain-heading">枚举成员</h3>')
-        } else if (/^(Class Members)/i.test(txt)) {
-          // Class Members: 通常紧跟一个空块，直接移除
-          $h5.remove()
-        } else {
-          $h5.replaceWith('<h3 class="ifm-plain-heading">' + escapeHtml(txt.replace(/[:：]$/, '')) + '</h3>')
-        }
-      })
-
-      // e) 参数/枚举成员表 → leader 风格
-      $inline.find('.table-inline-parameters').each(function () {
-        var $tbl = $(this)
-        var rows = []
-        $tbl.find('tr').each(function () {
-          var $tds = $(this).find('td')
-          if ($tds.length >= 2) {
-            var $typeTd = $tds.eq(0).clone()
-            var $nameFont = $typeTd.find('font[color="#000"]')
-            var paramName = $.trim($nameFont.text())
-            $nameFont.remove()
-            var paramTypeHtml = $typeTd.html()
-            // 说明列：文本提取 + 单独保留示意图（如 IMUCalibrationOrientation 的
-            // IMU 方向图）。直接用 text() 会把 <img> 一并丢掉。
-            var $descTd = $tds.eq(1).clone()
-            var paramImgsHtml = ''
-            $descTd.find('img').each(function () {
-              var src = $(this).attr('src') || ''
-              if (src) paramImgsHtml += '<div class="ifm-param-img"><img src="' + escapeHtml(src) + '" alt=""></div>'
-            })
-            $descTd.find('img').remove()
-            var paramDesc = $.trim($descTd.text())
-            // 枚举成员：只有类型+说明两列，name 为空
-            rows.push({
-              name: paramName,
-              typeHtml: paramTypeHtml,
-              desc: paramDesc,
-              imgs: paramImgsHtml
-            })
-          }
-        })
-        if (rows.length) {
-          var hasName = rows.some(function (r) { return !!r.name })
-          // 返回值表：列头应为「类型」，而非枚举成员表的「名称」
-          var $prevHeading = $tbl.prevAll('h3').first()
-          var isReturnTable = $prevHeading.hasClass('ifm-return-heading')
-          // 含示意图的表格（如 IMUCalibrationOrientation）：追加独立的「图片示例」列，
-          // 图片不再挤在说明列内；无图表格保持原有列结构不变
-          var hasImgs = rows.some(function (r) { return !!(r.imgs) })
-          // 枚举成员表（两列）标记 ifm-enum-table；返回值表标记 ifm-return-table
-          var tableCls = 'ifm-params-table' +
-            (isReturnTable ? ' ifm-return-table' : (!hasName ? ' ifm-enum-table' : '')) +
-            (hasImgs ? ' ifm-has-imgs' : '')
-          var $newTbl
-          if (hasName) {
-            $newTbl = $(
-              '<table class="' + tableCls + '">' +
-              '<thead><tr><th>名称</th><th>类型</th><th>说明</th>' +
-              (hasImgs ? '<th>图片示例</th>' : '') +
-              '</tr></thead><tbody></tbody></table>'
-            )
-            rows.forEach(function (r) {
-              $newTbl.find('tbody').append(
-                '<tr><td><code>' + escapeHtml(r.name) + '</code></td>' +
-                '<td><code>' + r.typeHtml + '</code></td>' +
-                '<td>' + escapeHtml(r.desc) + '</td>' +
-                (hasImgs ? '<td>' + (r.imgs || '') + '</td>' : '') +
-                '</tr>'
-              )
-            })
-          } else if (isReturnTable) {
-            // 返回值表：只显示 "类型 | 说明" 两列
-            $newTbl = $(
-              '<table class="' + tableCls + '">' +
-              '<thead><tr><th>类型</th><th>说明</th>' +
-              (hasImgs ? '<th>图片示例</th>' : '') +
-              '</tr></thead><tbody></tbody></table>'
-            )
-            rows.forEach(function (r) {
-              $newTbl.find('tbody').append(
-                '<tr><td><code>' + r.typeHtml + '</code></td>' +
-                '<td>' + escapeHtml(r.desc) + '</td>' +
-                (hasImgs ? '<td>' + (r.imgs || '') + '</td>' : '') +
-                '</tr>'
-              )
-            })
-          } else {
-            // 枚举成员表：只显示 "名称 | 说明" 两列（typeHtml 里含枚举名）
-            $newTbl = $(
-              '<table class="' + tableCls + '">' +
-              '<thead><tr><th>名称</th><th>说明</th>' +
-              (hasImgs ? '<th>图片示例</th>' : '') +
-              '</tr></thead><tbody></tbody></table>'
-            )
-            rows.forEach(function (r) {
-              $newTbl.find('tbody').append(
-                '<tr><td><code>' + r.typeHtml + '</code></td>' +
-                '<td>' + escapeHtml(r.desc) + '</td>' +
-                (hasImgs ? '<td>' + (r.imgs || '') + '</td>' : '') +
-                '</tr>'
-              )
-            })
-          }
-          $tbl.replaceWith($newTbl)
-        }
-      })
-
-      // e2) 参数表「类型」列：按 Java 语法角色着色，保留原有 <a> 跳转
-      colorizeParamTypes($inline)
-
-      // f) Note/注意 <b> → callout
-      // YAML 源头已统一 Note 块缩进，生成 md 时保持 b 内容为单行，
-      // 无需在适配层搬移/重组列表，避免误捕获卡片内其他 ol/ul
-      $inline.find('p b').each(function () {
-        var $b = $(this)
-        var bText = $b.text()
-        if (/^(注意|Notice|Note)[：:]/.test(bText) || /^(注意|Notice|Note)/.test(bText)) {
-          var noteHtml = $b.html().replace(/^(注意|Notice|Note)[：:]\s*/, '')
-          $b.replaceWith(
-            '<div class="ifm-callout"><strong>注意</strong><br>' + noteHtml + '</div>'
-          )
-        }
-      })
-
-      // g) 隐藏底部版本标签（已迁至标题行）
-      $inline.find('.msdk-support-tag').hide()
-      // class-inline-doc 是异步 fetch 后组装的，版本号可能直接嵌在描述段 <p> 内的
-      // <code><i>MSDK X.X.X开始支持</i></code>，msdk-support-tag 提取 IIFE 抓不到
-      // → 这里主动清理描述段里剩余的版本标记 code
-      $inline.find('p code, p i').each(function () {
-        var t = $.trim($(this).text())
-        if (/^MSDK\s+[\d.]+\s*开始支持$/.test(t) || /Supported\s+since\s+MSDK/i.test(t)) {
-          // 移除包裹这个版本标记的最近的 code 节点
-          var $c = $(this).closest('code')
-          if ($c.length) $c.remove()
-          else $(this).remove()
-        }
-      })
-      // 清理描述段末尾遗留的连续 <br>（含嵌套在 <font> 内的情况）
-      $inline.find('p, p font').each(function () {
-        var $el = $(this)
-        var html = $el.html()
-        if (html) {
-          // 反复剔除末尾的 &nbsp;/空白/<br>（不区分大小写、允许自闭合）
-          var cleaned = html.replace(/(?:\s|&nbsp;|<br\s*\/?>)+$/gi, '')
-          if (cleaned !== html) $el.html(cleaned)
-        }
+        $fig.find('pre').scrollLeft(0)
+        wrapLongSignatureParams($fig)
       })
     }
 
@@ -1574,7 +1020,13 @@ function initDocumentPage(options) {
       if ($flowItems.length) {
         var flowHtml = ''
         $flowItems.each(function () {
-          var itemHtml = $(this).html().replace(/^\s*\d+[\.、]\s*/, '')
+          // 序号前缀可能落在 <font> 等行内容器内（如 <font color="#666">1. 调用…），
+          // 直接对 html 开头匹配会失效，需连同容器开头一起处理
+          var itemRaw = $(this).html() || ''
+          var itemHtml = itemRaw.replace(/^\s*\d+[\.、]\s*/, '')
+          if (itemHtml === itemRaw) {
+            itemHtml = itemRaw.replace(/^(\s*<font[^>]*>)\s*\d+[\.、]\s*/, '$1')
+          }
           flowHtml += '<li>' + itemHtml + '</li>'
         })
         $descriptionFlow = $(
@@ -1594,18 +1046,28 @@ function initDocumentPage(options) {
     }
 
     // ===== 2. 面包屑 + Overview Header =====
-    // 面包屑层级：config.breadcrumb 优先，否则默认 Common APIs › className
-    var crumbs = config.breadcrumb || [
+    // 构建期已预渲染（scripts/prerender-ifm.js）时不再重复生成，只接管事件绑定
+    var prerenderFlags = $article.attr('data-prerender') || ''
+    var prerenderedOverview = prerenderFlags.indexOf('overview') >= 0
+    var prerenderedMembers = prerenderFlags.indexOf('members') >= 0
+    var $breadcrumb = null
+    var $eyebrow = null
+    if (!prerenderedOverview) {
+    // 面包屑层级：config.breadcrumb（定制页）优先；
+    // 否则从左侧菜单树推导真实层级（IMediaDataCenter › ICameraStreamManager › 类名），
+    // 推导失败再退回 Common APIs › className
+    var crumbs = config.breadcrumb || deriveBreadcrumbFromSidebar($, className) || [
       { name: 'Common APIs', href: null },
       { name: className, href: null }
     ]
     var breadcrumbHtml = '<nav class="ifm-breadcrumb" aria-label="面包屑">'
     crumbs.forEach(function (c, i) {
       if (i > 0) breadcrumbHtml += '<span class="ifm-breadcrumb-sep">›</span>'
-      if (c.href && i < crumbs.length - 1) {
+      var isLast = i === crumbs.length - 1
+      if (c.href && !isLast) {
         breadcrumbHtml += '<a href="' + escapeHtml(c.href) + '">' + escapeHtml(c.name) + '</a>'
       } else {
-        breadcrumbHtml += '<span>' + escapeHtml(c.name) + '</span>'
+        breadcrumbHtml += '<span' + (isLast ? ' aria-current="page"' : '') + '>' + escapeHtml(c.name) + '</span>'
       }
     })
     breadcrumbHtml += '</nav>'
@@ -1632,9 +1094,16 @@ function initDocumentPage(options) {
       'Android · Java / Kotlin</span>' +
       '</div>'
     )
-    if (topDeprecated) $eyebrow.addClass('ifm-overview-deprecated')
-    // 包名复制按钮
-    $eyebrow.find('.ifm-mini-copy').on('click', function () {
+    }
+    if (prerenderedOverview) {
+      // 预渲染分支：直接接管已存在的 eyebrow，保持后续 TOC 锚点逻辑可用
+      $eyebrow = $article.find('.ifm-eyebrow').first()
+      if ($eyebrow.length && !$eyebrow.attr('id')) $eyebrow.attr('id', 'ifm-overview')
+    }
+    if (topDeprecated && $eyebrow) $eyebrow.addClass('ifm-overview-deprecated')
+    // 包名复制按钮：构建期把 eyebrow、标题、lead、meta 行作为兄弟节点输出，
+    // 按钮位于 meta 行而非 eyebrow 内部，因此必须在正文范围内查找并幂等绑定
+    $article.find('.ifm-mini-copy').off('click.ifmCopy').on('click.ifmCopy', function () {
       ifmCopyText($(this).attr('data-copy') || '', $(this))
     })
 
@@ -1657,7 +1126,7 @@ function initDocumentPage(options) {
     }
 
     if ($descH5.length) {
-      $descH5.before($breadcrumb).before($eyebrow)
+      if (!prerenderedOverview) $descH5.before($breadcrumb).before($eyebrow)
       if ($descriptionFlow) $descH5.before($descriptionFlow)
       if ($descCallout) $descH5.before($descCallout)
       if ($workflow) $descH5.before($workflow)
@@ -1697,7 +1166,7 @@ function initDocumentPage(options) {
         })
       }
     } else {
-      $article.prepend($breadcrumb, $eyebrow)
+      if (!prerenderedOverview) $article.prepend($breadcrumb, $eyebrow)
       if ($descriptionFlow) $article.prepend($descriptionFlow)
       if ($descCallout) $article.prepend($descCallout)
       if ($workflow) $article.prepend($workflow)
@@ -1716,61 +1185,64 @@ function initDocumentPage(options) {
 
     // ===== 3.5 成员元数据：DOM 自动派生（监听 / 方法 / 枚举 / 相关类型）=====
     // 扫描所有顶层 api-row，自动判定 type / category / group
+    // 构建期已预渲染成员索引时，浏览器不再重复扫描成员元数据与分组
     var allMembers = []
-    $article.find('.api-row').each(function () {
-      var $row = $(this)
-      if ($row.parents('.inline-doc').length) return
-      var type = $.trim($row.find('.api-col.middle').text()).toLowerCase() || 'method'
-      if (type === 'unknown') type = 'method'  // 数据类字段标记为 unknown
-      var $link = $row.find('.api-col.right a').first()
-      var label = $.trim($link.text())
-      var domId = $row.attr('id') || ''
-      if (!label || !domId) return
-
-      var category, group, isEnum = false
-      if (type === 'enum') {
-        category = 'enum'; group = 'enum'; isEnum = true
-      } else if (type === 'class') {
-        category = 'class'; group = 'class'  // 相关类型，不进成员列表
-      } else {
-        if (/^(add|remove|removeall|clear).*listener$/i.test(label)) {
-          category = 'listener'; group = 'listener'
-        } else {
-          category = 'method'; group = 'method'
-        }
-      }
-
-      // 摘要从 inline-doc 提取
-      var summary = ''
-      var $inlineEl = $(document.getElementById(domId + '_inline'))
-      if ($inlineEl.length) {
-        var $dH5 = $inlineEl.find('h5').filter(function () { return /^描述/.test($.trim($(this).text())) }).first()
-        var $dP = $dH5.length ? $dH5.nextAll('p').first() : $inlineEl.find('p').first()
-        if ($dP.length) {
-          var $c2 = $dP.clone()
-          $c2.find('code').each(function () {
-            if (/MSDK\s+[\d.]+\s*开始支持/.test($(this).text())) $(this).remove()
-          })
-          $c2.find('b').remove()
-          var t2 = $.trim($c2.text())
-          var s2 = t2.match(/^[\s\S]*?[。.!?！？](?=\s|$)/)
-          summary = s2 ? s2[0] : t2.substring(0, 80)
-        }
-      }
-
-      allMembers.push({
-        domId: domId, label: label, type: type,
-        category: category, group: group, isEnum: isEnum,
-        summary: summary
-      })
-    })
-
-    // groupDefs 自动构建（按顺序：监听 → 方法 → 枚举）
     var IFM_GROUP_DEFS = []
-    if (allMembers.some(function (m) { return m.group === 'listener' })) IFM_GROUP_DEFS.push({ id: 'listener', label: '监听' })
-    if (allMembers.some(function (m) { return m.group === 'method' })) IFM_GROUP_DEFS.push({ id: 'method', label: '方法' })
-    if (allMembers.some(function (m) { return m.group === 'enum' })) IFM_GROUP_DEFS.push({ id: 'enum', label: '枚举' })
-    if (allMembers.some(function (m) { return m.group === 'class' })) IFM_GROUP_DEFS.push({ id: 'class', label: 'Class' })
+    if (!prerenderedMembers) {
+        $article.find('.api-row').each(function () {
+        var $row = $(this)
+        if ($row.parents('.inline-doc').length) return
+        var type = $.trim($row.find('.api-col.middle').text()).toLowerCase() || 'method'
+        if (type === 'unknown') type = 'method'  // 数据类字段标记为 unknown
+        var $link = $row.find('.api-col.right a').first()
+        var label = $.trim($link.text())
+        var domId = $row.attr('id') || ''
+        if (!label || !domId) return
+
+        var category, group, isEnum = false
+        if (type === 'enum') {
+          category = 'enum'; group = 'enum'; isEnum = true
+        } else if (type === 'class') {
+          category = 'class'; group = 'class'  // 相关类型，不进成员列表
+        } else {
+          if (/^(add|remove|removeall|clear).*listener$/i.test(label)) {
+            category = 'listener'; group = 'listener'
+          } else {
+            category = 'method'; group = 'method'
+          }
+        }
+
+        // 摘要从 inline-doc 提取
+        var summary = ''
+        var $inlineEl = $(document.getElementById(domId + '_inline'))
+        if ($inlineEl.length) {
+          var $dH5 = $inlineEl.find('h5').filter(function () { return /^描述/.test($.trim($(this).text())) }).first()
+          var $dP = $dH5.length ? $dH5.nextAll('p').first() : $inlineEl.find('p').first()
+          if ($dP.length) {
+            var $c2 = $dP.clone()
+            $c2.find('code').each(function () {
+              if (/MSDK\s+[\d.]+\s*开始支持/.test($(this).text())) $(this).remove()
+            })
+            $c2.find('b').remove()
+            var t2 = $.trim($c2.text())
+            var s2 = t2.match(/^[\s\S]*?[。.!?！？](?=\s|$)/)
+            summary = s2 ? s2[0] : t2.substring(0, 80)
+          }
+        }
+
+        allMembers.push({
+          domId: domId, label: label, type: type,
+          category: category, group: group, isEnum: isEnum,
+          summary: summary
+        })
+      })
+
+      // groupDefs 自动构建（按顺序：监听 → 方法 → 枚举）
+        if (allMembers.some(function (m) { return m.group === 'listener' })) IFM_GROUP_DEFS.push({ id: 'listener', label: '监听' })
+      if (allMembers.some(function (m) { return m.group === 'method' })) IFM_GROUP_DEFS.push({ id: 'method', label: '方法' })
+      if (allMembers.some(function (m) { return m.group === 'enum' })) IFM_GROUP_DEFS.push({ id: 'enum', label: '枚举' })
+      if (allMembers.some(function (m) { return m.group === 'class' })) IFM_GROUP_DEFS.push({ id: 'class', label: 'Class' })
+    }
 
     // 进入成员列表的成员（排除 class，class 归相关类型）
     // class 相关类型作为「Class」分组进入成员列表（点击滚动到底部对应卡片）；
@@ -1778,7 +1250,9 @@ function initDocumentPage(options) {
     var ifmMembers = allMembers
 
     // 构建成员列表 UI
-    if (ifmMembers.length) {
+    if (ifmMembers.length || $article.find('.ifm-member-row').length) {
+      // 构建期已预渲染成员列表时跳过重建，只接管事件绑定
+      if (!prerenderedMembers) {
       // 筛选按钮：根据实际分组动态生成（只有存在对应分组的才显示按钮）
       var filterBtns = '<button class="ifm-filter-btn" data-filter="all" aria-pressed="true">全部</button>'
       IFM_GROUP_DEFS.forEach(function (grp) {
@@ -1833,6 +1307,7 @@ function initDocumentPage(options) {
       } else {
         // 兜底：插到相关类之前 / article 末尾
         $article.append($ifmMembersSection)
+      }
       }
 
       // 成员行点击：滚动到对应 inline-doc + 闪烁高亮
@@ -1945,77 +1420,6 @@ function initDocumentPage(options) {
     // 收集顶层 class api-rows（在 injectClassInlineDocs 后仍保留 id）
     var ifmTocItems = []  // { anchorId, label } — 供 onScroll 判定高亮
 
-    function rebuildIfmToc() {
-      var $tocList = $('.site-toc-list')
-      if (!$tocList.length) return
-      $tocList.empty()
-      ifmTocItems = []
-
-      // 给 Overview 区加一个可跳转的 id
-      var $overviewEl = $article.find('.ifm-eyebrow').first()
-      if ($overviewEl.length && !$overviewEl.attr('id')) {
-        $overviewEl.attr('id', 'ifm-overview')
-      }
-
-      function appendTocLink(anchorId, label, extraClass, kind) {
-        var $li = $('<li>')
-        if (extraClass) $li.addClass(extraClass)
-        var $a = $('<a>')
-          .attr('href', '#' + anchorId)
-          .attr('data-scroll', anchorId)
-          .attr('data-target', anchorId)  // 兼容 onScroll 高亮匹配
-        // 加类型缩写小 badge：method→M / class→C / enum→E
-        if (kind) {
-          var kindLetter = { method: 'M', class: 'C', enum: 'E' }[kind] || kind.charAt(0).toUpperCase()
-          $a.append(
-            $('<span>')
-              .addClass('ifm-toc-kind')
-              .addClass('ifm-toc-kind-' + kind)
-              .text(kindLetter)
-          )
-        }
-        $a.append(document.createTextNode(label))
-        $li.append($a)
-        $tocList.append($li)
-        ifmTocItems.push({ anchorId: anchorId, label: label })
-      }
-
-      appendTocLink('ifm-overview', '概览')
-      if ($article.find('#ifm-workflow').length) {
-        appendTocLink('ifm-workflow', '典型调用流程')
-      }
-      if ($article.find('#ifm-members-nav').length) {
-        appendTocLink('ifm-members-nav', '成员索引')
-      }
-
-      // 方法分组：TOC 保持既有口径——method + listener 均归「方法」，仅排除 enum 与 class
-      // （class/enum 均归入下方「相关类型」组，按原始 DOM 顺序混排，不做类型重排；
-      //   ifmMembers 纳入 class 后必须显式排除，否则 TOC「方法」组会错误吸收 class 条目）
-      var ifmMethods = ifmMembers.filter(function (m) { return !m.isEnum && m.group !== 'class' })
-      var ifmEnums = ifmMembers.filter(function (m) { return m.isEnum })
-
-      if (ifmMethods.length) {
-        $tocList.append('<li class="toc-group"><span class="toc-group-title">方法</span></li>')
-        ifmMethods.forEach(function (m) {
-          appendTocLink(m.domId + '_inline', m.label, 'ifm-toc-method', 'method')
-        })
-      }
-
-      // 相关类型：严格沿用原始 DOM 顺序，class 与 enum 可以交错出现。
-      // allMembers 在页面 api-row 的扫描顺序中构建，可与内容区保持一致。
-      var relatedItems = allMembers.filter(function (m) {
-        return m.group === 'class' || m.group === 'enum'
-      })
-      if (relatedItems.length) {
-        $tocList.append('<li class="toc-group"><span class="toc-group-title">相关类型</span></li>')
-        relatedItems.forEach(function (m) {
-          appendTocLink(m.domId + '_inline', m.label, 'ifm-toc-related', m.type)
-        })
-      }
-
-      // 单一共享高亮器；TOC / 正文链接共用委托导航，不重复绑定。
-      window.DocRuntime.setToc(ifmTocItems)
-    }
 
     var $staticToc = $('.site-toc-list[data-static-toc]')
     if ($staticToc.length) {
@@ -2062,7 +1466,7 @@ function initDocumentPage(options) {
       }
     } else {
       // 名称和顺序已由本页 DOM 提供；异步预览完成只更新布局，不重建目录。
-      rebuildIfmToc()
+      // TOC 已由构建期 static-toc.js 生成，运行时无需重建
     }
 
     // 枚举成员示意图：点击当前页面弹窗预览（不另开窗口），
@@ -2111,7 +1515,11 @@ function initDocumentPage(options) {
           .off('click.offlineClass')
           .on('click.offlineClass', function (e) {
             if (!window.DocRuntime.plainClick(e) || $(e.target).closest('a, button, input, textarea, select, [contenteditable]').length || String(window.getSelection())) return
-            if (!window.DocNavigation.visit(href)) window.location.href = href
+            if (!window.DocNavigation.visit(href)) {
+              // 构建期已把站内绝对路径转为相对当前页面的形式，
+              // 此处直接赋值即可由浏览器正确解析
+              window.location.href = href
+            }
           })
         $row.addClass('api-row-hidden').attr('data-class-inline-id', rowId + '_inline')
         return

@@ -281,7 +281,27 @@ Searchdoc.Panel.prototype = $.extend({}, Searchdoc.Navigation, new function() {
             $('#panel').removeClass('panel_results_open')
         } catch (e) {}
         if (href && (href.indexOf('undefined') != href.length - 9)) {
-            location.href = href;
+            // 站点内绝对路径（/Components/...）需按当前挂载页所在的站点根解析，
+            // file:// 与子目录部署都适用。
+            // 查询串与 hash 需要分开处理：搜索高亮参数不参与页面标识，
+            // 但 hash 是目标方法锚点，必须保留，否则搜索结果会落到页面顶部。
+            var hashIdx = href.indexOf('#');
+            var hash = hashIdx >= 0 ? href.slice(hashIdx) : '';
+            var beforeHash = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
+            var qi = beforeHash.indexOf('?');
+            var docPath = qi >= 0 ? beforeHash.slice(0, qi) : beforeHash;
+            var qs = qi >= 0 ? beforeHash.slice(qi) : '';
+            // 站内文档统一走局部导航（正文包），避免整页刷新重复下载公共结构
+            if (window.DocNavigation && window.DocNavigation.visit &&
+                window.DocNavigation.canVisit && window.DocNavigation.canVisit(docPath)) {
+                if (window.DocNavigation.visit(docPath + hash)) return;
+            }
+            if (window.DocNavigation && window.DocNavigation.resolveDocPath) {
+                // 整页跳转同样要带上方法锚点，否则离线文档搜索会落到页顶
+                location.href = window.DocNavigation.resolveDocPath(docPath) + qs + hash;
+            } else {
+                location.href = href;
+            }
         }
     }
 
@@ -314,19 +334,9 @@ Searchdoc.Panel.prototype = $.extend({}, Searchdoc.Navigation, new function() {
         html += hlt(result.namespace) + '</p>';
         if (result.snippet) html += '<p class="snippet">' + sanitizeSnippet(result.snippet) + '</p>';
         li.innerHTML = html;
-        var prefix = window.pathPrefix; //
-        if (typeof prefix == 'undefined') {
-            var regx = new RegExp('/', 'g');
-            var res = location.pathname.match(regx);
-            var dirCount = res.length - 1;
-            prefix = '';
-            for (var i = 0; i < dirCount; i++) {
-                prefix += '../';
-            }
-        }
-        if (prefix == '') prefix = './';
-        // 中文搜索词必须编码后再进入 URL，否则目标页解码乱码
-        jQuery.data(li, 'path', prefix + result.path.substr(1) + '?search=' + encodeURIComponent(this.searchValue) + '&i=' + index + '&' + result.params);
+        // result.path 是站点内绝对路径（/Components/...），直接保留，
+        // 点击时再按当前挂载页的站点根解析；不再按 pathname 斜杠数拼 ../（file:// 下会算错）
+        jQuery.data(li, 'path', result.path + '?search=' + encodeURIComponent(this.searchValue) + '&i=' + index + '&' + result.params);
         return li;
     }
 

@@ -3264,6 +3264,10 @@ label {
   color: #9aa0a6;
   opacity: 0.7;
 }
+.documentation-page .site-main .article.ifm-page .ifm-breadcrumb [aria-current=page] {
+  color: #34383e;
+  font-weight: 600;
+}
 @keyframes ifm-flash {
   0% {
     background: rgba(255, 214, 102, 0.35);
