@@ -678,7 +678,14 @@
         ? u.protocol + '//' + prefix
         : u.origin + prefix
       var ext = u.protocol === 'file:' ? '.js' : '.json'
-      return base + '/_doc-data/' + rest + ext
+      // 线上正文包文件名固定，加上构建版本让缓存跟着发版失效；
+      // 本地是 file:// 直读脚本，带查询串会找不到文件，故不加。
+      var buildId = ''
+      if (u.protocol !== 'file:') {
+        var meta = document.querySelector('meta[name="doc-build"]')
+        buildId = meta ? (meta.getAttribute('content') || '') : ''
+      }
+      return base + '/_doc-data/' + rest + ext + (buildId ? '?v=' + encodeURIComponent(buildId) : '')
     } catch (e) {
       return null
     }
