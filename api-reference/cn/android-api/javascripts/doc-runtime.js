@@ -166,22 +166,48 @@
     return !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey && (!e.which || e.which === 1) && (!e.button || e.button === 0)
   }
 
+  // 按 id 查找元素，兼容历史数据里的大小写混用
+  function elementById(id) {
+    if (!id) return null
+    return document.getElementById(id) || document.getElementById(id.toLowerCase())
+  }
+
+  // 简介行（api-row）本身是隐藏的，真正的内容在同 id 的 _inline 块里
+  function inlineFor(el, pageUrl) {
+    if (!el || !$(el).hasClass('api-row')) return el
+    var triggerHref = $(el).find('a.trigger').first().attr('href')
+    var inlineId = $(el).attr('data-class-inline-id') || (triggerHref ? new URL(triggerHref, pageUrl).hash.slice(1) : '') || el.id + '_inline'
+    return document.getElementById(inlineId) || el
+  }
+
   function resolveTarget(hash) {
     var id
     try { id = decodeURIComponent(String(hash || '').replace(/^#/, '')) } catch (e) { return null }
     if (!id) return null
     var pageUrl = window.DocNavigation ? window.DocNavigation.currentUrl() : window.location.href
-    var el = document.getElementById(id) || document.getElementById(id.toLowerCase())
-    if (el && $(el).hasClass('api-row')) {
-      var triggerHref = $(el).find('a.trigger').first().attr('href')
-      var inlineId = $(el).attr('data-class-inline-id') || (triggerHref ? new URL(triggerHref, pageUrl).hash.slice(1) : '') || el.id + '_inline'
-      el = document.getElementById(inlineId) || el
+    var el = elementById(id)
+    if (!el) el = elementById(id + '_inline')
+    // 上游产物只给枚举成员生成了表格行，没有对应的内容块，因此
+    // value_x_enum_y_scanning_inline 这类锚点是悬空的（全站约两成）。
+    // 逐级去掉尾部片段回退到所属枚举；优先取内容块而非简介行。
+    if (!el && /_inline$/i.test(id)) {
+      var parts = id.split('_')
+      while (!el && parts.length > 2) {
+        parts.pop()
+        var cand = parts.join('_')
+        if (cand.length < 8) break
+        el = elementById(cand + '_inline') || elementById(cand)
+      }
     }
-    if (!el) el = document.getElementById(id + '_inline')
     // 历史类级 UID 指向无 ID 的 h1，映射到 Overview；不改其他锚点大小写。
     var page = new URL(pageUrl).pathname.split('/').pop().replace(/\.html$/i, '').toLowerCase()
     if (!el && id.toLowerCase() === page) el = document.getElementById('ifm-overview')
-    return el
+    // 源文档用中文章节名当锚点（如 #类成员），页面上没有对应 id，统一指向成员区
+    if (!el && /^(类成员|成员|方法|枚举|监听|属性|字段)$/.test(id)) {
+      el = document.getElementById('ifm-members-nav')
+    }
+    // 回退可能命中简介行，这里统一重定向到内容块
+    return inlineFor(el, pageUrl)
   }
 
   function headerOffset() {
